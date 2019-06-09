@@ -1,5 +1,5 @@
 //
-//  FCTCollection.swift
+//  Solution.swift
 //  Problem 1
 //
 //  Created by sebastien FOCK CHOW THO on 2019-06-09.

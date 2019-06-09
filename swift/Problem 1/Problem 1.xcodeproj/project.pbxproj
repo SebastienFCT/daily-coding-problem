@@ -10,7 +10,7 @@
 		5D20699622AD84CC002A4B05 /* Problem_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D20698C22AD84CC002A4B05 /* Problem_1.framework */; };
 		5D20699B22AD84CC002A4B05 /* Problem_1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D20699A22AD84CC002A4B05 /* Problem_1Tests.swift */; };
 		5D20699D22AD84CC002A4B05 /* Problem_1.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D20698F22AD84CC002A4B05 /* Problem_1.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5D2069A722AD850F002A4B05 /* FCTCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2069A622AD850F002A4B05 /* FCTCollection.swift */; };
+		5D3F4C9822AD995700216949 /* Solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3F4C9722AD995700216949 /* Solution.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +30,7 @@
 		5D20699522AD84CC002A4B05 /* Problem 1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Problem 1Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D20699A22AD84CC002A4B05 /* Problem_1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem_1Tests.swift; sourceTree = "<group>"; };
 		5D20699C22AD84CC002A4B05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5D2069A622AD850F002A4B05 /* FCTCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCTCollection.swift; sourceTree = "<group>"; };
+		5D3F4C9722AD995700216949 /* Solution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solution.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +75,7 @@
 			children = (
 				5D20698F22AD84CC002A4B05 /* Problem_1.h */,
 				5D20699022AD84CC002A4B05 /* Info.plist */,
-				5D2069A622AD850F002A4B05 /* FCTCollection.swift */,
+				5D3F4C9722AD995700216949 /* Solution.swift */,
 			);
 			path = "Problem 1";
 			sourceTree = "<group>";
@@ -198,7 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D2069A722AD850F002A4B05 /* FCTCollection.swift in Sources */,
+				5D3F4C9822AD995700216949 /* Solution.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
