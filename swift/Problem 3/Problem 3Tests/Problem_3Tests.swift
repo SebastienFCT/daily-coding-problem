@@ -1,0 +1,20 @@
+//
+//  Problem_3Tests.swift
+//  Problem 3Tests
+//
+//  Created by sebastien FOCK CHOW THO on 2019-06-09.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
+
+import XCTest
+@testable import Problem_3
+
+class Problem_3Tests: XCTestCase {
+
+    func testExample() {
+        let node = Node("root", Node("left", Node("left.left")), Node("right"))
+        
+        
+    }
+
+}

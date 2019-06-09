@@ -34,5 +34,4 @@ extension Array where Element == Int {
         return result
     }
 }
-
 ```
