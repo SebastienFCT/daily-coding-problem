@@ -20,9 +20,24 @@ class Node {
     }
     
     func serialize() -> String {
+        return "\(self.val) \((self.left?.serialize() ?? "_")) \((self.right?.serialize() ?? "_")) "
+    }
+}
+
+extension Array where Element == String {
+    mutating func deserialize() -> Node? {
+        if self.isEmpty {
+            return nil
+        }
         
+        while self.count > 0 {
+            let node = Node(self.removeFirst())
+            node.left = deserialize()
+            node.right = deserialize()
+            
+            return node
+        }
         
-        
-        return ""
+        return nil
     }
 }
