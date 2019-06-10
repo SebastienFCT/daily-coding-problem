@@ -13,12 +13,12 @@ You can modify the input array in-place.
 ```swift
 extension Array where Element == Int {
     func lowerMissingPositiveInteger() -> Int {
-        let sortedAndPosition = self.sorted{ $0 < $1}.filter{ $0 > 0 }
+        let sortedAndPositive = self.sorted{ $0 < $1}.filter{ $0 > 0 }
         
         var index = 1
         
         while (true) {
-            if !sortedAndPosition.contains(index) {
+            if !sortedAndPositive.contains(index) {
                 return index
             }
             
