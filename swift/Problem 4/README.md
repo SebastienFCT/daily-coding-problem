@@ -11,5 +11,19 @@ You can modify the input array in-place.
 ### Solution
 
 ```swift
-// MARK: - TODO
+extension Array where Element == Int {
+    func lowerMissingPositiveInteger() -> Int {
+        let sortedAndPosition = self.sorted{ $0 < $1}.filter{ $0 > 0 }
+        
+        var index = 1
+        
+        while (true) {
+            if !sortedAndPosition.contains(index) {
+                return index
+            }
+            
+            index += 1
+        }
+    }
+}
 ```
