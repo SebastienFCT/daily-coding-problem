@@ -1,5 +1,3 @@
-# daily-challenges
-
 My attempts to solve daily problems provided by [Daily Coding Problem](https://www.dailycodingproblem.com/).
 
 You can subscribe [here](https://www.dailycodingproblem.com/#subscribe).
@@ -67,3 +65,20 @@ assert deserialize(serialize(node)).left.left.val == 'left.left'
 
 
 * [Swift](./swift/Problem&#32;3/)
+
+## Problem 4
+
+#### Description
+
+This problem was asked by Stripe.
+
+Given an array of integers, find the first missing positive integer in linear time and constant space. In other words, find the lowest positive integer that does not exist in the array. The array can contain duplicates and negative numbers as well.
+
+For example, the input `[3, 4, -1, 1]` should give `2`. The input `[1, 2, 0]` should give `3`.
+
+You can modify the input array in-place.
+
+### Solutions
+
+
+* [Swift](./swift/Problem&#32;4/)
