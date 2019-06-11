@@ -18,5 +18,16 @@ Implement `car` and `cdr`.
 ### Solution
 
 ```swift
-// MARK: - TODO
+struct Cons {
+    var a: Int
+    var b: Int
+}
+
+func car(_ cons: Cons) -> Int {
+    return cons.a
+}
+
+func cdr(_ cons: Cons) -> Int {
+    return cons.b
+}
 ```
