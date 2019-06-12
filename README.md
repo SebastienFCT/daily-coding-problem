@@ -120,4 +120,4 @@ If using a language that has no pointers (such as Python), you can assume you ha
 ### Solutions
 
 
-* [Swift](./swift/Problem&#32;6/)
+* Swift - TODO
