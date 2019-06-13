@@ -19,5 +19,19 @@ What if, instead of being able to climb `1` or `2` steps at a time, you could cl
 ### Solution
 
 ```swift
-// MARK: - TODO
+func howManyWaysToReach(_ goal: Int, withStepUnits stepUnits: [Int]) -> Int {
+    var total = 0
+    
+    for unit in stepUnits {
+        if goal - unit == 0 {
+            total += 1
+        } else if goal - unit < 0 {
+            total += 0
+        } else {
+            total += howManyWaysToReach(goal - unit, withStepUnits: stepUnits)
+        }
+    }
+    
+    return total
+}
 ```
