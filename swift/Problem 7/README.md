@@ -30,6 +30,8 @@ extension String {
         if let val = Int(substring) {
             if val <= 26 {
                 return String(self.suffix(self.count - 1)).decypher() + String(self.suffix(self.count - 2)).decypher()
+            } else {
+                return String(self.suffix(self.count - 1)).decypher()
             }
         }
     

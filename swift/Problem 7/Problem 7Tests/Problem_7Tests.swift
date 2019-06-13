@@ -14,4 +14,14 @@ class Problem_7Tests: XCTestCase {
         let input = "111"
         XCTAssert(input.decypher() == 3)
     }
+    
+    func test2() {
+        let input = "261"
+        XCTAssert(input.decypher() == 2)
+    }
+    
+    func test3() {
+        let input = "299"
+        XCTAssert(input.decypher() == 1)
+    }
 }
