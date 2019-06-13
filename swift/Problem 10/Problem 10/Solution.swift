@@ -1,12 +1,13 @@
-### Description
+//
+//  Solution.swift
+//  Problem 10
+//
+//  Created by sebastien FOCK CHOW THO on 2019-06-12.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Apple.
+import Foundation
 
-Implement a job scheduler which takes in a function `f` and an integer `n`, and calls `f` after `n` milliseconds.
-
-### Solution
-
-```swift
 struct Functions {
     func printExecuted() {
         NSLog("executed")
@@ -40,4 +41,3 @@ func JobScheduler(fun: @escaping () -> (), delay: Double) {
         }
     }
 }
-```
