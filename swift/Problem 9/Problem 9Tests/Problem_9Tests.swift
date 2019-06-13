@@ -11,24 +11,25 @@ import XCTest
 
 class Problem_9Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let input = [2, 4, 6, 2, 5]
+        XCTAssert(input.largestSumWithNonAdjacent() == 13)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testExample2() {
+        let input = [5, 1, 1, 5]
+        XCTAssert(input.largestSumWithNonAdjacent() == 10)
+    }
+    
+    func test3() {
+        let input = [5, 6, 2, 6, 5]
+        XCTAssert(input.largestSumWithNonAdjacent() == 12)
+    }
+    
+    func test4() {
+        let input = [1, 2, 2, 1, 2, 1]
+        print(input.largestSumWithNonAdjacent())
+        XCTAssert(input.largestSumWithNonAdjacent() == 5)
     }
 
 }

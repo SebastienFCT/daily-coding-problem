@@ -1,16 +1,13 @@
-### Description
+//
+//  Solution.swift
+//  Problem 9
+//
+//  Created by sebastien FOCK CHOW THO on 2019-06-12.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Airbnb.
+import Foundation
 
-Given a list of integers, write a function that returns the largest sum of non-adjacent numbers. Numbers can be `0` or negative.
-
-For example, `[2, 4, 6, 2, 5]` should return `13`, since we pick `2`, `6`, and `5`. `[5, 1, 1, 5]` should return `10`, since we pick `5` and `5`.
-
-Follow-up: Can you do this in O(N) time and constant space?
-
-### Solution
-
-```swift
 extension Array where Element == Int {
     
     func largestSumWithNonAdjacent() -> Int {
@@ -46,4 +43,3 @@ extension Array where Element == Int {
         }
     }
 }
-```
