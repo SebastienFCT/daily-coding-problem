@@ -1,14 +1,13 @@
-### Description
+//
+//  Solution.swift
+//  Problem 14
+//
+//  Created by sebastien FOCK CHOW THO on 2019-06-13.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Google.
+import Foundation
 
-The area of a circle is defined as `πr^2`. Estimate `π` to `3` decimal places using a Monte Carlo method.
-
-Hint: The basic equation of a circle is `x^2 + y^2 = r^2`.
-
-### Solution
-
-```swift
 /*
  * For a circle of 2 units of diameter,
  * surface = πr^2 = π(1)^2 = π
@@ -57,4 +56,3 @@ struct Maths {
         return 4 * Double(pointsInCircle) / Double(pointsInSquare)
     }
 }
-```
