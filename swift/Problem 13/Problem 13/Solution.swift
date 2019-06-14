@@ -1,14 +1,13 @@
-### Description
+//
+//  Solution.swift
+//  Problem 13
+//
+//  Created by sebastien FOCK CHOW THO on 2019-06-13.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Amazon.
+import Foundation
 
-Given an integer `k` and a string `s`, find the length of the longest substring that contains at most `k` distinct characters.
-
-For example, given `s = "abcba"` and `k = 2`, the longest substring with `k` distinct characters is `"bcb"`.
-
-### Solution
-
-```swift
 extension String {
     func findLargestSubstringWithMaximumDistinctCharacter(_ distinctCharacters: Int) -> String {
         var result = ""
@@ -41,4 +40,3 @@ extension String {
         return result
     }
 }
-```
