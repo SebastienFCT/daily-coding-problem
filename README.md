@@ -267,3 +267,16 @@ Hint: The basic equation of a circle is `x^2 + y^2 = r^2`.
 
 
 * [Swift](./swift/Problem&#32;14/)
+
+## Problem 15
+
+#### Description
+
+This problem was asked by Facebook.
+
+Given a stream of elements too large to store in memory, pick a random element from the stream with uniform probability.
+
+### Solutions
+
+
+* [Swift](./swift/Problem&#32;15/)
