@@ -16,7 +16,8 @@ func testExample() {
     }
 }
 
-    
+// https://www.geeksforgeeks.org/select-a-random-number-from-stream-with-o1-space/
+
 struct Random {
     
     var result = 0
