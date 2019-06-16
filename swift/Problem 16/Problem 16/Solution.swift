@@ -1,17 +1,13 @@
-### Description
+//
+//  Solutions.swift
+//  Problem 16
+//
+//  Created by sebastien FOCK CHOW THO on 2019-06-15.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Twitter.
+import Foundation
 
-You run an e-commerce website and want to record the last `N` `order` ids in a log. Implement a data structure to accomplish this, with the following API:
-
-* `record(order_id)`: adds the order_id to the log
-* `get_last(i)`: gets the ith last element from the log. i is guaranteed to be smaller than or equal to N.
-
-You should be as efficient with time and space as possible.
-
-### Solution
-
-```swift
 class Node {
     var id: String
     var previous: Node?
@@ -83,4 +79,3 @@ struct Env {
         return target
     }
 }
-```
