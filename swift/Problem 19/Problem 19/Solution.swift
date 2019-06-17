@@ -28,4 +28,39 @@ extension Array where Element == Array<Int> {
         
         return result
     }
+    
+    // First let's try the "naive" way where we just ignore the previous color in our current selection
+    // (we know that this won't give us the optimum as sometimes taking the largest value for the house n can save us more on the selection of house n+1
+    
+    func optimumWithDistinctNeighborsV1() -> [String] {
+        var result: [String] = []
+        
+        var lastIndex: Int? = nil
+        
+        for i in 0...self.count-1 {
+            var pricing = self[i]
+            
+            if let lastIndex = lastIndex {
+                pricing[lastIndex] = Int.max
+            }
+            
+            var selectedElement: (offset: Int, element: Int)? = nil
+            
+            for element in pricing.enumerated() {
+                if selectedElement == nil {
+                    selectedElement = element
+                } else {
+                    if element.element < selectedElement!.element {
+                        selectedElement = element
+                    }
+                }
+            }
+            
+            result.append("color \(selectedElement!.element)")
+            lastIndex = selectedElement!.offset
+            
+        }
+        
+        return result
+    }
 }

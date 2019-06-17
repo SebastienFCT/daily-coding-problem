@@ -18,7 +18,7 @@ class Problem_19Tests: XCTestCase {
             [1, 2, 3]
         ]
         
-        print(input.optimum())
+        print(input.optimumWithDistinctNeighborsV1())
     }
 
 }
