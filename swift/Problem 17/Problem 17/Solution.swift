@@ -19,18 +19,23 @@ struct FileSystem {
         var rootVal = ""
         var string = string
         
-        while string != "\\" {
+        if string.isEmpty {
+            root = Item(parent: nil, name: "", level: 1)
+            return
+        }
+        
+        while string.first! != "\\" {
             rootVal += String(string.first!)
             string = String(string.dropFirst())
             
             if string.isEmpty {
+                root = Item(parent: nil, name: rootVal, level: 1)
                 return
             }
-            
-            root = Item(parent: nil, name: rootVal, level: 1)
-            root!.buildChildren(withString: string)
-            return
         }
+        
+        root = Item(parent: nil, name: rootVal, level: 1)
+        root!.buildChildren(withString: string)
     }
 }
 
@@ -47,20 +52,15 @@ class Item {
     }
     
     func buildChildren(withString string: String) {
-        var string = self.name
+        var string = string
         var previous = self
         
-        while string.first! != "\\" {
-            string = String(string.dropFirst())
-            
-            if string.isEmpty {
-                break
-            }
+        if string.isEmpty {
+            return
         }
         
         while !string.isEmpty {
-            print(string)
-            if String(string[string.index(string.startIndex, offsetBy: 2 + 2 * previous.level)]) != "\n\(String(repeating: "\t", count: previous.level))" {
+            if String(string.prefix(2 + 2 * previous.level)) != "\\n\(String(repeating: "\\t", count: previous.level))" {
                 
                 if let parent = previous.parent {
                     previous = parent
@@ -69,12 +69,9 @@ class Item {
                     fatalError("could not identify parent")
                 }
             } else {
-                if String(string[string.index(string.startIndex, offsetBy: 2 + 2 * previous.level)]) == "\n\(String(repeating: "\t", count: previous.level))" {
-                    _ = string.dropFirst(2 + 2 * previous.level)
-                    continue
-                }
+                string = String(string.dropFirst(2 + 2 * previous.level))
                 
-                var rest = string.split(separator: "\n", maxSplits: 1, omittingEmptySubsequences: true)
+                var rest = string.split(separator: "\\", maxSplits: 1, omittingEmptySubsequences: true)
                 
                 let item = Item(parent: previous, name: String(rest[0]), level: previous.level + 1)
                 previous.children.append(item)

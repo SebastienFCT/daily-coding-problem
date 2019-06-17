@@ -12,11 +12,11 @@ import XCTest
 class Problem_17Tests: XCTestCase {
 
     func testExample() {
-        let input = "dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext"
+        let input = "dir\\n\\tsubdir1\\n\\tsubdir2\\n\\t\\tfile.ext"
         var fileSystem = FileSystem()
         fileSystem.buildFileSystemFromString(input)
         
-        print(fileSystem.root?.children)
+        print(fileSystem.root?.children[1].children[0].name)
     }
 
 }
