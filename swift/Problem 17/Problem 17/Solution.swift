@@ -18,6 +18,10 @@ struct FileSystem {
     mutating func buildFileSystemFromString(_ string: String) {
         var rootVal = ""
         var string = string
+            .replacingOccurrences(of: "\n", with: "\\n")
+            .replacingOccurrences(of: "\t", with: "\\t")
+        
+        print(string)
         
         if string.isEmpty {
             root = Item(parent: nil, name: "", level: 1)
@@ -36,6 +40,15 @@ struct FileSystem {
         
         root = Item(parent: nil, name: rootVal, level: 1)
         root!.buildChildren(withString: string)
+    }
+    
+    func longestPath() -> String {
+        
+        if let root = root {
+            return root.longestPath(true)
+        }
+        
+        return ""
     }
 }
 
@@ -80,5 +93,19 @@ class Item {
                 string = String(string.dropFirst(rest[0].count))
             }
         }
+    }
+    
+    func longestPath(_ isRoot: Bool) -> String {
+        if !children.isEmpty {
+            var possibilities: [String] = []
+            for child in children {
+                possibilities.append("\((isRoot ? "" : "/"))\(name)\(child.longestPath(false))")
+            }
+            
+            possibilities.sort{ $0.count > $1.count }
+            return possibilities.first!
+        }
+        
+        return "\((isRoot ? "" : "/"))\(name)"
     }
 }
