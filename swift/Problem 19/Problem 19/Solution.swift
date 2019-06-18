@@ -63,4 +63,49 @@ extension Array where Element == Array<Int> {
         
         return result
     }
+    
+    // This time, let's try first to build an array of (item, position) objects, and then check for conflicts (similar neighbors)
+    func optimumWithDistinctNeighborsV2() -> [String] {
+        var intermediate = buildIntermediate()
+        
+        var i = 0
+        
+        while i < intermediate.count-1 {
+            if intermediate[i].offset == intermediate[i+1].offset {
+                if self[i].findMinN(1).element < self[i+1].findMinN(1).element {
+                    intermediate[i] = self[i].findMinN(1)
+                } else {
+                    intermediate[i+1] = self[i+1].findMinN(1)
+                }
+                
+                i = 0
+            } else {
+                i += 1
+            }
+        }
+        
+        return intermediate.map{ "color \($0.element)" }
+    }
+    
+    func buildIntermediate() -> [(offset: Int, element: Int)] {
+        var result: [(offset: Int, element: Int)] = []
+        
+        for i in 0...self.count-1 {
+            result.append(self[i].findMinN(0))
+        }
+        
+        return result
+    }
+}
+
+
+extension Array where Element == Int {
+    func findMinN(_ n: Int) -> (offset: Int, element: Int) {
+        guard n < self.count else {
+            fatalError("Can't evaluate n min with index > array length")
+        }
+        
+        let sorted = self.enumerated().sorted{ $0.element < $1.element }
+        return sorted[n]
+    }
 }

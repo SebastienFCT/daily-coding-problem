@@ -17,8 +17,19 @@ class Problem_19Tests: XCTestCase {
             [1, 2, 3],
             [1, 2, 3]
         ]
+     
+        XCTAssert(input.optimum() == ["color 1", "color 1", "color 1"])
+        XCTAssert(input.optimumWithDistinctNeighborsV1() == ["color 1", "color 2", "color 1"])
+    }
+    
+    func test2() {
+        let input = [
+            [1, 2, 3],
+            [1, 5, 5],
+            [1, 2, 3]
+        ]
         
-        print(input.optimumWithDistinctNeighborsV1())
+        XCTAssert(input.optimumWithDistinctNeighborsV2() == ["color 2", "color 1", "color 2"])
     }
 
 }
