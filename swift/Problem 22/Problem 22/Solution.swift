@@ -1,16 +1,13 @@
-### Description
+//
+//  Solution.swift
+//  Problem 22
+//
+//  Created by sebastien FOCK CHOW THO on 2019-06-18.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Microsoft.
+import Foundation
 
-Given a dictionary of words and a string made up of those words (no spaces), return the original sentence in a list. If there is more than one possible reconstruction, return any of them. If there is no possible reconstruction, then return null.
-
-For example, given the set of words `quick`, `brown`, `the`, `fox`, and the string `thequickbrownfox`, you should return `['the', 'quick', 'brown', 'fox']`.
-
-Given the set of words `bed`, `bath`, `bedbath`, `and`, `beyond`, and the string `bedbathandbeyond`, return either `['bed', 'bath', 'and', 'beyond]` or `['bedbath', 'and', 'beyond']`.
-
-### Solution
-
-```swift
 // First thought is: it's simple, since I can return any combination, I just have to loop through the array of work and stop every time I catch a word
 
 // But this won't work for something like this:
@@ -94,29 +91,3 @@ extension Node {
         return nil
     }
 }
-```
-
-#### Test
-
-```swift
-class Problem_22Tests: XCTestCase {
-
-    // Ok, let's put this all together:
-    // We create an node with an empty string as initial value, we set its possibilities
-    
-    func testExample() {
-        let root = Node(possibilities: ["quick", "brown", "the", "fox"], values: [], rest: "thequickbrownfox")
-        root.buildChildren()
-        
-        XCTAssert(root.findPath()! == ["the", "quick", "brown", "fox"])
-    }
-    
-    func testExample2() {
-        let root = Node(possibilities: ["bed", "bath", "bedbath", "and", "beyond"], values: [], rest: "bedbathandbeyond")
-        root.buildChildren()
-        
-        XCTAssert((root.findPath()! == ["bed", "bath", "and", "beyond"]) || (root.findPath()! == ["bedbath", "and", "beyond"]))
-    }
-
-}
-```
