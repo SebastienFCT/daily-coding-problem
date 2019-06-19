@@ -1,14 +1,13 @@
-### Description
+//
+//  Solution.swift
+//  Problem 21
+//
+//  Created by sebastien FOCK CHOW THO on 2019-06-18.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Snapchat.
+import Foundation
 
-Given an array of time intervals `(start, end)` for classroom lectures (possibly overlapping), find the minimum number of rooms required.
-
-For example, given `[(30, 75), (0, 50), (60, 150)]`, you should return 2.
-
-### Solution
-
-```swift
 extension Array where Element == (Int, Int) {
     
     // We're trying to visualize when multiple courses are overlapping
@@ -39,26 +38,3 @@ extension Array where Element == (Int, Int) {
         return result.max() ?? 0
     }
 }
-```
-
-#### Test
-
-```swift
-class Problem_21Tests: XCTestCase {
-
-    func testExample() {
-        let input: [(Int, Int)] = [(30, 75), (0, 50), (60, 150)]
-        XCTAssert(input.minimumRoomRequired() == 2)
-    }
-    
-    func test2() {
-        let input: [(Int, Int)] = [(1, 2), (1, 3), (2, 3), (4, 5)]
-        XCTAssert(input.minimumRoomRequired() == 3)
-    }
-
-    func test3() {
-        let input: [(Int, Int)] = [(1, 2), (1, 3), (2, 3), (3, 5)]
-        XCTAssert(input.minimumRoomRequired() == 3)
-    }
-}
-```
