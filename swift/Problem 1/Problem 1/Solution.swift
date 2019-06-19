@@ -60,7 +60,7 @@ extension Array where Element == Int {
  
     Since the order doesn't matter, we can build the branches of a tree based on the "rest" of the sub-array (the initial array minus all elements before the current node element). We also stop the process when there is n = k-1 elements in the array
  
-    Let's build a branch structure that can hold branches:
+    Let's build a branch structure that can hold other branches:
  
  */
 class Branch {
@@ -85,7 +85,7 @@ class Branch {
     "grow more branches up to level X"
  
     Let's build a trunk structure that can tell the branches "how far" they can extend
-    EDIT: I realize that a trunk is actually just a branch (with the exception that it was holding a "maxValue", so I decided to refactor the code
+    EDIT: I realized that a trunk is actually just a branch (with the exception that it was holding a "maxValue") so I decided to refactor my code
  
  */
 extension Branch {
@@ -114,7 +114,7 @@ extension Branch {
 }
 /**
  
-    Now we need to build a function that determine if any of the branches (and their extension) in the tree are
+    Now we need to build a function that determine if any of the last branches (and their extension) in the tree correspond to our expected sum
  
  */
 extension Branch {
