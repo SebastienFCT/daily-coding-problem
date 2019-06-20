@@ -128,8 +128,6 @@ class Path {
             return result
         }
         
-        print(currentPosition)
-        
         let top = (currentPosition.0 - 1, currentPosition.1)
         let bottom = (currentPosition.0 + 1, currentPosition.1)
         let left = (currentPosition.0, currentPosition.1 - 1)
