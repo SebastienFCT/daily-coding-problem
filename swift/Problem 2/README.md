@@ -20,7 +20,7 @@ Without this hint, I would have probably gone with a less efficient algorithm wh
 ```swift
 extension Array where Element == Int {
     
-    func productOfOthers() -> Array<Int> {
+    func productOfOthers() -> [Int] {
         let product = self.reduce(1){ $0 * $1 }
         
         return self.map{ product / $0 }
@@ -40,7 +40,7 @@ Let's apply the solution mentioned before:
 ```swift
 extension Array where Element == Int {
     
-    func productOfOtherWithoutDivision() -> Array<Int> {
+    func productOfOtherWithoutDivision() -> [Int] {
         var result: [Int] = []
         
         for i in 0...(self.count - 1) {

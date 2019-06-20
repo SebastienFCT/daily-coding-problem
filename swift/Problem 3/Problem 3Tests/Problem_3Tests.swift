@@ -15,8 +15,7 @@ class Problem_3Tests: XCTestCase {
         let node = Node("root", Node("left", Node("left.left")), Node("right"))
         
         let serialized = node.serialize()
-        var splitted = serialized.split(separator: " ").map(String.init)
-        let deserialized = splitted.deserialize()
+        let deserialized = serialized.deserialize()
         
         if let value = deserialized?.left?.left?.val {
             XCTAssert(value == "left.left")

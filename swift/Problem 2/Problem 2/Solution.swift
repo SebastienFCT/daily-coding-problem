@@ -20,7 +20,7 @@ import Foundation
 
 extension Array where Element == Int {
     
-    func productOfOthers() -> Array<Int> {
+    func productOfOthers() -> [Int] {
         let product = self.reduce(1){ $0 * $1 }
         
         return self.map{ product / $0 }
@@ -42,7 +42,7 @@ extension Array where Element == Int {
 
 extension Array where Element == Int {
     
-    func productOfOtherWithoutDivision() -> Array<Int> {
+    func productOfOtherWithoutDivision() -> [Int] {
         var result: [Int] = []
         
         for i in 0...(self.count - 1) {
