@@ -70,12 +70,10 @@ class Node {
         for possibility in rest.possibilities(from: possibilities) {
             let child = Node(possibilities: possibilities, values: values + [possibility.0], rest: possibility.1)
             children.append(child)
-            
-            // I realized after testing that I forgot this part: each child must build its own chilren
-            
-            for child in children {
-                child.buildChildren()
-            }
+        }
+        
+        for child in children {
+            child.buildChildren()
         }
     }
 }
