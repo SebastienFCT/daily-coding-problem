@@ -85,3 +85,97 @@ extension Array where Element == Array<Bool> {
         return nextStep
     }
 }
+/**
+ 
+    If we had walls, we would need to change our strategy to find all the possible paths to reach the destination instead
+ 
+    0   0   0   E
+ 
+    0   1   1   1
+ 
+    S   0   0   0
+ 
+    Our strategy will be:
+ 
+    - For each step loop for a next possible step
+    - If current = destination, return
+    - else loop
+ 
+    We need to make sure that the next step hasn't been picked yet (to avoid infinity loop)
+ 
+    let's build a class that will hold the paths and the position of the cursor in the matrix
+ 
+ */
+class Path {
+    var map: [[Bool]]
+    var currentPosition: (Int, Int)
+    var goal: (Int, Int)
+    var visited: [(Int, Int)]
+    
+    init(map: [[Bool]], currentPosition: (Int, Int), goal: (Int, Int), visited: [(Int, Int)]) {
+        self.map = map
+        self.currentPosition = currentPosition
+        self.goal = goal
+        self.visited = visited
+    }
+    
+    func buildPaths() -> [[(Int, Int)]] {
+        var result: [[(Int, Int)]] = []
+        
+        if currentPosition == goal {
+            // We arrived!
+            result.append(visited)
+            return result
+        }
+        
+        print(currentPosition)
+        
+        let top = (currentPosition.0 - 1, currentPosition.1)
+        let bottom = (currentPosition.0 + 1, currentPosition.1)
+        let left = (currentPosition.0, currentPosition.1 - 1)
+        let right = (currentPosition.0, currentPosition.1 + 1)
+        
+        let possiblePaths = [top, bottom, left, right].filter{ $0.0 >= 0 && $0.0 <= map.count-1 && $0.1 >= 0 && $0.1 <= map[0].count-1 }    // Here we assume each row of the map are equal
+        
+        for possiblePath in possiblePaths {
+            if map[possiblePath.0][possiblePath.1] == true {
+                // This is a wall
+                continue
+            }
+            
+            if visited.contains(where: { (x, y) -> Bool in
+                return x == possiblePath.0 && y == possiblePath.1
+            }) {
+                // We already visited this position
+                continue
+            }
+            
+            let path = Path(map: self.map, currentPosition: possiblePath, goal: self.goal, visited: self.visited + [possiblePath])
+            result += path.buildPaths()
+        }
+        
+        return result
+    }
+}
+/**
+ 
+    Finally, we're adding a final function that find the faster path:
+ 
+    - Get all possible paths
+    - Select the one with the smaller visited.count()
+ 
+ */
+extension Path {
+    func findOptimalPath() -> [(Int, Int)]? {        
+        return buildPaths().sorted{ $0.count < $1.count }.first
+    }
+    
+    func findOptimalPathLength() -> Int? {
+        let sorted = buildPaths().sorted{ $0.count < $1.count }
+        if let result = sorted.first {
+            return result.count - 1 // The initial position isn't considered a "step", however I still like being able to track the whole "path"
+        } else {
+            return nil
+        }
+    }
+}
