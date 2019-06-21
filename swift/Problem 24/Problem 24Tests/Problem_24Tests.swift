@@ -11,24 +11,31 @@ import XCTest
 
 class Problem_24Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+        let root = Node(parent: nil)
+        let left = Node(parent: root)
+        let right = Node(parent: root)
+        let leftleft = Node(parent: left)
+        let leftleftleft = Node(parent: leftleft)
+        
+        root.left = left
+        left.left = leftleft
+        root.right = right
+        leftleft.left = leftleftleft
+        
+        // I should be able to lock the root since nothing is locked yet
+        XCTAssertTrue(root.lock())
+        
+        // Leftleft should not be lockable since the root is locked
+        XCTAssertFalse(leftleft.lock())
+        
+        // Unlock root & Lock left
+        _ = root.unlock()
+        _ = left.lock()
+        
+        // Right should be lockable since no child nor parent are locked
+        XCTAssertTrue(right.lock())
+        
     }
 
 }
