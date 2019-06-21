@@ -15,12 +15,14 @@ class Problem_4Tests: XCTestCase {
         let input = [3, 4, -1, 1]
         
         XCTAssert(input.lowerMissingPositiveInteger() == 2)
+        XCTAssert(input.lowerMissingPositiveInteger2() == 2)
     }
     
     func testExample2() {
         let input = [1, 2, 0]
         
         XCTAssert(input.lowerMissingPositiveInteger() == 3)
+        XCTAssert(input.lowerMissingPositiveInteger2() == 3)
     }
 
 }
