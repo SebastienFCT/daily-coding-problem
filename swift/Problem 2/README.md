@@ -1,4 +1,4 @@
-### Description
+## Description
 
 This problem was asked by Uber.
 
@@ -8,7 +8,7 @@ For example, if our input was [1, 2, 3, 4, 5], the expected output would be `[12
 
 Follow-up: what if you can't use division?
 
-### Solution
+## Solution
 
 Since I read the `follow up` question from the beginning, I got the obvious answer for this challenge:
  
@@ -55,7 +55,7 @@ extension Array where Element == Int {
 }
 ```
 
-#### Tests
+## Tests
 
 ```swift
 class Problem_2Tests: XCTestCase {

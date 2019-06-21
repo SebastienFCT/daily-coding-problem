@@ -1,4 +1,4 @@
-### Description
+## Description
 
 This problem was recently asked by Google.
 
@@ -8,7 +8,7 @@ For example, given `[10, 15, 3, 7]` and `k` of `17`, return true since `10 + 7` 
 
 Bonus: Can you do this in one pass?
 
-### Solution
+## Solution
 
 Since we're only looking for a pair, the simplest way to implement this to me is to loop through the elements and progressively add them to a set.
  
@@ -144,7 +144,7 @@ extension Branch {
 
 Here we decided the build the "Tree" and then check reduce its branches to the sum, we could instead build the branches progressively and stop as soon as we get a valid result (since we're not expecting all the results)
 
-#### Tests
+## Tests
 
 ```swift
 class Problem_1Tests: XCTestCase {

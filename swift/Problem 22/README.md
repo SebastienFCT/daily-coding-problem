@@ -1,4 +1,4 @@
-### Description
+## Description
 
 This problem was asked by Microsoft.
 
@@ -8,7 +8,7 @@ For example, given the set of words `quick`, `brown`, `the`, `fox`, and the stri
 
 Given the set of words `bed`, `bath`, `bedbath`, `and`, `beyond`, and the string `bedbathandbeyond`, return either `['bed', 'bath', 'and', 'beyond]` or `['bedbath', 'and', 'beyond']`.
 
-### Solution
+## Solution
 
 First thought is: it's simple, since I can return any combination, I just have to loop through the array of work and stop every time I catch a word
 
@@ -104,7 +104,7 @@ extension Node {
 }
 ```
 
-#### Test
+## Test
 
 ```swift
 Ok, let's put this all together:

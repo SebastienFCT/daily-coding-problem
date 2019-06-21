@@ -1,4 +1,4 @@
-### Description
+## Description
 
 This problem was asked by Google.
 
@@ -10,7 +10,7 @@ In this example, assume nodes with the same value are the exact same node object
 
 Do this in `O(M + N)` time (where `M` and `N` are the lengths of the lists) and constant space.
 
-### Solution
+## Solution
 
 ```swift
 class Node: Equatable, Comparable, Hashable {
@@ -63,7 +63,7 @@ func commonNode(lhs: Node, rhs: Node) -> Node? {
 }
 ```
 
-#### Test
+## Test
 
 ```swift
 class Problem_20Tests: XCTestCase {

@@ -1,4 +1,4 @@
-### Description
+## Description
 
 This problem was asked by Google.
 
@@ -21,7 +21,7 @@ node = Node('root', Node('left', Node('left.left')), Node('right'))
 assert deserialize(serialize(node)).left.left.val == 'left.left'
 ```
 
-### Solution
+## Solution
 
 This is a problem I partially solved when I implemented a breadcrumb component for iOS and Android.
  
@@ -137,7 +137,7 @@ extension Array where Element == Substring {
 }
 ```
 
-#### Tests
+## Tests
 
 ```swift
 class Problem_3Tests: XCTestCase {

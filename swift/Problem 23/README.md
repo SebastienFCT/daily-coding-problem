@@ -1,4 +1,4 @@
-### Description
+## Description
 
 This problem was asked by Google.
 
@@ -17,7 +17,7 @@ For example, given the following board:
 
 and `start = (3, 0)` (bottom left) and `end = (0, 0)` (top left), the minimum number of steps required to reach the end is `7`, since we would need to go through `(1, 2)` because there is a wall everywhere else on the second row.
 
-### Solution
+## Solution
 
 I like this challenge a lot as it feels like implementing an AI for a rogue like game
  
@@ -190,7 +190,7 @@ extension Path {
 }
 ```
 
-#### Tests
+## Tests
 
 ```swift
 class Problem_23Tests: XCTestCase {

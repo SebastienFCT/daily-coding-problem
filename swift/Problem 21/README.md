@@ -1,4 +1,4 @@
-### Description
+## Description
 
 This problem was asked by Snapchat.
 
@@ -6,7 +6,7 @@ Given an array of time intervals `(start, end)` for classroom lectures (possibly
 
 For example, given `[(30, 75), (0, 50), (60, 150)]`, you should return 2.
 
-### Solution
+## Solution
 
 ```swift
 extension Array where Element == (Int, Int) {
@@ -41,7 +41,7 @@ extension Array where Element == (Int, Int) {
 }
 ```
 
-#### Test
+## Test
 
 ```swift
 class Problem_21Tests: XCTestCase {
