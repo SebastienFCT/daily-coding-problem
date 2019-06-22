@@ -1,18 +1,18 @@
-## Description
+//
+//  Solution.swift
+//  Problem 27
+//
+//  Created by sebastien FOCK CHOW THO on 2019-06-22.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Facebook.
+import Foundation
 
-Given a string of round, curly, and square open and closing brackets, return whether the brackets are balanced (well-formed).
-
-For example, given the string `([])[]({})`, you should return true.
-
-Given the string `([)]` or `((()`, you should return false.
-
-## Solution
-
-My first though was to build a function that splits the array into to arrays of equal length and check that they are symetric, something like:
-
-```swift
+/**
+ 
+    My first though was to build a function that splits the array into to arrays of equal length and check that they are symetric, something like:
+ 
+ */
 extension String {
     func isWellFormed() -> Bool {
         if self.count % 2 != 0 {
@@ -37,17 +37,16 @@ extension String {
         return true
     }
 }
-```
-
-However, I quickly realize that this doesn't work for the example: `([])[]({})` (see test1)
+/**
  
-Well formed isn't defined by symetry.
+    However, I quickly realize that this doesn't work for the example: "([])[]({})"
+ 
+    Well formed isn't defined by symetry.
+ 
+    A simple way to define it is : "Every opening bracket has its closing bracket"
 
-A simple way to define it is : "Every opening bracket has its closing bracket"
-
-Let's write a function that does this, it scans the characters, if it's an opening bracket it stores it in an array of opening brackend, if it's a closing one, it checks that it matches the last opening one in the array and continue
-
-```swift
+    Let's write a function that does this, it scans the characters, if it's an opening bracket it stores it in an array of opening brackend, if it's a closing one, it checks that it matches the last opening one in the array and continue
+ */
 extension String {
     mutating func isWellFormed2() -> Bool {
         var openingBrackets: [Character] = []
@@ -100,15 +99,15 @@ extension String {
         return true
     }
 }
-```
-
-Great, that worked.
+/**
  
-However, it's annoying to see all this redoundant code... What if the requirements are changing and we want to be able to handle "<" and ">" or other set of characters?
-
-First, we need a structure that holds pairs of characters and is able to check if any two characters provided are matching each other
-
-```swift
+    Great, that worked.
+ 
+    However, it's annoying to see all this redoundant code... What if the requirements are changing and we want to be able to handle "<" and ">" or other set of characters?
+ 
+    First, we need a structure that holds pairs of characters and is able to check if any two characters provided are matching each other
+ 
+ */
 struct Pairs {
     var sets: [Pair]
     
@@ -143,11 +142,11 @@ struct Pair {
     var left: Character
     var right: Character
 }
-```
-
-Finally, let's re-write our function using this new struct
-
-```swift
+/**
+ 
+    Finally, let's re-write our function using this new struct
+ 
+ */
 extension String {
     mutating func isWellFormed3(forPairs pairs: Pairs) -> Bool {
         var openingBrackets: [Character] = []
@@ -178,29 +177,3 @@ extension String {
         return true
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_27Tests: XCTestCase {
-
-    func test_1() {
-        let input = "([])[]({})"
-        XCTAssertTrue(input.isWellFormed())
-    }
-    
-    func test_2() {
-        var input = "([])[]({})"
-        XCTAssertTrue(input.isWellFormed2())
-    }
-    
-    func test_3() {
-        let pairs = Pairs(sets: [Pair(left: "{", right: "}"), Pair(left: "[", right: "]"), Pair(left: "(", right: ")")])
-        
-        var input = "([])[]({})"
-        XCTAssertTrue(input.isWellFormed3(forPairs: pairs))
-    }
-
-}
-```
