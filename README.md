@@ -522,3 +522,20 @@ Do this in constant space and in one pass.
 
 
 * [Swift](./swift/Problem&#32;26/)
+
+## Problem 27
+
+#### Description
+
+This problem was asked by Facebook.
+
+Given a string of round, curly, and square open and closing brackets, return whether the brackets are balanced (well-formed).
+
+For example, given the string `([])[]({})`, you should return true.
+
+Given the string `([)]` or `((()`, you should return false.
+
+### Solutions
+
+
+* [Swift](./swift/Problem&#32;27/)
