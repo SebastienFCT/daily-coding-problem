@@ -20,13 +20,13 @@ For example, given the list of words `["the", "quick", "brown", "fox", "jumps", 
 
 ## Solution
 
-Ok here the problem is two "organize" an array of string into a matrix of string (array of array)
+Ok here the problem is to "organize" an array of string into a matrix of string (array of array)
  
-There are a lot of rule to follow, and we should do them progressively
+There are a lot of rules to follow, and we should do them progressively
 
 Let's start our function by scanning the input and returning a matrix of string with the following first rule:
 
-- Each string needs to be suffixed by at least one space
+- Each string has to be suffixed by at least one space
 
 ```swift
 extension Array where Element == String {
@@ -56,15 +56,17 @@ extension Array where Element == String {
 }
 ```
 
-Ok, now from the piece of code, we want to add the spaces appropriately, we already included the logic for spaces between the words (`rowContent.count + (row.count-1) + word.count > length` means `if the length of all the words together + the an additional space for each word but the last + the length of the new word are greater than my maximum length then...`)
+Ok, now from this piece of code, we want to add the spaces appropriately, we already included the logic for spaces between the words : `rowContent.count + (row.count-1) + word.count > length` means
  
+> if the length of all the words together + the an additional space for each word but the last + the length of the new word are greater than my maximum length then...
+
 That means that we can add the spaces to each word but the last one already
 
-Let's add the following rules:
+Let's add the following rule:
 
-- If there is extra spaces, then start adding them one by one to each word
+- If there are extra spaces, then start adding them one by one to each word
 
-I would also separate the previous code in its own function to keep the different steps separate
+I would also separate the previous code to keep it clear
 
 ```swift
 extension Array where Element == String {
@@ -119,9 +121,11 @@ extension Array where Element == String {
 }
 ```
 
-When testing against a single word (the condition `If you can only fit one word on a line, then you should pad the right-hand side with spaces.`), it threw an error as it could not loop through words
+To test the following rule:
  
-We can fix this by detecting a single word in a row and appending the remaining space directly:
+> If you can only fit one word on a line, then you should pad the right-hand side with spaces.
+
+I'm running the code against a single word and it fails, this can be fixed by detecting a single word in a row and appending the remaining space directly:
 
 ```swift
 extension Array where Element == String {
