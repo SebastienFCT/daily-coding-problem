@@ -8,9 +8,9 @@ Implement run-length encoding and decoding. You can assume the string to be enco
 
 ## Solution
 
-This challenge requires to implement to functions:
+This challenge requires two implement to functions:
  
-- `Serialize()` will take a string as input and will apply the logic that replace any repeating sequence of the same characters by "XC" where X is the amount of time it's been repeated and C the character
+- `Serialize()` will take a string as input and will apply the logic that replaces any repeating sequence of the same character by "XC" where X is the amount of time it's been repeated and C the character
 - `Deserialize()` will take a string as input and will replace any occurrence of "XC" with the string "CC...CC" corresponding to X times the character C
 
 
@@ -41,7 +41,7 @@ extension String {
 
 For deserialize, the trick is to be able to extract integers value from each part.
  
-The hint we have is that each string only contains alphabetic characters, so we can split oour input using any character in a set of alphetic characters
+The hint we have is that each string only contains alphabetic characters, so we can split our input using any character in a set of alphetic characters
 
 First we will create our set of alphabetic characters
 
