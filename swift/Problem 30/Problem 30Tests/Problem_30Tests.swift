@@ -11,24 +11,33 @@ import XCTest
 
 class Problem_30Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_1() {
+        let input1 = [2, 0, 4, 0, 4, 1, 2]
+        XCTAssert(input1.findDeepestValley().subArray == [4, 0, 4])
+        
+        
+        let input2 = [4, 4]
+        XCTAssert(input2.findDeepestValley().subArray == [4, 4])
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func test_2() {
+        let input1 = [4, 0, 4]
+        XCTAssert(input1.fill() == (4, 4))
+        
+        let input2 = [4, 4]
+        XCTAssert(input2.fill() == (0, 4))
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func test_3() {
+        var input1 = [2, 0, 4, 0, 4, 1, 2]
+        XCTAssert(input1.rain() == 7)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_example() {
+        var input1 = [2, 1, 2]
+        XCTAssert(input1.rain() == 1)
+        
+        var input2 = [3, 0, 1, 3, 0, 5]
+        XCTAssert(input2.rain() == 8)
     }
-
 }
