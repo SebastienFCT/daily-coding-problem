@@ -10,21 +10,21 @@ Given two strings, compute the edit distance between them.
 
 Let's try to solve this problem step by step.
 
-We're trying to change a string into another one with a minimum of steps.
+We're trying to change a string into another one with a minimum amount of modifications.
 
 What are our rules?
 
 - If the output is longer than the input, we will have to add the difference
 - If the output is shorter, we will have to delete the difference
-- If some characters are similar, they should be kept in place to avoid substitution
+- If some characters are similar, they should be kept in place to avoid substitutions
 
-For example, if we start we an easy problem:
+For example, if we start with an easy one:
 
-- input = "", output = "hello" -> the output is longer, we will have to add 4 letters, in this case there is no pre-existing letter so we add the letter in the order of the output. Edit distance = output.length
+- input = "", output = "hello" -> the output is longer, we will have to add 4 letters, in this case there is no pre-existing letters so we add the letters in the order of the output. Edit distance = output.length
 
-- input = "hello world", output = "hello" -> the output is shorter, we will have to delete the difference but prior to this we need to run a function that find the closest string (defined by how many common character they have) -> if finds hello with difference = 0, it removes " world". Edit distance = " world".length
+- input = "hello world", output = "hello" -> the output is shorter, we will have to delete the difference but prior to this we need to run a function that find the closest string (defined by how many common characters they have) -> if finds hello with difference = 0, it removes " world". Edit distance = " world".length
 
-- input = "el", output = "hello" -> the output is longer, we run the same function that finds the closest string, it returns "el" (and notice here that it also need to return at which index it's located in the output -aka index = 1), we run a function that completes the string
+- input = "el", output = "hello" -> the output is longer, we run the same function that finds the closest string, it returns "el" (and notice here that it also need to return at which index it's located in the output -aka index = 1-), we run a function that completes the string
 
 Let's start with a function that finds the closest sub-string between two strings
 
@@ -75,7 +75,7 @@ That was fun! We now have a function that finds the closest sub-string from an i
  
 Let's build our main function that determines if there is any difference between two string, if yes uses the previous function to find their closest sub-strings and then add/remove and substitute elements
 
-```
+```swift
 extension String {
     func editDistance(toOutput output: String) -> Int {
         
