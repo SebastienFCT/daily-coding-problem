@@ -12,16 +12,18 @@ First let's try to explain how we understand the problem:
  
 The currency table is represented by a 2D array, this is how I understand it (values taken from the web):
 
-from    |   to      |   rate
-EUR     |   CAD     |   1.49
-CAD     |   EUR     |   0.67
-RMB     |   EUR     |   0.13
-EUR     |   RMB     |   7.82
-RMB     |   CAD     |   0.19
-CAD     |   RMB     |   5.24
-....
+```
+| from | to  | rate |
+|------|-----|------|
+| EUR  | CAD | 1.49 |
+| CAD  | EUR | 0.67 |
+| RMB  | EUR | 0.13 |
+| EUR  | RMB | 7.82 |
+| RMB  | CAD | 0.19 |
+| CAD  | RMB | 5.24 |
+```
 
-The goal is to be able to determine if there is any path for which with start with a certain amount of A and end up with a greater amount of A
+The goal is to be able to determine if there is any path for which we start with a certain amount of A and end up with a greater amount of A
 
 let's say that I start with 100EUR
 
@@ -29,7 +31,7 @@ let's say that I start with 100EUR
 - I convert it to CAD -> 782 * 0.19 = 148.58
 - I convert it to EUR -> 148.58 * 0.67 = 99.5486
 
-Notice that the output it lower than the input, which doesn't really make sense since I don't have any transaction cost. That also tells me that potentially I could revert this behaviour:
+Notice that the output is lower than the input, which doesn't really make sense since I don't have any transaction cost. That also tells me that potentially I could revert this behaviour:
 
 - I convert 100EUR to CAD -> 100 * 1.49 = 149
 - to RMB -> 149 * 5.24 = 780.76
