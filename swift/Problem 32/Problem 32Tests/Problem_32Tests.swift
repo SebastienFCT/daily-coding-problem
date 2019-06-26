@@ -11,24 +11,19 @@ import XCTest
 
 class Problem_32Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_1() {
+        let currencyTable = [
+            [0, "EUR", "CAD", 1.49],
+            [1, "CAD", "EUR", 0.67],
+            [2, "RMB", "EUR", 0.13],
+            [3, "EUR", "RMB", 7.82],
+            [4, "RMB", "CAD", 0.19],
+            [5, "CAD", "RMB", 5.24]
+        ]
+        
+        let currencyDebugger = CurrencyDebugger(currencyTable: currencyTable, originalCurrency: "EUR", originalValue: 100.0)
+        
+        print(currencyDebugger.anyDesignFlaw())
     }
 
 }
