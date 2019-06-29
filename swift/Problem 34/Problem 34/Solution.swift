@@ -74,9 +74,9 @@ extension String {
 
 func buildPalindrome(base: String, part: (value: String, index: Int)) -> String {
     var result = base
-    
     if part.index == 0 {
-        for i in part.value.count-1..<base.count {
+        let boundary = part.value.count % 2 == 0 ? part.value.count - 1 : part.value.count
+        for i in boundary..<base.count {
             result.insert(base[base.index(base.startIndex, offsetBy: i)], at: result.startIndex)
         }
     } else {

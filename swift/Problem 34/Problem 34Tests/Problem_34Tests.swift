@@ -31,6 +31,11 @@ class Problem_34Tests: XCTestCase {
     
     func test_4() {
         let input = "race"
-        XCTAssert(input.findPalindrome() == "ecarrace")
+        XCTAssert(input.findPalindrome() == "ecarace")
+    }
+    
+    func test_5() {
+        let input = "alasaka"
+        XCTAssert(input.findPalindrome() == "akasalasaka")
     }
 }
