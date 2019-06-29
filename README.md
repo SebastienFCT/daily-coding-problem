@@ -662,7 +662,7 @@ For example, given the sequence `[2, 1, 5, 7, 2, 0, 5]`, your algorithm should p
 
 * [Swift](./swift/Problem&#32;33/)
 
-## Problem 33
+## Problem 34
 
 #### Description
 
@@ -677,4 +677,4 @@ As another example, given the string "google", you should return `elgoogle`.
 ### Solutions
 
 
-* [Swift](./swift/Problem&#32;33/)
+* [Swift](./swift/Problem&#32;34/)
