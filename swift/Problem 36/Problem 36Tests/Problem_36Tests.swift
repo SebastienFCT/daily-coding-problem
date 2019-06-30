@@ -11,24 +11,46 @@ import XCTest
 
 class Problem_36Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_1() {
+        let input = Node(
+            value: "root"
+            , left: Node(value: "left", left: nil, right: nil)
+            , right: Node(
+                value: "right"
+                , left: Node(
+                    value: "right.left"
+                    , left: nil
+                    , right: Node(value: "right.left.right", left: nil, right: nil))
+                , right: Node(
+                    value: "right.right"
+                    , left: Node(
+                        value: "right.right.left"
+                        , left: nil
+                        , right: Node(value: "right.right.left.right", left: nil, right: nil))
+                    , right: nil)))
+        
+        print(input.maxLengh())
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_2() {
+        let input = Node(
+            value: "root"
+            , left: Node(value: "left", left: nil, right: nil)
+            , right: Node(
+                value: "right"
+                , left: Node(
+                    value: "right.left"
+                    , left: nil
+                    , right: Node(value: "right.left.right", left: nil, right: nil))
+                , right: Node(
+                    value: "right.right"
+                    , left: Node(
+                        value: "right.right.left"
+                        , left: nil
+                        , right: Node(value: "right.right.left.right", left: nil, right: nil))
+                    , right: nil)))
+        
+        XCTAssert(input.nextLargestNode()!.value == "right")
     }
 
 }
