@@ -695,3 +695,16 @@ For example, given the array `['G', 'B', 'R', 'R', 'B', 'R', 'G']`, it should be
 
 
 * [Swift](./swift/Problem&#32;35/)
+
+## Problem 36
+
+#### Description
+
+This problem was asked by Dropbox.
+
+Given the root to a binary search tree, find the second largest node in the tree.
+
+### Solutions
+
+
+* [Swift](./swift/Problem&#32;36/)
