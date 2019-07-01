@@ -1,31 +1,31 @@
-## Description
+//
+//  Solution.swift
+//  Problem 37
+//
+//  Created by sebastien FOCK CHOW THO on 2019-07-01.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Google.
+import Foundation
 
-The power set of a set is the set of all its subsets. Write a function that, given a set, generates its power set.
-
-For example, given the set `{1, 2, 3}`, it should return `{{}, {1}, {2}, {3}, {1, 2}, {1, 3}, {2, 3}, {1, 2, 3}}`.
-
-You may also use a list or array to represent a set.
-
-## Solution
-
-According to the example, we build a power set by creating a array of set and appending
+/**
  
-- First all possible combination of 1 item
-- All possible combination of 2 items
-- ...
-- All possible combinatino of N-1 items, N being the size of the original set
-- The set itself
-
-EDIT: after testing it out, I spent about an hour trying to apply the previous logic, I got stuck in my thoughts and tried a different approach:
-
-- Create a power set variable (an array of set)
-- Remove an element of the initial set and add it as a "set" in the power set variable, then loop
-- For each of the next element, add a combination of each element in the power set variable with themselve and finally add themselves as their own "set"
-- The end condition is when the initial set is empty
-
-```swift
+    According to the example, we build a power set by creating a array of set and appending
+ 
+    - First all possible combination of 1 item
+    - All possible combination of 2 items
+    - ...
+    - All possible combinatino of N-1 items, N being the size of the original set
+    - The set itself
+ 
+    EDIT: after testing it out, I spent about an hour trying to apply the previous logic, I got stuck in my thoughts and tried a different approach:
+ 
+    - Create a power set variable (an array of set)
+    - Remove an element of the initial set and add it as a "set" in the power set variable, then loop
+    - For each of the next element, add a combination of each element in the power set variable with themselve and finally add themselves as their own "set"
+    - The end condition is when the initial set is empty
+ 
+ */
 extension Set where Element == Int {
     // Powerset is a convenient methods that has an explicit name for the client. We could have used a single function instead.
     mutating func powerSet() -> [Set<Int>] {
@@ -65,17 +65,3 @@ extension Set where Element == Int {
         return result
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_37Tests: XCTestCase {
-
-    func test_example() {
-        var input = Set([1, 2, 3])
-        print(input.powerSet())
-    }
-
-}
-```
