@@ -11,24 +11,52 @@ import XCTest
 
 class Problem_38Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_1() {
+        let input = [
+            [true, false, false],
+            [false, false, false],
+            [false, false, false]
+        ]
+        
+        XCTAssertTrue(input.hasElementOnRow(0))
+        XCTAssertFalse(input.hasElementOnRow(1))
+        
+        XCTAssertTrue(input.hasElementOnColumn(0))
+        XCTAssertFalse(input.hasElementOnColumn(1))
+        
+        XCTAssertTrue(input.hasElementOnDiagonalsOf(row: 1, column: 1))
+        XCTAssertTrue(input.hasElementOnDiagonalsOf(row: 2, column: 2))
+        XCTAssertFalse(input.hasElementOnDiagonalsOf(row: 2, column: 1))
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func test_2() {
+        let input = [
+            [false, false],
+            [false, false]
+        ]
+        
+        print(input.findHowManyArrangement())
     }
+    
+    func test_3() {
+        let input = [
+            [false, false, false],
+            [false, false, false],
+            [false, false, false]
+        ]
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        print(input.findHowManyArrangement())
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_4() {
+        let input = [
+            [false, false, false, false],
+            [false, false, false, false],
+            [false, false, false, false],
+            [false, false, false, false]
+        ]
+        
+        print(input.findHowManyArrangement())
     }
 
 }
