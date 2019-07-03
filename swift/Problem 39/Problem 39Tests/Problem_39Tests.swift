@@ -11,24 +11,30 @@ import XCTest
 
 class Problem_39Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_1() {
+        let input: [[Character]] = [
+            [".", ".", "."],
+            ["*", "*", "."],
+            [".", ".", "*"]
+        ]
+        
+        XCTAssert(input.neighbourCount(row: 1, column: 1) == (live: 2, dead: 6))
+        XCTAssert(input.neighbourCount(row: 2, column: 2) == (live: 1, dead: 2))
+        XCTAssert(input.neighbourCount(row: 1, column: 0) == (live: 1, dead: 4))
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_2() {
+        var input: [[Character]] = [
+            [" ", "*", "*", "*", " ", " "],
+            ["*", "*", " ", "*", "*", "*"],
+            ["*", " ", "*", " ", " ", "*"],
+            [" ", " ", " ", "*", " ", "*"],
+            ["*", "*", " ", " ", "*", "*"],
+            [" ", "*", " ", "*", "*", " "]
+        ]
+        
+        print(input.neighbourCount(row: 0, column: 0))
+        input.gameOfLive(iterations: 10)
     }
 
 }
