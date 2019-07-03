@@ -113,7 +113,7 @@ extension Array where Element == Array<Character> {
 
 If we want to extend this, I would first add an extra step every time I replace my board with its modified copy: I would add 2 columns and 2 rows (enlarge it)
 
-```
+```swift
 extension Array where Element == Array<Character> {
     
     mutating func gameOfLive(iterations: Int) {
@@ -160,7 +160,7 @@ extension Array where Element == Array<Character> {
 
 Ok, the last part consist in displaying only the minimal possible board, I would just try to display both live or dead cell as I considered them being different than "no cell"
 
-```
+```swift
 extension Array where Element == Array<Character> {
     
     mutating func minimize() {
