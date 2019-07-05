@@ -10,9 +10,9 @@ Do this in `O(N)` time and `O(1)` space.
 
 ## Solution
 
-I wasn't able to solve this problem. After googling a little, I found multiple explanation with bitwise operation.
- 
-Bit operation isn't something I'm really familiar with, the following link https://www.youtube.com/watch?v=mHfvInveXDQ illustrates the solution
+> I wasn't able to solve this problem. After googling a little, I found multiple explanation with bitwise operation.
+> 
+> Bit operation isn't something I'm really familiar with, the following link https://www.youtube.com/watch?v=mHfvInveXDQ illustrates the solution
 
 ```swift
 extension Array where Element == Int {
