@@ -12,8 +12,13 @@ import XCTest
 class Problem_40Tests: XCTestCase {
 
     func test_1() {
-        let input = [1,1,1,2,2,2,3,3,3,4]
-        _ = input.findUniqueOccurence()
+        let input = [6, 1, 3, 3, 3, 6, 6]
+        XCTAssert(input.findUniqueOccurence(regularOccurence: 3) == 1)
+    }
+    
+    func test_2() {
+        let input = [13, 19, 13, 13]
+        XCTAssert(input.findUniqueOccurence(regularOccurence: 3) == 19)
     }
 
 }
