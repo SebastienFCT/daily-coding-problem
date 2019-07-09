@@ -24,11 +24,13 @@ class Itinerary {
     var value: String
     var destinations: [Itinerary]
     var isFinalDestination: Bool
+    var finalArrival: String?
 
-    init(value: String, destinations: [Itinerary], isFinalDestination: Bool = false) {
+    init(value: String, destinations: [Itinerary], isFinalDestination: Bool = false, finalArrival: String? = nil) {
         self.value = value
         self.destinations = destinations
         self.isFinalDestination = isFinalDestination
+        self.finalArrival = finalArrival
     }
 }
 
@@ -44,10 +46,12 @@ extension Array where Element == (depart: String, arrival: String) {
         let didReachfinalDestination = self.count == 1
         
         let possibilities = getPossibilities(element: start)
-        
         for possibility in possibilities {
             let itinerary = Itinerary(value: possibility.choice.depart, destinations: possibility.diff.buildItineraries(start: possibility.choice.arrival))
             itinerary.isFinalDestination = didReachfinalDestination
+            if didReachfinalDestination {
+                itinerary.finalArrival = possibility.choice.arrival
+            }
             result.append(itinerary)
         }
         
@@ -77,34 +81,69 @@ extension Array where Element == (depart: String, arrival: String) {
     Finally, let's build a function that find all full path
  
  */
-extension Array where Element == Itinerary {
-    
-    func getFullPath() -> [[String]] {
-        let result: [[String]] = []
-        
-        
-        
-        return result
-    }
-
-}
-
 extension Itinerary {
     
-    func buildFullPath(root: [[String]] = []) -> [[String]] {
-        
-        let newRoot = root.map{ $0 + [value] }
-        
-        if isFinalDestination {
-            return newRoot
-        }
-        
+    func buildFullPath(roots: [[String]] = []) -> [[String]] {
         var result: [[String]] = []
         
-        for destination in destinations {
-            result += destination.buildFullPath(root: newRoot)
+        if roots.isEmpty {
+            result.append([value])
+        } else {
+            for root in roots {
+                if let finalArrival = finalArrival {
+                    result.append(root + [value, finalArrival])
+                } else {
+                    result.append(root + [value])
+                }
+            }
         }
         
-        return result
+        if isFinalDestination {
+            return result
+        }
+        
+        var newResult: [[String]] = []
+        
+        for destination in destinations {
+            let next = destination.buildFullPath(roots: result)
+            
+            if !next.isEmpty {
+                for element in next {
+                    newResult.append(element)
+                }
+            }
+        }
+        
+        return newResult
+    }
+}
+/**
+    And we finish with a simple function finding the "lexicographically smallest"item
+ */
+extension Array where Element == Array<String> {
+    func lexicographicallySmallestPath() -> [String]? {
+        if self.isEmpty {
+            return nil
+        }
+        
+        var flattened: [String] = []
+        
+        for element in self {
+            flattened.append(element.joined(separator: ""))
+        }
+        
+        var index = 0
+        var value = flattened.first!
+        
+        for i in 0..<flattened.count {
+            let item = flattened[i]
+            
+            if item < value {
+                value = item
+                index = i
+            }
+        }
+        
+        return self[index]
     }
 }

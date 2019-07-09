@@ -15,10 +15,39 @@ class Problem_41Tests: XCTestCase {
         let input: [(depart: String, arrival: String)] =  [("SFO", "HKO"), ("YYZ", "SFO"), ("YUL", "YYZ"), ("HKO", "ORD")]
         let itineraries = input.buildItineraries(start: "YUL")
         
+        var result: [[String]] = []
+        
         for itinerary in itineraries {
-            
-            print(itinerary.buildFullPath())
+            result += itinerary.buildFullPath()
         }
+        
+        XCTAssert(result.lexicographicallySmallestPath()! == ["YUL", "YYZ", "SFO", "HKO", "ORD"])
+    }
+    
+    func test_2() {
+        let input: [(depart: String, arrival: String)] = [("SFO", "COM"), ("COM", "YYZ")]
+        let itineraries = input.buildItineraries(start: "COM")
+        
+        var result: [[String]] = []
+        
+        for itinerary in itineraries {
+            result += itinerary.buildFullPath()
+        }
+        
+        XCTAssert(result.lexicographicallySmallestPath() == nil)
+    }
+    
+    func test_3() {
+        let input: [(depart: String, arrival: String)] = [("A", "B"), ("A", "C"), ("B", "C"), ("C", "A")]
+        let itineraries = input.buildItineraries(start: "A")
+        
+        var result: [[String]] = []
+        
+        for itinerary in itineraries {
+            result += itinerary.buildFullPath()
+        }
+        
+        XCTAssert(result.lexicographicallySmallestPath()! == ["A", "B", "C", "A", "C"])
     }
 
 }
