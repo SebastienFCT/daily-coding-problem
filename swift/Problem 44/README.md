@@ -18,10 +18,10 @@ This solution doesn't fit the requirement though (faster than O(N^2)).
 
 What if I try to build sets of out of order?
 
-[3, 1, 5, 2]
-[0, 1, 2, 3]
-sorted: [1, 2, 3, 5]
-sorted indexes: [1, 3, 0, 2]
+- [3, 1, 5, 2]
+- [0, 1, 2, 3]
+- sorted: [1, 2, 3, 5]
+- sorted indexes: [1, 3, 0, 2]
 
 ... this doesn't lead me to anything.
 

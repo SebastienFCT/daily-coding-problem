@@ -852,3 +852,16 @@ For example, a sorted list has zero inversions. The array `[2, 4, 1, 3, 5]` has 
 
 
 * [Swift](./swift/Problem&#32;44/)
+
+## Problem 45
+
+#### Description
+
+This problem was asked by Two Sigma.
+
+Using a function `rand5()` that returns an integer from `1` to `5` (inclusive) with uniform probability, implement a function `rand7()` that returns an integer from `1` to `7` (inclusive).
+
+### Solutions
+
+
+* [Swift](./swift/Problem&#32;45/)
