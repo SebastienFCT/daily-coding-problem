@@ -11,24 +11,32 @@ import XCTest
 
 class Problem_43Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_1() {
+        let stack = Stack()
+        
+        stack.push(value: 1)
+        XCTAssert(stack.max() == 1)
+        stack.pop()
+        stack.push(value: 5)
+        XCTAssert(stack.max() == 5)
+        stack.push(value: 3)
+        XCTAssert(stack.max() == 5)
+        stack.push(value: 10)
+        XCTAssert(stack.max() == 10)
+        stack.push(value: 11)
+        XCTAssert(stack.max() == 11)
+        stack.push(value: 2)
+        XCTAssert(stack.max() == 11)
+        stack.pop()
+        XCTAssert(stack.max() == 11)
+        stack.pop()
+        XCTAssert(stack.max() == 10)
+        stack.pop()
+        XCTAssert(stack.max() == 5)
+        stack.pop()
+        XCTAssert(stack.max() == 5)
+        stack.pop()
+        XCTAssert(stack.max() == nil)
     }
 
 }
