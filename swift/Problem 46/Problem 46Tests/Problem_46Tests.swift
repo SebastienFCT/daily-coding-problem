@@ -11,24 +11,28 @@ import XCTest
 
 class Problem_46Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_1() {
+        let a = "abccba"
+        XCTAssertTrue(a.isPalindrom())
+        
+        let b = "abbcca"
+        XCTAssertFalse(b.isPalindrom())
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func test_2() {
+        let a = "abccba"
+        XCTAssert(a.anyPalindrome()! == "abccba")
+        
+        let b = "abbcca"
+        XCTAssertNil(b.anyPalindrome())
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_3() {
+        let input1 = "aabcdcb"
+        XCTAssert(input1.longestPalindrom() == "bcdcb")
+        
+        let input2 = "bananas"
+        XCTAssert(input2.longestPalindrom() == "anana")
     }
 
 }
