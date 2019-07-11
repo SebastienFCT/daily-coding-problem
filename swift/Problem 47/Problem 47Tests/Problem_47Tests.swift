@@ -11,24 +11,25 @@ import XCTest
 
 class Problem_47Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_exampleFAILED() {
+        let input = [9, 11, 8, 5, 7, 10]
+        print(input.findLargestDifferenceFAILED())
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func test_max_gap() {
+        let input = [1, 2, 3, 4, 5]
+        XCTAssert(input.maximumGap() == 4)
+        
+        let input2 = [10, 20, 5]
+        XCTAssert(input2.maximumGap() == 0)
+        
+        let input3 = [10, 3, 5]
+        XCTAssert(input3.maximumGap() == 2)
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_example() {
+        let input = [9, 11, 8, 5, 7, 10]
+        print(input.findLargestDifference())
     }
 
 }
