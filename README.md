@@ -895,3 +895,34 @@ For example, given `[9, 11, 8, 5, 7, 10]`, you should return `5`, since you coul
 
 
 * [Swift](./swift/Problem&#32;47/)
+
+## Problem 48
+
+#### Description
+
+This problem was asked by Google.
+
+Given pre-order and in-order traversals of a binary tree, write a function to reconstruct the tree.
+
+For example, given the following preorder traversal:
+
+`[a, b, d, e, c, f, g]`
+
+And the following inorder traversal:
+
+`[d, b, e, a, f, c, g]`
+
+You should return the following tree:
+
+```
+    a
+   / \
+  b   c
+ / \ / \
+d  e f  g
+```
+
+### Solutions
+
+
+* [Swift](./swift/Problem&#32;48/)
