@@ -10,60 +10,9 @@ import Foundation
 
 /**
  
-     I'm not familiar with preorder and inorder of a binary tree, given the example, it seems that
+    Node class
  
-     - preorder starts from the root and goes down from the left side of the tree, it has to finish all of a sub-tree before tackling the next branch of the parent tree
-     - inorder starts from the last branch and gets back to its parents, it needs to scan all nodes of a subtree before going to the parent of the sub-tree
- 
-     Given those facts what kind of rules do I know from inorder and preorder arrays?
- 
-     Preoder trees
-     - the first element of a preorder array is the root of my binary tree
-     - the last element of a preorder array is a child of the last level of the tree
-     - Two neighbours elements are either
-     - parent/child
-     - siblings (they cannot be grand-parent/grand-child)
- 
-     Inorder trees
-     - the first element of an inorder array is a node of the last level of the tree
- 
-     Other
-     - Looking at the example, it seems that all the elements between preorder[0] and preorder[x] where preorder[x] = inorder[0] are all the nodes from the root to the bottom left of the tree. This seems to be a good intuition and I want to see what else I can see once I remove these elements (based on the example)
- 
-     the tree is
- 
-     ```
-         a
-        / \
-       b   c
-      / \ / \
-     d  e f  g
-     ```
- 
-     * preorder: `[a, b, d, e, c, f, g]`
-     * inorder: `[d, b, e, a, f, c, g]`
-     * preorder[0] = a, inorder[0] = d = preorder[2] =>
- 
-     preorder[0] -> preorder[1] -> preorder[2] are the left branches, let's remove them and see we have
- 
-     * preorder: `[e, c, f, g]`
-     * inorder: `[b, e, a, f, c, g]`
- 
-     my inorder[0] corresponds to b which is one of the element of the previous preorders
- 
-     I feel like it's going somewhere but it would get really complicated in terms of if/else statements
- 
-     I can see another pattern where I observe each element and their neighbours from both arrays:
- 
-     * First I'm looking at a, it has only b as siblings, in the inorder it has e & f, since a is the root (first element of preorder) I'll will ignore its inorder siblings and I will assume that b is its direct left child
-     * b has a and d, a being its parent, I know that d is either its sibling or its left child
-        * b has d and e in inorders, so d is the direct left child
-     * d has b & e, b being its parent, e can be its sibling or its left child
-        * d has only b, so e is its sibling
- 
-     This looks good so far, let's try to build it
- 
-    First I will build a node class, it has a value, a reference to its parent, its left child and its right child. They can be nil
+    We can create a node with just a value or the custom init uses an array of 3 nodes and set the two last ones as children of the first
  
  */
 class Node {
@@ -71,6 +20,16 @@ class Node {
     var parent: Node?
     var left: Node?
     var right: Node?
+    
+    init(triple: [Node]) {
+        guard triple.count == 3 else {
+            fatalError("init requires 3 elements")
+        }
+        
+        value = triple[0].value
+        left = triple[1]
+        right = triple[2]
+    }
     
     init(value: String) {
         self.value = value
@@ -81,7 +40,7 @@ class Node {
 }
 /**
  
-    Now, I want to convert my array of integers to arrays of node so that I can apply my previous logic directly to my elements
+    This is a convenient method to convert our inputs (array of string) to arrays of nodes
  
  */
 extension Array where Element == String {
@@ -97,170 +56,94 @@ extension Array where Element == String {
 }
 /**
  
-    I want to build a function that takes my two array of integers and changes them to array of Node, the small detail is that I want to have the same Node references in both array so I'll build the second array based on existing nodes and values
+    Attempt to solve the problem differently
  
- */
-extension Array where Element == String {
-    func toNodes(withExistingNodes nodes: [Node]) -> [Node] {
-        var result: [Node] = []
-        
-        for element in self {
-            for node in nodes {
-                if node.value == element {
-                    result.append(node)
-                    break
-                }
-            }
-        }
-        
-        return result
-    }
-}
-/**
+    It's a binary tree, we can decompose it into sub-tree made of a parent and 2 children
  
-    Let's create few convenient methods:
-    - Finding neighbours of a node
-    - Checking if a node has a left child
-    - Checking if a node has a right child
-    - Checking if a node has a parent
+    Paying attention to the preorder array, we notice that taking each group of 3 elements from the right gives us these sub-trees
  
-    This is straight forward but helps us making the final piece of code more readable (or at least easier to debug)
+    There are 2 obstacles in doing this:
  
- */
-extension Array where Element == Node {
-    func findNeighbours(index: Int) -> [Node] {
-        guard count > 1 else {
-            return []
-        }
-        
-        if index == 0 {
-            return [self[1]]
-        }
-        
-        if index == self.count-1 {
-            return [self[self.count-2]]
-        }
-        
-        return [self[index-1], self[index+1]]
-    }
-}
-
-extension Node {
-    func hasLeftChild() -> Bool {
-        return left != nil
-    }
-    
-    func hasRightChild() -> Bool {
-        return right != nil
-    }
-    
-    func hasParent() -> Bool {
-        return parent != nil
-    }
-}
-/**
+    First we must know how many levels there are, this way we can deduce how many group we have at each level. Example:
  
-    We also need to make the Node class comparable
+    - for 1 level, we would have a single group [a,b,c]
+    - for 2 levels, we would have 2 groups ([b,d,e][c,f,g]) and then 1 group [a,b,c], notice that the children of a are the parent of the previous groups
+    - for 3 levels, we would have 4 groups ([d,h,i][e,j,k][f,l,m][g,n,o]) and then the previous ones
  
- */
-extension Node: Comparable {
-    static func < (lhs: Node, rhs: Node) -> Bool {
-        return lhs.value < rhs.value
-    }
-    
-    static func == (lhs: Node, rhs: Node) -> Bool {
-        return lhs.value == rhs.value
-    }
-    
-    
-}
-/**
- 
-    Ok, now we should be able to run the logic described earlier
+    Based on these observations, we should be able to build a node based on an array of integers
  
  */
 struct GoogleChallenge {
     var preorder: [String]
     var inorder: [String]
     var root: Node? = nil
+
     
-    mutating func buildTree() {
-        var preoderToNodes = preorder.toNodes()
-        let inorderToNodes = inorder.toNodes(withExistingNodes: preoderToNodes)
+    func treeLength() -> Int {
+        var result = 0
         
-        // We skip the first preorder element, it's the root
-        root = preoderToNodes[0]
-        
-        for i in 1..<preoderToNodes.count {
-            let current = preoderToNodes[i]
-            print("current is \(current.value)")
-            let preorderNeighbours = preoderToNodes.findNeighbours(index: i)
-            
-            for preorderNeighbour in preorderNeighbours {
-                print("preorder is \(preorderNeighbour.value)")
-                if preorderNeighbour == root {
-                    if !root!.hasLeftChild() {
-                        root!.left = current
-                        current.parent = root
-                    } else {
-                        print("\(current.value) (root) is a sibling of \(preorderNeighbour.value)")
-                        
-                    }
-                } else {
-                    // find the element in the inorder
-                    var index = -1
-                    for j in 0..<inorderToNodes.count {
-                        let inorderElement = inorderToNodes[j]
-                        
-                        if inorderElement == current {
-                            index = j
-                            break
-                        }
-                    }
-                    
-                    if index < 0 {
-                        fatalError("this should never happen!")
-                    }
-                    
-                    let inorderNeighbours = inorderToNodes.findNeighbours(index: index)
-                    
-                    for inorderNeighbour in inorderNeighbours {
-                        print("inorder is \(inorderNeighbour.value)")
-                        if inorderNeighbour == current.parent {
-                            continue
-                        }
-                        
-                        if preorderNeighbour == inorderNeighbour {
-                            if !current.hasLeftChild() {
-                                current.left = preorderNeighbour
-                                preorderNeighbour.parent = current
-                            } else {
-                                print("(preorder) \(preorderNeighbour.value) should be equal to (inorder) \(inorderNeighbour.value) and should be sibling of \(current.value)")
-                            }
-                        } else {
-                            if inorderNeighbour.left?.value == preorderNeighbour.value {
-                                print("---- preorder : \(preorderNeighbour.value), inorder : \(inorderNeighbour.value)")
-                                preorderNeighbour.parent = inorderNeighbour.parent
-                                inorderNeighbour.parent?.right = preorderNeighbour
-                            } else {
-                                if preorderNeighbour.parent != nil {
-                                    inorderNeighbour.parent = preorderNeighbour.parent
-                                    preorderNeighbour.right = inorderNeighbour
-                                } else {
-                                    if inorderNeighbour.left != nil && inorderNeighbour.parent != nil {
-                                        inorderNeighbour.right = preorderNeighbour
-                                        preorderNeighbour.parent = inorderNeighbour
-                                    } else {
-                                        print("preorder info: left - \(preorderNeighbour.left?.value), right \(preorderNeighbour.right?.value), parent: \(preorderNeighbour.parent?.value)")
-                                        print("inorder info: left - \(inorderNeighbour.left?.value), right \(inorderNeighbour.right?.value), parent: \(inorderNeighbour.parent?.value)")
-                                        print("(inorder) \(inorderNeighbour.value) should be parent of (preorder) \(preorderNeighbour.value)")
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+        for element in preorder {
+            if element == inorder[0] {
+                return result
             }
+            
+            result += 1
+        }
+        
+        return result
+    }
+}
+
+/**
+ 
+    Now with the length we can determine how many group are at the bottom of the tree:
+ 
+    - for length = 1, there is 1 group of 3
+    - for length = 2, there is 2 groups of 3
+    - for length = 3, there is 4 group of 3
+    - ...
+    - for length = N, N>1, there is 2*(N-1) groups of 3
+
+ */
+extension GoogleChallenge {
+    func buildChildren(children: [Node], preorder: [Node]) -> [Node] {
+        var result: [Node] = []
+        
+        var childrenCopy = children
+        var preorderCopy = preorder
+        
+        if children.isEmpty {
+            let groupCount = 2*(treeLength()-1)
+            
+            for _ in 0..<groupCount {
+                let suffix = Array(preorderCopy.suffix(3))
+                let node = Node(triple: suffix)
+                result.insert(node, at: 0)
+                
+                preorderCopy.removeLast()
+                preorderCopy.removeLast()
+                preorderCopy.removeLast()
+            }
+        } else {
+            for _ in 0..<children.count/2 {
+                let node = preorderCopy.suffix(1)[0]
+                
+                let leftAndRight = childrenCopy.suffix(2)
+                node.left = leftAndRight[0]
+                node.right = leftAndRight[1]
+                
+                preorderCopy.removeLast()
+                childrenCopy.removeLast()
+                childrenCopy.removeLast()
+                
+                result.insert(node, at: 0)
+            }
+        }
+        
+        if result.count == 1 {
+            return result
+        } else {
+            return buildChildren(children: result, preorder: preorderCopy)
         }
     }
 }

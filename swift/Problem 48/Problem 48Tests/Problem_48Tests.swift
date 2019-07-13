@@ -16,15 +16,15 @@ class Problem_48Tests: XCTestCase {
         let inorder = ["d", "b", "e", "a", "f", "c", "g"]
         
         var instance = GoogleChallenge(preorder: preorder, inorder: inorder, root: nil)
-        instance.buildTree()
+        instance.root = instance.buildChildren(children: [], preorder: instance.preorder.toNodes())[0]
         
-        print(instance.root?.value)
-        print(instance.root?.left?.value)
-        print(instance.root?.right?.value)
-        print(instance.root?.left?.left?.value)
-        print(instance.root?.left?.right?.value)
-        print(instance.root?.right?.left?.value)
-        print(instance.root?.right?.right?.value)
+        XCTAssert(instance.root?.value == "a")
+        XCTAssert(instance.root?.left?.value == "b")
+        XCTAssert(instance.root?.right?.value == "c")
+        XCTAssert(instance.root?.left?.left?.value == "d")
+        XCTAssert(instance.root?.left?.right?.value == "e")
+        XCTAssert(instance.root?.right?.left?.value == "f")
+        XCTAssert(instance.root?.right?.right?.value == "g")
     }
 
 }
@@ -37,6 +37,7 @@ class Problem_48Tests: XCTestCase {
    b   c
   / \ / \
  d  e f  g
+
  ```
  
  */
