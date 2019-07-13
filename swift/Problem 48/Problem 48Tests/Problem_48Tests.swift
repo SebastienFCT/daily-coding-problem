@@ -11,24 +11,32 @@ import XCTest
 
 class Problem_48Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_example() {
+        let preorder = ["a", "b", "d", "e", "c", "f", "g"]
+        let inorder = ["d", "b", "e", "a", "f", "c", "g"]
+        
+        var instance = GoogleChallenge(preorder: preorder, inorder: inorder, root: nil)
+        instance.buildTree()
+        
+        print(instance.root?.value)
+        print(instance.root?.left?.value)
+        print(instance.root?.right?.value)
+        print(instance.root?.left?.left?.value)
+        print(instance.root?.left?.right?.value)
+        print(instance.root?.right?.left?.value)
+        print(instance.root?.right?.right?.value)
     }
 
 }
+
+/**
+ 
+ ```
+     a
+    / \
+   b   c
+  / \ / \
+ d  e f  g
+ ```
+ 
+ */
