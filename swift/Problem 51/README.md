@@ -10,12 +10,56 @@ Hint: Make sure each one of the 52! permutations of the deck is equally likely.
 
 ## Solution
 
+In this problem, we're given with a function that returns a return number between 1 and k, let's add this quickly
+
 ```swift
-// MARK: - TODO
+func rand(k: Int) -> Int {
+    return Int.random(in: 1..<k)
+}
+```
+
+We need a method for swapping elements of an array
+
+```swift
+extension Array where Element == Int {
+    mutating func swapElements(leftIndex: Int, rightIndex: Int) {
+        let copy = self[leftIndex]
+        
+        self[leftIndex] = self[rightIndex]
+        self[rightIndex] = copy
+    }
+}
+```
+
+Now we will loop through our array and everytime we will re-locate the card to another position
+
+```swift
+extension Array where Element == Int {
+    mutating func shuffleDeck() {
+        for i in 0..<count {
+            let randomValue = rand(k: self.count)
+            
+            swapElements(leftIndex: i, rightIndex: randomValue)
+        }
+    }
+}
 ```
 
 ## Test
 
 ```swift
-// MARK: - TODO
+class Problem_51Tests: XCTestCase {
+
+    func test_shuffling() {
+        var deck: [Int] = []
+        for i in 1...52 {
+            deck.append(i)
+        }
+        
+        deck.shuffleDeck()
+        print(deck)
+    }
+
+}
+
 ```
