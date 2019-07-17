@@ -1,23 +1,22 @@
-## Description
+//
+//  Solution.swift
+//  Problem 52
+//
+//  Created by sebastien FOCK CHOW THO on 2019-07-16.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Google.
+import Foundation
 
-Implement an LRU (Least Recently Used) cache. It should be able to be initialized with a cache size `n`, and contain the following methods:
-
-* `set(key, value)`: sets `key` to `value`. If there are already n items in the cache and we are adding a new item, then it should also remove the least recently used item.
-* `get(key)`: gets the value at `key`. If no such key exists, return null.
-
-Each operation should run in `O(1)` time.
-
-## Solution
-
-A good way to find an element quickly is to use a dictionary
+/**
  
-To keep track of the elements that are the least used, we can create a FIFO linked list, the last element of the list is always the first element to be removed if we reach the limit size of the list
-
-The dictionary gives us a reference to all our node so that we can remove them quickly
-
-```swift
+    A good way to find an element quickly is to use a dictionary
+ 
+    To keep track of the elements that are the least used, we can create a FIFO linked list, the last element of the list is always the first element to be removed if we reach the limit size of the list
+ 
+    The dictionary gives us a reference to all our node so that we can remove them quickly
+ 
+ */
 class Node {
     var key: String
     var value: String
@@ -109,27 +108,3 @@ struct LRU {
         return nil
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_52Tests: XCTestCase {
-
-    func test_1() {
-        var lru = LRU(maxSize: 2, cache: [:], root: nil)
-        
-        XCTAssertNil(lru.get(key: "key1"))
-        
-        lru.add(node: Node(key: "key1", value: "value1", previous: nil, next: nil))
-        XCTAssertNotNil(lru.get(key: "key1"))
-        
-        lru.add(node: Node(key: "key2", value: "value2", previous: nil, next: nil))
-        XCTAssertNotNil(lru.get(key: "key1")) // key 2 is the least use
-        
-        lru.add(node: Node(key: "key3", value: "value3", previous: nil, next: nil)) // key 2 should be removed from the cache
-        XCTAssertNotNil(lru.get(key: "key2"))
-    }
-
-}
-```
