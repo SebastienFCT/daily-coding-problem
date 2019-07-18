@@ -1007,3 +1007,16 @@ Each operation should run in `O(1)` time.
 
 
 * [Swift](./swift/Problem&#32;52/)
+
+## Problem 53
+
+#### Description
+
+This problem was asked by Apple.
+
+Implement a queue using two stacks. Recall that a queue is a FIFO (first-in, first-out) data structure with the following methods: `enqueue`, which inserts an element into the queue, and `dequeue`, which removes it.
+
+### Solutions
+
+
+* [Swift](./swift/Problem&#32;53/)
