@@ -11,24 +11,22 @@ import XCTest
 
 class Problem_54Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_1() {
+        // available at http://www.sudokuessentials.com/how_to_play_sudoku.html
+        let simplesudoku = [
+            [4,1,nil,2,7,nil,8,nil,5],
+            [nil,8,5,1,4,6,nil,9,7],
+            [nil,7,nil,5,8,nil,nil,4,nil],
+            [9,2,7,4,5,1,3,8,6],
+            [5,3,8,6,9,7,4,1,2],
+            [1,6,4,3,2,8,7,5,9],
+            [8,5,2,7,nil,4,9,nil,nil],
+            [nil,9,nil,8,nil,2,5,7,4],
+            [7,4,nil,9,6,5,nil,2,8]
+        ]
+        
+        var sudoku = Sudoku(board: simplesudoku, possibilitiesBoard: [])
+        sudoku.proceed()
     }
 
 }
