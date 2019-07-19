@@ -20,7 +20,6 @@ import Foundation
 extension Array where Element == Array<Int?> {
     
     func isValid(value: Int, position: (row: Int, column: Int)) -> Bool {
-        
         // First check if the row is valid
         if self[position.row].contains(value) {
             return false
@@ -185,7 +184,7 @@ extension Array where Element == Array<Int?> {
         var result: [Int] = []
         
         for value in 1...9 {
-            if !isValid(value: value, position: position) {
+            if isValid(value: value, position: position) {
                 result.append(value)
             }
         }
@@ -205,14 +204,16 @@ struct Sudoku {
     var board: [[Int?]]
     var possibilitiesBoard: [[[Int]]]
     
-    mutating func buildRankBoard() {
-        possibilitiesBoard = Array(repeating: Array(repeating: [], count: 9), count: 9)
-        
+    mutating func refreshPossibilityBoard() {        
         for i in 0..<board.count {
             let row = board[i]
             for j in 0..<row.count {
-                let possibilities = board.possibilities(position: (i, j))
-                possibilitiesBoard[i][j] = possibilities
+                if board[i][j] == nil {
+                    let possibilities = board.possibilities(position: (i, j))
+                    possibilitiesBoard[i][j] = possibilities
+                } else {
+                    possibilitiesBoard[i][j] = []
+                }
             }
         }
     }
@@ -222,7 +223,7 @@ struct Sudoku {
         
         result.append(updatedElement)
         
-        for index in 0...9 {
+        for index in 0...8 {
             if (index != updatedElement.row) {
                 result.append((index, updatedElement.column))
             }
@@ -233,7 +234,7 @@ struct Sudoku {
         }
         
         for position in board.getGridPositions(position: updatedElement) {
-            if position != updatedElement {
+            if !(position.row == updatedElement.row && position.column == updatedElement.column) {
                 result.append(position)
             }
         }
@@ -244,9 +245,7 @@ struct Sudoku {
     mutating func set(value: Int, position: (row: Int, column: Int)) {
         board[position.row][position.column] = value
         
-        for spot in getPossibilitiesToUpdate(updatedElement: position) {
-            possibilitiesBoard[position.row][position.column] = board.possibilities(position: spot)
-        }
+        refreshPossibilityBoard()
     }
     
     func findNextElementToFill() -> (row: Int, column: Int)? {
@@ -256,9 +255,9 @@ struct Sudoku {
         for i in 0..<possibilitiesBoard.count {
             let row = possibilitiesBoard[i]
             for j in 0..<row.count {
-                if (!possibilitiesBoard.isEmpty) {
+                if (!possibilitiesBoard[i][j].isEmpty) {
                     if resultValue != nil {
-                        if possibilitiesBoard[i][j].count < resultValue! {
+                        if possibilitiesBoard[i][j].count > 0 && possibilitiesBoard[i][j].count < resultValue! {
                             resultValue = possibilitiesBoard[i][j].count
                             result = (i, j)
                             
@@ -289,33 +288,20 @@ struct Sudoku {
 extension Sudoku {
     mutating func proceed() {
         // We build the rankboard
-        buildRankBoard()
+        refreshPossibilityBoard()
         
         while true {
             guard let next = findNextElementToFill() else {
-                board.printMatrix()
+                print(board)
                 return
             }
             
-            for possibility in board.possibilities(position: next) {
-                if board.isValid(value: possibility, position: next) {
-                    set(value: possibility, position: next)
-                    board.printMatrix()
-                    break
-                }
+            let possibilities = board.possibilities(position: next)
+            if let possibility = possibilities.first {
+                set(value: possibility, position: next)
+                print(board)
+                print(possibilitiesBoard)
             }
         }
-        
-    }
-}
-
-extension Array where Element == Array<Int?> {
-    func printMatrix() {
-        let border = Swift.Array(repeating: "-", count: (self[0].count + 2))
-        print(border)
-        for row in self {
-            print("|\(row)|")
-        }
-        print(border)
     }
 }

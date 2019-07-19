@@ -24,8 +24,11 @@ class Problem_54Tests: XCTestCase {
             [nil,9,nil,8,nil,2,5,7,4],
             [7,4,nil,9,6,5,nil,2,8]
         ]
+        let possibilityBoard: [[[Int]]] = Array(repeating: Array(repeating: [], count: 9), count: 9)
         
-        var sudoku = Sudoku(board: simplesudoku, possibilitiesBoard: [])
+        var sudoku = Sudoku(board: simplesudoku, possibilitiesBoard: possibilityBoard)
+        sudoku.refreshPossibilityBoard()
+        
         sudoku.proceed()
     }
 
