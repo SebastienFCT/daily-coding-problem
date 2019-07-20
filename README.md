@@ -1053,3 +1053,16 @@ Hint: What if we enter the same URL twice?
 
 
 * [Swift](./swift/Problem&#32;55/)
+
+## Problem 56
+
+#### Description
+
+This problem was asked by Google.
+
+Given an undirected graph represented as an adjacency matrix and an integer k, write a function to determine whether each vertex in the graph can be colored such that no two adjacent vertices share the same color using at most k colors.
+
+### Solutions
+
+
+* [Swift](./swift/Problem&#32;56/)
