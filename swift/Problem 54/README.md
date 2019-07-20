@@ -8,6 +8,9 @@ Implement an efficient sudoku solver.
 
 ## Solution
 
+> THIS SOLUTION ONLY WORKS FOR SIMPLER BOARD
+> IT SHOULD IMPLEMENT A RECURSIVE SYSTEM THAT BUMP TO THE LAST CHANGE CELL EVERYTIME IT GETS STUCK SOMEWHERE
+
 Our sudoku template will be represented by a matrix of numbers.
  
 We will represent the missing spots by nil
