@@ -10,12 +10,61 @@ For example, given the string "the quick brown fox jumps over the lazy dog" and 
 
 ## Solution
 
+We're given a string and we want to distribute its words in lines of k length
+ 
+- First we will split the string into words (using spaces as a splitting reference)
+- Then we will loop through the words and append them to array of string, each string representing a row
+
 ```swift
-// MARK: TODO
+extension String {
+    func distribute(k: Int) -> [String]? {
+        
+        let splitted = self.split(separator: " ")
+        
+        print("splitted: \(splitted)")
+        
+        var result: [String] = []
+        var line = ""
+        
+        for i in 0..<splitted.count {
+            let word = splitted[i]
+            
+            guard String(word).count <= k else {
+                return nil
+            }
+            
+            if line.isEmpty {
+                line.append(String(word))
+            } else {
+                // + 1 for the space in between
+                if line.count + String(word).count + 1 > k {
+                    result.append(line)
+                    line = String(word)
+                } else {
+                    line += " \(String(word))"
+                }
+            }
+            
+            if i == splitted.count-1 && !line.isEmpty {
+                result.append(line)
+            }
+        }
+        
+        return result
+    }
+}
 ```
 
 ## Test
 
 ```swift
-// MARK: TODO
+class Problem_57Tests: XCTestCase {
+
+    func test_example() {
+        let input = "the quick brown fox jumps over the lazy dog"
+        
+        XCTAssert(input.distribute(k: 10) == ["the quick", "brown fox", "jumps over", "the lazy", "dog"])
+    }
+
+}
 ```
