@@ -1102,3 +1102,16 @@ You can assume all the integers in the array are unique.
 
 
 * [Swift](./swift/Problem&#32;58/)
+
+## Problem 59
+
+#### Description
+
+This problem was asked by Google.
+
+Implement a file syncing algorithm for two computers over a low-bandwidth network. What if we know the files in the two computers are mostly the same?
+
+### Solutions
+
+
+* [Swift](./swift/Problem&#32;59/)
