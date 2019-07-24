@@ -11,24 +11,28 @@ import XCTest
 
 class Problem_60Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_example() {
+        let input = [15, 5, 20, 10, 35, 15, 10]
+        
+        XCTAssert(input.findCoupleSetWithCommonSum() != nil)
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func test_example2() {
+        let input = [15, 5, 20, 10, 35]
+        
+        XCTAssert(input.findCoupleSetWithCommonSum() == nil)
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func test_obvious() {
+        let input = [1,1,2,2]
+        
+        XCTAssert(input.findCoupleSetWithCommonSum() != nil)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_obvious2() {
+        let input = [1,2]
+        
+        XCTAssert(input.findCoupleSetWithCommonSum() == nil)
     }
 
 }
