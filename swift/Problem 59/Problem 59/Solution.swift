@@ -1,17 +1,21 @@
-## Description
+//
+//  Solution.swift
+//  Problem 59
+//
+//  Created by sebastien FOCK CHOW THO on 2019-07-23.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Google.
+import Foundation
 
-Implement a file syncing algorithm for two computers over a low-bandwidth network. What if we know the files in the two computers are mostly the same?
+/**
 
-## Solution
-
-An OS is composed of
+    An OS is composed of
  
-- a directory that keep a reference to its files
-- another directory that keep a reference of recently updated files
-
-```swift
+    - a directory that keep a reference to its files
+    - another directory that keep a reference of recently updated files
+ 
+ */
 struct OS {
     
     var directory: [FileData]
@@ -45,11 +49,12 @@ struct FileData {
     var updatedAt: Date
     var deletedAt: Date
 }
-```
 
-The synchronization pushes updates first, then it add recently added files, it get files added remotely and finaly update local file based on the remote repository
-
-```swift
+/**
+ 
+    The synchronization pushes updates first, then it add recently added files, it get files added remotely and finaly update local file based on the remote repository
+ 
+ */
 struct Synchronization {
     var localOS: OS
     var remoteOS: OS
@@ -77,4 +82,3 @@ struct Synchronization {
         }
     }
 }
-```
