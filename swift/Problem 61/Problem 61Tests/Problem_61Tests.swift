@@ -15,4 +15,7 @@ class Problem_61Tests: XCTestCase {
         print(exponential(base: 2, exponent: 10))
     }
 
+    func test_2() {
+        print(exponentialSquaring(base: 2, exponent: 10))
+    }
 }

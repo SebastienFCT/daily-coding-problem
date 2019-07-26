@@ -35,3 +35,26 @@ func exponential(base: Int, exponent: Int) -> Int {
     
     return result
 }
+/**
+ 
+    I didn't feel like I was really making things "faster" as instead of doing 2*2*2*2, I'm doing 4*4 (which is probably the same thing in the computer language...) so I looked it up:
+ 
+    https://www.geeksforgeeks.org/exponential-squaring-fast-modulo-multiplication/
+ 
+    Exponential squaring is based on the following facts, exp(x,n) =:
+ 
+    - x.exp(x,n-1) if n is even
+    - x.exp(exp(x,2), (n-1)/2) if n is odd
+ 
+    The implementation is a recursive function that look like this
+ 
+ */
+func exponentialSquaring(base: Int, exponent: Int) -> Int {
+    if exponent == 0 { return 1 }
+    
+    if exponent % 2 == 1 {
+        return base * exponentialSquaring(base: base, exponent: (exponent - 1))
+    }
+    
+    return exponentialSquaring(base: base, exponent: (exponent / 2)) * exponentialSquaring(base: base, exponent: (exponent / 2))
+}
