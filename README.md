@@ -1194,3 +1194,19 @@ and the target word 'FOAM', you should return true, since it's the leftmost colu
 
 
 * [Swift](./swift/Problem&#32;63/)
+
+## Problem 64
+
+#### Description
+
+
+This problem was asked by Google.
+
+A knight's tour is a sequence of moves by a knight on a chessboard such that all squares are visited once.
+
+Given N, write a function to return the number of knight's tours on an N by N chessboard.
+
+### Solutions
+
+
+* [Swift](./swift/Problem&#32;64/)
