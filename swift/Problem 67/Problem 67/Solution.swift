@@ -1,27 +1,26 @@
-## Description
+//
+//  Solution.swift
+//  Problem 67
+//
+//  Created by sebastien FOCK CHOW THO on 2019-07-31.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Google.
+import Foundation
 
-Implement an LFU (Least Frequently Used) cache. It should be able to be initialized with a cache size n, and contain the following methods:
-
-- `set(key, value)`: sets `key` to `value`. If there are already n items in the cache and we are adding a new item, then it should also remove the least frequently used item. If there is a tie, then the least recently used key should be removed.
-- `get(key)`: gets the value at `key`. If no such key exists, return null.
-
-Each operation should run in O(1) time.
-
-## Solution
-
-I already worked on this problem in the past, the trick is to build a "linkedList" structure base on a node element that links to the previous and next element
+/**
  
-When we look for something, we check the cache first:
-
-- If it's in the cache, we remove it and re-add it (which put it back to the last used spot)
-- If it's not in the cache, we add it
-- Adding an element to the cache should make sure to remove the last element if required (if the cache max size has been reached)
-
-The Node class isn't really hard to implement:
-
-```swift
+    I already worked on this problem in the past, the trick is to build a "linkedList" structure base on a node element that links to the previous and next element
+ 
+    When we look for something, we check the cache first:
+ 
+    - If it's in the cache, we remove it and re-add it (which put it back to the last used spot)
+    - If it's not in the cache, we add it
+        - Adding an element to the cache should make sure to remove the last element if required (if the cache max size has been reached)
+ 
+    The Node class isn't really hard to implement:
+ 
+ */
 class Node {
     var key: String
     var value: String
@@ -108,11 +107,11 @@ struct Cache {
         }
     }
 }
-```
-
-Finally, we also need to update the cache if we're retrieving an element that already exist in it
-
-```swift
+/**
+ 
+    Finally, we also need to update the cache if we're retrieving an element that already exist in it
+ 
+ */
 extension Cache {
     mutating func get(key: String) -> Node? {
         
@@ -129,33 +128,3 @@ extension Cache {
         return nil
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_67Tests: XCTestCase {
-
-    func test_cache() {
-        var cache = Cache(size: 3, existing: [:], leastUsed: nil)
-        
-        XCTAssert(cache.get(key: "first") == nil)
-        
-        let firstNode = Node(key: "first", value: "first_value", previous: nil, next: nil)
-        cache.add(node: firstNode)
-        XCTAssert(cache.get(key: "first")!.value == firstNode.value)
-        
-        let secondNode = Node(key: "second", value: "second_value", previous: nil, next: nil)
-        cache.add(node: secondNode)
-        XCTAssert(cache.get(key: "second")!.value == secondNode.value)
-        
-        // Because we just checked the second node, it becomes the more recently used
-        XCTAssert(cache.leastUsed!.value == secondNode.value)
-        
-        // Because we just checked the first node, it becomes the more recently used
-        cache.get(key: "first")
-        XCTAssert(cache.leastUsed!.value == firstNode.value)
-    }
-
-}
-```

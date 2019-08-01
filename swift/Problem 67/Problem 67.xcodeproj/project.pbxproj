@@ -10,6 +10,7 @@
 		5D1BF85B22F25B9D0060CF8C /* Problem_67.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1BF85122F25B9D0060CF8C /* Problem_67.framework */; };
 		5D1BF86022F25B9D0060CF8C /* Problem_67Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1BF85F22F25B9D0060CF8C /* Problem_67Tests.swift */; };
 		5D1BF86222F25B9D0060CF8C /* Problem_67.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D1BF85422F25B9D0060CF8C /* Problem_67.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5D1BF86E22F25D2F0060CF8C /* Solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1BF86D22F25D2F0060CF8C /* Solution.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		5D1BF85A22F25B9D0060CF8C /* Problem 67Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Problem 67Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D1BF85F22F25B9D0060CF8C /* Problem_67Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem_67Tests.swift; sourceTree = "<group>"; };
 		5D1BF86122F25B9D0060CF8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D1BF86D22F25D2F0060CF8C /* Solution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solution.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				5D1BF85422F25B9D0060CF8C /* Problem_67.h */,
 				5D1BF85522F25B9D0060CF8C /* Info.plist */,
+				5D1BF86D22F25D2F0060CF8C /* Solution.swift */,
 			);
 			path = "Problem 67";
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D1BF86E22F25D2F0060CF8C /* Solution.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +400,7 @@
 		5D1BF86922F25B9D0060CF8C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = E5P894ED53;
@@ -414,6 +419,7 @@
 		5D1BF86A22F25B9D0060CF8C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = E5P894ED53;
