@@ -1,42 +1,25 @@
-## Description
+//
+//  Solution.swift
+//  Problem 68
+//
+//  Created by sebastien FOCK CHOW THO on 2019-08-01.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Google.
+import Foundation
 
-On our special chessboard, two bishops attack each other if they share the same diagonal. This includes bishops that have another bishop located between them, i.e. bishops can attack through pieces.
-
-You are given N bishops, represented as (row, column) tuples on a M by M chessboard. Write a function to count the number of pairs of bishops that attack each other. The ordering of the pair doesn't matter: (1, 2) is considered the same as (2, 1).
-
-For example, given M = 5 and the list of bishops:
-
-- (0, 0)
-- (1, 2)
-- (2, 2)
-- (4, 0)
-
-The board would look like this:
-
-```
-[b 0 0 0 0]
-[0 0 b 0 0]
-[0 0 b 0 0]
-[0 0 0 0 0]
-[b 0 0 0 0]
-```
-
-You should return 2, since bishops 1 and 3 attack each other, as well as bishops 3 and 4.
-
-## Solution
-
-I would solve this problem in two steps:
+/**
  
-- First I would write appropriate extensions to find bishops that are on the same diagonales
-- Second, I would write the actual logic where I create a set of pairs for each pair of bishop that would attack each other. I would have to make sure that two pair are the same for the following condition: (a, b) = (a, b) and (a, b) = (b, a)
-
-Let's start with the extension and utilities
-
-Note: rather than using 'b' for bishop, I will use the integer 1, this way I can extend a matric of integers
-
-```swift
+    I would solve this problem in two steps:
+ 
+    - First I would write appropriate extensions to find bishops that are on the same diagonales
+    - Second, I would write the actual logic where I create a set of pairs for each pair of bishop that would attack each other. I would have to make sure that two pair are the same for the following condition: (a, b) = (a, b) and (a, b) = (b, a)
+ 
+    Let's start with the extension and utilities
+ 
+    Note: rather than using 'b' for bishop, I will use the integer 1, this way I can extend a matric of integers
+ 
+ */
 extension Array where Element == Array<Int> {
     func positionOfBishopsOnDiagonal(position: (row: Int, column: Int)) -> [((row: Int, column: Int), (row: Int, column: Int))] {
         var result: [((row: Int, column: Int), (row: Int, column: Int))] = []
@@ -97,11 +80,11 @@ extension Array where Element == Array<Int> {
         return result
     }
 }
-```
-
-Now we write our function exploiting the utilities methods
-
-```swift
+/**
+ 
+    Now we write our function exploiting the utilities methods
+ 
+ */
 struct BishopWar {
     var board: [[Int]]
     
@@ -153,35 +136,3 @@ func == (left: (row: Int, column: Int), right: (row: Int, column: Int)) -> Bool 
 func == (left: ((row: Int, column: Int), (row: Int, column: Int)), right: ((row: Int, column: Int), (row: Int, column: Int))) -> Bool {
     return (left.0 == right.0 && left.1 == right.1) || (left.1 == right.0 && left.0 == right.1)
 }
-```
-
-## Test
-
-```swift
-class Problem_68Tests: XCTestCase {
-
-    func test_diagonals() {
-        let input = [
-            [0, 0, 0, 0],
-            [0, 0, 0, 0],
-            [0, 0, 0, 0],
-            [0, 0, 0, 0]
-        ]
-        
-        print(input.diagonals(position: (2, 2)))
-    }
-
-    func test_example() {
-        let board = [
-            [1,0,0,0,0],
-            [0,0,1,0,0],
-            [0,0,1,0,0],
-            [0,0,0,0,0],
-            [1,0,0,0,0]
-        ]
-        
-        let bishopWar = BishopWar(board: board)
-        XCTAssert(bishopWar.bishopConflictCount() == 2)
-    }
-}
-```
