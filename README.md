@@ -1418,3 +1418,16 @@ Should return null, since we have an infinite loop.
 
 
 * [Swift](./swift/Problem&#32;72/)
+
+## Problem 73
+
+#### Description
+
+This problem was asked by Google.
+
+Given the head of a singly linked list, reverse it in-place.
+
+### Solutions
+
+
+* [Swift](./swift/Problem&#32;73/)
