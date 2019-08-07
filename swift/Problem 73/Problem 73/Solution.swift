@@ -1,14 +1,19 @@
-## Description
+//
+//  Solution.swift
+//  Problem 73
+//
+//  Created by sebastien FOCK CHOW THO on 2019-08-06.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Google.
+import Foundation
 
-Given the head of a singly linked list, reverse it in-place.
+/**
+ 
+    First, let's define a linked list
+ 
+ */
 
-## Solution
-
-First, let's define a linked list
-
-```swift
 class Node {
     var value: String
     var next: Node?
@@ -22,13 +27,14 @@ class Node {
 struct LinkedList {
     var head: Node?
 }
-```
 
-A -> B -> C -> D has to become D -> C -> B -> A
+/**
  
-We can store each node in an array, it would give us [A, B, C, D, A], reverse the array and rebuild the linked list
-
-```swift
+    A -> B -> C -> D has to become D -> C -> B -> A
+ 
+    We can store each node in an array, it would give us [A, B, C, D, A], reverse the array and rebuild the linked list
+ 
+ */
 extension LinkedList {
     mutating func reverse() {
         if let linkedListHead = head {
@@ -68,11 +74,11 @@ extension Node {
         return current + [self]
     }
 }
-```
-
-Utility class to visually display the linked list
-
-```swift
+/**
+ 
+    Utility class to visually display the linked list
+ 
+ */
 extension LinkedList {
     func log() {
         if let head = head {
@@ -86,22 +92,3 @@ extension LinkedList {
         }
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_73Tests: XCTestCase {
-
-    func test_1() {
-        let head = Node(value: "A", next: Node(value: "B", next: Node(value: "C", next: Node(value: "D", next: nil))))
-        
-        var linkedList = LinkedList(head: head)
-        linkedList.log()
-        
-        linkedList.reverse()
-        linkedList.log()
-    }
-
-}
-```
