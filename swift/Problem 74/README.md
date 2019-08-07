@@ -26,12 +26,41 @@ And there are 4 12's in the table.
 
 ## Solution
 
+To check if the value V is in the column C, I would do 2 things:
+ 
+- Check if V % C == 0
+- If yes, check if V / C <= N (if it's greater, then it's not in the table)
+
+I will apply this logic to a loop going through the columns.
+    
 ```swift
-// MARK: - TODO
+struct MultiplicationTable {
+    var length: Int
+    
+    func countOccurence(value: Int) -> Int {
+        var count = 0
+        
+        for i in stride(from: length, to: 1, by: -1) {
+            if value % i == 0 && value / i <= length {
+                count += 1
+            }
+        }
+        
+        return count
+    }
+}
 ```
 
 ## Test
 
 ```swift
-// MARK: - TODO
+class Problem_74Tests: XCTestCase {
+
+    func test_example() {
+        let table = MultiplicationTable(length: 6)
+        XCTAssert(table.countOccurence(value: 12) == 4)
+    }
+
+}
+
 ```
