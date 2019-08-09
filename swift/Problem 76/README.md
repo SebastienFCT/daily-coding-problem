@@ -22,6 +22,24 @@ gi
 
 So your function should return 1, since we only needed to remove 1 column.
 
+As another example, given the following table:
+
+```
+abcdef
+```
+
+Your function should return 0, since the rows are already ordered (there's only one row).
+
+As another example, given the following table:
+
+```
+zyx
+wvu
+tsr
+```
+
+Your function should return 3, since we would need to remove all the columns to order it.
+
 ## Solution
 
 I would first write a function that can reverse my matrix (each column becomes a row) and run a function for each row checking if their elements are ordered alphabetically
@@ -91,7 +109,7 @@ extension Array where Element == Character {
 ```swift
 class Problem_76Tests: XCTestCase {
 
-    func test_flip() {
+    func test_example() {
         let input: [[Character]] = [
             ["c", "b", "a"],
             ["d", "a", "f"],
@@ -100,6 +118,24 @@ class Problem_76Tests: XCTestCase {
         
         XCTAssert(input.rowsToRemoveForLexicographicallyOrdered().count == 1)
         XCTAssert(input.rowsToRemoveForLexicographicallyOrdered().indexes == [1])
+    }
+    
+    func test_example2() {
+        let input: [[Character]] = [
+            ["a", "b", "c", "d", "e", "f"]
+        ]
+        
+        XCTAssert(input.rowsToRemoveForLexicographicallyOrdered().count == 0)
+    }
+    
+    func test_example3() {
+        let input: [[Character]] = [
+            ["z","y","x"],
+            ["w","v","u"],
+            ["t","s","r"]
+        ]
+        
+        XCTAssert(input.rowsToRemoveForLexicographicallyOrdered().count == 3)
     }
 
 }
