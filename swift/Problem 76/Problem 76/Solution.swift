@@ -1,32 +1,18 @@
-## Description
+//
+//  Solution.swift
+//  Problem 76
+//
+//  Created by sebastien FOCK CHOW THO on 2019-08-09.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Google.
+import Foundation
 
-You are given an N by M 2D matrix of lowercase letters. Determine the minimum number of columns that can be removed to ensure that each row is ordered from top to bottom lexicographically. That is, the letter at each column is lexicographically later as you go down each row. It does not matter whether each row itself is ordered lexicographically.
-
-For example, given the following table:
-
-```
-cba
-daf
-ghi
-```
-
-This is not ordered because of the a in the center. We can remove the second column to make it ordered:
-
-```
-ca
-df
-gi
-```
-
-So your function should return 1, since we only needed to remove 1 column.
-
-## Solution
-
-I would first write a function that can reverse my matrix (each column becomes a row) and run a function for each row checking if their elements are ordered alphabetically
-
-```swift
+/**
+ 
+    I would first write a function that can reverse my matrix (each column becomes a row) and run a function for each row checking if their elements are ordered alphabetically
+ 
+ */
 extension Array where Element == Array<Character> {
     
     private func flip() -> [[Character]] {
@@ -84,23 +70,3 @@ extension Array where Element == Character {
         return true
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_76Tests: XCTestCase {
-
-    func test_flip() {
-        let input: [[Character]] = [
-            ["c", "b", "a"],
-            ["d", "a", "f"],
-            ["g", "h", "i"]
-        ]
-        
-        XCTAssert(input.rowsToRemoveForLexicographicallyOrdered().count == 1)
-        XCTAssert(input.rowsToRemoveForLexicographicallyOrdered().indexes == [1])
-    }
-
-}
-```

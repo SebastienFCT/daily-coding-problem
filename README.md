@@ -1502,10 +1502,9 @@ This is not ordered because of the a in the center. We can remove the second col
 ca
 df
 gi
-So 
 ```
 
-your function should return 1, since we only needed to remove 1 column.
+So your function should return 1, since we only needed to remove 1 column.
 
 ### Solutions
 
