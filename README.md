@@ -1479,3 +1479,35 @@ For example, given the array [0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 
 
 
 * [Swift](./swift/Problem&#32;75/)
+
+## Problem 76
+
+#### Description
+
+This problem was asked by Google.
+
+You are given an N by M 2D matrix of lowercase letters. Determine the minimum number of columns that can be removed to ensure that each row is ordered from top to bottom lexicographically. That is, the letter at each column is lexicographically later as you go down each row. It does not matter whether each row itself is ordered lexicographically.
+
+For example, given the following table:
+
+```
+cba
+daf
+ghi
+```
+
+This is not ordered because of the a in the center. We can remove the second column to make it ordered:
+
+```
+ca
+df
+gi
+So 
+```
+
+your function should return 1, since we only needed to remove 1 column.
+
+### Solutions
+
+
+* [Swift](./swift/Problem&#32;76/)
