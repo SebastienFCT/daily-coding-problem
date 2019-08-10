@@ -1,20 +1,20 @@
-## Description
+//
+//  Solution.swift
+//  Problem 77
+//
+//  Created by sebastien FOCK CHOW THO on 2019-08-10.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Snapchat.
+import Foundation
 
-Given a list of possibly overlapping intervals, return a new list of intervals where all overlapping intervals have been merged.
-
-The input list is not necessarily ordered in any way.
-
-For example, given `[(1, 3), (5, 8), (4, 10), (20, 25)]`, you should return `[(1, 3), (4, 10), (20, 25)]`.
-
-## Solution
-
-- First I would define a structure for my interval
-- Then I would right a function that check if an interval is overlapping another one
-- Finally I would build a custom function reducing my array based on the previous utility
-
-```swift
+/**
+ 
+    - First I would define a structure for my interval
+    - Then I would right a function that check if an interval is overlapping another one
+    - Finally I would build a custom function reducing my array based on the previous utility
+ 
+ */
 struct Interval {
     var start: Int
     var end: Int
@@ -47,11 +47,12 @@ extension Array where Element == Interval {
         return self
     }
 }
-```
 
-Utility functions to switch from the tuple syntax to intervals
-
-```swift
+/**
+ 
+    Utility functions to switch from the tuple syntax to intervals
+ 
+ */
 func tuplesToIntervals(input: [(start: Int, end: Int)]) -> [Interval] {
     var result: [Interval] = []
     
@@ -71,17 +72,3 @@ func intervalsToTuples(input: [(Interval)]) -> [(start: Int, end: Int)] {
     
     return result
 }
-```
-
-## Test
-
-```swift
-class Problem_77Tests: XCTestCase {
-
-    func test_example() {
-        var input = tuplesToIntervals(input: [(1, 3), (5, 8), (4, 10), (20, 25)])
-        print(intervalsToTuples(input: input.reduceOverlapping()))
-    }
-
-}
-```
