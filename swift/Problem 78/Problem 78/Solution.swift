@@ -1,16 +1,20 @@
-## Description
+//
+//  Solution.swift
+//  Problem 78
+//
+//  Created by sebastien FOCK CHOW THO on 2019-08-11.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Google.
+import Foundation
 
-Given k sorted singly linked lists, write a function to merge all the lists into one sorted singly linked list.
-
-## Solution
-
-To create a singly linked list structure, I'll start with a node that keeps a reference to its next element
+/**
  
-The singly linked list will hold a reference of its root
-
-```swift
+    To create a singly linked list structure, I'll start with a node that keeps a reference to its next element
+ 
+    The singly linked list will hold a reference of its root
+ 
+ */
 class Node<T> {
     var value: T
     var next: Node?
@@ -100,32 +104,3 @@ class SortedLinkedList<T> where T: Comparable {
         return result
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_78Tests: XCTestCase {
-
-    func test_insert() {
-        let root = Node(value: 1, next: Node(value: 2, next: Node(value: 3, next: nil)))
-        let sortedLinkedList = SortedLinkedList(root: root)
-        XCTAssert(sortedLinkedList.toString() == "(1)->(2)->(3)")
-        
-        sortedLinkedList.insert(node: Node(value: 2))
-        XCTAssert(sortedLinkedList.toString() == "(1)->(2)->(2)->(3)")
-    }
-    
-    func test_merge() {
-        let root = Node(value: 1, next: Node(value: 3, next: Node(value: 5, next: nil)))
-        let sortedLinkedList = SortedLinkedList(root: root)
-        
-        let root2 = Node(value: 2, next: Node(value: 4, next: Node(value: 6, next: nil)))
-        let sortedLinkedList2 = SortedLinkedList(root: root2)
-        
-        sortedLinkedList.merge(list: sortedLinkedList2)
-        XCTAssert(sortedLinkedList.toString() == "(1)->(2)->(3)->(4)->(5)")
-    }
-
-}
-```

@@ -11,24 +11,24 @@ import XCTest
 
 class Problem_78Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_insert() {
+        let root = Node(value: 1, next: Node(value: 2, next: Node(value: 3, next: nil)))
+        let sortedLinkedList = SortedLinkedList(root: root)
+        XCTAssert(sortedLinkedList.toString() == "(1)->(2)->(3)")
+        
+        sortedLinkedList.insert(node: Node(value: 2))
+        XCTAssert(sortedLinkedList.toString() == "(1)->(2)->(2)->(3)")
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_merge() {
+        let root = Node(value: 1, next: Node(value: 3, next: Node(value: 5, next: nil)))
+        let sortedLinkedList = SortedLinkedList(root: root)
+        
+        let root2 = Node(value: 2, next: Node(value: 4, next: Node(value: 6, next: nil)))
+        let sortedLinkedList2 = SortedLinkedList(root: root2)
+        
+        sortedLinkedList.merge(list: sortedLinkedList2)
+        XCTAssert(sortedLinkedList.toString() == "(1)->(2)->(3)->(4)->(5)")
     }
 
 }
