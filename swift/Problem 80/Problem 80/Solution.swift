@@ -1,24 +1,20 @@
-## Description
+//
+//  Solution.swift
+//  Problem 80
+//
+//  Created by sebastien FOCK CHOW THO on 2019-08-13.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Google.
+import Foundation
 
-Given the root of a binary tree, return a deepest node. For example, in the following tree, return d.
-
-```
-    a
-   / \
-  b   c
- /
-d
-```
-
-## Solution
-
-I'll first build my tree structure based on a node component that can have two node children
+/**
  
-I'll then write a function that builds a list of "full branches" (representing all the possible branches)
-
-```swift
+    I'll first build my tree structure based on a node component that can have two node children
+ 
+    I'll then write a function that builds a list of "full branches" (representing all the possible branches)
+ 
+ */
 class Node<T> {
     var value: T
     var left: Node<T>?
@@ -59,19 +55,3 @@ class Node<T> {
         return result
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_80Tests: XCTestCase {
-
-    func test_example() {
-        let input = Node(value: "a", left: Node(value: "b", left: Node(value: "d", left: nil, right: nil), right: nil), right: Node(value: "c", left: nil, right: nil))
-        
-        XCTAssert(input.findDeepestNode().node.value == "d")
-        XCTAssert(input.findDeepestNode().level == 2)
-    }
-
-}
-```
