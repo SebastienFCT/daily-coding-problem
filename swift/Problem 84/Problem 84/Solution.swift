@@ -1,25 +1,19 @@
-## Description
+//
+//  Solution.swift
+//  Problem 84
+//
+//  Created by sebastien FOCK CHOW THO on 2019-08-17.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Amazon.
+import Foundation
 
-Given a matrix of 1s and 0s, return the number of "islands" in the matrix. A 1 represents land and 0 represents water, so an island is a group of 1s that are neighboring whose perimeter is surrounded by water.
+/**
+ 
+    I'll try to build a function that finds a land (1) and adds all connected lands to it
+ 
+ */
 
-For example, this matrix has 4 islands.
-
-```
-1 0 0 0 0
-0 0 1 1 0
-0 1 1 0 0
-0 0 0 0 0
-1 1 0 0 1
-1 1 0 0 1
-```
-
-## Solution
-
-I'll try to build a function that finds a land (1) and adds all connected lands to it
-
-```swift
 typealias Position2D = (row: Int, column: Int)
 
 extension Array where Element == Array<Int> {
@@ -102,25 +96,3 @@ func connected(lefts: [Position2D], rights: [Position2D]) -> Bool {
     
     return false
 }
-```
-
-## Test
-
-```swift
-class Problem_84Tests: XCTestCase {
-
-    func test_example() {
-        let input = [
-            [1,0,0,0,0],
-            [0,0,1,1,0],
-            [0,1,1,0,0],
-            [0,0,0,0,0],
-            [1,1,0,0,1],
-            [1,1,0,0,1]
-        ]
-        
-        input.countIslands()
-    }
-
-}
-```
