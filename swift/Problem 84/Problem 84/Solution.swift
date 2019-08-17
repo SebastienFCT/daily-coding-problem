@@ -70,8 +70,6 @@ extension Array where Element == Array<Int> {
             }
         }
         
-        print(newIslands)
-        
         if hasChanged {
             return mergeIslands(islands: newIslands)
         } else {

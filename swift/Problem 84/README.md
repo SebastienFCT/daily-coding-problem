@@ -76,8 +76,6 @@ extension Array where Element == Array<Int> {
             }
         }
         
-        print(newIslands)
-        
         if hasChanged {
             return mergeIslands(islands: newIslands)
         } else {
@@ -119,7 +117,7 @@ class Problem_84Tests: XCTestCase {
             [1,1,0,0,1]
         ]
         
-        input.countIslands()
+        XCTAssert(input.countIslands() == 4)
     }
 
 }
