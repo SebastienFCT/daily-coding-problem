@@ -1,18 +1,21 @@
-## Description
+//
+//  Solution.swift
+//  Problem 86
+//
+//  Created by sebastien FOCK CHOW THO on 2019-08-19.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Google.
+import Foundation
 
-Given a string of parentheses, write a function to compute the minimum number of parentheses to be removed to make the string valid (i.e. each open parenthesis is eventually closed).
-
-For example, given the string "()())()", you should return 1. Given the string ")(", you should return 2, since we must remove all of them.
-
-## Solution
-
-I would write a function that goes through the string and keep track of each opening parenthese until it finds a closing one.
+/**
  
-Basically a FIFO structure
+    I would write a function that goes through the string and keep track of each opening parenthese until it finds a closing one.
+ 
+    Basically a FIFO structure
+ 
+ */
 
-```swift
 extension String {
     
     func countNonValidParentheses() -> Int {
@@ -43,22 +46,3 @@ extension String {
         return result + openingCounting
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_86Tests: XCTestCase {
-
-    func test_example() {
-        let input = "()())()"
-        XCTAssert(input.countNonValidParentheses() == 1)
-    }
-    
-    func test_example2() {
-        let input = ")("
-        XCTAssert(input.countNonValidParentheses() == 2)
-    }
-
-}
-```
