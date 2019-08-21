@@ -1,45 +1,21 @@
-## Description
+//
+//  Solution.swift
+//  Problem 87
+//
+//  Created by sebastien FOCK CHOW THO on 2019-08-20.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Uber.
+import Foundation
 
-A rule looks like this:
-
-```
-A NE B
-```
-
-This means this means point A is located northeast of point B.
-
-```
-A SW C
-```
-
-means that point A is southwest of C.
-
-Given a list of rules, check if the sum of the rules validate. For example:
-
-```
-A N B
-B NE C
-C N A
-```
-
-does not validate, since A cannot be both north and south of C.
-
-```
-A NW B
-A N B
-```
-
-is considered valid.
-
-## Solution
-
-I'm not fan of this answer, but I spent way too much time on it.
+/**
  
-Hopefully the next similar challenges will help me being more confortable with the concept of "multi linked list" I tried to build here.
+    I'm not fan of this answer, but I spent way too much time on it.
+ 
+    Hopefully the next similar challenges will help me being more confortable with the concept of "multi linked list" I tried to build here.
+ 
+ */
 
-```swift
 enum PosOrientation: String {
     case N = "N"
     case NE = "NE"
@@ -367,19 +343,3 @@ extension Pos {
         west.append(Pos(value: posValue))
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_87Tests: XCTestCase {
-
-    func test_example() {
-        var ds = UberChallenge(allPos: [])
-        print(ds.addRule(rule: "A N B"))
-        print(ds.addRule(rule: "B NE C"))
-        print(ds.addRule(rule: "C N A"))
-    }
-
-}
-```
