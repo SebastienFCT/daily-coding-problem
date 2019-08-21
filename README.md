@@ -1753,3 +1753,17 @@ is considered valid.
 
 
 * [Swift](./swift/Problem&#32;87/)
+
+## Problem 88
+
+#### Description
+
+This question was asked by ContextLogic.
+
+Implement division of two positive integers without using the division, multiplication, or modulus operators. Return the quotient as an integer, ignoring the remainder.
+
+
+### Solutions
+
+
+* [Swift](./swift/Problem&#32;88/)
