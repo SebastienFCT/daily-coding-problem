@@ -1767,3 +1767,19 @@ Implement division of two positive integers without using the division, multipli
 
 
 * [Swift](./swift/Problem&#32;88/)
+
+## Problem 89
+
+#### Description
+
+This problem was asked by LinkedIn.
+
+Determine whether a tree is a valid binary search tree.
+
+A binary search tree is a tree with two children, left and right, and satisfies the constraint that the key in the left child must be less than or equal to the root and the key in the right child must be greater than or equal to the root.
+
+
+### Solutions
+
+
+* [Swift](./swift/Problem&#32;89/)
