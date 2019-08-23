@@ -1783,3 +1783,16 @@ A binary search tree is a tree with two children, left and right, and satisfies 
 
 
 * [Swift](./swift/Problem&#32;89/)
+
+## Problem 90
+
+#### Description
+
+This question was asked by Google.
+
+Given an integer n and a list of integers l, write a function that randomly generates a number from 0 to n-1 that isn't in l (uniform).
+
+### Solutions
+
+
+* [Swift](./swift/Problem&#32;90/)
