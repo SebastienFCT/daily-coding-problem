@@ -1,16 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 92
+//
+//  Created by sebastien FOCK CHOW THO on 2019-08-25.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Airbnb.
+import Foundation
 
-We're given a hashmap associating each `courseId` key with a list of `courseIds` values, which represents that the prerequisites of `courseId` are `courseIds`. Return a sorted ordering of courses such that we can finish all courses.
-
-Return null if there is no such ordering.
-
-For example, given `{'CSC300': ['CSC100', 'CSC200'], 'CSC200': ['CSC100'], 'CSC100': []}`, should return `['CSC100', 'CSC200', 'CSCS300']`.
-
-## Solution
-
-```swift
 class Node {
     var value: String
     var dependents: [Node]
@@ -116,26 +113,3 @@ extension Array where Element == Node {
         }
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_92Tests: XCTestCase {
-
-    func test_example() {
-        var dm = DependencyManager(nodes: [])
-        dm.buildMap(input: [
-                "CSC300": [
-                    "CSC100"
-                    , "CSC200"
-                ]
-                , "CSC200": ["CSC100"]
-                , "CSC100": []
-            ]
-        )
-        XCTAssert(dm.buildOptimalPath() == ["CSC100", "CSC200", "CSC300"])
-    }
-
-}
-```
