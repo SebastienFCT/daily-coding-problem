@@ -1852,3 +1852,16 @@ Given a tree, return the size of the largest tree/subtree that is a BST.
 
 
 * [Swift](./swift/Problem&#32;93/)
+
+## Problem 94
+
+#### Description
+
+This problem was asked by Google.
+
+Given a binary tree of integers, find the maximum path sum between two nodes. The path must go through at least one node, and does not need to go through the root.
+
+### Solutions
+
+
+* [Swift](./swift/Problem&#32;94/)
