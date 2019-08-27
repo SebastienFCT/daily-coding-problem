@@ -1,12 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 94
+//
+//  Created by sebastien FOCK CHOW THO on 2019-08-27.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Google.
+import Foundation
 
-Given a binary tree of integers, find the maximum path sum between two nodes. The path must go through at least one node, and does not need to go through the root.
-
-## Solution
-
-```swift
 class Node {
     var val: Int
     var left: Node?
@@ -44,29 +45,3 @@ class Node {
         }
     }
 }
-```
-## Test
-
-```swift
-class Problem_94Tests: XCTestCase {
-
-    func test_1() {
-        let tree = Node(val: 10, left: Node(val: 12, left: nil, right: nil), right: Node(val: 2, left: nil, right: nil))
-        
-        XCTAssert(tree.maxPathSum() == 22)
-    }
-    
-    func test_2() {
-        let tree = Node(val: 10, left: Node(val: 12, left: nil, right: nil), right: Node(val: 38, left: nil, right: nil))
-        
-        XCTAssert(tree.maxPathSum() == 48)
-    }
-    
-    func test_3() {
-        let tree = Node(val: 10, left: Node(val: 12, left: nil, right: Node(val: 38, left: nil, right: nil)), right: Node(val: 38, left: nil, right: nil))
-        
-        XCTAssert(tree.maxPathSum() == 50)
-    }
-
-}
-```
