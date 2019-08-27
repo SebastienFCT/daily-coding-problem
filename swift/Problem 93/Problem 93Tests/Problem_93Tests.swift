@@ -11,24 +11,63 @@ import XCTest
 
 class Problem_93Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_simple_tree() {
+        let tree = Node(
+            value: 10
+            , left: Node(
+                value: 9
+                , left: nil
+                , right: nil)
+            , right: Node(
+                value: 11
+                , left: nil
+                , right: Node(
+                    value: 12
+                    , left: nil
+                    , right: nil
+                )
+            )
+        )
+        XCTAssert(tree.largestBstSize() == 4)
+        
+        let tree2 = Node(
+            value: 10
+            , left: Node(
+                value: 9
+                , left: nil
+                , right: nil)
+            , right: Node(
+                value: 11
+                , left: nil
+                , right: Node(
+                    value: 8
+                    , left: nil
+                    , right: nil
+                )
+            )
+        )
+        XCTAssert(tree2.largestBstSize() == 3)
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_multiple_level() {
+        let tree = Node(
+            value: 5
+            , left: Node(
+                value: 10
+                , left: nil
+                , right: nil)
+            , right: Node(
+                value: 4
+                , left: Node(value: 3
+                    , left: nil
+                    , right: nil)
+                , right: Node(value: 5
+                    , left: nil
+                    , right: nil
+                )
+            )
+        )
+        XCTAssert(tree.largestBstSize() == 3)
     }
 
 }
