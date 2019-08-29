@@ -1,18 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 95
+//
+//  Created by sebastien FOCK CHOW THO on 2019-08-28.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Palantir.
+import Foundation
 
-Given a number represented by a list of digits, find the next greater permutation of a number, in terms of lexicographic ordering. If there is not greater permutation possible, return the permutation with the lowest value/ordering.
-
-For example, the list `[1,2,3]` should return `[1,3,2]`. The list `[1,3,2]` should return `[2,1,3]`. The list `[3,2,1]` should return `[1,2,3]`.
-
-Can you perform the operation without allocating extra memory (disregarding the input memory)?
-
-## Solution
-
-Taken from https://stackoverflow.com/questions/1622532/algorithm-to-find-next-greater-permutation-of-a-given-string
-
-```swift
 extension Array where Element == Int {
     
     func nextPermutation() -> [Int] {
@@ -85,18 +80,3 @@ extension Array where Element == Int {
         return left + right.reversed()
     }
 }
-
-```
-
-## Test
-
-```swift
-class Problem_95Tests: XCTestCase {
-
-    func test_example() {
-        let input = [1,2,3]
-        XCTAssert(input.nextPermutation() == [1, 3, 2])
-    }
-
-}
-```
