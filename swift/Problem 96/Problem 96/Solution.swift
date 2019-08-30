@@ -1,14 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 96
+//
+//  Created by sebastien FOCK CHOW THO on 2019-08-29.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Microsoft.
+import Foundation
 
-Given a number in the form of a list of digits, return all possible permutations.
-
-For example, given `[1,2,3]`, return `[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]`.
-
-## Solution
-
-```swift
 extension Array where Element == Int {
     
     func allPermutations() -> [[Int]] {
@@ -42,17 +41,3 @@ extension Array where Element == Int {
         return result
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_96Tests: XCTestCase {
-
-    func test_example() {
-        let input = [1,2,3]
-        print(input.allPermutations())
-    }
-
-}
-```
