@@ -1,28 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 98
+//
+//  Created by sebastien FOCK CHOW THO on 2019-08-31.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Coursera.
+import Foundation
 
-Given a 2D board of characters and a word, find if the word exists in the grid.
-
-The word can be constructed from letters of sequentially adjacent cell, where "adjacent" cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.
-
-For example, given the following board:
-
-```
-[
-  ['A','B','C','E'],
-  ['S','F','C','S'],
-  ['A','D','E','E']
-]
-```
-
-* `exists(board, "ABCCED")` returns `true` 
-* `exists(board, "SEE")` returns `true`
-* `exists(board, "ABCB")` returns `false`.
-
-## Solution
-
-```swift
 extension Array where Element == Array<Character> {
     
     typealias MatrixPos = (row: Int, column: Int)
@@ -132,24 +117,3 @@ extension Array where Element == Array<Character> {
         return nil
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_98Tests: XCTestCase {
-
-    func test_example() {
-        let matrix: [[Character]] = [
-            ["A","B","C","E"],
-            ["S","F","C","S"],
-            ["A","D","E","E"]
-        ]
-        
-        XCTAssertTrue(matrix.exists(word: "ABCCED"))
-        XCTAssertTrue(matrix.exists(word: "SEE"))
-        XCTAssertFalse(matrix.exists(word: "ABCB"))
-    }
-
-}
-```
