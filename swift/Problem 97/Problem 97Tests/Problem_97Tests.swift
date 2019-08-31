@@ -11,24 +11,29 @@ import XCTest
 
 class Problem_97Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_1() {
+        var td = TimedDictionary(map: [:])
+        
+        td.set(key: "1", value: 1, time: 0)
+        td.set(key: "1", value: 2, time: 2)
+        XCTAssert(td.get(key: "1", time: 1) == 1)
+        XCTAssert(td.get(key: "1", time: 3) == 2)
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func test_2() {
+        var td = TimedDictionary(map: [:])
+        
+        td.set(key: "1", value: 1, time: 5)
+        XCTAssert(td.get(key: "1", time: 0) == nil)
+        XCTAssert(td.get(key: "1", time: 10) == 1)
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_3() {
+        var td = TimedDictionary(map: [:])
+        
+        td.set(key: "1", value: 1, time: 0)
+        td.set(key: "1", value: 2, time: 0)
+        XCTAssert(td.get(key: "1", time: 0) == 2)
     }
 
 }

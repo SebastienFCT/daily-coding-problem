@@ -35,11 +35,76 @@ d.get(1, 0) # get key 1 at time 0 should be 2
 ## Solution
 
 ```swift
-// MARK: - TODO
+struct TimedDictionary {
+    var map: [String : [(value: Int, time: Int)]]
+    
+    func get(key: String, time: Int) -> Int? {
+        if let values = map[key] {
+            let filtered = values.filter{ $0.time <= time }
+            
+            if filtered.isEmpty {
+                return nil
+            }
+            
+            return filtered.last!.value
+        }
+        
+        return nil
+    }
+    
+    mutating func set(key: String, value: Int, time: Int) {
+        if let values = map[key] {
+            
+            for i in 0..<values.count {
+                let current = values[i]
+                
+                if current.time == time {
+                    var copy = values
+                    copy[i].value = value
+                    
+                    map[key] = copy
+                    return
+                }
+            }
+            
+            map[key]?.append((value: value, time: time))
+            
+        } else {
+            map[key] = [(value: value, time: time)]
+        }
+    }
+}
 ```
 
 ## Test
 
 ```swift
-// MARK: - TODO
+class Problem_97Tests: XCTestCase {
+
+    func test_1() {
+        var td = TimedDictionary(map: [:])
+        
+        td.set(key: "1", value: 1, time: 0)
+        td.set(key: "1", value: 2, time: 2)
+        XCTAssert(td.get(key: "1", time: 1) == 1)
+        XCTAssert(td.get(key: "1", time: 3) == 2)
+    }
+    
+    func test_2() {
+        var td = TimedDictionary(map: [:])
+        
+        td.set(key: "1", value: 1, time: 5)
+        XCTAssert(td.get(key: "1", time: 0) == nil)
+        XCTAssert(td.get(key: "1", time: 10) == 1)
+    }
+    
+    func test_3() {
+        var td = TimedDictionary(map: [:])
+        
+        td.set(key: "1", value: 1, time: 0)
+        td.set(key: "1", value: 2, time: 0)
+        XCTAssert(td.get(key: "1", time: 0) == 2)
+    }
+
+}
 ```
