@@ -1,14 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 102
+//
+//  Created by sebastien FOCK CHOW THO on 2019-09-04.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Lyft.
+import Foundation
 
-Given a list of integers and a number K, return which contiguous elements of the list sum to K.
-
-For example, if the list is [1, 2, 3, 4, 5] and K is 9, then it should return [2, 3, 4], since 2 + 3 + 4 = 9.
-
-## Solution
-
-```swift
 extension Array where Element == Int {
     
     func contiguousElement(forSum sum: Int) -> [Int] {
@@ -43,24 +42,3 @@ extension Array where Element == Int {
         return []
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_102Tests: XCTestCase {
-
-    func test_example() {
-        let input = [1, 2, 3, 4, 5]
-        XCTAssert(input.contiguousElement(forSum: 9) == [2, 3, 4])
-    }
-    
-    func test_other() {
-        let input = [1,2,3,4,5,6]
-        XCTAssert(input.contiguousElement(forSum: 3) == [1, 2])
-        XCTAssert(input.contiguousElement(forSum: 2) == [2])
-        XCTAssert(input.contiguousElement(forSum: 100) == [])
-    }
-
-}
-```
