@@ -1,16 +1,13 @@
-## Description
+//
+//  Solutions.swift
+//  Problem 103
+//
+//  Created by sebastien FOCK CHOW THO on 2019-09-05.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Square.
+import Foundation
 
-Given a string and a set of characters, return the shortest substring containing all the characters in the set.
-
-For example, given the string "figehaeci" and the set of characters {a, e, i}, you should return "aeci".
-
-If there is no substring containing all the characters in the set, return null.
-
-## Solution
-
-```swift
 extension String {
     func subSequeceContaining(set: Set<Character>) -> String? {
         let toArray = self.toArrayOfCharacter()
@@ -70,18 +67,3 @@ extension Array where Element == Character {
         return result
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_103Tests: XCTestCase {
-
-    func test_example() {
-        let input = "figehaeci"
-        let set: Set<Character> = ["a", "e", "i"]
-        XCTAssert(input.subSequeceContaining(set: set) == "aeci")
-    }
-
-}
-```
