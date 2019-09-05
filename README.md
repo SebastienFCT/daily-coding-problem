@@ -2067,3 +2067,20 @@ For example, if the list is [1, 2, 3, 4, 5] and K is 9, then it should return [2
 
 
 * [Swift](./swift/Problem&#32;102/)
+
+## Problem 103
+
+#### Description
+
+This problem was asked by Square.
+
+Given a string and a set of characters, return the shortest substring containing all the characters in the set.
+
+For example, given the string "figehaeci" and the set of characters {a, e, i}, you should return "aeci".
+
+If there is no substring containing all the characters in the set, return null.
+
+### Solutions
+
+
+* [Swift](./swift/Problem&#32;103/)
