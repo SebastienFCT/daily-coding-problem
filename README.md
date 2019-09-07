@@ -2084,3 +2084,16 @@ If there is no substring containing all the characters in the set, return null.
 
 
 * [Swift](./swift/Problem&#32;103/)
+
+## Problem 104
+
+#### Description
+
+Determine whether a doubly linked list is a palindrome. What if it’s singly linked?
+
+For example, `1 -> 4 -> 3 -> 4 -> 1` returns True while `1 -> 4` returns False
+
+### Solutions
+
+
+* [Swift](./swift/Problem&#32;104/)
