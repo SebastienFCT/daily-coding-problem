@@ -1,20 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 107
+//
+//  Created by sebastien FOCK CHOW THO on 2019-09-09.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Microsoft.
+import Foundation
 
-Print the nodes in a binary tree level-wise. For example, the following should print 1, 2, 3, 4, 5.
-
-```
-  1
- / \
-2   3
-   / \
-  4   5
-```
-
-## Solution
-
-```swift
 class Node<T> {
     var value: T
     var left: Node<T>?
@@ -77,17 +70,3 @@ class Node<T> {
         return result
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_107Tests: XCTestCase {
-
-    func test_example() {
-        let root = Node<Int>(value: 1, left: Node<Int>(value: 2, left: nil, right: nil), right: Node<Int>(value: 3, left: Node<Int>(value: 4, left: nil, right: nil), right: Node<Int>(value: 5, left: nil, right: nil)))
-        _ = root.printTree()
-    }
-
-}
-```
