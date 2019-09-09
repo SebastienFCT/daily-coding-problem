@@ -2127,3 +2127,24 @@ For example, `[2, 0, 1, 0]` returns `True` while `[1, 1, 0, 1]` returns `False`.
 
 
 * [Swift](./swift/Problem&#32;106/)
+
+## Problem 107
+
+#### Description
+
+This problem was asked by Microsoft.
+
+Print the nodes in a binary tree level-wise. For example, the following should print 1, 2, 3, 4, 5.
+
+```
+  1
+ / \
+2   3
+   / \
+  4   5
+```
+
+### Solutions
+
+
+* [Swift](./swift/Problem&#32;107/)
