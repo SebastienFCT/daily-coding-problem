@@ -1,14 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 109
+//
+//  Created by sebastien FOCK CHOW THO on 2019-09-11.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Google.
+import Foundation
 
-Given two strings A and B, return whether or not A can be shifted some number of times to get B.
-
-For example, if A is `abcde` and B is `cdeab`, return `true`. If A is `abc` and B is `acb`, return `false`.
-
-## Solution
-
-```swift
 // MARK: - Convenient method to convert UInt8 to [Bit]
 // See https://stackoverflow.com/a/44808203/2641304
 
@@ -79,22 +78,3 @@ extension Array where Element == Bit {
         return copy
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_109Tests: XCTestCase {
-
-    func test_example_1() {
-        let input: [Bit] = [1,0,1,0,1,0,1,0].toBitArray()
-        XCTAssert(input.swapOddAndEven().toIntArray() == [0,1,0,1,0,1,0,1])
-    }
-    
-    func test_example_2() {
-        let input: [Bit] = [1,1,1,0,0,0,1,0].toBitArray()
-        XCTAssert(input.swapOddAndEven().toIntArray() == [1,1,0,1,0,0,0,1])
-    }
-
-}
-```
