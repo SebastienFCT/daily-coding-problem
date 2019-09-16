@@ -9,11 +9,24 @@ Follow-up: given a mutable string representation, can you perform this operation
 ## Solution
 
 ```swift
-// MARK: - TODO
+extension String {
+    func reverseWords() -> String {
+        
+        let words = self.components(separatedBy: .whitespacesAndNewlines).reversed()
+        
+        return words.joined(separator: " ")
+    }
+}
 ```
 
 ## Test
 
 ```swift
-// MARK: - TODO
+class Problem_113Tests: XCTestCase {
+
+    func test_reverse() {
+        XCTAssert("Hello Green World".reverseWords() == "World Green Hello")
+    }
+
+}
 ```
