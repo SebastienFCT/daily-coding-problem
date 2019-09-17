@@ -1,12 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 115
+//
+//  Created by sebastien FOCK CHOW THO on 2019-09-17.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Google.
+import Foundation
 
-Given two non-empty binary trees `s` and `t`, check whether tree `t` has exactly the same structure and node values with a subtree of `s`. A subtree of `s` is a tree consists of a node in `s` and all of this node's descendants. The tree `s` could also be considered as a subtree of itself.
-
-## Solution
-
-```swift
 class Node {
     var value: String
     var left: Node?
@@ -80,56 +81,3 @@ extension Node: Equatable {
         return true
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_115Tests: XCTestCase {
-
-    func test_node_inclusion() {
-        let root = Node(value: "root")
-        
-        let l = Node(value: "l")
-        root.left = l
-        
-        let ll = Node(value: "ll")
-        l.left = ll
-        let lr = Node(value: "lr")
-        l.right = lr
-        let lll = Node(value: "lll")
-        ll.left = lll
-        let llr = Node(value: "llr")
-        ll.right = llr
-        
-        let r = Node(value: "r")
-        root.right = r
-        
-        XCTAssertTrue(root.includes(node: lr))
-    }
-    
-    func test_node_non_inclusion() {
-        let root = Node(value: "root")
-        
-        let l = Node(value: "l")
-        root.left = l
-        
-        let ll = Node(value: "ll")
-        l.left = ll
-        let lr = Node(value: "lr")
-        l.right = lr
-        let lll = Node(value: "lll")
-        ll.left = lll
-        let llr = Node(value: "llr")
-        ll.right = llr
-        
-        let r = Node(value: "r")
-        root.right = r
-        
-        let otherNode = Node(value: "test", left: Node(value: "testLeft"), right: Node(value: "testRight"))
-        
-        XCTAssertFalse(root.includes(node: otherNode))
-    }
-
-}
-```
