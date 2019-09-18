@@ -22,18 +22,4 @@ class Problem_1Tests: XCTestCase {
         
         XCTAssertFalse(input.hasPairForSum(sum: 100))
     }
-    
-    func testGeneric() {
-        let trunk = Branch(value: 17, maxLevel: 2, level: 0, rest: [10, 15, 3, 7])
-        trunk.growBranches()
-        
-        XCTAssert(trunk.anyPathForValue())
-    }
-    
-    func testGeneric2() {
-        let trunk = Branch(value: 100, maxLevel: 5, level: 0, rest: [10, 6, 12, 890, 10, 10, 20, 5, 10, 90, 12, 22, 9, 10])
-        trunk.growBranches()
-        
-        XCTAssert(trunk.anyPathForValue())
-    }
 }

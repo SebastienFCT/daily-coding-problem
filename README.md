@@ -19,6 +19,17 @@ Bonus: Can you do this in one pass?
 
 * [Swift](./swift/Problem&#32;1/)
 
+## Problem 1b
+
+### Description
+
+Given array of integers, there is any combination of N elements which sum return K
+
+### Solutions
+
+
+* [Swift](./swift/Problem&#32;1b/)
+
 ## Problem 2
 
 #### Description

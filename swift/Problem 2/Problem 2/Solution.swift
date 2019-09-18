@@ -8,16 +8,6 @@
 
 import Foundation
 
-/**
- 
-    Since I read the `follow up` question from the beginning, I got the obvious answer for this challenge:
- 
-    - Get the product of all elements and store it in a variable
-    - Map the initial array to a new one that corresponds to the calculated product divided by the the item in the initial array
- 
-    Without this hint, I would have probably gone with a less efficient algorithm where I loop through each element and try to get a product of all element but the current one. This shows how valuable are the first "brain-storming" minutes for any challenge.
- */
-
 extension Array where Element == Int {
     
     func productOfOthers() -> [Int] {
@@ -26,19 +16,6 @@ extension Array where Element == Int {
         return self.map{ product / $0 }
     }
 }
-
-/**
- 
-    So now, how to do this without division?
- 
-    Let's apply the solution mentioned before:
- 
-    - Create a empty array (the result)
-    - Loop through your initial array and for each element
-        - Create a copy of your initial array and remove the ith element
-        - Store in your result array the product of the elements
- 
- */
 
 extension Array where Element == Int {
     

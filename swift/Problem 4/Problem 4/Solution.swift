@@ -8,15 +8,6 @@
 
 import Foundation
 
-/**
- 
-    To solve this problem, I would
- 
-    1. Loop through positive integers 0, 1, 2, ...
-    2. For each element, check if the array
- 
- */
-
 extension Array where Element == Int {
     func lowerMissingPositiveInteger() -> Int {
         var index = 1
@@ -30,17 +21,6 @@ extension Array where Element == Int {
         }
     }
 }
-
-/**
- 
-    Now this is expensive as each loop is actually scanning the array
- 
-    Another approach might be looping through the elements of the array itself.
- 
-    1. First let's remove negative element and sort the array
-    2. Then we loop through the array and make sure that each value is equal to its previous value + 1 otherwise that means that we found the lowest missing integer
- 
- */
 
 extension Array where Element == Int {
     func lowerMissingPositiveInteger2() -> Int {
