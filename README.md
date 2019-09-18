@@ -2289,3 +2289,18 @@ Given two non-empty binary trees `s` and `t`, check whether tree `t` has exactly
 
 
 * [Swift](./swift/Problem&#32;115/)
+
+## Problem 116
+
+#### Description
+
+This problem was asked by Jane Street.
+
+Generate a finite, but an arbitrarily large binary tree quickly in O(1).
+
+That is, `generate()` should return a tree whose size is unbounded but finite.
+
+### Solutions
+
+
+* [Swift](./swift/Problem&#32;116/)
