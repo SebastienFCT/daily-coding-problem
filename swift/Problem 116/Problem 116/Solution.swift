@@ -1,14 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 116
+//
+//  Created by sebastien FOCK CHOW THO on 2019-09-18.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Jane Street.
+import Foundation
 
-Generate a finite, but an arbitrarily large binary tree quickly in O(1).
-
-That is, `generate()` should return a tree whose size is unbounded but finite.
-
-## Solution
-
-```swift
 class Node {
     var value: String
     var left: Node?
@@ -38,17 +37,3 @@ class Node {
         return result
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_116Tests: XCTestCase {
-
-    func test_random_tree() {
-        let root = Node(value: "root", random: false)
-        print(root?.countNodes())
-    }
-
-}
-```
