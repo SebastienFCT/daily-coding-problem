@@ -2304,3 +2304,16 @@ That is, `generate()` should return a tree whose size is unbounded but finite.
 
 
 * [Swift](./swift/Problem&#32;116/)
+
+## Problem 117
+
+#### Description
+
+This problem was asked by Facebook.
+
+Given a binary tree, return the level of the tree with minimum sum.
+
+### Solutions
+
+
+* [Swift](./swift/Problem&#32;117/)
