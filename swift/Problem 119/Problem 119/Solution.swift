@@ -1,14 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 119
+//
+//  Created by sebastien FOCK CHOW THO on 2019-09-21.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Google.
+import Foundation
 
-Given a set of closed intervals, find the smallest set of numbers that covers all the intervals. If there are multiple smallest sets, return any of them.
-
-For example, given the intervals `[0, 3], [2, 6], [3, 4], [6, 9]`, one set of numbers that covers all these intervals is `{3, 6}`.
-
-## Solution
-
-```swift
 struct Interval {
     var min: Int
     var max: Int
@@ -51,20 +50,3 @@ extension Array where Element == Interval {
         return result
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_119Tests: XCTestCase {
-
-    func test_example() {
-        let input = [Interval(min: 0, max: 3), Interval(min: 2, max: 6), Interval(min: 3, max: 4), Interval(min: 6, max: 9)]
-        
-        let actual = input.mininumCover()
-        let expected = [3, 6]
-        XCTAssert(actual == expected || actual.count == expected.count)
-    }
-
-}
-```
