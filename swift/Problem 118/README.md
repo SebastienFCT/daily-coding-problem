@@ -9,11 +9,23 @@ For example, given [-9, -2, 0, 2, 3], return [0, 4, 4, 9, 81].
 ## Solution
 
 ```swift
-// MARK: - TODO
+extension Array where Element == Int {
+    func squareAndSort() -> [Int] {
+        return self.map{ $0 * $0 }.sorted()
+    }
+}
 ```
 
 ## Test
 
 ```swift
-// MARK: - TODO
+class Problem_118Tests: XCTestCase {
+
+    func test_example() {
+        let input = [-9, -2, 0, 2, 3]
+        
+        XCTAssert(input.squareAndSort() == [0, 4, 4, 9, 81])
+    }
+
+}
 ```
