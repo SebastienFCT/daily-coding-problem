@@ -1,14 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 121
+//
+//  Created by sebastien FOCK CHOW THO on 2019-09-23.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Google.
+import Foundation
 
-Given a string which we can delete at most k, return whether you can make a palindrome.
-
-For example, given 'waterrfetawx' and a k of 2, you could delete f and x to get 'waterretaw'.
-
-## Solution
-
-```swift
 extension String {
     func isPalindrome() -> Bool {
         return String(self.prefix(count / 2)) == String(self.suffix(count / 2).reversed())
@@ -34,18 +33,3 @@ extension String {
         return false
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_121Tests: XCTestCase {
-
-    func test_example() {
-        let input = "waterrfetawx"
-        XCTAssertTrue(input.canBuildPalindrome(maxDeletion: 2))
-        XCTAssertFalse(input.canBuildPalindrome(maxDeletion: 1))
-    }
-
-}
-```
