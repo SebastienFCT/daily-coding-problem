@@ -9,13 +9,6 @@
 import XCTest
 @testable import Problem_22
 
-/**
- 
- Ok, let's put this all together:
- 
- We create an node with an empty string as initial value, we set its possibilities
- 
- */
 class Problem_22Tests: XCTestCase {
     
     func testExample() {

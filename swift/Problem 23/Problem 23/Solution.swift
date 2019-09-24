@@ -8,26 +8,6 @@
 
 import Foundation
 
-/**
- 
-    I like this challenge a lot as it feels like implementing an AI for a rogue like game
- 
-    I'm not familiar with game development, I guess my first move would be finding the faster path without any wall
- 
-    0   0   0   E
- 
-    0   0   0   0
- 
-    S   0   0   0
- 
-    In a matrix, and given 2 points A(x1, y1) & B(x2, y2), my first intuition is to look at the minimum between (x2 - x1) and (y2 - y1), and increment the value of my point A for the minimum axis found (the logic is that if walking a step on x gets me closer to my destination that walking a step on y, then I'll start walking the step on the x axis)
- 
-    So in the previous example,
-    - walking a step to the right on the x axis gets me 2 steps from the Exit's x value
-    - walking a step to the top on the y axis gets me 1 steps from the Exit's y value
-    I'll choose moving a step towards the top and a re-iterate my logic.
- 
- */
 extension Array where Element == Array<Bool> {
     func nextStep(position: (Int, Int), goal: (Int, Int)) -> (Int, Int)? {
         
@@ -85,27 +65,7 @@ extension Array where Element == Array<Bool> {
         return nextStep
     }
 }
-/**
- 
-    If we had walls, we would need to change our strategy to find all the possible paths to reach the destination instead
- 
-    0   0   0   E
- 
-    0   1   1   1
- 
-    S   0   0   0
- 
-    Our strategy will be:
- 
-    - For each step loop for a next possible step
-    - If current = destination, return
-    - else loop
- 
-    We need to make sure that the next step hasn't been picked yet (to avoid infinity loop)
- 
-    let's build a class that will hold the paths and the position of the cursor in the matrix
- 
- */
+
 class Path {
     var map: [[Bool]]
     var currentPosition: (Int, Int)
@@ -154,17 +114,8 @@ class Path {
         
         return result
     }
-}
-/**
- 
-    Finally, we're adding a final function that find the faster path:
- 
-    - Get all possible paths
-    - Select the one with the smaller visited.count()
- 
- */
-extension Path {
-    func findOptimalPath() -> [(Int, Int)]? {        
+    
+    func findOptimalPath() -> [(Int, Int)]? {
         return buildPaths().sorted{ $0.count < $1.count }.first
     }
     

@@ -14,10 +14,6 @@ You may augment the node to add parent pointers or any other property you would 
 
 ## Solution
 
-First we need to build a node class
- 
-Since it's a binary tree, a node will have a reference to 2 other nodes and can be locked
-
 ```swift
 class Node {
     var parent: Node?
@@ -30,16 +26,7 @@ class Node {
         self.left = nil
         self.right = nil
     }
-}
-```
-
-The other rules are:
-- A node should have a `lock` method
-- A node should have an `unlock` method
-- A node should have a `isLockableOrUnlockable`
-
-```swift
-extension Node {
+    
     func isLoackableOrUnloackable() -> Bool {
         if anyParentLocked() {
             return false
@@ -96,6 +83,7 @@ extension Node {
         return false
     }
 }
+
 ```
 
 ## Tests

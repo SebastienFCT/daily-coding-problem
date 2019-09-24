@@ -8,36 +8,6 @@
 
 import Foundation
 
-/**
- 
-    There are two things to do here:
- 
-    - Design a Node class that can hold a reference to another node
-    - Add a method to this class that remove its kth element, we will get back to this
- 
- */
-//class Node {
-//    var node: Node?
-//
-//    init() {
-//        self.node = nil
-//    }
-//}
-/**
- 
-    To remove the kth element, we will loop through the children nodes until we reached the (k-1)th
- 
-    We will update the child node reference of (k-1).Node from k.Node to (k+1).Node
- 
-    We will then remove the k.Node
- 
-    If our structure is A -> B -> C -> D,
-    We're trying to delete node at index k = 2
-    Then we must loop up to 1 (index 1), update the reference and delete the old reference
- 
-    While building the function, there an obvious edge case: when k is greater than the length of the linked list. This should never happened as per the instruciton but the optionals of Swift help us easily handling the case
- 
- */
 extension Node {
     
     func removeElementAt(_ index: Int) {
@@ -64,11 +34,7 @@ extension Node {
         }
     }
 }
-/**
- 
-    Let's add a property to each node to easily identify them and create a function that finds the kth node
- 
- */
+
 class Node {
     var value: String
     var node: Node?
