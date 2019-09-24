@@ -10,18 +10,8 @@ import XCTest
 @testable import Problem_27
 
 class Problem_27Tests: XCTestCase {
-
-    func test_1() {
-        let input = "([])[]({})"
-        XCTAssertTrue(input.isWellFormed())
-    }
     
-    func test_2() {
-        var input = "([])[]({})"
-        XCTAssertTrue(input.isWellFormed2())
-    }
-    
-    func test_3() {
+    func test_example() {
         let pairs = Pairs(sets: [Pair(left: "{", right: "}"), Pair(left: "[", right: "]"), Pair(left: "(", right: ")")])
         
         var input = "([])[]({})"
