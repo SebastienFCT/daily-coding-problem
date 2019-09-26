@@ -20,11 +20,43 @@ And here are examples of non-numbers:
 ## Solution
 
 ```swift
-// MARK: - TODO
+extension String {
+    
+    func representNumber() -> Bool {
+        
+        if matchesRegex("^[+-]?([0-9]*\\.?[0-9]+|[0-9]+\\.?[0-9]*)([eE][+-]?[0-9]+)?$") {
+            return true
+        }
+        
+        return false
+    }
+    
+    func matchesRegex(_ regexString: String) -> Bool {
+        if let regex = try? NSRegularExpression(pattern: regexString), let _ = regex.firstMatch(in: self.trimmingCharacters(in: .whitespacesAndNewlines), options: [], range: NSRange(location: 0, length: self.count)) {
+            return true
+        }
+        
+        return false
+    }
+}
 ```
 
 ## Test
 
 ```swift
-// MARK: - TODO
+class Problem_123Tests: XCTestCase {
+
+    func test_example() {
+        XCTAssertTrue("10".representNumber())
+        XCTAssertTrue("-10".representNumber())
+        XCTAssertTrue("10.1".representNumber())
+        XCTAssertTrue("-10.1".representNumber())
+        XCTAssertTrue("1e5".representNumber())
+        XCTAssertFalse("a".representNumber())
+        XCTAssertFalse("x 1".representNumber())
+        XCTAssertFalse("a -2".representNumber())
+        XCTAssertFalse("-".representNumber())
+    }
+
+}
 ```
