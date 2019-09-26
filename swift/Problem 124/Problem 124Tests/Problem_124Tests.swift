@@ -11,24 +11,10 @@ import XCTest
 
 class Problem_124Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_approximation_of_iteration_before_reaching_one_remaining_coin() {
+        print("Starting with 10 coins, you should expect to play \(approximateIterations(n: 10, targetRemaining: 1, sampleSize: 200)) round(s) in average until one coin remains")
+        print("Starting with 10 coins, you should expect to play \(approximateIterations(n: 10, targetRemaining: 1, sampleSize: 400)) round(s) in average until one coin remains")
+        print("Starting with 10 coins, you should expect to play \(approximateIterations(n: 10, targetRemaining: 1, sampleSize: 1000)) round(s) in average until one coin remains")
     }
 
 }
