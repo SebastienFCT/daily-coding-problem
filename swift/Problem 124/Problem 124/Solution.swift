@@ -25,7 +25,7 @@ func approximateIterations(n totalCoins: Int, targetRemaining: Int, sampleSize: 
             attempts += 1
         }
         
-        if (coins.filter{ $0 }.count == 1) {
+        if (coins.filter{ $0 }.count == targetRemaining) {
             successes.append(attempts)
         }
     }
