@@ -8,11 +8,6 @@ Implement run-length encoding and decoding. You can assume the string to be enco
 
 ## Solution
 
-This challenge requires two implement to functions:
- 
-- `Serialize()` will take a string as input and will apply the logic that replaces any repeating sequence of the same character by "XC" where X is the amount of time it's been repeated and C the character
-- `Deserialize()` will take a string as input and will replace any occurrence of "XC" with the string "CC...CC" corresponding to X times the character C
-
 
 ```swift
 extension String {
@@ -36,46 +31,7 @@ extension String {
         
         return result
     }
-}
-```
-
-For deserialize, the trick is to be able to extract integers value from each part.
- 
-The hint we have is that each string only contains alphabetic characters, so we can split our input using any character in a set of alphetic characters
-
-First we will create our set of alphabetic characters
-
-Then we scan our input, putting together non alphabetic characters and combining them once we find an alphabetic character
-
-```swift
-extension String {
-    mutating func deserialize() -> String {
-        let set = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
-        var result = ""
-
-        var countString = ""
-
-        while !self.isEmpty {
-            let current = self.removeFirst()
-
-            // I had to google "how to find if a character is in a character set as the function `contains` was dealing with unicode scalars
-            if String(current).rangeOfCharacter(from: set) != nil {
-                result.append(String(repeating: current, count: Int(countString) ?? 0))
-                countString = ""
-            } else {
-                countString += String(current)
-            }
-        }
-
-        return result
-    }
-}
-```
-
-If I didn't have access to the convenient method `Int(description: String)`, I would create my own like this
-
-```swift
-extension String {
+    
     mutating func toInt() -> Int {
         let values: [Character : Int] = [
             "1" : 1,

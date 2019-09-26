@@ -8,30 +8,6 @@
 
 import Foundation
 
-/**
- 
-    Let's try to solve this problem step by step.
- 
-    We're trying to change a string into another one with a minimum of steps.
- 
-    What are our rules?
- 
-    - If the output is longer than the input, we will have to add the difference
-    - If the output is shorter, we will have to delete the difference
-    - If some characters are similar, they should be kept in place to avoid substitution
- 
-    For example, if we start we an easy problem:
- 
-    - input = "", output = "hello" -> the output is longer, we will have to add 4 letters, in this case there is no pre-existing letter so we add the letter in the order of the output. Edit distance = output.length
- 
-    - input = "hello world", output = "hello" -> the output is shorter, we will have to delete the difference but prior to this we need to run a function that find the closest string (defined by how many common character they have) -> if finds hello with difference = 0, it removes " world". Edit distance = " world".length
- 
-    - input = "el", output = "hello" -> the output is longer, we run the same function that finds the closest string, it returns "el" (and notice here that it also need to return at which index it's located in the output -aka index = 1), we run a function that completes the string
- 
-    Let's start with a function that finds the closest sub-string between two strings
- 
- */
-
 extension String {
     func closestSubString(toExpectedOutput output: String) -> (result: String, startingAtIndex: Int, withEditDist: Int) {
         guard self.count >= output.count else {
@@ -39,11 +15,6 @@ extension String {
         }
         
         var result = ("", 0, Int.max)
-        // Between "abcde" and "te", there is "ab", "bc", "cd" and "de" -aka 4- possibilities
-        // Between "abcde" and "tec", there is "abc", "bcd", "cde" -aka 3- possibilities
-        // Between "abcde" and "tecd", there is "abcd", "bcde" -aka 2- possibilities
-        
-        // There are (size of input - size of output) + 1 possibilitie(s) (this part might be wrong be seem right)... It could be confirmed via math combinations equations
         
         for i in 0..<(self.count - output.count + 1) {
             let start = self.index(self.startIndex, offsetBy: i)
@@ -71,15 +42,7 @@ extension String {
         
         return result
     }
-}
-/**
- 
-    That was fun! We now have a function that finds the closest sub-string from an input A to an expected output B
- 
-    Let's build our main function that determines if there is any difference between two string, if yes uses the previous function to find their closest sub-strings and then add/remove and substitute elements
- 
- */
-extension String {
+    
     func editDistance(toOutput output: String) -> Int {
         
         if self.count < output.count {
