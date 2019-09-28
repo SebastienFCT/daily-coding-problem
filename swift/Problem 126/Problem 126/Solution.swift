@@ -1,12 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 126
+//
+//  Created by sebastien FOCK CHOW THO on 2019-09-28.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Facebook.
+import Foundation
 
-Write a function that rotates a list by k elements. For example, `[1, 2, 3, 4, 5, 6]` rotated by two becomes `[3, 4, 5, 6, 1, 2]`. Try solving this without creating a copy of the list. How many swap or move operations do you need?
-
-## Solution
-
-```swift
 extension Array where Element == Int {
     
     mutating func rotate(by k: Int) -> [Int] {
@@ -37,18 +38,3 @@ extension Array where Element == Int {
         self[right] = tmp
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_126Tests: XCTestCase {
-
-    func test_example() {
-        var input = [1, 2, 3, 4, 5, 6]
-        
-        XCTAssert(input.rotate(by: 2) == [3, 4, 5, 6, 1, 2])
-    }
-
-}
-```
