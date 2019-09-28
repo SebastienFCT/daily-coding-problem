@@ -11,24 +11,22 @@ import XCTest
 
 class Problem_125Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_example() {
+        let root = Node(value: 10)
+        let l = Node(value: 5)
+        let r = Node(value: 15)
+        let rl = Node(value: 11)
+        let rr = Node(value: 15)
+        
+        root.left = l
+        root.right = r
+        
+        r.left = rl
+        r.right = rr
+        
+        let current = root.paidForSum(20)
+        XCTAssert(current?.count == 2)
+        XCTAssert(current![0].value + current![1].value == 20)
     }
 
 }
