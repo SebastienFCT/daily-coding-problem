@@ -8,26 +8,8 @@
 
 import Foundation
 
-/**
- 
-    According to the example, we build a power set by creating a array of set and appending
- 
-    - First all possible combination of 1 item
-    - All possible combination of 2 items
-    - ...
-    - All possible combinatino of N-1 items, N being the size of the original set
-    - The set itself
- 
-    EDIT: after testing it out, I spent about an hour trying to apply the previous logic, I got stuck in my thoughts and tried a different approach:
- 
-    - Create a power set variable (an array of set)
-    - Remove an element of the initial set and add it as a "set" in the power set variable, then loop
-    - For each of the next element, add a combination of each element in the power set variable with themselve and finally add themselves as their own "set"
-    - The end condition is when the initial set is empty
- 
- */
 extension Set where Element == Int {
-    // Powerset is a convenient methods that has an explicit name for the client. We could have used a single function instead.
+    
     mutating func powerSet() -> [Set<Int>] {
         return self.allCombination(result: [])
     }

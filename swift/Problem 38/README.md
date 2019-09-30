@@ -79,13 +79,7 @@ extension Array where Element == Array<Bool> {
         
         return false
     }
-}
-```
-
-Ok now that it has been tested, it's time to write a recursive function that build our board progressively and counts all the possibilities
-
-```swift
-extension Array where Element == Array<Bool> {
+    
     func findHowManyArrangement() -> Int {
         return findHowManyArrangements(atColumn: 0)
     }
@@ -111,10 +105,6 @@ extension Array where Element == Array<Bool> {
     }
 }
 ```
-
-This seems to be working. I spent forever trying to understand why my test_3() would return 0.
- 
-I didn't spend enough time visualizing the solution (like I usually do) and I totally missed the diagonal parts. It's been implemented correctly, but when visualizing in my mind, I forgot them, therefore I expected a 3x3 board to have solutions
 
 ## Tests
 

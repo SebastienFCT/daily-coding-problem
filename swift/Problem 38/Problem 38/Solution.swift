@@ -8,17 +8,6 @@
 
 import Foundation
 
-/**
- 
-    In this problem, we're trying to distribute N element on a board of NxN cases
- 
-    The first idea that comes to mind is to build a function that get every possibilities for each element 1x1 based on the existing board (after previous distributions). For each of this possibilities, we keep trying all the possibilities until there is no more element. If we reach the "no more element" then it counts as one possibility.
- 
-    First, we should try to write our utility(ies) function(s) that will determine if an element can be added at the location (x,y)
- 
-    For this exercise, I will represent my board by an matrix (array of array) of booleans. False being "empty case" and True being "Queen" (or element).
- 
- */
 extension Array where Element == Array<Bool> {
     
     func hasElementOnRow(_ row: Int) -> Bool {
@@ -83,13 +72,7 @@ extension Array where Element == Array<Bool> {
         
         return false
     }
-}
-/**
- 
-    Ok now that it has been tested, it's time to write a recursive function that build our board progressively and counts all the possibilities
- 
- */
-extension Array where Element == Array<Bool> {
+    
     func findHowManyArrangement() -> Int {
         return findHowManyArrangements(atColumn: 0)
     }
@@ -114,10 +97,3 @@ extension Array where Element == Array<Bool> {
         return result
     }
 }
-/**
- 
-    This seems to be working. I spent forever trying to understand why my test_3() would return 0.
- 
-    I didn't spend enough time visualizing the solution (like I usually do) and I totally missed the diagonal parts. It's been implemented correctly, but when visualizing in my mind, I forgot them, therefore I expected a 3x3 board to have solutions
- 
- */
