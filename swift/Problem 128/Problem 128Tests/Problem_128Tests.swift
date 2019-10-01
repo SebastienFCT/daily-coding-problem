@@ -11,24 +11,30 @@ import XCTest
 
 class Problem_128Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func test_disk_on_top_on_smaller_one() {
+        var success = false
+        
+        let rod1 = HanoiRod()
+        
+        do {
+            _ = try rod1.push(node: HanoiDisk(value: 1))
+            _ = try rod1.push(node: HanoiDisk(value: 2))
+        } catch {
+            success = true
         }
+        
+        XCTAssert(success)
+    }
+    
+    func test_hanoi_game() {
+        let game = HanoiGame(withDisks: 3)
+        
+        game.move(from: 0, to: 1)
+    }
+    
+    func test_solver() {
+        let game = HanoiGame(withDisks: 4)
+        game.solve()
     }
 
 }
