@@ -8,13 +8,6 @@
 
 import Foundation
 
-/**
- 
-    I wasn't able to solve this problem. After googling a little, I found multiple explanation with bitwise operation.
- 
-    Bit operation isn't something I'm really familiar with, the following link https://www.youtube.com/watch?v=mHfvInveXDQ illustrates the solution
- 
- */
 extension Array where Element == Int {
     func findUniqueOccurence(regularOccurence: Int) -> UInt {
         // First we're creating an array of bit, this will represent the sum of all the values
@@ -54,10 +47,3 @@ extension String {
         }
     }
 }
-/**
- 
-    Swift provides an built-in feature for reading binaries: by prefixing the binary with 0b
- 
-    0b10 = 2
- 
- */

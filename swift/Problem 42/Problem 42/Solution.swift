@@ -8,13 +8,6 @@
 
 import Foundation
 
-/**
- 
-    For this problem, I'd like to try a recursive function that tries adding all remaining values from an array and test it against a final value
- 
-    I was able to get it in a really short solution so I'll add comment in the code directly
- 
- */
 extension Array where Element == Int {
     
     // The function tries to find an element that is equals to the sum `forSum`

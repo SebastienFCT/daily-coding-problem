@@ -12,15 +12,6 @@ Given the list of flights `[('A', 'B'), ('A', 'C'), ('B', 'C'), ('C', 'A')]` and
 
 ## Solution
 
-In this problem, we must:
- 
-- Find all possible ways (in order to display the "lexicographically smallest one"
-- Determine if there is no possible way at home
-
-Building a tree seems to be an ideal solution
-
-Let's start by building a Itinerary class that will correspond to one flight. It will hold a reference to possible next Itinerary
-
 ```swift
 class Itinerary {
     var value: String
@@ -34,14 +25,43 @@ class Itinerary {
         self.isFinalDestination = isFinalDestination
         self.finalArrival = finalArrival
     }
+    
+    func buildFullPath(roots: [[String]] = []) -> [[String]] {
+        var result: [[String]] = []
+        
+        if roots.isEmpty {
+            result.append([value])
+        } else {
+            for root in roots {
+                if let finalArrival = finalArrival {
+                    result.append(root + [value, finalArrival])
+                } else {
+                    result.append(root + [value])
+                }
+            }
+        }
+        
+        if isFinalDestination {
+            return result
+        }
+        
+        var newResult: [[String]] = []
+        
+        for destination in destinations {
+            let next = destination.buildFullPath(roots: result)
+            
+            if !next.isEmpty {
+                for element in next {
+                    newResult.append(element)
+                }
+            }
+        }
+        
+        return newResult
+    }
+
 }
-```
 
-I'm now building a function that generate all possible path
- 
-I added `isFinalDestination` as I realized that I needed somehow a way to determine if the loop ended
-
-```swift
 extension Array where Element == (depart: String, arrival: String) {
     
     func buildItineraries(start: String) -> [Itinerary] {
@@ -79,52 +99,7 @@ extension Array where Element == (depart: String, arrival: String) {
         return possibilities
     }
 }
-```
 
-Finally, let's build a function that find all full path
-
-```swift
-extension Itinerary {
-    
-    func buildFullPath(roots: [[String]] = []) -> [[String]] {
-        var result: [[String]] = []
-        
-        if roots.isEmpty {
-            result.append([value])
-        } else {
-            for root in roots {
-                if let finalArrival = finalArrival {
-                    result.append(root + [value, finalArrival])
-                } else {
-                    result.append(root + [value])
-                }
-            }
-        }
-        
-        if isFinalDestination {
-            return result
-        }
-        
-        var newResult: [[String]] = []
-        
-        for destination in destinations {
-            let next = destination.buildFullPath(roots: result)
-            
-            if !next.isEmpty {
-                for element in next {
-                    newResult.append(element)
-                }
-            }
-        }
-        
-        return newResult
-    }
-}
-```
-
-And we finish with a simple function finding the "lexicographically smallest"item
-
-```swift
 extension Array where Element == Array<String> {
     func lexicographicallySmallestPath() -> [String]? {
         if self.isEmpty {

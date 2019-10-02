@@ -10,9 +10,6 @@ For example, given `S = [12, 1, 61, 5, 9, 2]` and `k = 24`, return `[12, 9, 2, 1
 
 ## Solution
 
-For this problem, I'd like to try a recursive function that tries adding all remaining values from an array and test it against a final value
- 
-I was able to get it in a really short solution so I'll add comment in the code directly
 
 ```swift
 extension Array where Element == Int {
