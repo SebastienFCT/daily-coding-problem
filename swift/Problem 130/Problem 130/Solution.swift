@@ -1,14 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 130
+//
+//  Created by sebastien FOCK CHOW THO on 2019-10-02.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Facebook.
+import Foundation
 
-Given an array of numbers representing the stock prices of a company in chronological order and an integer `k`, return the maximum profit you can make from `k` buys and sells. You must buy the stock before you can sell it, and you must sell the stock before you can buy it again.
-
-For example, given `k` = 2 and the array `[5, 2, 4, 0, 1]`, you should return 3.
-
-## Solution
-
-```swift
 extension Array where Element == Int {
     
     func maxProfits(k actions: Int) -> Int {
@@ -33,17 +32,3 @@ extension Array where Element == Int {
         }
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_130Tests: XCTestCase {
-
-    func test_example() {
-        let input = [5, 2, 4, 0, 1]
-        XCTAssert(input.maxProfits(k: 2) == 3)
-    }
-
-}
-```
