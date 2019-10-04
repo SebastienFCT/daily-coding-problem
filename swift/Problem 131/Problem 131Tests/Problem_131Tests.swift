@@ -11,24 +11,20 @@ import XCTest
 
 class Problem_131Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_deep_copy() {
+        let root = Node(value: 0)
+        let one = Node(value: 1)
+        let two = Node(value: 2)
+        
+        root.rand = two
+        one.rand = two
+        two.rand = one
+        
+        root.next = one
+        one.next = two
+        
+        let copy = root.deepCopy(nodes: [:], rootKey: nil)
+        XCTAssert(root.values() == copy.values())
     }
 
 }

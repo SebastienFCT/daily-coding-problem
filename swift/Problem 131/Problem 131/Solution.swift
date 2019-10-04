@@ -1,12 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 131
+//
+//  Created by sebastien FOCK CHOW THO on 2019-10-03.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This question was asked by Snapchat.
+import Foundation
 
-Given the head to a singly linked list, where each node also has a “random” pointer that points to anywhere in the linked list, deep clone the list.
-
-## Solution
-
-```swift
 class Node {
     var value: Int
     var next: Node?
@@ -67,28 +68,3 @@ class Node {
         return result
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_131Tests: XCTestCase {
-
-    func test_deep_copy() {
-        let root = Node(value: 0)
-        let one = Node(value: 1)
-        let two = Node(value: 2)
-        
-        root.rand = two
-        one.rand = two
-        two.rand = one
-        
-        root.next = one
-        one.next = two
-        
-        let copy = root.deepCopy(nodes: [:], rootKey: nil)
-        XCTAssert(root.values() == copy.values())
-    }
-
-}
-```
