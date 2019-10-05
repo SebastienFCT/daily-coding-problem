@@ -11,24 +11,36 @@ import XCTest
 
 class Problem_132Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_hit_counter() {
+        var counter = HitCounter(hits: [], limit: 5)
+        
+        XCTAssert(counter.total() == 0)
+        
+        counter.record(timestamp: 1450249151)
+        
+        XCTAssert(counter.total() == 1)
+        
+        counter.record(timestamp: 1470249151)
+        
+        XCTAssert(counter.total() == 2)
+        
+        counter.record(timestamp: 1520249151)
+        
+        XCTAssert(counter.total() == 3)
+        
+        counter.record(timestamp: 1540249151)
+        
+        XCTAssert(counter.total() == 4)
+        
+        counter.record(timestamp: 1570249151)
+        
+        XCTAssert(counter.total() == 5)
+        XCTAssert(counter.range(lower: 1450249150, upper: 1470249152) == 2)
+        
+        counter.record(timestamp: 1570249171)
+        
+        XCTAssert(counter.total() == 5)
+        XCTAssert(counter.range(lower: 1450249150, upper: 1470249152) == 1)
     }
 
 }
