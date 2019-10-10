@@ -11,24 +11,18 @@ import XCTest
 
 class Problem_137Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_bitArray() {
+        var ba = BitArray(size: 10)
+        ba.set(i: 5, val: true)
+        print(ba.get(i: 0))
+        print(ba.get(i: 5))
+        print(ba.get(i: 11))
+        ba.set(i: 11, val: true)
+        ba.set(i: 0, val: true)
+        ba.set(i: 5, val: false)
+        print(ba.get(i: 0))
+        print(ba.get(i: 5))
+        print(ba.get(i: 11))
     }
 
 }
