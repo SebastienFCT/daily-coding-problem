@@ -1,16 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 138
+//
+//  Created by sebastien FOCK CHOW THO on 2019-10-10.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Google.
+import Foundation
 
-Find the minimum number of coins required to make `n` cents.
-
-You can use standard American denominations, that is, 1¢, 5¢, 10¢, and 25¢.
-
-For example, given `n = 16`, return `3` since we can make it with a 10¢, a 5¢, and a 1¢.
-
-## Solution
-
-```swift
 class CoinDistributor {
     static private let coins = Set([1, 5, 10, 25])
     
@@ -32,16 +29,3 @@ class CoinDistributor {
         return result
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_138Tests: XCTestCase {
-
-    func test_example() {
-        XCTAssert(CoinDistributor.withdraw(n: 16).count == 3)
-    }
-
-}
-```
