@@ -2731,3 +2731,32 @@ For example, given `n = 16`, return `3` since we can make it with a 10¢, a 5¢,
 ### Solutions
 
 * [Swift](./swift/Problem&#32;138/)
+
+## Problem 139
+
+#### Description
+
+This problem was asked by Google.
+
+Given an `iterator` with methods `next()` and `hasNext()`, create a wrapper iterator, `PeekableInterface`, which also implements `peek()`. `peek` shows the next element that would be returned on `next()`.
+
+Here is the interface:
+
+```
+class PeekableInterface(object):
+    def __init__(self, iterator):
+        pass
+
+    def peek(self):
+        pass
+
+    def next(self):
+        pass
+
+    def hasNext(self):
+        pass
+```
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;139/)
