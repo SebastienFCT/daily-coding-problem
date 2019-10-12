@@ -24,11 +24,52 @@ class PeekableInterface(object):
 ## Solution
 
 ```swift
-// MARK: - TODO
+protocol PeekableInterface {
+    func peek() -> Any?
+}
+
+struct Iterator: PeekableInterface {
+    var items: [Any] = []
+    var currentIndex = 0
+
+    func hasNext() -> Bool {
+        return currentIndex < items.count-1
+    }
+    
+    mutating func next() -> Any? {
+        if currentIndex >= items.count {
+            return nil
+        }
+        
+        currentIndex += 1
+        return items[currentIndex]
+    }
+    
+    func peek() -> Any? {        
+        if currentIndex >= items.count {
+            return nil
+        }
+        
+        return items[currentIndex+1]
+    }
+}
 ```
 
 ## Test
 
 ```swift
-// MARK: - TODO
+class Problem_139Tests: XCTestCase {
+
+    func test_peekable_interface() {
+        
+        var input = Iterator(items: ["a", 2, 3, "4", 5], currentIndex: 0)
+        
+        XCTAssert(input.peek() as? Int == 2)
+        XCTAssert(input.peek() as? Int == 2)
+        input.next()
+        input.next()
+        XCTAssert(input.peek() as? String == "4")
+    }
+
+}
 ```
