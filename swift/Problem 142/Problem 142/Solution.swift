@@ -1,14 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 142
+//
+//  Created by sebastien FOCK CHOW THO on 2019-10-14.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Google.
+import Foundation
 
-You're given a string consisting solely of `(`, `)`, and `*`. `*` can represent either a `(`, `)`, or an empty string. Determine whether the parentheses are balanced.
-
-For example, `(()*` and `(*)` are balanced. `)*(` is not balanced.
-
-## Solution
-
-```swift
 extension String {
     
     func isBalanced() -> Bool {
@@ -73,26 +72,3 @@ extension String {
         return result
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_142Tests: XCTestCase {
-
-    func test_example() {
-        let input1 = "(()*"
-        XCTAssertTrue(input1.isBalanced())
-        
-        let input2 = "(*)"
-        XCTAssertTrue(input2.isBalanced())
-        
-        let input3 = ")*("
-        XCTAssertFalse(input3.isBalanced())
-        
-        let input4 = "((*))"
-        XCTAssertTrue(input4.isBalanced())
-    }
-
-}
-```
