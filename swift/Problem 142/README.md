@@ -45,7 +45,7 @@ extension String {
         return openingParentheses == 0
     }
     
-    func possibilities() -> [String] {
+    private func possibilities() -> [String] {
         var result: [String] = [""]
         
         for character in self {
