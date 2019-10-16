@@ -15,11 +15,23 @@ For example, given `x = 10` and `lst = [9, 12, 3, 5, 14, 10, 10]`, one partition
 ## Solution
 
 ```swift
-// MARK: - TODO
+extension Array where Element == Int {
+    
+    func partition(x: Int) -> [Int] {
+        return self.sorted()
+    }
+}
 ```
 
 ## Test
 
 ```swift
-// MARK: - TODO
+class Problem_143Tests: XCTestCase {
+
+    func test_example() {
+        let lst = [9, 12, 3, 5, 14, 10, 10]
+        print(lst.partition(x: 10))
+    }
+
+}
 ```
