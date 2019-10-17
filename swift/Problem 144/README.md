@@ -13,11 +13,31 @@ Follow-up: If you can preprocess the array, can you do this in constant time?
 ## Solution
 
 ```swift
-// MARK: - TODO
+extension Array where Element == Int {
+    
+    func indexOfNextLargest(ofIndex index: Int) -> Int? {
+        
+        let map = self.enumerated().sorted{ $0.element < $1.element }
+        
+        for item in map {
+            if item.element > self[index] {
+                return item.offset
+            }
+        }
+        
+        return nil
+    }
+}
 ```
 
 ## Test
 
 ```swift
-// MARK: - TODO
+class Problem_144Tests: XCTestCase {
+
+    func test_example() {
+        let input = [4, 1, 3, 5, 6]
+        XCTAssertTrue(input.indexOfNextLargest(ofIndex: 0) == 3)
+    }
+}
 ```
