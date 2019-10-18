@@ -1,14 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 145
+//
+//  Created by sebastien FOCK CHOW THO on 2019-10-17.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Google.
+import Foundation
 
-Given the head of a singly linked list, swap every two nodes and return its head.
-
-For example, given `1 -> 2 -> 3 -> 4`, return `2 -> 1 -> 4 -> 3`.
-
-## Solution
-
-```swift
 class Node {
     var value: Int
     var next: Node?
@@ -65,20 +64,3 @@ class Node {
         return result
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_145Tests: XCTestCase {
-
-    func test_example() {
-        let list = Node(value: 1, next: Node(value: 2, next: Node(value: 3, next: Node(value: 4, next: nil))))
-        
-        XCTAssert(list.toString() == "1->2->3->4")
-        let swapped = list.swapPairs()
-        XCTAssert(swapped?.toString() == "2->1->4->3")
-    }
-
-}
-```
