@@ -2852,3 +2852,18 @@ Follow-up: If you can preprocess the array, can you do this in constant time?
 ### Solutions
 
 * [Swift](./swift/Problem&#32;144/)
+
+
+## Problem 145
+
+#### Description
+
+This problem was asked by Google.
+
+Given the head of a singly linked list, swap every two nodes and return its head.
+
+For example, given `1 -> 2 -> 3 -> 4`, return `2 -> 1 -> 4 -> 3`.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;145/)
