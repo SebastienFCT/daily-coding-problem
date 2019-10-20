@@ -2903,3 +2903,13 @@ We do not remove the tree at the root or its left child because it still has a `
 ### Solutions
 
 * [Swift](./swift/Problem&#32;146/)
+
+## Problem 147
+
+#### Description
+
+Given a list, sort it using this method: `reverse(lst, i, j)`, which reverses `lst` from `i` to `j`.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;147/)
