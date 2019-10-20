@@ -1,9 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 147
+//
+//  Created by sebastien FOCK CHOW THO on 2019-10-19.
+//  Copyright © 2019 sebfct. All rights reserved.
+//
 
-Given a list, sort it using this method: `reverse(lst, i, j)`, which reverses `lst` from `i` to `j`.
+import Foundation
 
-## Solution
-```swift
 extension Array where Element == Int {
     func customSort() -> [Int] {
         var result = self
@@ -46,18 +50,3 @@ extension Array where Element == Int {
         return result
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_147Tests: XCTestCase {
-
-    func test_custom_sort() {
-        let input = [3, 1, 4, 2]
-        
-        XCTAssert(input.customSort() == [1, 2, 3, 4])
-    }
-
-}
-```
