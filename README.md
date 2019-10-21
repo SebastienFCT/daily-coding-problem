@@ -2913,3 +2913,19 @@ Given a list, sort it using this method: `reverse(lst, i, j)`, which reverses `l
 ### Solutions
 
 * [Swift](./swift/Problem&#32;147/)
+
+## Problem 148
+
+#### Description
+
+This problem was asked by Apple.
+
+Gray code is a binary code where each successive value differ in only one bit, as well as when wrapping around. Gray code is common in hardware so that we don't see temporary spurious values during transitions.
+
+Given a number of bits `n`, generate a possible gray code for it.
+
+For example, for n = `2`, one gray code would be `[00, 01, 11, 10]`.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;148/)
