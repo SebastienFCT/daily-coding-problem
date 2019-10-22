@@ -24,9 +24,6 @@ class CustomList {
             sum += element
             self.processedList.append(sum)
         }
-        
-        print(list)
-        print(processedList)
     }
     
     func sum(_ i: Int, _ j: Int) -> Int {
@@ -48,6 +45,7 @@ class CustomList {
         return result
     }
 }
+
 ```
 
 ## Test
