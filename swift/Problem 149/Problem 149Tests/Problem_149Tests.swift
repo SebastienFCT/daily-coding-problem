@@ -11,24 +11,17 @@ import XCTest
 
 class Problem_149Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_example() {
+        let input = CustomList(list: [1, 2, 3, 4, 5])
+        XCTAssert(input.sum(1, 3) == input.sumByLoop(1, 3))
+        XCTAssert(input.sum(0, 4) == input.sumByLoop(0, 4))
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_other() {
+        let input = CustomList(list: [21, 34, 54, 4123, 4545, 62, 662, 75, 234, 11, 76, 2354, 7])
+        XCTAssert(input.sum(1, 3) == input.sumByLoop(1, 3))
+        XCTAssert(input.sum(5, 8) == input.sumByLoop(5, 8))
+        XCTAssert(input.sum(0, 12) == input.sumByLoop(0, 12))
     }
 
 }
