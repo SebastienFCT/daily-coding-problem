@@ -37,6 +37,7 @@ class CustomList {
         return processedList[j-1] - ((i == 0) ? 0 : processedList[i-1])
     }
     
+    // For UITests to valid the custom sum
     func sumByLoop(_ i: Int, _ j: Int) -> Int {
         var result = 0
         
