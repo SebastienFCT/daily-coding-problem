@@ -11,24 +11,13 @@ import XCTest
 
 class Problem_150Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_example() {
+        let input: [XYPoint] = [(0, 0), (5, 4), (3, 1)]
+        
+        XCTAssert(input.findNearestPoints(from: (1, 2), limit: 2).count == 2)
+        XCTAssert(input.findNearestPoints(from: (1, 2), limit: 2).contains(where: { (point) -> Bool in
+            return (point.x == 0 && point.y == 0) || (point.x == 3 && point.y == 1)
+        }))
     }
 
 }
