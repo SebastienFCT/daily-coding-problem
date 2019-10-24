@@ -1,28 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 151
+//
+//  Created by sebastien FOCK CHOW THO on 2019-10-23.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-Given a 2-D matrix representing an image, a location of a pixel in the screen and a color `C`, replace the color of the given pixel and all adjacent same colored pixels with `C`.
+import Foundation
 
-For example, given the following matrix, and location pixel of (2, 2), and 'G' for green:
-
-```
-B B W
-W W W
-W W W
-B B B
-```
-
-Becomes
-
-```
-B B G
-G G G
-G G G
-B B B
-```
-
-## Solution
-
-```swift
 extension Array where Element == Array<String> {
     
     typealias PixelLoc = (row: Int, column: Int)
@@ -92,30 +77,3 @@ extension Array where Element == Array<String> {
         return self[location.row][location.column]
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_151Tests: XCTestCase {
-
-    func test_example() {
-        var input = [
-            ["B", "B", "W"],
-            ["W", "W", "W"],
-            ["W", "W", "W"],
-            ["B", "B", "B"]
-        ]
-        
-        _ = input.replace(location: (2, 2), withValue: "G")
-        
-        XCTAssert(input == [
-            ["B", "B", "G"],
-            ["G", "G", "G"],
-            ["G", "G", "G"],
-            ["B", "B", "B"]
-        ])
-    }
-
-}
-```
