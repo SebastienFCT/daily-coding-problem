@@ -11,24 +11,28 @@ import XCTest
 
 class Problem_152Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func test_example() {
+        let tb = Triplebyte(values: [1, 2, 3, 4], percentages: [0.1, 0.5, 0.2, 0.2])
+        
+        var repartition: [Int: Double] = [
+            1: 0,
+            2: 0,
+            3: 0,
+            4: 0
+        ]
+        
+        let iterationCount = 1000
+        
+        for _ in 0...iterationCount {
+            let value = tb.random()
+            repartition[value]! += 1
         }
+        
+        for key in repartition.keys {
+            repartition[key] = repartition[key]! / Double(iterationCount)
+        }
+        
+        print(repartition)
     }
 
 }
