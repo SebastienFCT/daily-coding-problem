@@ -1,20 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 154
+//
+//  Created by sebastien FOCK CHOW THO on 2019-10-26.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Amazon.
+import Foundation
 
-Implement a stack API using only a heap. A stack implements the following methods:
-
-- `push(item)`, which adds an element to the stack
-- `pop()`, which removes and returns the most recently added element (or throws an error if there is nothing on the stack)
-
-Recall that a heap has the following operations:
-
-- `push(item)`, which adds a new key to the heap
-- `pop()`, which removes and returns the max value of the heap
-
-## Solution
-
-```swift
 class Stack {
     var heap: Heap
     var lastAddedKeys: [Int]
@@ -75,28 +68,3 @@ class Heap {
         return item
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_154Tests: XCTestCase {
-
-    func test_stack() {
-        let stack = Stack()
-        
-        stack.push(item: 0)
-        stack.push(item: 1)
-        stack.push(item: 2)
-        
-        XCTAssert(stack.pop() == 2)
-        
-        stack.push(item: 3)
-        stack.push(item: -1)
-        
-        XCTAssert(stack.pop() == -1)
-        XCTAssert(stack.pop() == 3)
-    }
-
-}
-```
