@@ -1,16 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 155
+//
+//  Created by sebastien FOCK CHOW THO on 2019-10-27.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by MongoDB.
+import Foundation
 
-Given a list of elements, find the majority element, which appears more than half the time (`> floor(len(lst) / 2.0)`).
-
-You can assume that such element exists.
-
-For example, given `[1, 2, 1, 1, 3, 4, 0]`, return 1.
-
-## Solution
-
-```swift
 extension Array where Element == Int {
     func findElementThatAppearTheMost() -> Int? {
         
@@ -33,16 +30,3 @@ extension Array where Element == Int {
         return result
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_155Tests: XCTestCase {
-
-    func test_example() {
-        XCTAssert([1, 2, 1, 1, 3, 4, 0].findElementThatAppearTheMost() == 1)
-    }
-
-}
-```
