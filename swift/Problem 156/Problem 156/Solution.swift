@@ -1,16 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 156
+//
+//  Created by sebastien FOCK CHOW THO on 2019-10-28.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Facebook.
+import Foundation
 
-Given a positive integer `n`, find the smallest number of squared integers which sum to `n`.
-
-For example, given `n` = 13, return 2 since 13 = 32 + 22 = 9 + 4.
-
-Given `n` = 27, return 3 since 27 = 32 + 32 + 32 = 9 + 9 + 9.
-
-## Solution
-
-```swift
 struct FacebookChallenge {
     
     func smallestNumberOfSquaredInteger(target: Int) -> Int? {
@@ -39,16 +36,3 @@ struct FacebookChallenge {
         return result
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_156Tests: XCTestCase {
-
-    func test_example() {
-        XCTAssert(FacebookChallenge().smallestNumberOfSquaredInteger(target: 13) == 3)
-    }
-
-}
-```
