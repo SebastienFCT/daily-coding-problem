@@ -9,11 +9,36 @@ For example, `carrace` should return true, since it can be rearranged to form `r
 ## Solution
 
 ```swift
-// MARK: - TODO
+extension String {
+    func isPalindrome() -> Bool {
+        var characterSet: Set<Character> = Set()
+        
+        for character in self {
+            if characterSet.contains(character) {
+                characterSet.remove(character)
+            } else {
+                characterSet.insert(character)
+            }
+        }
+        
+        if self.count % 2 == 0 {
+            return characterSet.isEmpty
+        } else {
+            return characterSet.count == 1
+        }
+    }
+}
 ```
 
 ## Test
 
 ```swift
-// MARK: - TODO
+class Problem_157Tests: XCTestCase {
+
+    func test_example() {
+        XCTAssertTrue("carrace".isPalindrome())
+        XCTAssertFalse("daily".isPalindrome())
+    }
+
+}
 ```
