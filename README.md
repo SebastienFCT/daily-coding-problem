@@ -3071,3 +3071,18 @@ Given `n` = 27, return 3 since 27 = 32 + 32 + 32 = 9 + 9 + 9.
 ### Solutions
 
 * [Swift](./swift/Problem&#32;156/)
+
+## Problem 157
+
+#### Description
+
+This problem was asked by Amazon.
+
+Given a string, determine whether any permutation of it is a palindrome.
+
+For example, `carrace` should return true, since it can be rearranged to form `racecar`, which is a palindrome. `daily` should return false, since there's no rearrangement that can form a palindrome.
+
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;157/)
