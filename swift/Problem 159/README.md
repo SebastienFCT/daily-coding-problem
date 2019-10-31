@@ -9,11 +9,33 @@ For example, given the string "acbbac", return "b". Given the string "abcdef", r
 ## Solution
 
 ```swift
-// MARK: - TODO
+extension String {
+    func firstRecurringCharacter() -> Character? {
+        
+        var scanned: Set<Character> = Set()
+        
+        for character in self {            
+            if scanned.contains(character) {
+                return character
+            }
+            
+            scanned.insert(character)
+        }
+        
+        return nil
+    }
+}
 ```
 
 ## Test
 
 ```swift
-// MARK: - TODO
+class Problem_159Tests: XCTestCase {
+
+    func test_example() {
+        XCTAssert("acbbac".firstRecurringCharacter() == "b")
+        XCTAssertNil("abcdef".firstRecurringCharacter())
+    }
+
+}
 ```
