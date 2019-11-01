@@ -11,24 +11,20 @@ import XCTest
 
 class Problem_160Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_example() {
+        let root = Node(value: "a", weight: 0, children: [
+            Node(value: "b", weight: 3, children: []),
+            Node(value: "c", weight: 5, children: []),
+            Node(value: "d", weight: 8, children: [
+                Node(value: "e", weight: 2, children: [
+                    Node(value: "g", weight: 1, children: []),
+                    Node(value: "h", weight: 1, children: [])
+                ]),
+                Node(value: "f", weight: 4, children: [])
+            ])
+        ])
+        
+        print(root.longestPath()?.totalWeight)
     }
 
 }
