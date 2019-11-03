@@ -1,26 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 162
+//
+//  Created by sebastien FOCK CHOW THO on 2019-11-03.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Square.
+import Foundation
 
-Given a list of words, return the shortest unique prefix of each word. For example, given the list:
-
-- dog
-- cat
-- apple
-- apricot
-- fish
-
-Return the list:
-
-- d
-- c
-- app
-- apr
-- f
-
-## Solution
-
-```swift
 class SquareChallenge {
     var input: [String]
     
@@ -84,17 +71,3 @@ class SquareChallenge {
     }
     
 }
-```
-
-## Test
-
-```swift
-class Problem_162Tests: XCTestCase {
-
-    func test_example() {
-        let prefixGenerator = SquareChallenge(input: ["dog", "cat", "apple", "apricot", "fish"])
-        print(prefixGenerator.log())
-    }
-
-}
-```
