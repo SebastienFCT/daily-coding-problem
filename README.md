@@ -3216,3 +3216,16 @@ You can assume the given expression is always valid.
 ### Solutions
 
 * [Swift](./swift/Problem&#32;163/)
+
+## Problem 164
+
+#### Description
+
+This problem was asked by Google.
+
+You are given an array of length `n + 1` whose elements belong to the set `{1, 2, ..., n}`. By the pigeonhole principle, there must be a duplicate. Find it in linear time and space.
+
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;164/)
