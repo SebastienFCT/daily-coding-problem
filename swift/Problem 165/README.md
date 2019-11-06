@@ -15,11 +15,32 @@ For example, given the array `[3, 4, 9, 6, 1]`, return `[1, 1, 2, 1, 0]`, since:
 ## Solution
 
 ```swift
-// MARK: - TODO
+extension Array where Element == Int {
+    
+    func mapToTotalSmallerElementToTheRight() -> [Int] {
+        
+        var result: [Int] = []
+        
+        for i in 0..<count {
+            let current = self[i]
+            let rest = Array(self.suffix(count-i))
+            
+            result.append(rest.reduce(0, { $1 < current ? $0 + 1 : $0 }))
+        }
+        
+        return result
+    }
+}
 ```
 
 ## Test
 
 ```swift
-// MARK: - TODO
+class Problem_165Tests: XCTestCase {
+
+    func test_example() {
+        XCTAssert([3, 4, 9, 6, 1].mapToTotalSmallerElementToTheRight() == [1, 1, 2, 1, 0])
+    }
+
+}
 ```
