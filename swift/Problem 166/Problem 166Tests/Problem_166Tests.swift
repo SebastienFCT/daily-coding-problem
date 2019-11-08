@@ -11,24 +11,19 @@ import XCTest
 
 class Problem_166Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_example() {
+        let iterator = Iterator2D(elements: [[1, 2], [3], [], [4, 5, 6]])
+        XCTAssertTrue(iterator.has_next())
+        XCTAssert(iterator.next() == 1)
+        XCTAssert(iterator.next() == 2)
+        XCTAssertTrue(iterator.has_next())
+        XCTAssert(iterator.next() == 3)
+        XCTAssert(iterator.next() == 4)
+        XCTAssert(iterator.next() == 5)
+        XCTAssertTrue(iterator.has_next())
+        XCTAssert(iterator.next() == 6)
+        XCTAssertFalse(iterator.has_next())
+        
     }
 
 }
