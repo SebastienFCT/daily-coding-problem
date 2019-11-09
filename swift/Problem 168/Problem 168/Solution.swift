@@ -1,30 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 168
+//
+//  Created by sebastien FOCK CHOW THO on 2019-11-09.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Facebook.
+import Foundation
 
-Given an N by N matrix, rotate it by 90 degrees clockwise.
-
-For example, given the following matrix:
-
-```
-[[1, 2, 3],
- [4, 5, 6],
- [7, 8, 9]]
-```
-
-you should return:
-
-```
-[[7, 4, 1],
- [8, 5, 2],
- [9, 6, 3]]
-```
-
-Follow-up: What if you couldn't use any extra space?
-
-## Solution
-    
-```swift
 extension Array where Element == Array<Int> {
     
     mutating func rotate90() {
@@ -58,23 +41,3 @@ extension Array where Element == Array<Int> {
         }
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_168Tests: XCTestCase {
-
-    func test_example() {
-        var input = [
-            [1, 2, 3],
-            [4, 5, 6],
-            [7, 8, 9]
-        ]
-        
-        input.rotate90()
-        print(input)
-    }
-
-}
-```
