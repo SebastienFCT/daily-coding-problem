@@ -1,14 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 169
+//
+//  Created by sebastien FOCK CHOW THO on 2019-11-10.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Google.
+import Foundation
 
-Given a linked list, sort it in O(n log n) time and constant space.
-
-For example, the linked list `4 -> 1 -> -3 -> 99` should become `-3 -> 1 -> 4 -> 99`.
-
-## Solution
-    
-```swift
 class Node {
     var value: Int
     var next: Node?
@@ -64,17 +63,3 @@ class Node {
         return result
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_169Tests: XCTestCase {
-
-    func test_example() {
-        let ll = Node(value: 4, next: Node(value: 1, next: Node(value: -3, next: Node(value: 99, next: nil))))
-        XCTAssert(ll.sort()?.printList() == "-3->1->4->99")
-    }
-
-}
-```
