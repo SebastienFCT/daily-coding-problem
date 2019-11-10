@@ -3312,3 +3312,17 @@ Follow-up: What if you couldn't use any extra space?
 ### Solutions
 
 * [Swift](./swift/Problem&#32;168/)
+
+## Problem 169
+
+#### Description
+
+This problem was asked by Google.
+
+Given a linked list, sort it in O(n log n) time and constant space.
+
+For example, the linked list `4 -> 1 -> -3 -> 99` should become `-3 -> 1 -> 4 -> 99`.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;169/)
