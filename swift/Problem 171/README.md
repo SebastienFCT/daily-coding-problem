@@ -17,11 +17,63 @@ Find the busiest period in the building, that is, the time with the most people 
 ## Solution
     
 ```swift
-// MARK: - TODO
+struct Presence {
+    
+    enum entryType: String {
+        case enter = "enter"
+        case exit = "exit"
+    }
+
+    typealias Entry = (timestamp: Double, count: Int, type: entryType)
+    
+    var entries: [Entry]
+    
+    func busiestPeriod() -> (Double, Double) {
+        let sorted = entries.sorted{ $0.timestamp < $1.timestamp }
+        
+        var current = 0
+        var max = 0
+        
+        var currentPeriod: (before: Double, after: Double) = (sorted.first!.timestamp, sorted.first!.timestamp)
+        var maxPeriod = currentPeriod
+        
+        for entry in sorted {
+            currentPeriod.before = currentPeriod.after
+            currentPeriod.after = entry.timestamp
+            
+            switch entry.type {
+            case .enter:
+                current += entry.count
+                if current > max {
+                    max = current
+                    maxPeriod = currentPeriod
+                }
+            case .exit:
+                current -= entry.count
+            }
+        }
+        
+        return maxPeriod
+    }
+}
 ```
 
 ## Test
 
 ```swift
-// MARK: - TODO
+class Problem_171Tests: XCTestCase {
+
+    func test_presence() {
+        let presence = Presence(entries: [
+            (1573599077, 1, .enter),
+            (1573599078, 7, .enter),
+            (1573599078, 1, .exit),
+            (1573599079, 7, .enter),
+            (1573599079, 2, .exit)
+        ])
+        
+        XCTAssert(presence.busiestPeriod() == (1573599078.0, 1573599079.0))
+    }
+
+}
 ```
