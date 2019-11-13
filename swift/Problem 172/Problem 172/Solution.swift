@@ -1,18 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 172
+//
+//  Created by sebastien FOCK CHOW THO on 2019-11-13.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Dropbox.
+import Foundation
 
-Given a string `s` and a list of words `words`, where each word is the same length, find all starting indices of substrings in `s` that is a concatenation of every word in `words` exactly once.
-
-For example, given s = "dogcatcatcodecatdog" and words = ["cat", "dog"], return [0, 13], since "dogcat" starts at index 0 and "catdog" starts at index 13.
-
-Given s = "barfoobazbitbyte" and words = ["dog", "cat"], return [] since there are no substrings composed of "dog" and "cat" in `s`.
-
-The order of the indices does not matter.
-
-## Solution
-
-```swift
 extension Array where Element == String {
     
     func indicesForCombinations(s: String) -> [Int] {
@@ -83,18 +78,3 @@ extension String {
         return nil
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_172Tests: XCTestCase {
-
-    func test_example() {
-        XCTAssert(["cat", "dog"].indicesForCombinations(s: "dogcatcatcodecatdog") == [13, 0])
-        
-        XCTAssert(["cat", "dog"].indicesForCombinations(s: "barfoobazbitbyte") == [])
-    }
-
-}
-```
