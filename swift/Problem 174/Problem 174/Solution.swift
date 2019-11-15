@@ -1,17 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 174
+//
+//  Created by sebastien FOCK CHOW THO on 2019-11-15.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Microsoft.
+import Foundation
 
-Describe and give an example of each of the following types of polymorphism:
-
-- Ad-hoc polymorphism
-- Parametric polymorphism
-- Subtype polymorphism
-
-
-## Solution
-
-```swift
 // Subtype polymophism is the ability to apply the behaviour of a function from a parent class to its children classes:
 
 class Animal {
@@ -74,10 +70,3 @@ extension ExamplePolymorphism {
         let doubleSum = addNumbers(left: 1.1, right: 2.2)
     }
 }
-```
-
-## Test
-
-```swift
-NA
-```
