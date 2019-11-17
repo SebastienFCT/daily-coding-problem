@@ -1,16 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 176
+//
+//  Created by sebastien FOCK CHOW THO on 2019-11-17.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Bloomberg.
+import Foundation
 
-Determine whether there exists a one-to-one character mapping from one string `s1` to another `s2`.
-
-For example, given `s1 = abc` and `s2 = bcd`, return true since we can map `a` to `b`, `b` to `c`, and `c` to `d`.
-
-Given `s1 = foo` and `s2 = bar`, return false since the o cannot map to two characters.
-
-## Solution
-
-```swift
 extension String {
     
     func hasOneToOneCharacterMapping(with: String) -> Bool {
@@ -41,17 +38,3 @@ extension String {
         return modifiedString
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_176Tests: XCTestCase {
-
-    func test_example() {
-        XCTAssertTrue("abc".hasOneToOneCharacterMapping(with: "bcd"))
-        XCTAssertFalse("foo".hasOneToOneCharacterMapping(with: "bar"))
-    }
-
-}
-```
