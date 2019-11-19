@@ -1,16 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 177
+//
+//  Created by sebastien FOCK CHOW THO on 2019-11-18.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Airbnb.
+import Foundation
 
-Given a linked list and a positive integer `k`, rotate the list to the right by `k` places.
-
-For example, given the linked list `7 -> 7 -> 3 -> 5` and `k = 2`, it should become `3 -> 5 -> 7 -> 7`.
-
-Given the linked list `1 -> 2 -> 3 -> 4 -> 5` and `k = 3`, it should become `3 -> 4 -> 5 -> 1 -> 2`.
-
-## Solution
-
-```swift
 class Node {
     var value: Int
     var next: Node?
@@ -60,20 +57,3 @@ class Node {
         }
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_177Tests: XCTestCase {
-
-    func test_example() {
-        let ll1 = Node(value: 7, next: Node(value: 7, next: Node(value: 3, next: Node(value: 5, next: nil))))
-        XCTAssert(ll1.rotate(by: 2).value == 3)
-        
-        let ll2 = Node(value: 1, next: Node(value: 2, next: Node(value: 3, next: Node(value: 4, next: Node(value: 5, next: nil)))))
-        XCTAssert(ll2.rotate(by: 3).value == 3)
-    }
-
-}
-```
