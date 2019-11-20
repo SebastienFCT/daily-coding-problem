@@ -3482,3 +3482,37 @@ Given `s1 = foo` and `s2 = bar`, return false since the o cannot map to two char
 ### Solutions
 
 * [Swift](./swift/Problem&#32;176/)
+
+## Problem 177
+
+#### Description
+
+This problem was asked by Airbnb.
+
+Given a linked list and a positive integer `k`, rotate the list to the right by `k` places.
+
+For example, given the linked list `7 -> 7 -> 3 -> 5` and `k = 2`, it should become `3 -> 5 -> 7 -> 7`.
+
+Given the linked list `1 -> 2 -> 3 -> 4 -> 5` and `k = 3`, it should become `3 -> 4 -> 5 -> 1 -> 2`.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;177/)
+
+## Problem 178
+
+#### Description
+
+This problem was asked by Two Sigma.
+
+Alice wants to join her school's Probability Student Club. Membership dues are computed via one of two simple probabilistic games.
+
+The first game: roll a die repeatedly. Stop rolling once you get a five followed by a six. Your number of rolls is the amount you pay, in dollars.
+
+The second game: same, except that the stopping condition is a five followed by a five.
+
+Which of the two games should Alice elect to play? Does it even matter? Write a program to simulate the two games and calculate their expected value.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;178/)
