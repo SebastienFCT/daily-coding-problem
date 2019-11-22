@@ -1,18 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 180
+//
+//  Created by sebastien FOCK CHOW THO on 2019-11-21.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Google.
+import Foundation
 
-Given a stack of N elements, interleave the first half of the stack with the second half reversed using only one other queue. This should be done in-place.
-
-Recall that you can only push or pop from a stack, and enqueue or dequeue from a queue.
-
-For example, if the stack is [1, 2, 3, 4, 5], it should become [1, 5, 2, 4, 3]. If the stack is [1, 2, 3, 4], it should become [1, 4, 2, 3].
-
-Hint: Try working backwards from the end state.
-
-## Solution
-
-```swift
 struct Stack {
     var value: [Int]
     
@@ -62,26 +57,3 @@ extension Stack {
         }
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_180Tests: XCTestCase {
-
-    func test_example_1() {
-        var stack = Stack(value: [1, 2, 3, 4, 5])
-        stack.interleave()
-        
-        XCTAssert(stack.value == [1, 5, 2, 4, 3])
-    }
-    
-    func test_example_2() {
-        var stack = Stack(value: [1, 2, 3, 4])
-        stack.interleave()
-        
-        XCTAssert(stack.value == [1, 4, 2, 3])
-    }
-
-}
-```
