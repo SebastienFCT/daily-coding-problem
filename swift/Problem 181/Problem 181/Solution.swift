@@ -1,16 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 181
+//
+//  Created by sebastien FOCK CHOW THO on 2019-11-22.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Google.
+import Foundation
 
-Given a string, split it into as few strings as possible such that each string is a palindrome.
-
-For example, given the input string racecarannakayak, return ["racecar", "anna", "kayak"].
-
-Given the input string abc, return ["a", "b", "c"].
-
-## Solution
-
-```swift
 extension String {
     
     func splitInPalindromes() -> [String] {
@@ -44,20 +41,3 @@ extension String {
         return prefix(count/2) == String(suffix(count/2).reversed())
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_181Tests: XCTestCase {
-
-    func test_example_1() {
-        XCTAssert("racecarannakayak".splitInPalindromes() == ["racecar", "anna", "kayak"])
-    }
-    
-    func test_example_2() {
-        XCTAssert("abc".splitInPalindromes() == ["a", "b", "c"])
-    }
-
-}
-```
