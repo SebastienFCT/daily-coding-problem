@@ -11,24 +11,35 @@ import XCTest
 
 class Problem_182Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_minimally_connected_true() {
+        
+        let node1 = Node(value: 1)
+        let node2 = Node(value: 2)
+        let node3 = Node(value: 3)
+        
+        node1.children = [node2]
+        node2.children = [node3]
+        node3.children = [node1]
+        
+        XCTAssertTrue(node1.isMinimallyConnected())
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_minimally_connected_false() {
+        
+        let root = Node(value: 1)
+        
+        let l = Node(value: 2)
+        let r = Node(value: 3)
+        root.children = [l, r]
+        
+        let ll = Node(value: 4)
+        let lr = Node(value: 5)
+        l.children = [ll, lr]
+        
+        let rr = Node(value: 6)
+        r.children = [rr]
+        
+        XCTAssertFalse(root.isMinimallyConnected())
     }
 
 }
