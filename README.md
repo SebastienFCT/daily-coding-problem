@@ -3600,7 +3600,7 @@ Describe what happens when you type a URL into your browser and press Enter.
 
 ### Solutions
 
-* [Swift](./swift/Problem&#32;183/)
+* [Markdown](./others/Problem&#32;183/)
 
 ## Problem 184
 
