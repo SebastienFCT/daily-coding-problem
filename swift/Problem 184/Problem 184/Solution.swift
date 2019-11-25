@@ -1,14 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 184
+//
+//  Created by sebastien FOCK CHOW THO on 2019-11-25.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Amazon.
+import Foundation
 
-Given `n` numbers, find the greatest common denominator between them.
-
-For example, given the numbers `[42, 56, 14]`, return `14`.
-
-## Solution
-
-```swift
 extension Array where Element == Int {
     
     func greatestCommonDenominator() -> Int {
@@ -33,16 +32,3 @@ extension Array where Element == Int {
         return 0
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_184Tests: XCTestCase {
-
-    func test_example() {
-        XCTAssert([42, 56, 14].greatestCommonDenominator() == 14)
-    }
-
-}
-```

@@ -3601,3 +3601,17 @@ Describe what happens when you type a URL into your browser and press Enter.
 ### Solutions
 
 * [Swift](./swift/Problem&#32;183/)
+
+## Problem 184
+
+#### Description
+
+This problem was asked by Amazon.
+
+Given `n` numbers, find the greatest common denominator between them.
+
+For example, given the numbers `[42, 56, 14]`, return `14`.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;184/)
