@@ -28,10 +28,8 @@ struct Rectangle {
 extension Array where Element == Rectangle {
     func intersect() -> Bool {
         
-        for i in 0..<count {
-            for j in 0..<count {
-                if i == j { continue }
-                
+        for i in 0..<count-1 {
+            for j in i+1..<count {                
                 if self[i].intersectWith(rect: self[j]) {
                     return true
                 }
