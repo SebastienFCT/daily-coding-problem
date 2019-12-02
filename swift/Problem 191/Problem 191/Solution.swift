@@ -1,18 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 191
+//
+//  Created by sebastien FOCK CHOW THO on 2019-12-02.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Stripe.
+import Foundation
 
-Given a collection of intervals, find the minimum number of intervals you need to remove to make the rest of the intervals non-overlapping.
-
-Intervals can "touch", such as `[0, 1]` and `[1, 2]`, but they won't be considered overlapping.
-
-For example, given the intervals `(7, 9), (2, 4), (5, 8)`, return 1 as the last interval can be removed and the first two won't overlap.
-
-The intervals are not necessarily sorted in any order.
-
-## Solution
-
-```swift
 typealias Interval = (start: Int, end: Int)
 
 func overlaps(left: Interval, right: Interval) -> Bool {
@@ -85,28 +80,3 @@ extension Array where Element == Interval {
         return results.first!
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_191Tests: XCTestCase {
-
-    func test_example() {
-        let input: [Interval] = [(7, 9), (2, 4), (5, 8)]
-        let result = input.largestNonOverlappingSubset()
-        
-        print(result.0)
-        XCTAssert(result.currentlyRemoved == 1)
-    }
-    
-    func test_with_unique_possibility() {
-        let input: [Interval] = [(1, 3), (2, 4), (1, 2)]
-        let result = input.largestNonOverlappingSubset()
-        
-        print(result.0)
-        XCTAssert(result.currentlyRemoved == 1)
-    }
-
-}
-```
