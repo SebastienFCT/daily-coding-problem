@@ -11,11 +11,42 @@ Given the array `[1, 2, 1, 0, 0]`, we can't reach the end, so return false.
 ## Solution
 
 ```swift
-// MARK: - TODO
+extension Array where Element == Int {
+    
+    func canReachTheEndByWalkingAtMostEachIndex() -> Bool {
+        
+        guard let first = first else {
+            return true
+        }
+        
+        guard first > 0 else {
+            return false
+        }
+        
+        for i in 1...first {
+            let next = Array(self.suffix(count-i))
+            
+            if next.canReachTheEndByWalkingAtMostEachIndex() {
+                return true
+            }
+        }
+        
+        return false
+    }
+}
 ```
 
 ## Test
 
 ```swift
-// MARK: - TODO
+class Problem_192Tests: XCTestCase {
+
+    func test_example_1() {
+        XCTAssertTrue([1, 3, 1, 2, 0, 1].canReachTheEndByWalkingAtMostEachIndex())
+    }
+    
+    func test_example_2() {
+        XCTAssertFalse([1, 2, 1, 0, 0].canReachTheEndByWalkingAtMostEachIndex())
+    }
+}
 ```
