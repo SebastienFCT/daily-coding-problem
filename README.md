@@ -3840,3 +3840,25 @@ And i1 = 1, j1 = 1, i2 = 3, j2 = 3, return 15 as there are 15 numbers in the mat
 ### Solutions
 
 * [Swift](./swift/Problem&#32;195/)
+
+## Problem 196
+
+#### Description
+
+This problem was asked by Apple.
+
+Given the root of a binary tree, find the most frequent subtree sum. The subtree sum of a node is the sum of all values under a node, including the node itself.
+
+For example, given the following tree:
+
+```
+  5
+ / \
+2  -5
+```
+
+Return 2 as it occurs twice: once as the left leaf, and once as the sum of `2 + 5 - 5`.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;196/)
