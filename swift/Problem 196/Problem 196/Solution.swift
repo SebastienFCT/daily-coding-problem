@@ -1,22 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 196
+//
+//  Created by sebastien FOCK CHOW THO on 2019-12-07.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Apple.
+import Foundation
 
-Given the root of a binary tree, find the most frequent subtree sum. The subtree sum of a node is the sum of all values under a node, including the node itself.
-
-For example, given the following tree:
-
-```
-  5
- / \
-2  -5
-```
-
-Return 2 as it occurs twice: once as the left leaf, and once as the sum of `2 + 5 - 5`.
-
-## Solution
-
-```swift
 class Node {
     var value: Int
     var left: Node?
@@ -105,18 +96,3 @@ class Node {
         return result
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_196Tests: XCTestCase {
-
-    func test_example() {
-        let tree = Node(value: 5, left: Node(value: 2), right: Node(value: -5))
-        
-        XCTAssert(tree.mostFrequentSubtreeSum() == 2)
-    }
-
-}
-```
