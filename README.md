@@ -3862,3 +3862,15 @@ Return 2 as it occurs twice: once as the left leaf, and once as the sum of `2 + 
 ### Solutions
 
 * [Swift](./swift/Problem&#32;196/)
+
+## Problem 197
+
+#### Description
+
+This problem was asked by Amazon.
+
+Given an array and a number k that's smaller than the length of the array, rotate the array to the right k elements in-place.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;197/)
