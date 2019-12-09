@@ -1,14 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 197
+//
+//  Created by sebastien FOCK CHOW THO on 2019-12-08.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Amazon.
+import Foundation
 
-Given an array and a number k that's smaller than the length of the array, rotate the array to the right k elements in-place.
-
-Return 2 as it occurs twice: once as the left leaf, and once as the sum of `2 + 5 - 5`.
-
-## Solution
-
-```swift
 extension Array where Element == Int {
     
     mutating func rotate(k: Int) {
@@ -33,20 +32,3 @@ extension Array where Element == Int {
         }
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_197Tests: XCTestCase {
-
-    func test_rotate() {
-        var input = [1, 2, 3, 4, 5]
-        input.rotate(k: 3)
-        let expected = [2, 3, 4, 1, 5]
-        
-        XCTAssert(input == expected)
-    }
-
-}
-```
