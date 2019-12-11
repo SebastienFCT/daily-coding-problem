@@ -3889,3 +3889,17 @@ For example, given the set [3, 5, 10, 20, 21], you should return [5, 10, 20]. Gi
 ### Solutions
 
 * [Swift](./swift/Problem&#32;198/)
+
+## Problem 199
+
+#### Description
+
+This problem was asked by Facebook.
+
+Given a string of parentheses, find the balanced string that can be produced from it using the minimum number of insertions and deletions. If there are multiple solutions, return any of them.
+
+For example, given "(()", you could return "(())". Given "))()(", you could return "()()()()".
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;199/)
