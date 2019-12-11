@@ -9,11 +9,32 @@ For example, given the intervals `[(1, 4), (4, 5), (7, 9), (9, 12)]`, you should
 ## Solution
 
 ```swift
-// MARK: - TODO
+typealias Interval = (start: Int, end: Int)
+
+extension Array where Element == Interval {
+    
+    func smallestStabingSet() -> Interval {
+        
+        let mins = self.map{ $0.end }.sorted()
+        let maxs = self.map{ $0.start }.sorted()
+        
+        return (mins.first!, maxs.last!)
+    }
+}
 ```
 
 ## Test
 
 ```swift
-// MARK: - TODO
+class Problem_200Tests: XCTestCase {
+
+    func test_example() {
+        let input: [Interval] = [(1, 4), (4, 5), (7, 9), (9, 12)]
+        let computed = input.smallestStabingSet()
+        let expected: Interval = (4, 9)
+        
+        XCTAssert(computed == expected)
+    }
+
+}
 ```
