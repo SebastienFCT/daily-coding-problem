@@ -7,11 +7,37 @@ Write a program that checks whether an integer is a palindrome. For example, 121
 ## Solution
 
 ```swift
-// MARK: - TODO
+extension Int {
+    
+    func isPalindrome() -> Bool {
+        
+        var n = self
+        var reversed = 0
+        var remainder = 0
+        
+        while n != 0 {
+            remainder = n % 10
+            reversed = reversed * 10 + remainder
+            n /= 10
+        }
+        
+        return self == reversed
+        
+    }
+}
 ```
 
 ## Test
 
 ```swift
-// MARK: - TODO
+class Problem_202Tests: XCTestCase {
+
+    func test_example() {
+        
+        XCTAssertTrue(121.isPalindrome())
+        XCTAssertTrue(888.isPalindrome())
+        XCTAssertFalse(678.isPalindrome())
+    }
+
+}
 ```
