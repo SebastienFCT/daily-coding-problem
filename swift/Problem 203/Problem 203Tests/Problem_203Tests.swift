@@ -11,24 +11,16 @@ import XCTest
 
 class Problem_203Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_example() {
+        XCTAssert([5, 7, 10, 3, 4].minValue() == 3)
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func test_case_2() {
+        XCTAssert([9, 10, 11, 1, 2, 3, 4, 5, 6, 7, 8].minValue() == 1)
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_case_3() {
+        XCTAssert([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].minValue() == 1)
     }
 
 }
