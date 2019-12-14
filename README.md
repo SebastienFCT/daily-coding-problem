@@ -3939,3 +3939,15 @@ Write a program that returns the weight of the maximum weight path.
 ### Solutions
 
 * [Swift](./swift/Problem&#32;201/)
+
+## Problem 202
+
+#### Description
+
+This problem was asked by Palantir.
+
+Write a program that checks whether an integer is a palindrome. For example, 121 is a palindrome, as well as 888. 678 is not a palindrome. Do not convert the integer into a string.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;202/)
