@@ -1,12 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 204
+//
+//  Created by sebastien FOCK CHOW THO on 2019-12-15.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Amazon.
+import Foundation
 
-Given a complete binary tree, count the number of nodes in faster than O(n) time. Recall that a complete binary tree has every level filled except the last, and the nodes in the last level are filled starting from the left.
-
-## Solution
-
-```swift
 class Node {
     var value: Int
     var left: Node?
@@ -57,28 +58,3 @@ class Node {
         return 1 + (left?.binaryNodeCount(currentLeft: leftCount-1, currentRight: 0) ?? 0) + (right?.binaryNodeCount(currentLeft: 0, currentRight: rightCount-1) ?? 0)
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_204Tests: XCTestCase {
-
-    func test_example() {
-        
-        let root = Node(value: 5
-            , left: Node(value: 3
-                , left: Node(value: 2)
-                , right: Node(value: 4)
-            )
-            , right: Node(value: 7
-                , left: Node(value: 6)
-                , right: nil
-            )
-        )
-        
-        XCTAssert(root.countNodes() == 6)
-    }
-
-}
-```
