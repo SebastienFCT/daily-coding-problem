@@ -9,11 +9,51 @@ Given an array and a permutation, apply the permutation to the array. For exampl
 ## Solution
 
 ```swift
-// MARK: - TODO
+extension Array {
+    
+    mutating func applyPermutation(permutation: [Int]) {
+        
+        var copy = self
+        var viewed: Set<Int> = Set()
+        
+        for i in 0..<count {
+            if viewed.contains(i) { continue }
+            
+            if permutation[i] != i {
+                copy[i] = self[permutation[i]]
+                copy[permutation[i]] = self[i]
+                
+                viewed.insert(permutation[i])
+            } else {
+                copy[i] = self[i]
+            }
+            
+            viewed.insert(i)
+            
+            if viewed.count == count {
+                self = copy
+            }
+        }
+        
+        self = copy
+        
+    }
+}
 ```
 
 ## Test
 
 ```swift
-// MARK: - TODO
+class Problem_206Tests: XCTestCase {
+
+    func test_example() {
+        var current = ["a", "b", "c"]
+        current.applyPermutation(permutation: [2, 1, 0])
+        
+        let expected = ["c", "b", "a"]
+            
+        XCTAssert(current == expected)
+    }
+
+}
 ```
