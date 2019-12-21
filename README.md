@@ -4029,3 +4029,15 @@ For example, given the linked list `5 -> 1 -> 8 -> 0 -> 3` and `k = 3`, the solu
 ### Solutions
 
 * [Swift](./swift/Problem&#32;208/)
+
+## Problem 209
+
+#### Description
+
+This problem was asked by YouTube.
+
+Write a program that computes the length of the longest common subsequence of three given strings. For example, given "epidemiologist", "refrigeration", and "supercalifragilisticexpialodocious", it should return `5`, since the longest common subsequence is "eieio".
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;209/)
