@@ -4059,3 +4059,15 @@ Bonus: What input `n <= 1000000` gives the longest sequence?
 ### Solutions
 
 * [Swift](./swift/Problem&#32;210/)
+
+## Problem 211
+
+#### Description
+
+This problem was asked by Microsoft.
+
+Given a string and a pattern, find the starting indices of all occurrences of the pattern in the string. For example, given the string "abracadabra" and the pattern "abr", you should return `[0, 7]`.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;211/)
