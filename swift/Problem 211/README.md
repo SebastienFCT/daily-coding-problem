@@ -7,11 +7,37 @@ Given a string and a pattern, find the starting indices of all occurrences of th
 ## Solution
 
 ```swift
-// MARK: - TODO
+extension String {
+    
+    func indexes(forSubstring substring: String) -> [Int] {
+        
+        var result: [Int] = []
+        
+        for i in 0..<count {
+            let copy = suffix(count-i)
+            
+            if copy.prefix(substring.count) == substring {
+                result.append(i)
+            }
+        }
+        
+        return result
+    }
+}
 ```
 
 ## Test
 
 ```swift
-// MARK: - TODO
+class Problem_211Tests: XCTestCase {
+
+    func test_example() {
+        let input = "abracadabra"
+        let expected = [0, 7]
+        let actual = input.indexes(forSubstring: "abr")
+        
+        XCTAssert(actual == expected)
+    }
+
+}
 ```
