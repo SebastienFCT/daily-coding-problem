@@ -4071,3 +4071,17 @@ Given a string and a pattern, find the starting indices of all occurrences of th
 ### Solutions
 
 * [Swift](./swift/Problem&#32;211/)
+
+## Problem 212
+
+#### Description
+
+This problem was asked by Dropbox.
+
+Spreadsheets often use this alphabetical encoding for its columns: "A", "B", "C", ..., "AA", "AB", ..., "ZZ", "AAA", "AAB", ....
+
+Given a column number, return its alphabetical column id. For example, given `1`, return "A". Given `27`, return "AA".
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;212/)
