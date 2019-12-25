@@ -4101,3 +4101,17 @@ For example, given "2542540123", you should return ['254.25.40.123', '254.254.0.
 ### Solutions
 
 * [Swift](./swift/Problem&#32;213/)
+
+## Problem 214
+
+#### Description
+
+This problem was asked by Stripe.
+
+Given an integer n, return the length of the longest consecutive run of 1s in its binary representation.
+
+For example, given `156`, you should return `3`.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;214/)
