@@ -1,14 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 214
+//
+//  Created by sebastien FOCK CHOW THO on 2019-12-25.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Stripe.
+import Foundation
 
-Given an integer n, return the length of the longest consecutive run of 1s in its binary representation.
-
-For example, given `156`, you should return `3`.
-
-## Solution
-
-```swift
 extension Int {
     
     func longestConsecutiveOnes() -> Int {
@@ -55,16 +54,3 @@ extension Array where Element == Int {
         return max
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_214Tests: XCTestCase {
-
-    func test_example() {
-        print(156.longestConsecutiveOnes())
-    }
-
-}
-```
