@@ -11,24 +11,30 @@ import XCTest
 
 class Problem_217Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_binary_converter() {
+        print(123.toBinary())
+        print([1, 1, 1, 1, 0, 1, 1].binaryToInt())
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func test_is_sparse() {
+        print([1, 1, 1, 1, 0, 1, 1].isSparse())
+        print([1, 0, 0, 0, 0, 0, 1].isSparse())
+        print([1, 0, 1].isSparse())
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func test_example() {
+        let input = 21
+        let expected = 21
+        let actual = input.nextSparse()
+        
+        XCTAssert(actual == expected)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_example_2() {
+        let input = 22
+        let actual = input.nextSparse()
+        
+        XCTAssert(actual != 22)
     }
 
 }

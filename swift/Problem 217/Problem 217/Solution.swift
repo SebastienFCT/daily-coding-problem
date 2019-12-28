@@ -1,12 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 217
+//
+//  Created by sebastien FOCK CHOW THO on 2019-12-28.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-We say a number is sparse if there are no adjacent ones in its binary representation. For example, `21` (10101) is sparse, but `22` (10110) is not. For a given input `N`, find the smallest sparse number greater than or equal to `N`.
+import Foundation
 
-Do this in faster than `O(N log N)` time.
-
-## Solution
-
-```swift
 extension Int {
     
     func nextSparse() -> Int {
@@ -83,38 +84,3 @@ extension Array where Element == Int {
         return value
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_217Tests: XCTestCase {
-
-    func test_binary_converter() {
-        print(123.toBinary())
-        print([1, 1, 1, 1, 0, 1, 1].binaryToInt())
-    }
-    
-    func test_is_sparse() {
-        print([1, 1, 1, 1, 0, 1, 1].isSparse())
-        print([1, 0, 0, 0, 0, 0, 1].isSparse())
-        print([1, 0, 1].isSparse())
-    }
-    
-    func test_example() {
-        let input = 21
-        let expected = 21
-        let actual = input.nextSparse()
-        
-        XCTAssert(actual == expected)
-    }
-    
-    func test_example_2() {
-        let input = 22
-        let actual = input.nextSparse()
-        
-        XCTAssert(actual != 22)
-    }
-
-}
-```
