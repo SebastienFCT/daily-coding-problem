@@ -1,30 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 216
+//
+//  Created by sebastien FOCK CHOW THO on 2019-12-27.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Facebook.
+import Foundation
 
-Given a number in Roman numeral format, convert it to decimal.
-
-The values of Roman numerals are as follows:
-
-```
-{
-    'M': 1000,
-    'D': 500,
-    'C': 100,
-    'L': 50,
-    'X': 10,
-    'V': 5,
-    'I': 1
-}
-```
-
-In addition, note that the Roman numeral system uses subtractive notation for numbers such as `IV` and `XL`.
-
-For the input `XIV`, for instance, you should return `14`.
-
-## Solution
-
-```swift
 extension String {
     
     func romanToDecimal() -> Int {
@@ -62,19 +45,3 @@ extension String {
         return result
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_216Tests: XCTestCase {
-
-    func test_example() {
-        let expected = 14
-        let actual = "XIV".romanToDecimal()
-        
-        XCTAssert(actual == expected)
-    }
-
-}
-```
