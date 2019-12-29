@@ -1,12 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 218
+//
+//  Created by sebastien FOCK CHOW THO on 2019-12-29.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Yahoo.
+import Foundation
 
-Write an algorithm that computes the reversal of a directed graph. For example, if a graph consists of `A -> B -> C`, it should become `A <- B <- C`.
-
-## Solution
-
-```swift
 class Node {
     var value: String
     var next: Node?
@@ -61,22 +62,3 @@ class Node {
         return result
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_218Tests: XCTestCase {
-
-    func test_example() {
-        let current = Node(value: "A", next: Node(value: "B", next: Node(value: "C")))
-        let reversed = current.reverse()
-        
-        let expected = "C->B->A"
-        let actual = reversed.view
-        
-        XCTAssert(actual == expected)
-    }
-
-}
-```
