@@ -11,24 +11,35 @@ import XCTest
 
 class Problem_219Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_red_win_horizontally() {
+        var game = Connect4()
+        
+        try? game.drop(type: .red, column: 0)
+        try? game.drop(type: .red, column: 1)
+        try? game.drop(type: .red, column: 2)
+        try? game.drop(type: .red, column: 3)
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func test_black_win_vertically() {
+        var game = Connect4()
+        
+        try? game.drop(type: .black, column: 0)
+        try? game.drop(type: .black, column: 0)
+        try? game.drop(type: .black, column: 0)
+        try? game.drop(type: .black, column: 0)
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func test_draw() {
+        var game = Connect4()
+        game.board = [
+            [.empty, .black, .red, .red, .red, .black, .black],
+            [.red, .red, .black, .black, .black, .red, .red],
+            [.black, .black, .red, .red, .red, .black, .black],
+            [.red, .red, .black, .black, .black, .red, .red],
+            [.black, .black, .red, .red, .red, .black, .black],
+            [.red, .red, .black, .black, .black, .red, .red],
+        ]
+        
+        try? game.drop(type: .red, column: 0)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

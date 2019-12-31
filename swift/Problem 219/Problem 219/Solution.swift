@@ -1,14 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 219
+//
+//  Created by sebastien FOCK CHOW THO on 2019-12-30.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Salesforce.
+import Foundation
 
-Connect 4 is a game where opponents take turns dropping red or black discs into a 7 x 6 vertically suspended grid. The game ends either when one player creates a line of four consecutive discs of their color (horizontally, vertically, or diagonally), or when there are no more spots left in the grid.
-
-Design and implement Connect 4.
-
-## Solution
-
-```swift
 struct Connect4 {
     
     enum Connect4Error: Error {
@@ -234,43 +233,3 @@ extension Connect4 {
         }
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_219Tests: XCTestCase {
-
-    func test_red_win_horizontally() {
-        var game = Connect4()
-        
-        try? game.drop(type: .red, column: 0)
-        try? game.drop(type: .red, column: 1)
-        try? game.drop(type: .red, column: 2)
-        try? game.drop(type: .red, column: 3)
-    }
-
-    func test_black_win_vertically() {
-        var game = Connect4()
-        
-        try? game.drop(type: .black, column: 0)
-        try? game.drop(type: .black, column: 0)
-        try? game.drop(type: .black, column: 0)
-        try? game.drop(type: .black, column: 0)
-    }
-    
-    func test_draw() {
-        var game = Connect4()
-        game.board = [
-            [.empty, .black, .red, .red, .red, .black, .black],
-            [.red, .red, .black, .black, .black, .red, .red],
-            [.black, .black, .red, .red, .red, .black, .black],
-            [.red, .red, .black, .black, .black, .red, .red],
-            [.black, .black, .red, .red, .red, .black, .black],
-            [.red, .red, .black, .black, .black, .red, .red],
-        ]
-        
-        try? game.drop(type: .red, column: 0)
-    }
-}
-```
