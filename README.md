@@ -4205,3 +4205,17 @@ Write an algorithm that computes the reversal of a directed graph. For example, 
 ### Solutions
 
 * [Swift](./swift/Problem&#32;218/)
+
+## Problem 219
+
+#### Description
+
+This problem was asked by Salesforce.
+
+Connect 4 is a game where opponents take turns dropping red or black discs into a 7 x 6 vertically suspended grid. The game ends either when one player creates a line of four consecutive discs of their color (horizontally, vertically, or diagonally), or when there are no more spots left in the grid.
+
+Design and implement Connect 4.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;219/)
