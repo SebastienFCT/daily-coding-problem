@@ -1,17 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 220
+//
+//  Created by sebastien FOCK CHOW THO on 2019-12-31.
+//  Copyright © 2019 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Square.
+import Foundation
 
-In front of you is a row of `N` coins, with values `v1`, `v2`, ..., `vN`.
-
-You are asked to play the following game. You and an opponent take turns choosing either the first or last coin from the row, removing it from the row, and receiving the value of the coin.
-
-Write a program that returns the maximum amount of money you can win with certainty, if you move first, assuming your opponent plays optimally.
-
-
-## Solution
-
-```swift
 struct TheCoinGame {
     var coins: [Int]
     
@@ -97,18 +93,3 @@ extension Array where Element == Int {
         return 0
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_220Tests: XCTestCase {
-
-    func test_the_coin_game() {
-        
-        let game = TheCoinGame(coins: [1,2,3,4,5,6,7,8,9,10])
-        print(game.maximum())
-    }
-
-}
-```
