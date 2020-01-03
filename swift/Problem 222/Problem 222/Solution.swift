@@ -1,15 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 222
+//
+//  Created by sebastien FOCK CHOW THO on 2020-01-02.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Quora.
+import Foundation
 
-Given an absolute pathname that may have . or .. as part of it, return the shortest standardized path.
-
-For example, given "/usr/bin/../bin/./scripts/../", return "/usr/bin/".
-
-
-## Solution
-
-```swift
 extension String {
     
     func shortestStandardizedPath() -> String {
@@ -48,20 +46,3 @@ extension String {
         return "\(absolutePath ? "/" : "")\(splitted.joined(separator: "/"))/"
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_222Tests: XCTestCase {
-
-    func test_example() {
-        let input = "/usr/bin/../bin/./scripts/../"
-        let actual = input.shortestStandardizedPath()
-        let expected = "/usr/bin/"
-        
-        XCTAssert(actual == expected)
-    }
-
-}
-```
