@@ -4249,3 +4249,18 @@ Let's define a "sevenish" number to be one which is either a power of `7`, or th
 ### Solutions
 
 * [Swift](./swift/Problem&#32;221/)
+
+## Problem 222
+
+#### Description
+
+This problem was asked by Quora.
+
+Given an absolute pathname that may have . or .. as part of it, return the shortest standardized path.
+
+For example, given "/usr/bin/../bin/./scripts/../", return "/usr/bin/".
+
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;222/)
