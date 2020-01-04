@@ -12,11 +12,39 @@ Do this in `O(N)` time.
 ## Solution
 
 ```swift
-// MARK: - TODO
+extension Array where Element == Int {
+    
+    func smallestPositiveIntNotInAnySumSubset() -> Int {
+        
+        guard count > 1 else {
+            return 1
+        }
+        
+        var result = 1
+        var index = 0
+        
+        while result >= self[index] {
+            result += self[index]
+            index += 1
+        }
+        
+        return result
+    }
+}
 ```
 
 ## Test
 
 ```swift
-// MARK: - TODO
+class Problem_224Tests: XCTestCase {
+
+    func test_example() {
+        let input = [1, 2, 3, 10]
+        let actual = input.smallestPositiveIntNotInAnySumSubset()
+        let expected = 7
+        
+        XCTAssert(actual == expected)
+    }
+
+}
 ```
