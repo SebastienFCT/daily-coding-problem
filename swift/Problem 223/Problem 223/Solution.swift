@@ -1,13 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 223
+//
+//  Created by sebastien FOCK CHOW THO on 2020-01-03.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Palantir.
+import Foundation
 
-Typically, an implementation of in-order traversal of a binary tree has `O(h)` space complexity, where `h` is the height of the tree. Write a program to compute the in-order traversal of a binary tree using `O(1)` space.
-
-
-## Solution
-
-```swift
 // Solution from https://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion-and-without-stack/
 
 class Node {
@@ -51,4 +51,3 @@ class Node {
         }
     }
 }
-```
