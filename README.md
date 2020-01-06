@@ -4313,3 +4313,18 @@ Bonus: Find an O(log N) solution if k = 2.
 ### Solutions
 
 * [Solution from geeksForGeek.org](./swift/Problem&#32;225/)
+
+## Problem 226
+
+#### Description
+
+This problem was asked by Airbnb.
+
+You come across a dictionary of sorted words in a language you've never seen before. Write a program that returns the correct order of letters in this language.
+
+For example, given `['xww', 'wxyz', 'wxyw', 'ywx', 'ywz']`, you should return `['x', 'z', 'w', 'y']`.
+
+
+### Solutions
+
+* [Solution from geeksForGeek.org](./swift/Problem&#32;226/)
