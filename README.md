@@ -4293,7 +4293,7 @@ Do this in `O(N)` time.
 
 ### Solutions
 
-* [Solution from geeksForGeek.org](./swift/Problem&#32;224/)
+* [Solution](./swift/Problem&#32;224/)
 
 ## Problem 225
 
@@ -4312,7 +4312,7 @@ Bonus: Find an O(log N) solution if k = 2.
 
 ### Solutions
 
-* [Solution from geeksForGeek.org](./swift/Problem&#32;225/)
+* [Solution](./swift/Problem&#32;225/)
 
 ## Problem 226
 
@@ -4327,4 +4327,4 @@ For example, given `['xww', 'wxyz', 'wxyw', 'ywx', 'ywz']`, you should return `[
 
 ### Solutions
 
-* [Solution from geeksForGeek.org](./swift/Problem&#32;226/)
+* [Solution](./swift/Problem&#32;226/)
