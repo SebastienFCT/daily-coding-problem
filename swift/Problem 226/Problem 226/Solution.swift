@@ -1,15 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 226
+//
+//  Created by sebastien FOCK CHOW THO on 2020-01-06.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Airbnb.
+import Foundation
 
-You come across a dictionary of sorted words in a language you've never seen before. Write a program that returns the correct order of letters in this language.
-
-For example, given `['xww', 'wxyz', 'wxyw', 'ywx', 'ywz']`, you should return `['x', 'z', 'w', 'y']`.
-
-
-## Solution
-
-```swift
 class Node {
     var value: Character
     var next: Node?
@@ -150,23 +148,3 @@ extension StringProtocol {
     subscript(range: PartialRangeThrough<Int>) -> SubSequence { self[...index(startIndex, offsetBy: range.upperBound)] }
     subscript(range: PartialRangeUpTo<Int>) -> SubSequence { self[..<index(startIndex, offsetBy: range.upperBound)] }
 }
-```
-
-## Test
-
-```swift
-class Problem_226Tests: XCTestCase {
-
-    func test_example() {
-        
-        var language = Language(nodes: [], root: nil, compared: [])
-        language.process(words: ["xww", "wxyz", "wxyw", "ywx", "ywz"])
-        
-        let expected = "x->z->w->y"
-        let actual = language.root?.printableTree()
-        
-        XCTAssert(actual == expected)
-    }
-
-}
-```
