@@ -1,13 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 227
+//
+//  Created by sebastien FOCK CHOW THO on 2020-01-07.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Facebook.
+import Foundation
 
-Boggle is a game played on a `4 x 4` grid of letters. The goal is to find as many words as possible that can be formed by a sequence of adjacent letters in the grid, using each cell at most once. Given a game board and a dictionary of valid words, implement a Boggle solver.
-
-
-## Solution
-
-```swift
 struct Boggle {
     
     func allSolutions(forDictionary: [String], board: Boggleboard) -> [BoggleSolution] {
@@ -123,31 +123,3 @@ extension StringProtocol {
     subscript(range: PartialRangeThrough<Int>) -> SubSequence { self[...index(startIndex, offsetBy: range.upperBound)] }
     subscript(range: PartialRangeUpTo<Int>) -> SubSequence { self[..<index(startIndex, offsetBy: range.upperBound)] }
 }
-```
-
-## Test
-
-```swift
-class Problem_227Tests: XCTestCase {
-
-    func test_boggle() {
-        
-        // Created random board and dictionary from http://fuzzylogicinc.net/boggle/EnterBoard.aspx?BoardID=auhejskdciehsdes&Length=3&Size=4
-        
-        let board: [[Character]] = [
-            ["a", "u", "h", "e"],
-            ["j", "s", "k", "d"],
-            ["c", "i", "e", "h"],
-            ["s", "d", "e", "s"]
-        ]
-        
-        let dictionary = ["asci", "aside", "asked", "cid", "cides", "dee", "deek", "deid", "deked", "desk", "dies", "diked", "disa", "dish", "disked", "eds", "ehs", "eiked", "eke", "eses", "heeds", "hes", "huskies", "idees", "ish", "jauked", "juked", "ked", "kehuas", "kids", "sau", "see", "seek", "sei", "seise", "sesh", "sheds", "sheikh", "shes", "side", "sies", "sikes", "skee", "ski", "skied", "skua", "sukhs", "use"]
-        
-        let solutions = Boggle().allSolutions(forDictionary: dictionary, board: board)
-        let mapped = solutions.map{ $0.word }
-        
-        print(mapped)
-    }
-
-}
-```

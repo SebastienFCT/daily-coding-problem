@@ -11,24 +11,23 @@ import XCTest
 
 class Problem_227Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_boggle() {
+        
+        // Created random board and dictionary from http://fuzzylogicinc.net/boggle/EnterBoard.aspx?BoardID=auhejskdciehsdes&Length=3&Size=4
+        
+        let board: [[Character]] = [
+            ["a", "u", "h", "e"],
+            ["j", "s", "k", "d"],
+            ["c", "i", "e", "h"],
+            ["s", "d", "e", "s"]
+        ]
+        
+        let dictionary = ["asci", "aside", "asked", "cid", "cides", "dee", "deek", "deid", "deked", "desk", "dies", "diked", "disa", "dish", "disked", "eds", "ehs", "eiked", "eke", "eses", "heeds", "hes", "huskies", "idees", "ish", "jauked", "juked", "ked", "kehuas", "kids", "sau", "see", "seek", "sei", "seise", "sesh", "sheds", "sheikh", "shes", "side", "sies", "sikes", "skee", "ski", "skied", "skua", "sukhs", "use"]
+        
+        let solutions = Boggle().allSolutions(forDictionary: dictionary, board: board)
+        let mapped = solutions.map{ $0.word }
+        
+        print(mapped)
     }
 
 }
