@@ -1,13 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 228
+//
+//  Created by sebastien FOCK CHOW THO on 2020-01-08.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Twitter.
+import Foundation
 
-Given a list of numbers, create an algorithm that arranges them in order to form the largest possible integer. For example, given `[10, 7, 76, 415]`, you should return `77641510`.
-
-
-## Solution
-
-```swift
 extension Array where Element == Int {
     
     func maximumConcat() -> Int {
@@ -57,20 +57,3 @@ extension Array where Element == Array<Int> {
         return result
     }
 }
-```
-
-## Test
-
-```swift
-class Problem_228Tests: XCTestCase {
-
-    func test_example() {
-        
-        let actual = [10, 7, 76, 415].maximumConcat()
-        let expected = 77641510
-        
-        XCTAssert(actual == expected)
-    }
-
-}
-```
