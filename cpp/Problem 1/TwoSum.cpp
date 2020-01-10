@@ -6,11 +6,13 @@ using namespace std;
 
 bool IsTwoSum(vector<int> arr, int k){
     map<int, int> dict;
-    for(auto &i : arr){
-        dict[i] = 0;
+    for(int i = 0; i < arr.size(); i++){
+        dict[arr[i]] = i;
     }
-    for(auto &i : arr){
-        if(dict.count(k-i)) return true;
+    for(int i = 0; i < arr.size(); i++){
+        if(dict.count(k-arr[i])){
+            if(dict[k-arr[i]] != i) return true;
+        }
     }
     return false;
 }
