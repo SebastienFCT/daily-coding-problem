@@ -47,6 +47,7 @@ Follow-up: what if you can't use division?
 
 
 * [Swift](./swift/Problem&#32;2/)
+* [Python](./python/Problem&#32;2/)
 
 ## Problem 3
 
@@ -1971,7 +1972,7 @@ For example, given the following board:
 ]
 ```
 
-* `exists(board, "ABCCED")` returns `true` 
+* `exists(board, "ABCCED")` returns `true`
 * `exists(board, "SEE")` returns `true`
 * `exists(board, "ABCB")` returns `false`.
 
