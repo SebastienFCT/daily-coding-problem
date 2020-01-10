@@ -32,6 +32,8 @@ Given array of integers, there is any combination of N elements which sum return
 
 
 * [Swift](./swift/Problem&#32;1b/)
+* [C++](./cpp/Problem&#32;1b/)
+
 
 ## Problem 2
 
