@@ -11,17 +11,14 @@ Bonus: Can you do this in one pass?
 ## Solution
 
 ```python
-def IsTwoNumberSumToK(numbers, l):
-  for i in numbers:
-    for j in numbers:
-      sum  = i + j
-      if sum == k:
-        return(True)
-  return(False)
-```
+def IsTwoNumberSumToK(numbers, k):
+    for i in range((len(numbers)-1)):
+        if (k - numbers[i]) in numbers[(i+1):len(numbers)]:
+            return(True)
+    return(False)
 
-## Test
-```python
-numbers = [10, 15, 3, 7]
-k = 17
-IsTwoNumberSumToK(numbers, k)
+assert not IsTwoNumberSumToK([], 17)
+assert IsTwoNumberSumToK([10, 15, 3, 7], 17)
+assert not IsTwoNumberSumToK([10, 15, 3, 4], 17)
+assert not IsTwoNumberSumToK([8, 15, 3, 4], 16)
+```
