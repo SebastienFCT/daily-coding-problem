@@ -4,7 +4,7 @@ You can subscribe [here](https://www.dailycodingproblem.com/#subscribe).
 
 ## Problem 1
 
-### Description
+#### Description
 
 This problem was asked by Google.
 
@@ -21,19 +21,27 @@ Bonus: Can you do this in one pass?
 * [Python](./python/Problem&#32;1/)
 * [C++](./cpp/Problem&#32;1/)
 
-
 ## Problem 1b
 
-### Description
+#### Description
 
-Given array of integers, there is any combination of N elements which sum return K
+Given array of integers, there is any combination of **up to N** elements which sum return K
 
 ### Solutions
 
 
 * [Swift](./swift/Problem&#32;1b/)
-* [C++](./cpp/Problem&#32;1b/)
 
+## Problem 1c
+
+#### Description
+
+Given array of integers, there is any combination of **exact** N elements which sum return K
+
+### Solutions
+
+
+* [C++](./cpp/Problem&#32;1c/)
 
 ## Problem 2
 
