@@ -11,5 +11,17 @@ Bonus: Can you do this in one pass?
 ## Solution
 
 ```python
-
+def IsTwoNumberSumToK(numbers, l):
+  for i in numbers:
+    for j in numbers:
+      sum  = i + j
+      if sum == k:
+        return(True)
+  return(False)
 ```
+
+## Test
+```python
+numbers = [10, 15, 3, 7]
+k = 17
+IsTwoNumberSumToK(numbers, k)
