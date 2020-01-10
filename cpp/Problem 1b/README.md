@@ -1,6 +1,6 @@
 ## Description
 
-Given array of integers, there is any combination of N elements which sum return K
+Given array of integers, there is any combination of **exact** N elements which sum return K
 
 ## Solution
 
