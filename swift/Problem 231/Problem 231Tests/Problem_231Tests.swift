@@ -11,23 +11,27 @@ import XCTest
 
 class Problem_231Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_example_1() {
+        
+        let input = "aaabbc"
+        let expected = ["ababca", "ababac", "abacba", "abacab"]
+        
+        if let output = input.rearrangeWithoutAdjacentDuplicates() as? String {
+            print(output)
+            XCTAssert(expected.contains(output))
+        } else {
+            XCTFail("output wasn't a string")
+        }
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func test_example_2() {
+        
+        let input = "aaab"
+        
+        if let output = input.rearrangeWithoutAdjacentDuplicates() as? Bool {
+            XCTAssertFalse(output)
+        } else {
+            XCTFail("output wasn't False")
         }
     }
 

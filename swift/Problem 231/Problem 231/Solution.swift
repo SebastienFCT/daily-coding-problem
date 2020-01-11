@@ -1,14 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 231
+//
+//  Created by sebastien FOCK CHOW THO on 2020-01-11.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by IBM.
+import Foundation
 
-Given a string with repeated characters, rearrange the string so that no two adjacent characters are the same. If this is not possible, return `None`.
-
-For example, given "aaabbc", you could return "ababac". Given "aaab", return `None`.
-
-## Solution
-
-```swift
 extension String {
     
     func rearrangeWithoutAdjacentDuplicates() -> Any {
@@ -89,36 +88,3 @@ extension Dictionary where Key == Character, Value == Int {
         return result
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_231Tests: XCTestCase {
-
-    func test_example_1() {
-        
-        let input = "aaabbc"
-        let expected = ["ababca", "ababac", "abacba", "abacab"]
-        
-        if let output = input.rearrangeWithoutAdjacentDuplicates() as? String {
-            print(output)
-            XCTAssert(expected.contains(output))
-        } else {
-            XCTFail("output wasn't a string")
-        }
-    }
-    
-    func test_example_2() {
-        
-        let input = "aaab"
-        
-        if let output = input.rearrangeWithoutAdjacentDuplicates() as? Bool {
-            XCTAssertFalse(output)
-        } else {
-            XCTFail("output wasn't False")
-        }
-    }
-
-}
-```
