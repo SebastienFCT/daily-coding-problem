@@ -42,6 +42,7 @@ Given array of integers, there is any combination of **exact** N elements which 
 
 
 * [C++](./cpp/Problem&#32;1c/)
+* [Swift](./swift/Problem&#32;1c/)
 
 ## Problem 2
 
