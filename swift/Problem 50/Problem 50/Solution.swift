@@ -8,11 +8,6 @@
 
 import Foundation
 
-/**
- 
-    Ok first we will define our tree structure
- 
- */
 class Node {
     var value: Double?
     var operation: Character?
@@ -29,18 +24,7 @@ class Node {
         self.value = nil
         self.operation = operation
     }
-}
-/**
- 
-     With this simple structure we can build a tree based of node having up to two children and holding reference to either a character that represent the operation to apply or an double
- 
-     Let's build a function that determines the value of a node:
- 
-     - if the node has a value, it returns it
-     - if the node doesn't have a value, it returns the operation of its children
- 
- */
-extension Node {
+    
     func getValue() -> Double {
         
         if let value = value {
@@ -65,4 +49,3 @@ extension Node {
         fatalError("operation, left or right was missing")
     }
 }
-

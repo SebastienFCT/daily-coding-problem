@@ -8,14 +8,6 @@ Given N, write a function to return the number of knight's tours on an N by N ch
 
 ## Solution
 
-A knight in the Chess game moves in an L shape (1 tile to a direction and 2 tiles in a perpendicular direction.
- 
-For this challenge, we should start writing a function that find all next possible moves for the knight.
-
-The second part will consist in building a recursive function that register all the moves and stops when the board has been fully "explored".
-
-We can use a board of integers set to 0 and turn them to 1 as the knight moves
-
 ```swift
 protocol ChessPiece {
     var position: (row: Int, column: Int) { get set }

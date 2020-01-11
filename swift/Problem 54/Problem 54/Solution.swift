@@ -8,15 +8,6 @@
 
 import Foundation
 
-/**
- 
-    Our sudoku template will be represented by a matrix of numbers.
- 
-    We will represent the missing spots by nil
- 
-    Let's start by building a rule that decides if a value can be inserted at a certain position
- 
- */
 extension Array where Element == Array<Int?> {
     
     func isValid(value: Int, position: (row: Int, column: Int)) -> Bool {
@@ -171,13 +162,6 @@ extension Array where Element == Array<Int?> {
     }
 }
 
-/**
- 
-    Ok, now that we have our basic rules, let's decide how our algorithm will run.
- 
-    When you play a sudoku, you're looking for the best spot for your next candidate to fill. This is defined by the spot where there is the fewer chance to make a mistake. Let's write such a function
- 
- */
 extension Array where Element == Array<Int?> {
     
     func possibilities(position: (row: Int, column: Int)) -> [Int] {
@@ -193,13 +177,6 @@ extension Array where Element == Array<Int?> {
     }
 }
 
-/**
- 
-    We should also make sure that we know which spots are impacted when we fill another one
- 
-    Let's build a copy of our board that will show the the possibilities of each spot. Then we will make sure to update all the spots once we fill one
- 
- */
 struct Sudoku {
     var board: [[Int?]]
     var possibilitiesBoard: [[[Int]]]
@@ -280,11 +257,7 @@ struct Sudoku {
         return result
     }
 }
-/**
- 
-    Let's build our function that solves the sudoku
- 
- */
+
 extension Sudoku {
     mutating func proceed() {
         // We build the rankboard

@@ -8,15 +8,6 @@
 
 import Foundation
 
-/**
- 
-    the format of the expected shorten URL is "zLg6wl"
- 
-    When you look at a sequence of 6 bits, it has the format "011001", it's base 2 and each bit can be either 0 or 1
- 
-    Imagine a different base where you have all the letter lowercased, all the letter upper cased and all the number from 0 to 9, it would be a base 26 + 26 + 10 = 62
- 
- */
 var base64 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
 struct URLShortener {

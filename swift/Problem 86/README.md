@@ -8,10 +8,6 @@ For example, given the string "()())()", you should return 1. Given the string "
 
 ## Solution
 
-I would write a function that goes through the string and keep track of each opening parenthese until it finds a closing one.
- 
-Basically a FIFO structure
-
 ```swift
 extension String {
     

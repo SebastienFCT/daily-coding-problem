@@ -27,15 +27,6 @@ You should return 2, since bishops 1 and 3 attack each other, as well as bishops
 
 ## Solution
 
-I would solve this problem in two steps:
- 
-- First I would write appropriate extensions to find bishops that are on the same diagonales
-- Second, I would write the actual logic where I create a set of pairs for each pair of bishop that would attack each other. I would have to make sure that two pair are the same for the following condition: (a, b) = (a, b) and (a, b) = (b, a)
-
-Let's start with the extension and utilities
-
-Note: rather than using 'b' for bishop, I will use the integer 1, this way I can extend a matric of integers
-
 ```swift
 extension Array where Element == Array<Int> {
     func positionOfBishopsOnDiagonal(position: (row: Int, column: Int)) -> [((row: Int, column: Int), (row: Int, column: Int))] {
@@ -97,11 +88,7 @@ extension Array where Element == Array<Int> {
         return result
     }
 }
-```
 
-Now we write our function exploiting the utilities methods
-
-```swift
 struct BishopWar {
     var board: [[Int]]
     

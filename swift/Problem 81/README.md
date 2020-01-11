@@ -8,12 +8,6 @@ For example if `{"2": ["a", "b", "c"], 3: ["d", "e", "f"], …}` then `23` shoul
 
 ## Solution
 
-We can alias a dictionary of characters and array of character and it will represent our maps
- 
-I will simply create a function that expects a current result and a string to decode and will render the possibilities when decoding the next character
-
-Calling recursively will do the job
-
 ```swift
 typealias YelpMapping = [Character : [Character]]
 

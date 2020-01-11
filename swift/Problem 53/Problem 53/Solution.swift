@@ -8,11 +8,6 @@
 
 import Foundation
 
-/**
- 
-    Two stacks to do a FIFO, the concept of FIFO (First In, First Out) is to drop elements in the order they were added
- 
- */
 struct FIFO {
     var stack1: [Any]
     var stack2: [Any]

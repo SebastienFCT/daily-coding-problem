@@ -10,11 +10,6 @@ For example, given the string "the quick brown fox jumps over the lazy dog" and 
 
 ## Solution
 
-We're given a string and we want to distribute its words in lines of k length
- 
-- First we will split the string into words (using spaces as a splitting reference)
-- Then we will loop through the words and append them to array of string, each string representing a row
-
 ```swift
 extension String {
     func distribute(k: Int) -> [String]? {

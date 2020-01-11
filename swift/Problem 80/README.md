@@ -14,10 +14,6 @@ d
 
 ## Solution
 
-I'll first build my tree structure based on a node component that can have two node children
- 
-I'll then write a function that builds a list of "full branches" (representing all the possible branches)
-
 ```swift
 class Node<T> {
     var value: T

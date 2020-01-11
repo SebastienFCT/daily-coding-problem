@@ -9,11 +9,6 @@ For example, given the array [10, 5, 7], you should return true, since we can mo
 Given the array [10, 5, 1], you should return false, since we can't modify any one element to get a non-decreasing array.
 
 ## Solution
-
-There are 2 things to implement here:
- 
-- First we want a function that tells us if an array of integer is non-decreasing
-- Second we will create a function that loop through each element and check if removing them result in a non-decreasing array of integer
     
 ```swift
 extension Array where Element == Int {

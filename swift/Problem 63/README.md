@@ -17,8 +17,6 @@ and the target word 'FOAM', you should return true, since it's the leftmost colu
 
 ## Solution
 
-First we will write a function that find any position that matches the first character of the string
-
 ```swift
 extension Array where Element == Array<String> {
     func find(character: String) -> [(row: Int, column: Int)] {
@@ -34,13 +32,7 @@ extension Array where Element == Array<String> {
         
         return result
     }
-}
-```
 
-Ok so now we have multiple potential candidate for the solution, we need to check against each of them until we find the word
-
-```swift
-extension Array where Element == Array<String> {
     func runAgainst(word: String, startingAt: (row: Int, column: Int)) -> Bool {
         var row = ""
         var column = ""

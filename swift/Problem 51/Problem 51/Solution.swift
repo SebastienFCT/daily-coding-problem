@@ -8,19 +8,10 @@
 
 import Foundation
 
-/**
-
-    In this problem, we're given with a function that returns a return number between 1 and k, let's add this quickly
- 
- */
 func rand(k: Int) -> Int {
     return Int.random(in: 1..<k)
 }
-/**
- 
-    We need a method for swapping elements of an array
- 
- */
+
 extension Array where Element == Int {
     mutating func swapElements(leftIndex: Int, rightIndex: Int) {
         let copy = self[leftIndex]
@@ -28,13 +19,7 @@ extension Array where Element == Int {
         self[leftIndex] = self[rightIndex]
         self[rightIndex] = copy
     }
-}
-/**
- 
-    Now we will loop through our array and everytime we will re-locate the card to another position
- 
- */
-extension Array where Element == Int {
+    
     mutating func shuffleDeck() {
         for i in 0..<count {
             let randomValue = rand(k: self.count)

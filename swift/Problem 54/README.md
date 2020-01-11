@@ -8,15 +8,6 @@ Implement an efficient sudoku solver.
 
 ## Solution
 
-> THIS SOLUTION ONLY WORKS FOR SIMPLER BOARD
-> IT SHOULD IMPLEMENT A RECURSIVE SYSTEM THAT BUMP TO THE LAST CHANGE CELL EVERYTIME IT GETS STUCK SOMEWHERE
-
-Our sudoku template will be represented by a matrix of numbers.
- 
-We will represent the missing spots by nil
-
-Let's start by building a rule that decides if a value can be inserted at a certain position
-
 ```swift
 extension Array where Element == Array<Int?> {
     
@@ -171,13 +162,7 @@ extension Array where Element == Array<Int?> {
         return result
     }
 }
-```
 
-Ok, now that we have our basic rules, let's decide how our algorithm will run.
- 
-When you play a sudoku, you're looking for the best spot for your next candidate to fill. This is defined by the spot where there is the fewer chance to make a mistake. Let's write such a function
-
-```swift
 extension Array where Element == Array<Int?> {
     
     func possibilities(position: (row: Int, column: Int)) -> [Int] {
@@ -192,13 +177,7 @@ extension Array where Element == Array<Int?> {
         return result
     }
 }
-```
 
-We should also make sure that we know which spots are impacted when we fill another one
- 
-Let's build a copy of our board that will show the the possibilities of each spot. Then we will make sure to update all the spots once we fill one
-
-```swift
 struct Sudoku {
     var board: [[Int?]]
     var possibilitiesBoard: [[[Int]]]
@@ -279,12 +258,7 @@ struct Sudoku {
         return result
     }
 }
-```
 
-Let's build our function that solves the sudoku
-
-
-```swift
 extension Sudoku {
     mutating func proceed() {
         // We build the rankboard

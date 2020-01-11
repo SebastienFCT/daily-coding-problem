@@ -6,8 +6,6 @@ Implement a queue using two stacks. Recall that a queue is a FIFO (first-in, fir
 
 ## Solution
 
-Two stacks to do a FIFO, the concept of FIFO (First In, First Out) is to drop elements in the order they were added
-
 ```swift
 struct FIFO {
     var stack1: [Any]

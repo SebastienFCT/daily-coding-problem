@@ -17,8 +17,6 @@ For example, this matrix has 4 islands.
 
 ## Solution
 
-I'll try to build a function that finds a land (1) and adds all connected lands to it
-
 ```swift
 typealias Position2D = (row: Int, column: Int)
 
