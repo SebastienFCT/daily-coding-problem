@@ -10,6 +10,7 @@
 		5D85FB3523C95483006B8EBE /* Problem_1c.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D85FB2B23C95483006B8EBE /* Problem_1c.framework */; };
 		5D85FB3A23C95483006B8EBE /* Problem_1cTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D85FB3923C95483006B8EBE /* Problem_1cTests.swift */; };
 		5D85FB3C23C95483006B8EBE /* Problem_1c.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D85FB2E23C95483006B8EBE /* Problem_1c.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5D85FB4823C95679006B8EBE /* Solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D85FB4723C95679006B8EBE /* Solution.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		5D85FB3423C95483006B8EBE /* Problem 1cTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Problem 1cTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D85FB3923C95483006B8EBE /* Problem_1cTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem_1cTests.swift; sourceTree = "<group>"; };
 		5D85FB3B23C95483006B8EBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D85FB4723C95679006B8EBE /* Solution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solution.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				5D85FB2E23C95483006B8EBE /* Problem_1c.h */,
 				5D85FB2F23C95483006B8EBE /* Info.plist */,
+				5D85FB4723C95679006B8EBE /* Solution.swift */,
 			);
 			path = "Problem 1c";
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D85FB4823C95679006B8EBE /* Solution.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +395,7 @@
 		5D85FB4323C95483006B8EBE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = E5P894ED53;
@@ -409,6 +414,7 @@
 		5D85FB4423C95483006B8EBE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = E5P894ED53;
