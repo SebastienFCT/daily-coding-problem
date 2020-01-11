@@ -24,12 +24,6 @@ d  e f  g
 
 ## Solution
 
-This is my second attempt after failing a first time. As I wasn't focused enought I tried to address the issue with a solution that wasn't robust enough and I ended up adding if/else conditions for specific cases as I was running out of time.
-
-Node class
- 
-We can create a node with just a value or the custom init uses an array of 3 nodes and set the two last ones as children of the first
-
 ```swift
 class Node {
     var value: String
@@ -54,11 +48,7 @@ class Node {
         self.right = nil
     }
 }
-```
 
-This is a convenient method to convert our inputs (array of string) to arrays of nodes
-
-```swift
 extension Array where Element == String {
     func toNodes() -> [Node] {
         var result: [Node] = []
@@ -70,29 +60,7 @@ extension Array where Element == String {
         return result
     }
 }
-```
 
-This is how I went the second time:
- 
-It's a binary tree, we can decompose it into sub-tree made of a parent and 2 children
-
-Paying attention to the preorder array, we notice that taking each group of 3 elements from the right gives us these sub-trees
-
-There are 2 obstacles in doing this:
-
-First we must know how many levels there are, this way we can deduce how many group we have at each level. Example:
-
-- for 1 level, we would have a single group [a,b,c]
-- for 2 levels, we would have 2 groups ([b,d,e][c,f,g]) and then 1 group [a,b,c], notice that the children of a are the parent of the previous groups
-- for 3 levels, we would have 4 groups ([d,h,i][e,j,k][f,l,m][g,n,o]) and then the previous ones
-
-Based on these observations, we should be able to build a node based on an array of integers
-
-First we should determine how many group we need to grab on the bottom of the tree, this can be determine via the methods we used earlier to find the main left branch of the tree
-
-(I already have a Node class and few required methods)
-
-```swift
 struct GoogleChallenge {
     var preorder: [String]
     var inorder: [String]
@@ -113,17 +81,7 @@ struct GoogleChallenge {
         return result
     }
 }
-```
 
-Now with the length we can determine how many group are at the bottom of the tree:
- 
-- for length = 1, there is 1 group of 3
-- for length = 2, there is 2 groups of 3
-- for length = 3, there is 4 group of 3
-- ...
-- for length = N, N>1, there is 2\*(N-1) groups of 3
-
-```swft
 extension GoogleChallenge {
     func buildChildren(children: [Node], preorder: [Node]) -> [Node] {
         var result: [Node] = []
@@ -170,5 +128,23 @@ extension GoogleChallenge {
 ## Test
 
 ```swift
-// MARK: - TODO
+class Problem_48Tests: XCTestCase {
+
+    func test_example() {
+        let preorder = ["a", "b", "d", "e", "c", "f", "g"]
+        let inorder = ["d", "b", "e", "a", "f", "c", "g"]
+        
+        var instance = GoogleChallenge(preorder: preorder, inorder: inorder, root: nil)
+        instance.root = instance.buildChildren(children: [], preorder: instance.preorder.toNodes())[0]
+        
+        XCTAssert(instance.root?.value == "a")
+        XCTAssert(instance.root?.left?.value == "b")
+        XCTAssert(instance.root?.right?.value == "c")
+        XCTAssert(instance.root?.left?.left?.value == "d")
+        XCTAssert(instance.root?.left?.right?.value == "e")
+        XCTAssert(instance.root?.right?.left?.value == "f")
+        XCTAssert(instance.root?.right?.right?.value == "g")
+    }
+
+}
 ```

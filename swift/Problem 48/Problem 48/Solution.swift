@@ -8,13 +8,6 @@
 
 import Foundation
 
-/**
- 
-    Node class
- 
-    We can create a node with just a value or the custom init uses an array of 3 nodes and set the two last ones as children of the first
- 
- */
 class Node {
     var value: String
     var parent: Node?
@@ -38,11 +31,7 @@ class Node {
         self.right = nil
     }
 }
-/**
- 
-    This is a convenient method to convert our inputs (array of string) to arrays of nodes
- 
- */
+
 extension Array where Element == String {
     func toNodes() -> [Node] {
         var result: [Node] = []
@@ -54,25 +43,7 @@ extension Array where Element == String {
         return result
     }
 }
-/**
- 
-    Attempt to solve the problem differently
- 
-    It's a binary tree, we can decompose it into sub-tree made of a parent and 2 children
- 
-    Paying attention to the preorder array, we notice that taking each group of 3 elements from the right gives us these sub-trees
- 
-    There are 2 obstacles in doing this:
- 
-    First we must know how many levels there are, this way we can deduce how many group we have at each level. Example:
- 
-    - for 1 level, we would have a single group [a,b,c]
-    - for 2 levels, we would have 2 groups ([b,d,e][c,f,g]) and then 1 group [a,b,c], notice that the children of a are the parent of the previous groups
-    - for 3 levels, we would have 4 groups ([d,h,i][e,j,k][f,l,m][g,n,o]) and then the previous ones
- 
-    Based on these observations, we should be able to build a node based on an array of integers
- 
- */
+
 struct GoogleChallenge {
     var preorder: [String]
     var inorder: [String]
@@ -94,17 +65,6 @@ struct GoogleChallenge {
     }
 }
 
-/**
- 
-    Now with the length we can determine how many group are at the bottom of the tree:
- 
-    - for length = 1, there is 1 group of 3
-    - for length = 2, there is 2 groups of 3
-    - for length = 3, there is 4 group of 3
-    - ...
-    - for length = N, N>1, there is 2*(N-1) groups of 3
-
- */
 extension GoogleChallenge {
     func buildChildren(children: [Node], preorder: [Node]) -> [Node] {
         var result: [Node] = []

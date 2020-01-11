@@ -42,8 +42,6 @@ Your function should return 3, since we would need to remove all the columns to 
 
 ## Solution
 
-I would first write a function that can reverse my matrix (each column becomes a row) and run a function for each row checking if their elements are ordered alphabetically
-
 ```swift
 extension Array where Element == Array<Character> {
     

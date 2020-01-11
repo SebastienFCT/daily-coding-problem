@@ -8,15 +8,6 @@
 
 import Foundation
 
-/**
- 
-    A good way to find an element quickly is to use a dictionary
- 
-    To keep track of the elements that are the least used, we can create a FIFO linked list, the last element of the list is always the first element to be removed if we reach the limit size of the list
- 
-    The dictionary gives us a reference to all our node so that we can remove them quickly
- 
- */
 class Node {
     var key: String
     var value: String

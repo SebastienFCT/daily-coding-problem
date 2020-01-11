@@ -10,19 +10,6 @@ Given the multiset `{15, 5, 20, 10, 35}`, it would return false, since we can't 
 
 ## Solution
 
-In this problem, we're trying to find a combination of element of set for which the sum is equal of the sum of the rest.
- 
-I don't know how manage multisets in swift (not sure if it exists) so I'll use arrays
-
-It's like picking a random element until we either:
-
-- Reach a value that correspond to the sum of the rest (in which case we return true)
-- Reach a value that is greater than the sum of the rest (in which case we return false)
-
-The order in which we pick the element counts
-
-To build such an algorithm, we can try to use a tree, each node correspond to the new picked element
-
 ```swift
 class Node {
     var value: Int
@@ -35,11 +22,7 @@ class Node {
         self.remainingElements = remainingElements
     }
 }
-```
 
-We need to create a root for our tree, and right a recursive function that finds a path (branches) where the sum of the remaining elements is equal to the sum of the previous values
-
-```swift
 extension Node {
     func coupleWithCommonSum() -> (left: [Int], right: [Int])? {
         let reducedPrevious = previousElements.reduce(0, +)
@@ -73,11 +56,7 @@ extension Node {
         return nil
     }
 }
-```
 
-Finally, we need to try this algorithm again each possible root of the tree
-
-```swift
 extension Array where Element == Int {
     func findCoupleSetWithCommonSum() -> (left: [Int], right: [Int])? {
         

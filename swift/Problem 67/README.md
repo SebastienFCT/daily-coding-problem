@@ -11,16 +11,6 @@ Each operation should run in O(1) time.
 
 ## Solution
 
-I already worked on this problem in the past, the trick is to build a "linkedList" structure base on a node element that links to the previous and next element
- 
-When we look for something, we check the cache first:
-
-- If it's in the cache, we remove it and re-add it (which put it back to the last used spot)
-- If it's not in the cache, we add it
-- Adding an element to the cache should make sure to remove the last element if required (if the cache max size has been reached)
-
-The Node class isn't really hard to implement:
-
 ```swift
 class Node {
     var key: String
@@ -108,11 +98,7 @@ struct Cache {
         }
     }
 }
-```
 
-Finally, we also need to update the cache if we're retrieving an element that already exist in it
-
-```swift
 extension Cache {
     mutating func get(key: String) -> Node? {
         

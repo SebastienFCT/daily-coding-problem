@@ -13,12 +13,6 @@ Given a 5 by 5 matrix, there are 70 ways to get to the bottom-right.
 
 ## Solution
 
-For this problem, we can use a tree structure that reveals all possible path
- 
-To find what are the possible moves, we will replace the position already visited by 1
-
-Let's start by writing quick utility functions to find all possible next moves and another move
-
 ```swift
 extension Array where Element == Array<Int> {
     
@@ -47,13 +41,7 @@ extension Array where Element == Array<Int> {
         
         return copy
     }
-}
-```
 
-Now I can use these method to calculate all path to get from (0,0) to (maxRow,maxColumn)
-
-```swift
-extension Array where Element == Array<Int> {
     func pathCount(current: (row: Int, column: Int), to: (row: Int, column: Int)) -> Int {
         var result = 0
         

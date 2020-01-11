@@ -8,8 +8,6 @@ For example, given a file with the content `Hello world`, three `read7()` return
 
 ## Solution
 
-Once you have your function read7(), you just have to do a readN() = [read7() * N/7], compile the result together and returns the first N characters
-
 ```swift
 struct MicrosoftChallenge {
     var filename: String

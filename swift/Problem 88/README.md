@@ -6,10 +6,6 @@ Implement division of two positive integers without using the division, multipli
 
 ## Solution
 
-No too much to explain here.
-
-A division (without remainder) is basically "how many times do I have this in that?"
-
 ```swift
 struct GoogleCalculator {
     

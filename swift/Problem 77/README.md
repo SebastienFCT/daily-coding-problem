@@ -10,10 +10,6 @@ For example, given `[(1, 3), (5, 8), (4, 10), (20, 25)]`, you should return `[(1
 
 ## Solution
 
-- First I would define a structure for my interval
-- Then I would right a function that check if an interval is overlapping another one
-- Finally I would build a custom function reducing my array based on the previous utility
-
 ```swift
 struct Interval {
     var start: Int
@@ -47,11 +43,7 @@ extension Array where Element == Interval {
         return self
     }
 }
-```
 
-Utility functions to switch from the tuple syntax to intervals
-
-```swift
 func tuplesToIntervals(input: [(start: Int, end: Int)]) -> [Interval] {
     var result: [Interval] = []
     

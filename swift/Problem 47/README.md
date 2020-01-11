@@ -28,21 +28,7 @@ extension Array where Element == Int {
         
         return (max - min > 0) ? max - min : 0
     }
-}
-```
-
-Ok after testing, I've seen what I forgot to take into consideration:
- 
-You need to buy the stock **before** you sell it (even though it was clearly mentioned in the exercise, I assume this was simple and skipped the first minutes analysing...)
-
-How do we fix this?
-
-What if we start from the end of our array, grab the largest value and look at the largest gap we can have with any of value before it?
-
-First we write a function that find the largest gap in a sub array based on the last value (this is basically finding the smallest value in the array)
-
-```swift
-extension Array where Element == Int {
+    
     func maximumGap() -> Int {
         guard self.count > 2 else {
             return 0
@@ -50,7 +36,6 @@ extension Array where Element == Int {
         
         var min = self.first!
         
-        // We skip the first item already set as the minimum and the last item as it's the item we're running the logic against
         for i in 1..<self.count-1 {
             let element = self[i]
             
@@ -61,13 +46,7 @@ extension Array where Element == Int {
         
         return (last! - min) > 0 ? last! - min : 0
     }
-}
-```
-
-Ok this works, now we just have to loop through the array and check the maximum gap for each value starting from the end.
-
-```swift
-extension Array where Element == Int {
+    
     func findLargestDifference() -> Int {
         guard count > 2 else {
             return 0
@@ -78,8 +57,8 @@ extension Array where Element == Int {
         
         return Swift.max(maximumGap(), copy.maximumGap())
     }
-}
 
+}
 ```
 
 ## Test

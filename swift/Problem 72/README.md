@@ -37,11 +37,6 @@ Should return null, since we have an infinite loop.
 
 ## Solution
 
-I would solve this problem in two steps:
- 
-- First I would write a function that find all possible path for a given graph
-- Then I would write a function that given the possible paths, would find the greatest path value
-
 ```swift
 struct DirectedGraph {
     var nodes: String

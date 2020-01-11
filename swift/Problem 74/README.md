@@ -26,13 +26,6 @@ And there are 4 12's in the table.
 
 ## Solution
 
-To check if the value V is in the column C, I would do 2 things:
- 
-- Check if V % C == 0
-- If yes, check if V / C <= N (if it's greater, then it's not in the table)
-
-I will apply this logic to a loop going through the columns.
-    
 ```swift
 struct MultiplicationTable {
     var length: Int
@@ -62,5 +55,4 @@ class Problem_74Tests: XCTestCase {
     }
 
 }
-
 ```

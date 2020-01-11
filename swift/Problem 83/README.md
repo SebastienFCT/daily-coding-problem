@@ -26,11 +26,6 @@ should become:
 
 ## Solution
 
-In swift this is straight forward:
- 
-- We create a node structure base of the tree
-- We create a reverse function that reverse both children, the trick is to properly handly single children or no children
-
 ```swift
 class Node<T> {
     var value: T

@@ -6,8 +6,6 @@ Given the head of a singly linked list, reverse it in-place.
 
 ## Solution
 
-First, let's define a linked list
-
 ```swift
 class Node {
     var value: String
@@ -22,13 +20,7 @@ class Node {
 struct LinkedList {
     var head: Node?
 }
-```
 
-A -> B -> C -> D has to become D -> C -> B -> A
- 
-We can store each node in an array, it would give us [A, B, C, D, A], reverse the array and rebuild the linked list
-
-```swift
 extension LinkedList {
     mutating func reverse() {
         if let linkedListHead = head {
@@ -68,11 +60,7 @@ extension Node {
         return current + [self]
     }
 }
-```
 
-Utility class to visually display the linked list
-
-```swift
 extension LinkedList {
     func log() {
         if let head = head {

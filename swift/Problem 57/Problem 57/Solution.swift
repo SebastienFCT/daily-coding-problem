@@ -8,14 +8,6 @@
 
 import Foundation
 
-/**
- 
-    We're given a string and we want to distribute its words in lines of k length
- 
-    - First we will split the string into words (using spaces as a splitting reference)
-    - Then we will loop through the words and append them to array of string, each string representing a row
- 
- */
 extension String {
     func distribute(k: Int) -> [String]? {
         

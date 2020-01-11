@@ -9,20 +9,6 @@ For example, if the list is `[-10, -10, 5, 2]`, we should return `500`, since th
 You can assume the list has at least three integers.
 
 ## Solution
-
-The example shows clearly the challenge: negative values can be used when their product result in a positive value
- 
-To solve this problem, I would order the array descendently by absolute values and I would try to figure out an algorithm that find the 3 largest values with either 2 of them being negative or none of them
-
-- Let's imagine that my sorted array is [9,8,7,6,...], the result is obvious, it's the first 3 elements
-- Now if I have [-10,-9,8,7,6,....], then I still grab the 3 first elements
-- The real problem is when I have something like [-10,9,8,-7,6], for this one I have to figure out if -10 * -7 * 9 is greater than 9 * 8 * 6
-
-Let's try to create two utility functions that do the following:
-
-- The first one find the largest trio with 2 negative values
-- The second one find the largest trio with no negative values
-- After this I only have to return the maximum between the two
     
 ```swift
 extension Array where Element == Int {

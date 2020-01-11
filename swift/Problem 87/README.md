@@ -35,10 +35,6 @@ is considered valid.
 
 ## Solution
 
-I'm not fan of this answer, but I spent way too much time on it.
- 
-Hopefully the next similar challenges will help me being more confortable with the concept of "multi linked list" I tried to build here.
-
 ```swift
 enum PosOrientation: String {
     case N = "N"
