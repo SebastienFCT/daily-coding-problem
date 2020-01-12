@@ -110,6 +110,7 @@ You can modify the input array in-place.
 
 
 * [Swift](./swift/Problem&#32;4/)
+* [Python](./python/Problem&#32;4/)
 
 ## Problem 5
 
