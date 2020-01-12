@@ -62,6 +62,7 @@ Follow-up: what if you can't use division?
 
 * [Swift](./swift/Problem&#32;2/)
 * [Python](./python/Problem&#32;2/)
+* [C++](./cpp/Problem&#32;2/)
 
 ## Problem 3
 
