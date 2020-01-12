@@ -11,24 +11,22 @@ import XCTest
 
 class Problem_232Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_prefixMap() {
+        
+        var pmap = PrefixMap(map: [:])
+        
+        pmap.insert(key: "x_1", value: 1)
+        pmap.insert(key: "x_2", value: 2)
+        pmap.insert(key: "x_3", value: 12)
+        pmap.insert(key: "x_4", value: 21)
+        
+        pmap.insert(key: "y_1", value: 3)
+        pmap.insert(key: "y_2", value: 7)
+        pmap.insert(key: "y_3", value: 33)
+        pmap.insert(key: "y_4", value: -1)
+        
+        XCTAssert(pmap.sum(prefix: "x") == 36)
+        XCTAssert(pmap.sum(prefix: "y") == 42)
     }
 
 }
