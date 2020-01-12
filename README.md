@@ -31,6 +31,7 @@ Given array of integers, there is any combination of **up to N** elements which 
 
 
 * [Swift](./swift/Problem&#32;1b/)
+* [C++](./cpp/Problem&#32;1b/)
 
 ## Problem 1c
 
@@ -41,8 +42,8 @@ Given array of integers, there is any combination of **exact** N elements which 
 ### Solutions
 
 
-* [C++](./cpp/Problem&#32;1c/)
 * [Swift](./swift/Problem&#32;1c/)
+* [C++](./cpp/Problem&#32;1c/)
 
 ## Problem 2
 
