@@ -134,8 +134,8 @@ Implement `car` and `cdr`.
 
 ### Solutions
 
-
 * [Swift](./swift/Problem&#32;5/)
+* [Python](./python/Problem&#32;5/)
 
 ## Problem 6
 
