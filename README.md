@@ -4450,3 +4450,15 @@ assert mapsum.sum("col") == 5
 ### Solutions
 
 * [Solution](./swift/Problem&#32;232/)
+
+## Problem 233
+
+#### Description
+
+This problem was asked by Apple.
+
+Implement the function `fib(n)`, which returns the `nth` number in the Fibonacci sequence, using only `O(1)` space.
+
+### Solutions
+
+* [Solution](./swift/Problem&#32;233/)
