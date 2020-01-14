@@ -4462,3 +4462,15 @@ Implement the function `fib(n)`, which returns the `nth` number in the Fibonacci
 ### Solutions
 
 * [Solution](./swift/Problem&#32;233/)
+
+## Problem 234
+
+#### Description
+
+This problem was asked by Microsoft.
+
+Recall that the minimum spanning tree is the subset of edges of a tree that connect all its vertices with the smallest possible total edge weight. Given an undirected graph with weighted edges, compute the maximum weight spanning tree.
+
+### Solutions
+
+* [Solution](./swift/Problem&#32;234/)
