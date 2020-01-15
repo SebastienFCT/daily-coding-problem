@@ -149,8 +149,9 @@ If using a language that has no pointers (such as Python), you can assume you ha
 
 ### Solutions
 
-
 * Swift - TODO
+* Python - TODO
+
 
 ## Problem 7
 
@@ -164,10 +165,12 @@ For example, the message `111` would give `3`, since it could be decoded as `aaa
 
 You can assume that the messages are decodable. For example, `001` is not allowed.
 
+
 ### Solutions
 
-
 * [Swift](./swift/Problem&#32;7/)
+* [Python](./python/Problem&#32;7/)
+
 
 ## Problem 8
 
