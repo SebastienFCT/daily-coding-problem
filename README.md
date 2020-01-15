@@ -93,7 +93,7 @@ assert deserialize(serialize(node)).left.left.val == 'left.left'
 
 
 * [Swift](./swift/Problem&#32;3/)
-* [Python](./python/Problem&#32;3/)
+
 * [C++](./cpp/Problem&#32;3/)
 
 ## Problem 4
