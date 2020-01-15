@@ -11,24 +11,49 @@ import XCTest
 
 class Problem_234Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_all_edges() {
+        let n1 = Node(value: 0)
+        let n2 = Node(value: 1)
+        let n3 = Node(value: 2)
+        let n4 = Node(value: 3)
+        let n5 = Node(value: 4)
+        
+        n1.siblings = [(n2, 1), (n3, 2)]
+        n3.siblings = [(n4, 4), (n5, 5)]
+        
+        let actual = n1.allEdges(current: [])
+        
+        XCTAssert(actual.contains(where: { (_, weight) -> Bool in
+            return weight == 1
+        }))
+        
+        XCTAssert(actual.contains(where: { (_, weight) -> Bool in
+            return weight == 2
+        }))
+        
+        XCTAssert(actual.contains(where: { (_, weight) -> Bool in
+            return weight == 4
+        }))
+        
+        XCTAssert(actual.contains(where: { (_, weight) -> Bool in
+            return weight == 5
+        }))
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_maximum_spanning_tree() {
+        let n1 = Node(value: 1)
+        let n2 = Node(value: 2)
+        let n3 = Node(value: 3)
+        let n4 = Node(value: 4)
+        let n5 = Node(value: 5)
+        
+        n1.siblings = [(n2, 1), (n3, 2)]
+        n3.siblings = [(n4, 4), (n5, 5), (n2, 8)]
+        
+        let actual = n1.maximumSpanningTree()
+        let expected = [8, 5, 4, 2] // It's ordered by descending weight
+        
+        XCTAssert(actual.map{ $0.weight } == expected)
     }
 
 }
