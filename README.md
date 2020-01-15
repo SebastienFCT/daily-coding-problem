@@ -93,7 +93,6 @@ assert deserialize(serialize(node)).left.left.val == 'left.left'
 
 
 * [Swift](./swift/Problem&#32;3/)
-
 * [C++](./cpp/Problem&#32;3/)
 
 ## Problem 4
@@ -113,6 +112,7 @@ You can modify the input array in-place.
 
 * [Swift](./swift/Problem&#32;4/)
 * [Python](./python/Problem&#32;4/)
+* [C++](./cpp/Problem&#32;4/)
 
 ## Problem 5
 
