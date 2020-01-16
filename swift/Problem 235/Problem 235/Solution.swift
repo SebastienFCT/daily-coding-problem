@@ -21,13 +21,14 @@ extension Array where Element == Int {
         var max = self[0]
         
         for i in 1..<count {
+            comparisonCount += 1
             if self[i] < min {
-                comparisonCount += 1
                 min = self[i]
+                continue
             } else if self[i] > max {
-                comparisonCount += 1
                 max = self[i]
             }
+            comparisonCount += 1
         }
         
         return (min, max, comparisonCount)

@@ -21,7 +21,7 @@ class Problem_235Tests: XCTestCase {
         
         let actual = input.minMax()
         
-        XCTAssert(actual.comparisonCount < 2*(input.count-2))
+        XCTAssert(actual.comparisonCount <= 2*(input.count-2))
         XCTAssert(actual.min == input.min())
         XCTAssert(actual.max == input.max())
     }
