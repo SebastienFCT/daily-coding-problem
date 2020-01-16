@@ -23,7 +23,14 @@ For example, the following tree has 5 unival subtrees:
 ### Solutions
 
 ```python
+# Class Node
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
 
+# define function to examine a tree is universal or not
 def is_unival_tree(root):
   if root == None:
     return(True)
@@ -35,6 +42,7 @@ def is_unival_tree(root):
     return(True)
   return(False)
 
+# define a function to count the number of universal trees
 def count_unival_trees(root):
   if root == None:
     return(0)
@@ -43,4 +51,14 @@ def count_unival_trees(root):
     total_count += 1
   return(total_count)
 
+
+# test
+root = Node(0) 
+root.left = Node(1)
+root.right = Node(0)
+root.right.left = Node(1)
+root.right.right = Node(0)
+root.right.left.left = Node(1)
+root.right.left.right = Node(1)
+assert count_unival_trees(root) ==5
 ```
