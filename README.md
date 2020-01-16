@@ -93,7 +93,6 @@ assert deserialize(serialize(node)).left.left.val == 'left.left'
 ### Solutions
 
 * [Swift](./swift/Problem&#32;3/)
-
 * [C++](./cpp/Problem&#32;3/)
 
 
@@ -114,6 +113,7 @@ You can modify the input array in-place.
 
 * [Swift](./swift/Problem&#32;4/)
 * [Python](./python/Problem&#32;4/)
+* [C++](./cpp/Problem&#32;4/)
 
 ## Problem 5
 
@@ -4481,3 +4481,15 @@ Recall that the minimum spanning tree is the subset of edges of a tree that conn
 ### Solutions
 
 * [Solution](./swift/Problem&#32;234/)
+
+## Problem 235
+
+#### Description
+
+This problem was asked by Facebook.
+
+Given an array of numbers of length `N`, find both the minimum and maximum using less than `2 * (N - 2)` comparisons.
+
+### Solutions
+
+* [Solution](./swift/Problem&#32;235/)
