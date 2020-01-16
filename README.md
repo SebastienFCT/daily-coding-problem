@@ -21,6 +21,7 @@ Bonus: Can you do this in one pass?
 * [Python](./python/Problem&#32;1/)
 * [C++](./cpp/Problem&#32;1/)
 
+
 ## Problem 1b
 
 #### Description
@@ -91,10 +92,10 @@ assert deserialize(serialize(node)).left.left.val == 'left.left'
 
 ### Solutions
 
-
 * [Swift](./swift/Problem&#32;3/)
 
 * [C++](./cpp/Problem&#32;3/)
+
 
 ## Problem 4
 
@@ -199,6 +200,8 @@ For example, the following tree has 5 unival subtrees:
 
 
 * [Swift](./swift/Problem&#32;8/)
+* [Python](./python/Problem&#32;8/)
+
 
 ## Problem 9
 
