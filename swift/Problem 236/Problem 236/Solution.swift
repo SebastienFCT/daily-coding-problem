@@ -1,14 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 236
+//
+//  Created by sebastien FOCK CHOW THO on 2020-01-16.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Nvidia.
+import Foundation
 
-You are given a list of N points (x1, y1), (x2, y2), ..., (xN, yN) representing a polygon. You can assume these points are given in order; that is, you can construct the polygon by connecting point 1 to point 2, point 2 to point 3, and so on, finally looping around to connect point N to point 1.
-
-Determine if a new point p lies inside this polygon. (If p is on the boundary of the polygon, you should return False).
-
-## Solution
-
-```swift
 typealias NPoint = (x: Int, y: Int)
 
 typealias NPolygon = [NPoint]    // Assuming it's ordered
@@ -64,36 +63,3 @@ func crossProduct(p1: NPoint, p2: NPoint, comparisonPoint: NPoint) -> Int {
     
     return (p2.y - p1.y) * (comparisonPoint.x - p1.x) - (p2.x - p1.x) * (comparisonPoint.y - p1.y)
 }
-```
-
-## Tests
-
-```swift
-class Problem_236Tests: XCTestCase {
-
-    func test_point_in_polygon() {
-        
-        let polygon: NPolygon = [(1, 1), (1, 2), (3, 6), (4, 2), (5, 3)]
-        let point: NPoint = (2, 2)
-        
-        XCTAssertTrue(isPointInPolygon(point: point, polygon: polygon))
-    }
-    
-    func test_point_out_of_polygon() {
-        
-        let polygon: NPolygon = [(1, 1), (1, 2), (3, 6), (4, 2), (5, 3)]
-        let point: NPoint = (6, 6)
-        
-        XCTAssertFalse(isPointInPolygon(point: point, polygon: polygon))
-    }
-    
-    func test_point_on_polygon_bound() {
-        
-        let polygon: NPolygon = [(1, 1), (1, 2), (3, 6), (4, 2), (5, 3)]
-        let point: NPoint = (1, 1)
-        
-        XCTAssertFalse(isPointInPolygon(point: point, polygon: polygon))
-    }
-
-}
-```
