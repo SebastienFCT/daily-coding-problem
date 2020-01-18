@@ -1,21 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 238
+//
+//  Created by sebastien FOCK CHOW THO on 2020-01-18.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by MIT.
+import Foundation
 
-Blackjack is a two player card game whose rules are as follows:
-
-- The player and then the dealer are each given two cards.
-- The player can then "hit", or ask for arbitrarily many additional cards, so long as their total does not exceed `21`.
-- The dealer must then hit if their total is `16` or lower, otherwise pass.
-- Finally, the two compare totals, and the one with the greatest sum not exceeding `21` is the winner.
-
-For this problem, cards values are counted as follows: each card between `2` and `10` counts as their face value, face cards count as `10`, and aces count as `1`.
-
-Given perfect knowledge of the sequence of cards in the deck, implement a blackjack solver that maximizes the player's score (that is, wins minus losses).
-
-## Solution
-
-```swift
 struct BlackJack {
     
     var deck: [Int] = [
@@ -178,30 +170,3 @@ struct BlackJack {
         return result
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_238Tests: XCTestCase {
-
-    func test_blackjack() {
-        
-        let bj = BlackJack()
-        
-        print("shuffled deck is \(bj.deck)")
-        
-        let optimal = bj.solve()
-        print("optimal path is \(optimal)")
-        
-        var cardDrawn = 0
-        for i in 0..<optimal.count {
-            cardDrawn += optimal[i].playerHits + 2
-            cardDrawn += optimal[i].dealerHits + 2
-        }
-        
-        print("\(cardDrawn) cards were drawn")
-    }
-
-}
-```
