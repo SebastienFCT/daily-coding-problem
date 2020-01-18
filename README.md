@@ -4507,3 +4507,25 @@ Determine if a new point p lies inside this polygon. (If p is on the boundary of
 ### Solutions
 
 * [Solution](./swift/Problem&#32;236/)
+
+## Problem 237
+
+#### Description
+
+This problem was asked by Amazon.
+
+A tree is symmetric if its data and shape remain unchanged when it is reflected about the root node. The following tree is an example:
+
+```
+        4
+      / | \
+    3   5   3
+  /           \
+9              9
+```
+
+Given a `k`-ary tree, determine whether it is symmetric.
+
+### Solutions
+
+* [Solution](./swift/Problem&#32;237/)
