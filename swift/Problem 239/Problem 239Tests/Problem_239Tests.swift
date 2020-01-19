@@ -11,24 +11,20 @@ import XCTest
 
 class Problem_239Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_android_screen_lock() {
+        
+        let asl = AndroidScreenLock()
+        
+        XCTAssert(asl.totalPossibilities(length: 1) == 9)
+        
+        print(asl.totalPossibilities(length: 2))
+        print(asl.totalPossibilities(length: 3))
+        print(asl.totalPossibilities(length: 4))
+        print(asl.totalPossibilities(length: 5))
+        print(asl.totalPossibilities(length: 6))
+        print(asl.totalPossibilities(length: 7))
+        print(asl.totalPossibilities(length: 8))
+        print(asl.totalPossibilities(length: 9))
     }
 
 }

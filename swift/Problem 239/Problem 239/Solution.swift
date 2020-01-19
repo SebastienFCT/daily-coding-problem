@@ -1,21 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 239
+//
+//  Created by sebastien FOCK CHOW THO on 2020-01-19.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Uber.
+import Foundation
 
-One way to unlock an Android phone is through a pattern of swipes across a `1-9` keypad.
-
-For a pattern to be valid, it must satisfy the following:
-
-- All of its keys must be distinct.
-- It must not connect two keys by jumping over a third key, unless that key has already been used.
-
-For example, `4 - 2 - 1 - 7` is a valid pattern, whereas `2 - 1 - 7` is not.
-
-Find the total number of valid unlock patterns of length N, where 1 <= N <= 9.
-
-## Solution
-
-```swift
 struct AndroidScreenLock {
     
     func totalPossibilities(length n: Int) -> Int {
@@ -270,28 +262,3 @@ struct AndroidScreenLock {
     }
     
 }
-```
-
-## Tests
-
-```swift
-class Problem_239Tests: XCTestCase {
-
-    func test_android_screen_lock() {
-        
-        let asl = AndroidScreenLock()
-        
-        XCTAssert(asl.totalPossibilities(length: 1) == 9)
-        
-        print(asl.totalPossibilities(length: 2))
-        print(asl.totalPossibilities(length: 3))
-        print(asl.totalPossibilities(length: 4))
-        print(asl.totalPossibilities(length: 5))
-        print(asl.totalPossibilities(length: 6))
-        print(asl.totalPossibilities(length: 7))
-        print(asl.totalPossibilities(length: 8))
-        print(asl.totalPossibilities(length: 9))
-    }
-
-}
-```
