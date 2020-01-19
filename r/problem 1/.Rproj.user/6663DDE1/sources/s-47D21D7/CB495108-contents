@@ -1,0 +1,56 @@
+---
+title: "STAT4700-A1"
+author: "Wanqing Yang"
+date: 'Due: Feburary 4, 2020'
+output: pdf_document
+---
+
+                                        
+The manager of an insurance company asks for your advice on a particular kind of insurance. She wants to estimare the distribution of claims and believes that claims are normally distributed. However, there is a deductible of 5000 dollar, so damages under 5000 dollar are not claimed and observed. Basically she wants to **estimate the parameters in a truncated normal distribution. **She presents the following sample of claims(before deductible, in $1000) and asks for your help:
+
+{35; 12; 10.5; 9; 8.8; 8.5; 7.8; 6.8; 6.5; 6.2; 6; 5.8; 5.5; 5.2; 5.1}.
+
+**Q1.**Formulate the research problem and statistic objectives
+ 
+**Research problem:** Estimate the parameters in the distribution<br/>  
+
+**Statistic Objective:** Helps to get estimator of parameters in a truncated normal distribution
+
+**Q2.**Estimate the parameters in the distribution and explain results to the manager
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library("truncnorm")
+library("car")
+```
+
+**Step1:Visualize the data**
+```{r}
+x<-c(35,12, 10.5, 9, 8.8, 8.5, 7.8, 7.2, 6.8, 6.5, 6.2, 6, 5.8, 5.5, 5.2, 5.1)
+summary(x)
+par(mfrow=c(1,2))
+x.trnorm<-rtruncnorm(n=16,m=9.247,sd=sd(x),a=5,b=Inf)
+hist(x.trnorm,main = "Histogram of 16 samples(in $1000)")
+plot(density(x.trnorm),main = "Density")
+```
+
+**Step2:Using MLE-method to get parameter estimator**
+```{r}
+#Define negative likelihood function
+nll.trnorm<-function(data,par){
+  return(-sum(log(dtruncnorm(data,a=5,mean=par[1],sd=par[2]))))
+}
+#find parameters that maximize the likelihood function
+optim(par=c(0,1),fn=nll.trnorm,data=x,method="L-BFGS-B",lower=5)
+```
+
+**Conclusion:** Based on the information that manager provided to us, we know that the data distribution is truncated normal distribution with mean($\mu$), variance($\sigma$), lower bound(a=5) and upper bound(b=$\infty$). I used MLE-method to get the parameter estimator of mean($\mu$) and variance($\sigma$), and got $\mu$_hat=5,$\sigma$_hat=8.08.
+
+**Q3.**Discuss practical constraints, logistic concerns, and peculiar issues, if any.
+
+
+
+
+
+
+
+
