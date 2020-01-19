@@ -20,7 +20,7 @@ Bonus: Can you do this in one pass?
 * [Swift](./swift/Problem&#32;1/)
 * [Python](./python/Problem&#32;1/)
 * [C++](./cpp/Problem&#32;1/)
-
+* [R](./r/Problem&#32;1/)
 
 ## Problem 1b
 
