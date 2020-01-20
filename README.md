@@ -219,6 +219,8 @@ Follow-up: Can you do this in O(N) time and constant space?
 
 
 * [Swift](./swift/Problem&#32;9/)
+* [Python](./python/Problem&#32;9/)
+
 
 ## Problem 10
 
