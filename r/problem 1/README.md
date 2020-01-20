@@ -8,8 +8,16 @@ For example, given `[10, 15, 3, 7]` and `k` of `17`, return true since `10 + 7` 
 
 Bonus: Can you do this in one pass?
 
-## Solution - one pass (hash)
+## Solution
 
 ```r
-paste my code
+Q1.fn<-function(num,k){
+  if(length(num)<2) return(FALSE)
+  for(i in 1:(length(num)-1)){
+    for(j in (i+1):length(num)){
+      if(num[i]+num[j] == k) return(TRUE)
+    }
+  }
+  return(FALSE)
+}
 ```

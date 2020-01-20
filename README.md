@@ -20,7 +20,7 @@ Bonus: Can you do this in one pass?
 * [Swift](./swift/Problem&#32;1/)
 * [Python](./python/Problem&#32;1/)
 * [C++](./cpp/Problem&#32;1/)
-
+* [R](./r/problem&#32;1/)
 
 ## Problem 1b
 
@@ -64,6 +64,8 @@ Follow-up: what if you can't use division?
 * [Swift](./swift/Problem&#32;2/)
 * [Python](./python/Problem&#32;2/)
 * [C++](./cpp/Problem&#32;2/)
+* [R](./r/Problem2/)
+
 
 ## Problem 3
 
@@ -4495,3 +4497,81 @@ Given an array of numbers of length `N`, find both the minimum and maximum using
 ### Solutions
 
 * [Solution](./swift/Problem&#32;235/)
+
+## Problem 236
+
+#### Description
+
+This problem was asked by Nvidia.
+
+You are given a list of N points (x1, y1), (x2, y2), ..., (xN, yN) representing a polygon. You can assume these points are given in order; that is, you can construct the polygon by connecting point 1 to point 2, point 2 to point 3, and so on, finally looping around to connect point N to point 1.
+
+Determine if a new point p lies inside this polygon. (If p is on the boundary of the polygon, you should return False).
+
+### Solutions
+
+* [Solution](./swift/Problem&#32;236/)
+
+## Problem 237
+
+#### Description
+
+This problem was asked by Amazon.
+
+A tree is symmetric if its data and shape remain unchanged when it is reflected about the root node. The following tree is an example:
+
+```
+        4
+      / | \
+    3   5   3
+  /           \
+9              9
+```
+
+Given a `k`-ary tree, determine whether it is symmetric.
+
+### Solutions
+
+* [Solution](./swift/Problem&#32;237/)
+
+## Problem 238
+
+#### Description
+
+This problem was asked by MIT.
+
+Blackjack is a two player card game whose rules are as follows:
+
+- The player and then the dealer are each given two cards.
+- The player can then "hit", or ask for arbitrarily many additional cards, so long as their total does not exceed `21`.
+- The dealer must then hit if their total is `16` or lower, otherwise pass.
+- Finally, the two compare totals, and the one with the greatest sum not exceeding `21` is the winner.
+
+For this problem, cards values are counted as follows: each card between `2` and `10` counts as their face value, face cards count as `10`, and aces count as `1`.
+
+Given perfect knowledge of the sequence of cards in the deck, implement a blackjack solver that maximizes the player's score (that is, wins minus losses).
+
+### Solutions
+
+* [Solution](./swift/Problem&#32;238/)
+
+## Problem 239
+
+#### Description
+
+This problem was asked by Uber.
+
+One way to unlock an Android phone is through a pattern of swipes across a `1-9` keypad.
+
+For a pattern to be valid, it must satisfy the following:
+
+- All of its keys must be distinct.
+- It must not connect two keys by jumping over a third key, unless that key has already been used.
+
+For example, `4 - 2 - 1 - 7` is a valid pattern, whereas `2 - 1 - 7` is not.
+
+Find the total number of valid unlock patterns of length N, where 1 <= N <= 9.
+
+### Solutions
+
+* [Solution](./swift/Problem&#32;239/)
