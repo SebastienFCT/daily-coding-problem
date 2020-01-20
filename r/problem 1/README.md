@@ -20,4 +20,14 @@ Q1.fn<-function(num,k){
   }
   return(FALSE)
 }
+
+```
+
+```r
+Q1.fn.new <- function(num, k){
+  if (length(num) <2 ) return(FALSE)
+  for (i in 1:(length(num)-1)){
+    if ((k-num[i]) %in% num[(i+1):length(num)]) return(TRUE)
+  }
+}
 ```
