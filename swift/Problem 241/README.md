@@ -13,11 +13,38 @@ Given a list of paper citations of a researcher, calculate their h-index.
 ## Solution
 
 ```swift
-// MARK: - TODO
+struct Academia {
+    
+    func hIndex(papers n: Int, citations h: [Int]) -> Int {
+        
+        guard h.count == n else {
+            fatalError("citation(s) missing for at least 1 paper")
+        }
+        
+        for i in stride(from: n, through: 0, by: -1) {
+            
+            let filtered = h.filter{ $0 >= i }
+            
+            if filtered.count >= i {
+                return i
+            }
+        }
+        
+        return 0
+    }
+}
 ```
 
 ## Tests
 
 ```swift
-// MARK: - TODO
+class Problem_241Tests: XCTestCase {
+
+    func test_example() {
+        let academia = Academia()
+        
+        XCTAssert(academia.hIndex(papers: 5, citations: [4,3,0,1,5]) == 3)
+    }
+
+}
 ```
