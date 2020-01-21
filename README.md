@@ -236,6 +236,8 @@ Implement a job scheduler which takes in a function `f` and an integer `n`, and 
 
 
 * [Swift](./swift/Problem&#32;10/)
+* [Python](./python/Problem&#32;10/)
+
 
 ## Problem 11
 
