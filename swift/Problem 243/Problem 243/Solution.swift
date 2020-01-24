@@ -1,14 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 243
+//
+//  Created by sebastien FOCK CHOW THO on 2020-01-23.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Etsy.
+import Foundation
 
-Given an array of numbers N and an integer k, your task is to split N into k partitions such that the maximum sum of any partition is minimized. Return this sum.
-
-For example, given `N = [5, 1, 2, 7, 3, 4]` and `k = 3`, you should return `8`, since the optimal partition is `[5, 1, 2], [7], [3, 4]`.
-
-## Solution
-
-```swift
 extension Array where Element == Int {
     
     func minimumSumForKPartitions(k: Int) -> Int {
@@ -46,19 +45,3 @@ extension Array where Element == Int {
         return result
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_243Tests: XCTestCase {
-
-    func test_example() {
-        
-        let input = [5, 1, 2, 7, 3, 4]
-        
-        print(input.minimumSumForKPartitions(k: 3) == 8)
-    }
-
-}
-```
