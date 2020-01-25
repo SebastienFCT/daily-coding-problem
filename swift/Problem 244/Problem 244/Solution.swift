@@ -30,4 +30,23 @@ struct SieveOfEratosthenes {
         
         return result
     }
+    
+    func allPrimes(count: Int) {
+        
+        var index = 2
+        var iteration = 0
+        var list: [Int] = []
+        
+        while iteration < count {
+            if !list.contains(where: { (item) -> Bool in
+                return index % item == 0
+            }) {
+                print(index)
+                iteration += 1
+                list.append(index)
+            }
+            
+            index += 1
+        }
+    }
 }
