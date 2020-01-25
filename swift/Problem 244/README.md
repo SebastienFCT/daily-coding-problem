@@ -13,11 +13,42 @@ Bonus: Create a generator that produces primes indefinitely (that is, without ta
 ## Solution
 
 ```swift
-// MARK: - TODO
+struct SieveOfEratosthenes {
+    
+    func primes(before: Int) -> [Int] {
+        
+        var result: [Int] = []
+        var nonPrimes: Set<Int> = Set()
+        
+        for i in 2..<before {
+            if !nonPrimes.contains(i) {
+                result.append(i)
+            }
+            
+            var index = result.last! + result.last!
+            
+            while index < before {
+                nonPrimes.insert(index)
+                index += result.last!
+            }
+        }
+        
+        return result
+    }
+}
 ```
 
 ## Tests
 
 ```swift
-// MARK: - TODO
+class Problem_244Tests: XCTestCase {
+
+    func test_sieve_or_erastosthenes() {
+        
+        let soe = SieveOfEratosthenes()
+        
+        XCTAssert(soe.primes(before: 100) == [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97])
+    }
+
+}
 ```
