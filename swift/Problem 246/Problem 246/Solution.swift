@@ -1,14 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 246
+//
+//  Created by sebastien FOCK CHOW THO on 2020-01-26.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Dropbox.
+import Foundation
 
-Given a list of words, determine whether the words can be chained to form a circle. A word X can be placed in front of another word Y in a circle if the last character of X is same as the first character of Y.
-
-For example, the words `['chair', 'height', 'racket', touch', 'tunic']` can form the following circle: `chair --> racket --> touch --> height --> tunic --> chair`.
-
-## Solution
-
-```swift
 extension Array where Element == String {
     
     func canCircle() -> Bool {
@@ -51,18 +50,3 @@ extension Array where Element == String {
         return false
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_246Tests: XCTestCase {
-
-    func test_example() {
-        let input = ["chair", "height", "racket", "touch", "tunic"]
-        
-        XCTAssertTrue(input.canCircle())
-    }
-
-}
-```
