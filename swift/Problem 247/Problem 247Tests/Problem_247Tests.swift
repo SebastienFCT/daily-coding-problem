@@ -11,24 +11,55 @@ import XCTest
 
 class Problem_247Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_height_balanced_binary_tree() {
+        
+        
+        let root = Node(value: 0)
+        
+        let l = Node(value: 1)
+        
+        let ll = Node(value: 11)
+        l.left = ll
+        root.left = l
+        
+        let r = Node(value: 2)
+        
+        let rl = Node(value: 21)
+        let rr = Node(value: 22)
+        r.left = rl
+        r.right = rr
+        
+        let rrl = Node(value: 221)
+        rr.right = rrl
+        
+        root.right = r
+        
+        XCTAssertTrue(root.isHeightBalanced())
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_height_unbalanced_binary_tree() {
+        
+        
+        let root = Node(value: 0)
+        
+        let l = Node(value: 1)
+        
+        root.left = l
+        
+        let r = Node(value: 2)
+        
+        let rl = Node(value: 21)
+        let rr = Node(value: 22)
+        
+        let rrl = Node(value: 221)
+        rr.right = rrl
+        
+        r.left = rl
+        r.right = rr
+        
+        root.right = r
+        
+        XCTAssertFalse(root.isHeightBalanced())
     }
 
 }
