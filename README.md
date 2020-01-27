@@ -4686,3 +4686,15 @@ For example, the words `['chair', 'height', 'racket', touch', 'tunic']` can form
 ### Solutions
 
 * [Solution](./swift/Problem&#32;246/)
+
+## Problem 247
+
+#### Description
+
+This problem was asked by PayPal.
+
+Given a binary tree, determine whether or not it is height-balanced. A height-balanced binary tree can be defined as one in which the heights of the two subtrees of any node never differ by more than one.
+
+### Solutions
+
+* [Solution](./swift/Problem&#32;247/)
