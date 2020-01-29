@@ -140,6 +140,7 @@ Implement `car` and `cdr`.
 
 * [Swift](./swift/Problem&#32;5/)
 * [Python](./python/Problem&#32;5/)
+* [C++](./cpp/Problem&#32;5/)
 
 ## Problem 6
 
