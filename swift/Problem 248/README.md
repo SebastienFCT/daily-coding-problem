@@ -7,11 +7,48 @@ Given a binary tree, determine whether or not it is height-balanced. A height-ba
 ## Solution
 
 ```swift
-// MARK: - TODO
+func max(left: Int, right: Int) -> Int {
+    
+    return (left + right + abs(left - right)) / 2
+}
 ```
 
 ## Tests
 
 ```swift
-// MARK: - TODO
+class Problem_248Tests: XCTestCase {
+
+    func test_max() {
+        
+        let expected = 23
+        let actual = max(left: 23, right: 21)
+        
+        XCTAssert(expected == actual)
+    }
+    
+    func test_max_2() {
+
+        let expected = 23
+        let actual = max(left: 21, right: 23)
+
+        XCTAssert(expected == actual)
+    }
+
+    func test_max_3() {
+
+        let expected = 2
+        let actual = max(left: 2, right: -10)
+
+        XCTAssert(expected == actual)
+    }
+    
+    func test_max_4() {
+
+        let expected = -2
+        let actual = max(left: -2, right: -10)
+
+        XCTAssert(expected == actual)
+    }
+
+}
 ```
