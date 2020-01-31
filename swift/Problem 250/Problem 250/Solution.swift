@@ -10,9 +10,7 @@ import Foundation
 
 struct Cryptarithmetic {
     
-    var dictionary: [Character : Int]
-    
-    func solve3words(word1: String, word2: String, word3: String) {
+    func solve3words(word1: String, word2: String, word3: String) -> [Character : Int]? {
         
         let set = [word1, word2, word3].toCharacterSet()
         let array = Array(set)
@@ -21,39 +19,73 @@ struct Cryptarithmetic {
             fatalError("too many characters")
         }
         
-        var digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        let digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
         
         for i in 0...9 {
-            var copyCharacters = array
-            var copyDigits = digits
-            var dictionary: [Character : Int] = [:]
+            var copy = digits
+            var map: [Int] = []
             
-            while copyCharacters.isEmpty {
+            map.append(copy.remove(at: i))
+            
+            for j in 0...8 {
+                map.append(copy.remove(at: j))
                 
+                for k in 0...7 {
+                    map.append(copy.remove(at: k))
+                    
+                    for l in 0...6 {
+                        map.append(copy.remove(at: l))
+                        
+                        for m in 0...5 {
+                            map.append(copy.remove(at: m))
+                            
+                            for n in 0...4 {
+                                map.append(copy.remove(at: n))
+                                
+                                for o in 0...3 {
+                                    map.append(copy.remove(at: o))
+                                    
+                                    for p in 0...2 {
+                                        map.append(copy.remove(at: p))
+                                        
+                                        for q in 0...1 {
+                                            map.append(copy.remove(at: q))
+                                            map.append(copy.remove(at: 0))
+                                            
+                                            let dictionary = mapsToDictionary(characters: array, digits: map)
+                                            if test(dictionary: dictionary, word1: word1, word2: word2, word3: word3) {
+                                                return dictionary
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
-        for character in array {
-            var dictionary: [Character : Int] = [:]
-            
-            var copy = inputs
-            for i in 0..<copy.count {
-                var anotherCopy = copy
-            }
-            
-        }
+        
+        return nil
     }
     
-    func test(set: CharacterSet) -> Bool {
-        var word1Val: Int = 0
-        var word2Val: Int = 0
-        var word3Val: Int = 0
+    func mapsToDictionary(characters: [Character], digits: [Int]) -> [Character: Int] {
+        var result: [Character : Int] = [:]
+        
+        for i in 0..<characters.count {
+            result[characters[i]] = digits[i]
+        }
+        
+        return result
+    }
+    
+    func test(dictionary: [Character : Int], word1: String, word2: String, word3: String) -> Bool {
+        let word1Val = word1.wordToInt(dictionary: dictionary)
+        let word2Val = word2.wordToInt(dictionary: dictionary)
+        let word3Val = word3.wordToInt(dictionary: dictionary)
         
         return word1Val + word2Val == word3Val
     }
-}
-
-extension Array where Element == Int {
-    
 }
 
 extension Array where Element == String {
