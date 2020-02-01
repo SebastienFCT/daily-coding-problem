@@ -4753,3 +4753,16 @@ Given a three-word puzzle like the one above, create an algorithm that finds a s
 ### Solutions
 
 * [Solution](./swift/Problem&#32;250/)
+
+## Problem 251
+
+#### Description
+
+This problem was asked by Amazon.
+
+Given an array of a million integers between zero and a billion, out of order, how can you efficiently sort it? Assume that you cannot store an array of a billion elements in memory.
+
+
+### Solutions
+
+* [Solution](./swift/Problem&#32;251/)
