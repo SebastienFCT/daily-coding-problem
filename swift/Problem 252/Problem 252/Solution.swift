@@ -1,14 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 252
+//
+//  Created by sebastien FOCK CHOW THO on 2020-02-01.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Palantir.
+import Foundation
 
-The ancient Egyptians used to express fractions as a sum of several terms where each numerator is one. For example, 4 / 13 can be represented as 1 / 4 + 1 / 18 + 1 / 468.
-
-Create an algorithm to turn an ordinary fraction a / b, where a < b, into an Egyptian fraction.
-
-## Solution
-
-```swift
 typealias Fraction = (numerator: Int, denominator: Int)
 
 struct EgyptianMaths {
@@ -62,23 +61,3 @@ struct EgyptianMaths {
         }
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_252Tests: XCTestCase {
-
-    func test_example() {
-        
-        let em = EgyptianMaths()
-        let actual = em.convertFraction(fraction: (4, 13))
-        
-        XCTAssert(actual.count == 3)
-        XCTAssert(actual[0] == (1, 4))
-        XCTAssert(actual[1] == (1, 18))
-        XCTAssert(actual[2] == (1, 468))
-    }
-
-}
-```
