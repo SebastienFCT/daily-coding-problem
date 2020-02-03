@@ -1,21 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 253
+//
+//  Created by sebastien FOCK CHOW THO on 2020-02-02.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by PayPal.
+import Foundation
 
-Given a string and a number of lines `k`, print the string in zigzag form. In zigzag, characters are printed out diagonally from top left to bottom right until reaching the `kth` line, then back up to top right, and so on.
-
-For example, given the sentence `"thisisazigzag"` and `k = 4`, you should print:
-
-```
-t     a     g
- h   s z   a
-  i i   i z
-   s     g
-```
-
-## Solution
-
-```swift
 struct Zigzag {
     
     func printZigzag(value: String, lines k: Int) {
@@ -59,19 +51,3 @@ struct Zigzag {
         return lines
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_253Tests: XCTestCase {
-
-    func test_example() {
-     
-        
-        let zigzag = Zigzag()
-        zigzag.printZigzag(value: "thisisazigzag", lines: 4)
-    }
-
-}
-```
