@@ -11,24 +11,42 @@ import XCTest
 
 class Problem_254Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_example() {
+        
+        let root = Node(value: 0)
+        
+        let l = Node(value: 1)
+        let ll = Node(value: 3)
+        let llr = Node(value: 5)
+        
+        ll.right = llr
+        l.left = ll
+        root.left = l
+        
+        let r = Node(value: 2)
+        let rr = Node(value: 4)
+        let rrl = Node(value: 6)
+        let rrr = Node(value: 7)
+        
+        rr.left = rrl
+        rr.right = rrr
+        r.right = rr
+        root.right = r
+        
+        let actual = root.toBinaryTree()
+        
+        XCTAssert(actual.value == 0)
+        XCTAssert(actual.left?.value == 5)
+        XCTAssertNil(actual.left?.left)
+        XCTAssertNil(actual.left?.right)
+        
+        XCTAssert(actual.right?.value == 4)
+        XCTAssert(actual.right?.left?.value == 6)
+        XCTAssertNil(actual.right?.left?.left)
+        XCTAssertNil(actual.right?.left?.right)
+        XCTAssert(actual.right?.right?.value == 7)
+        XCTAssertNil(actual.right?.right?.left)
+        XCTAssertNil(actual.right?.right?.right)
     }
 
 }
