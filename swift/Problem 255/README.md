@@ -29,11 +29,55 @@ Given a graph, find its transitive closure.
 ## Solution
 
 ```swift
-// MARK: - TODO
+extension Array where Element == Array<Int> {
+    
+    func transitiveClosure() -> [[Int]] {
+        
+        var result: [[Int]] = []
+        
+        let defaultRow = Swift.Array(repeating: 0, count: count)
+        for _ in 0..<count {
+            result.append(defaultRow)
+        }
+        
+        for i in 0..<count {
+            
+            for reference in self[i] {
+                
+                result[i][reference] = 1
+            }
+        }
+        
+        return result
+    }
+}
 ```
 
 ## Tests
 
 ```swift
-// MARK: - TODO
+class Problem_255Tests: XCTestCase {
+
+    func test_example() {
+        
+        let input = [
+            [0, 1, 3],
+            [1, 2],
+            [2],
+            [3]
+        ]
+        
+        let expected = [
+            [1, 1, 0, 1],
+            [0, 1, 1, 0],
+            [0, 0, 1, 0],
+            [0, 0, 0, 1]
+        ]
+        
+        let actual = input.transitiveClosure()
+        
+        XCTAssert(actual == expected)
+    }
+
+}
 ```
