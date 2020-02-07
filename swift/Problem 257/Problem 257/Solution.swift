@@ -1,12 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 257
+//
+//  Created by sebastien FOCK CHOW THO on 2020-02-06.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by WhatsApp.
+import Foundation
 
-Given an array of integers out of order, determine the bounds of the smallest window that must be sorted in order for the entire array to be sorted. For example, given `[3, 7, 5, 6, 9]`, you should return `(1, 3)`.
-
-## Solution
-
-```swift
 extension Array where Element == Int {
 
     typealias Boundary = (start: Int, end: Int)
@@ -33,20 +34,3 @@ extension Array where Element == Int {
         return boundary
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_257Tests: XCTestCase {
-
-    func test_example() {
-        let input = [3, 7, 5, 6, 9]
-        let actual = input.boundForSmallestWindowToSort()
-        let expected = (1, 3)
-        
-        XCTAssert(actual == expected)
-    }
-
-}
-```
