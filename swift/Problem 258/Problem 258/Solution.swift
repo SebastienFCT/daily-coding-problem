@@ -1,26 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 258
+//
+//  Created by sebastien FOCK CHOW THO on 2020-02-07.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Morgan Stanley.
+import Foundation
 
-In Ancient Greece, it was common to write text with the first line going left to right, the second line going right to left, and continuing to go back and forth. This style was called "boustrophedon".
-
-Given a binary tree, write an algorithm to print the nodes in boustrophedon order.
-
-For example, given the following tree:
-
-```
-       1
-    /     \
-  2         3
- / \       / \
-4   5     6   7
-```
-
-You should return `[1, 3, 2, 4, 5, 6, 7]`.
-
-## Solution
-
-```swift
 class Node {
     var value: Int
     var left: Node?
@@ -92,30 +79,3 @@ class Node {
         return result
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_258Tests: XCTestCase {
-
-    
-    func test_example() {
-        
-        let root = Node(value: 1
-            , left: Node(value: 2
-                , left: Node(value: 4)
-                , right: Node(value: 5))
-            , right: Node(value: 3
-                , left: Node(value: 6)
-                , right: Node(value: 7))
-        )
-        
-        let actual = root.boustrophedon()
-        let expected = [1, 3, 2, 4, 5, 6, 7]
-        
-        XCTAssert(actual == expected)
-    }
-
-}
-```
