@@ -4326,7 +4326,7 @@ Do this in `O(N)` time.
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;224/)
+* [Swift](./swift/Problem&#32;224/)
 
 ## Problem 225
 
@@ -4345,7 +4345,7 @@ Bonus: Find an O(log N) solution if k = 2.
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;225/)
+* [Swift](./swift/Problem&#32;225/)
 
 ## Problem 226
 
@@ -4360,7 +4360,7 @@ For example, given `['xww', 'wxyz', 'wxyw', 'ywx', 'ywz']`, you should return `[
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;226/)
+* [Swift](./swift/Problem&#32;226/)
 
 ## Problem 227
 
@@ -4373,7 +4373,7 @@ Boggle is a game played on a `4 x 4` grid of letters. The goal is to find as man
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;227/)
+* [Swift](./swift/Problem&#32;227/)
 
 ## Problem 228
 
@@ -4386,7 +4386,7 @@ Given a list of numbers, create an algorithm that arranges them in order to form
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;228/)
+* [Swift](./swift/Problem&#32;228/)
 
 ## Problem 229
 
@@ -4407,7 +4407,7 @@ ladders = {1: 38, 4: 14, 9: 31, 21: 42, 28: 84, 36: 44, 51: 67, 71: 91, 80: 100}
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;229/)
+* [Swift](./swift/Problem&#32;229/)
 
 
 ## Problem 230
@@ -4424,7 +4424,7 @@ For example, if N = 1 and k = 5, we will need to try dropping the egg at every f
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;230/)
+* [Swift](./swift/Problem&#32;230/)
 
 ## Problem 231
 
@@ -4438,7 +4438,7 @@ For example, given "aaabbc", you could return "ababac". Given "aaab", return `No
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;231/)
+* [Swift](./swift/Problem&#32;231/)
 
 ## Problem 232
 
@@ -4463,7 +4463,7 @@ assert mapsum.sum("col") == 5
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;232/)
+* [Swift](./swift/Problem&#32;232/)
 
 ## Problem 233
 
@@ -4475,7 +4475,7 @@ Implement the function `fib(n)`, which returns the `nth` number in the Fibonacci
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;233/)
+* [Swift](./swift/Problem&#32;233/)
 
 ## Problem 234
 
@@ -4487,7 +4487,7 @@ Recall that the minimum spanning tree is the subset of edges of a tree that conn
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;234/)
+* [Swift](./swift/Problem&#32;234/)
 
 ## Problem 235
 
@@ -4499,7 +4499,7 @@ Given an array of numbers of length `N`, find both the minimum and maximum using
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;235/)
+* [Swift](./swift/Problem&#32;235/)
 
 ## Problem 236
 
@@ -4513,7 +4513,7 @@ Determine if a new point p lies inside this polygon. (If p is on the boundary of
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;236/)
+* [Swift](./swift/Problem&#32;236/)
 
 ## Problem 237
 
@@ -4535,7 +4535,7 @@ Given a `k`-ary tree, determine whether it is symmetric.
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;237/)
+* [Swift](./swift/Problem&#32;237/)
 
 ## Problem 238
 
@@ -4556,7 +4556,7 @@ Given perfect knowledge of the sequence of cards in the deck, implement a blackj
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;238/)
+* [Swift](./swift/Problem&#32;238/)
 
 ## Problem 239
 
@@ -4577,7 +4577,7 @@ Find the total number of valid unlock patterns of length N, where 1 <= N <= 9.
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;239/)
+* [Swift](./swift/Problem&#32;239/)
 
 ## Problem 240
 
@@ -4591,7 +4591,7 @@ What is the minimum number of swaps necessary for this to happen?
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;240/)
+* [Swift](./swift/Problem&#32;240/)
 
 ## Problem 241
 
@@ -4609,7 +4609,7 @@ Given a list of paper citations of a researcher, calculate their h-index.
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;241/)
+* [Swift](./swift/Problem&#32;241/)
 
 ## Problem 242
 
@@ -4626,7 +4626,7 @@ You can assume that all values get cleared at the end of the day, and that you w
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;242/)
+* [Swift](./swift/Problem&#32;242/)
 
 ## Problem 243
 
@@ -4640,7 +4640,7 @@ For example, given `N = [5, 1, 2, 7, 3, 4]` and `k = 3`, you should return `8`, 
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;243/)
+* [Swift](./swift/Problem&#32;243/)
 
 ## Problem 244
 
@@ -4658,7 +4658,7 @@ Bonus: Create a generator that produces primes indefinitely (that is, without ta
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;244/)
+* [Swift](./swift/Problem&#32;244/)
 
 ## Problem 245
 
@@ -4672,7 +4672,7 @@ For example, given `[6, 2, 4, 0, 5, 1, 1, 4, 2, 9]`, you should return `2`, as t
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;245/)
+* [Swift](./swift/Problem&#32;245/)
 
 ## Problem 246
 
@@ -4686,7 +4686,7 @@ For example, the words `['chair', 'height', 'racket', touch', 'tunic']` can form
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;246/)
+* [Swift](./swift/Problem&#32;246/)
 
 ## Problem 247
 
@@ -4698,7 +4698,7 @@ Given a binary tree, determine whether or not it is height-balanced. A height-ba
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;247/)
+* [Swift](./swift/Problem&#32;247/)
 
 ## Problem 248
 
@@ -4710,7 +4710,7 @@ Find the maximum of two numbers without using any if-else statements, branching,
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;248/)
+* [Swift](./swift/Problem&#32;248/)
 
 ## Problem 249
 
@@ -4722,7 +4722,7 @@ Given an array of integers, find the maximum XOR of any two elements.
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;249/)
+* [Swift](./swift/Problem&#32;249/)
 
 ## Problem 250
 
@@ -4752,7 +4752,7 @@ Given a three-word puzzle like the one above, create an algorithm that finds a s
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;250/)
+* [Swift](./swift/Problem&#32;250/)
 
 ## Problem 251
 
@@ -4780,7 +4780,7 @@ Create an algorithm to turn an ordinary fraction a / b, where a < b, into an Egy
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;252/)
+* [Swift](./swift/Problem&#32;252/)
 
 ## Problem 253
 
@@ -4802,7 +4802,7 @@ t     a     g
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;253/)
+* [Swift](./swift/Problem&#32;253/)
 
 ## Problem 254
 
@@ -4837,7 +4837,7 @@ You should convert it to:
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;254/)
+* [Swift](./swift/Problem&#32;254/)
 
 ## Problem 255
 
@@ -4871,7 +4871,7 @@ Given a graph, find its transitive closure.
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;255/)
+* [Swift](./swift/Problem&#32;255/)
 
 ## Problem 256
 
@@ -4883,7 +4883,7 @@ Given a linked list, rearrange the node values such that they appear in alternat
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;256/)
+* [Swift](./swift/Problem&#32;256/)
 
 ## Problem 257
 
@@ -4895,7 +4895,7 @@ Given an array of integers out of order, determine the bounds of the smallest wi
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;257/)
+* [Swift](./swift/Problem&#32;257/)
 
 ## Problem 258
 
@@ -4921,7 +4921,7 @@ You should return `[1, 3, 2, 4, 5, 6, 7]`.
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;258/)
+* [Swift](./swift/Problem&#32;258/)
 
 ## Problem 259
 
@@ -4945,4 +4945,16 @@ For example, if the dictionary is `["cat", "calf", "dog", "bear"]`, the only win
 
 ### Solutions
 
-* [Solution](./swift/Problem&#32;259/)
+* [Swift](./swift/Problem&#32;259/)
+
+## Problem 260
+
+#### Description
+
+This problem was asked by Pinterest.
+
+The sequence `[0, 1, ..., N]` has been jumbled, and the only clue you have for its order is an array representing whether each number is larger or smaller than the last. Given this information, reconstruct an array that is consistent with it. For example, given `[None, +, +, -, +]`, you could return `[1, 2, 3, 0, 4]`.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;260/)
