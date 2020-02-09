@@ -1,12 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 260
+//
+//  Created by sebastien FOCK CHOW THO on 2020-02-09.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Pinterest.
+import Foundation
 
-The sequence `[0, 1, ..., N]` has been jumbled, and the only clue you have for its order is an array representing whether each number is larger or smaller than the last. Given this information, reconstruct an array that is consistent with it. For example, given `[None, +, +, -, +]`, you could return `[1, 2, 3, 0, 4]`.
-
-## Solution
-
-```swift
 struct JumbledSequence {
     
     // Solution found at https://github.com/vineetjohn/daily-coding-problem
@@ -39,21 +40,3 @@ struct JumbledSequence {
         return result
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_260Tests: XCTestCase {
-
-    func test_example() {
-        
-        let js = JumbledSequence()
-        let actual = js.solve(input: ["+", "+", "-", "+"])
-        let expected = [1, 2, 3, 0, 4]
-        
-        XCTAssert(actual == expected)
-    }
-
-}
-```

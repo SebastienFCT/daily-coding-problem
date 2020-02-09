@@ -10,6 +10,7 @@
 		5D097A4323F0B6CE0068B780 /* Problem_260.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D097A3923F0B6CD0068B780 /* Problem_260.framework */; };
 		5D097A4823F0B6CE0068B780 /* Problem_260Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D097A4723F0B6CE0068B780 /* Problem_260Tests.swift */; };
 		5D097A4A23F0B6CE0068B780 /* Problem_260.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D097A3C23F0B6CD0068B780 /* Problem_260.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5D097A5623F0B7170068B780 /* Solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D097A5523F0B7170068B780 /* Solution.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		5D097A4223F0B6CE0068B780 /* Problem 260Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Problem 260Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D097A4723F0B6CE0068B780 /* Problem_260Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem_260Tests.swift; sourceTree = "<group>"; };
 		5D097A4923F0B6CE0068B780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D097A5523F0B7170068B780 /* Solution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solution.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				5D097A3C23F0B6CD0068B780 /* Problem_260.h */,
 				5D097A3D23F0B6CD0068B780 /* Info.plist */,
+				5D097A5523F0B7170068B780 /* Solution.swift */,
 			);
 			path = "Problem 260";
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D097A5623F0B7170068B780 /* Solution.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +395,7 @@
 		5D097A5123F0B6CE0068B780 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = E5P894ED53;
@@ -409,6 +414,7 @@
 		5D097A5223F0B6CE0068B780 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = E5P894ED53;
