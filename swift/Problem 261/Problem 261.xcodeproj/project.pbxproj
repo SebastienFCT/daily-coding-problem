@@ -10,6 +10,7 @@
 		5D2508F723F22D7A005D745E /* Problem_261.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2508ED23F22D7A005D745E /* Problem_261.framework */; };
 		5D2508FC23F22D7A005D745E /* Problem_261Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2508FB23F22D7A005D745E /* Problem_261Tests.swift */; };
 		5D2508FE23F22D7A005D745E /* Problem_261.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D2508F023F22D7A005D745E /* Problem_261.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5D25090A23F24F31005D745E /* Solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D25090923F24F31005D745E /* Solution.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		5D2508F623F22D7A005D745E /* Problem 261Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Problem 261Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D2508FB23F22D7A005D745E /* Problem_261Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem_261Tests.swift; sourceTree = "<group>"; };
 		5D2508FD23F22D7A005D745E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D25090923F24F31005D745E /* Solution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solution.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				5D2508F023F22D7A005D745E /* Problem_261.h */,
 				5D2508F123F22D7A005D745E /* Info.plist */,
+				5D25090923F24F31005D745E /* Solution.swift */,
 			);
 			path = "Problem 261";
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D25090A23F24F31005D745E /* Solution.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +395,7 @@
 		5D25090523F22D7A005D745E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = E5P894ED53;
@@ -409,6 +414,7 @@
 		5D25090623F22D7A005D745E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = E5P894ED53;
