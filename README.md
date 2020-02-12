@@ -4986,3 +4986,15 @@ Given a dictionary of character frequencies, build a Huffman tree, and use it to
 ### Solutions
 
 * [Swift](./swift/Problem&#32;261/)
+
+## Problem 262
+
+#### Description
+
+This problem was asked by Mozilla.
+
+A bridge in a connected (undirected) graph is an edge that, if removed, causes the graph to become disconnected. Find all the bridges in a graph.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;262/)
