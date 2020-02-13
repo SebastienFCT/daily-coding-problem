@@ -14,11 +14,60 @@ We can consider a sentence valid if it conforms to the following rules:
 ## Solution
 
 ```swift
-// MARK: - TODO
+extension String {
+    
+    func areValidSentences() -> Bool {
+        
+        guard count > 2,  first!.isUppercase else {
+            return false
+        }
+        
+        let last = self.last!
+        
+        guard ["!", "?", "."].contains(last) else {
+            return false
+        }
+        
+        var previous = first!
+        var current = self[1]
+        
+        if !((current.isLetter && current.isLowercase) || (current == " ")) {
+            return false
+        }
+        
+        for i in 2..<count {
+            print("currnet: \(self[i])")
+            previous = current
+            current = self[i]
+            
+            switch previous {
+            case " ":
+                if [" ", "!", "?", "."].contains(current) { return false }
+            case "?", "!", ".":
+                if current.isLowercase { return false }
+                if !current.isLetter { return false }
+            default:
+                break
+            }
+        }
+        
+        return true
+    }
+}
 ```
 
 ## Tests
 
 ```swift
-// MARK: - TODO
+class Problem_263Tests: XCTestCase {
+
+    func test_sentences() {
+        
+        XCTAssertFalse("The quick brown fox jumps over the lazy dog".areValidSentences())
+        XCTAssertTrue("The quick brown fox jumps over the lazy dog!".areValidSentences())
+        XCTAssertTrue("The quick brown fox.Jumps over,the lazy dog!".areValidSentences())
+        XCTAssertFalse("The quick brown fox. Jumps over,the lazy dog!".areValidSentences())
+    }
+
+}
 ```
