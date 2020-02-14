@@ -1,16 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 264
+//
+//  Created by sebastien FOCK CHOW THO on 2020-02-13.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by LinkedIn.
+import Foundation
 
-Given a set of characters `C` and an integer `k`, a De Bruijn sequence is a cyclic sequence in which every possible `k`-length string of characters in `C` occurs exactly once.
-
-For example, suppose `C = {0, 1}` and `k = 3`. Then our sequence should contain the substrings `{'000', '001', '010', '011', '100', '101', '110', '111'}`, and one possible solution would be `00010111`.
-
-Create an algorithm that finds a De Bruijn sequence.
-
-## Solution
-
-```swift
 // Algorith taken from https://www.geeksforgeeks.org/de-bruijn-sequence-set-1/
 // I didn't get the explanation.
 
@@ -64,25 +61,18 @@ struct DeBrujinSequence {
         return result
     }
 }
-```
 
-## Tests
-
-```swift
-class Problem_264Tests: XCTestCase {
-
-    func test_implementation() {
-        
-        var dbs = DeBrujinSequence(seen: Set(), edges: [])
-        var characters = Set<Character>()
-        characters.insert("0")
-        characters.insert("1")
-        
-        let output = dbs.build(n: 3, characters: characters)
-        
-        print(dbs.edges)
-        print(output)
+extension StringProtocol {
+    subscript(offset: Int) -> Character { self[index(startIndex, offsetBy: offset)] }
+    subscript(range: Range<Int>) -> SubSequence {
+        let startIndex = index(self.startIndex, offsetBy: range.lowerBound)
+        return self[startIndex..<index(startIndex, offsetBy: range.count)]
     }
-
+    subscript(range: ClosedRange<Int>) -> SubSequence {
+        let startIndex = index(self.startIndex, offsetBy: range.lowerBound)
+        return self[startIndex..<index(startIndex, offsetBy: range.count)]
+    }
+    subscript(range: PartialRangeFrom<Int>) -> SubSequence { self[index(startIndex, offsetBy: range.lowerBound)...] }
+    subscript(range: PartialRangeThrough<Int>) -> SubSequence { self[...index(startIndex, offsetBy: range.upperBound)] }
+    subscript(range: PartialRangeUpTo<Int>) -> SubSequence { self[..<index(startIndex, offsetBy: range.upperBound)] }
 }
-```

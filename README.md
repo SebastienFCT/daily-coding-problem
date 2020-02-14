@@ -5032,4 +5032,4 @@ Create an algorithm that finds a De Bruijn sequence.
 
 ### Solutions
 
-* [Swift](./swift/Problem&#32;264/)
+* [Swift](./swift/Problem&#32;264/) ([credit to Geeksforgeeks](https://www.geeksforgeeks.org/de-bruijn-sequence-set-1/))
