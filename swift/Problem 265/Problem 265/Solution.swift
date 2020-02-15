@@ -1,17 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 265
+//
+//  Created by sebastien FOCK CHOW THO on 2020-02-14.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Atlassian.
+import Foundation
 
-MegaCorp wants to give bonuses to its employees based on how many lines of codes they have written. They would like to give the smallest positive amount to each worker consistent with the constraint that if a developer has written more lines of code than their neighbor, they should receive more money.
-
-Given an array representing a line of seats of employees at MegaCorp, determine how much each one should get paid.
-
-For example, given `[10, 40, 200, 1000, 60, 30]`, you should return `[1, 2, 3, 4, 2, 1]`.
-
-
-## Solution
-
-```swift
 extension Array where Element == Int {
     
     func distributeBonuses() -> [Int] {
@@ -82,26 +78,3 @@ extension Array where Element == Int {
         return result
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_265Tests: XCTestCase {
-
-    func test_example() {
-        let input = [10, 40, 200, 1000, 60, 30]
-        let actual = input.distributeBonuses()
-        let expected = [1, 2, 3, 4, 2, 1]
-        
-        XCTAssert(actual == expected)
-    }
-    
-    func test_example_other() {
-        let input = [10, 40, 200, 1000, 60, 30, 20, 50, 70, 50, 10]
-        let actual = input.distributeBonuses()
-        print(actual)
-    }
-
-}
-```
