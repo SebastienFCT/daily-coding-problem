@@ -9,11 +9,39 @@ Given a dictionary of words and an input word, create a function that returns al
 ## Solution
 
 ```swift
-// MARK: - TODO
+extension Array where Element == String {
+    
+    func stepWords(from input: String) -> [String] {
+        
+        var result: [String] = []
+        
+        for word in self {
+            
+            let difference = word.sorted().difference(from: input.sorted())
+            
+            if (difference.count == 1) {
+                result.append(word)
+            }
+        }
+        
+        return result
+    }
+}
 ```
 
 ## Tests
 
 ```swift
-// MARK: - TODO
+class Problem_266Tests: XCTestCase {
+
+    func test_example() {
+        
+        let input = ["APPEAL", "CATS", "DOGS", "APPLES"]
+        let actual = input.stepWords(from: "APPLE")
+        let expected = ["APPEAL", "APPLES"]
+        
+        print(actual == expected)
+    }
+
+}
 ```
