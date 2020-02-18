@@ -1,12 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 268
+//
+//  Created by sebastien FOCK CHOW THO on 2020-02-17.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Indeed.
+import Foundation
 
-Given a 32-bit positive integer N, determine whether it is a power of four in faster than O(log N) time.
-
-## Solution
-
-```swift
 extension Int {
     
     // O(log N)
@@ -24,4 +25,3 @@ extension Int {
         return true
     }
 }
-```
