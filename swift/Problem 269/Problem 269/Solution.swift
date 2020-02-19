@@ -1,23 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 269
+//
+//  Created by sebastien FOCK CHOW THO on 2020-02-18.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Microsoft.
+import Foundation
 
-You are given an string representing the initial conditions of some dominoes. Each element can take one of three values:
-
-- `L`, meaning the domino has just been pushed to the left,
-- `R`, meaning the domino has just been pushed to the right, or
-- `.`, meaning the domino is standing still.
-
-Determine the orientation of each tile when the dominoes stop falling. Note that if a domino receives a force from the left and right side simultaneously, it will remain upright.
-
-For example, given the string `.L.R....L`, you should return `LL.RRRLLL`.
-
-Given the string `..R...L.L`, you should return `..RR.LLLL`.
-
-
-## Solution
-
-```swift
 extension Array where Element == Character {
     
     func dominos() -> [Character] {
@@ -77,28 +67,18 @@ extension Array where Element == Character {
         return changeCount == 0 ? result : result.dominos()
     }
 }
-```
 
-## Tests
-
-```swift
-class Problem_269Tests: XCTestCase {
-
-    func test_example_1() {
-        let input: [Character] = [".", "L", ".", "R", ".", ".", ".", ".", "L"]
-        let expected: [Character] = ["L", "L", ".", "R", "R", "R", "L", "L", "L"]
-        let actual = input.dominos()
-        
-        XCTAssert(actual == expected)
+extension StringProtocol {
+    subscript(offset: Int) -> Character { self[index(startIndex, offsetBy: offset)] }
+    subscript(range: Range<Int>) -> SubSequence {
+        let startIndex = index(self.startIndex, offsetBy: range.lowerBound)
+        return self[startIndex..<index(startIndex, offsetBy: range.count)]
     }
-    
-    func test_example_2() {
-        let input: [Character] = [".", ".", "R", ".", ".", ".", "L", ".", "L"]
-        let expected: [Character] = [".", ".", "R", "R", ".", "L", "L", "L", "L"]
-        let actual = input.dominos()
-        
-        XCTAssert(actual == expected)
+    subscript(range: ClosedRange<Int>) -> SubSequence {
+        let startIndex = index(self.startIndex, offsetBy: range.lowerBound)
+        return self[startIndex..<index(startIndex, offsetBy: range.count)]
     }
-
+    subscript(range: PartialRangeFrom<Int>) -> SubSequence { self[index(startIndex, offsetBy: range.lowerBound)...] }
+    subscript(range: PartialRangeThrough<Int>) -> SubSequence { self[...index(startIndex, offsetBy: range.upperBound)] }
+    subscript(range: PartialRangeUpTo<Int>) -> SubSequence { self[..<index(startIndex, offsetBy: range.upperBound)] }
 }
-```
