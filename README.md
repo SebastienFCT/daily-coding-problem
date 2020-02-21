@@ -5155,7 +5155,7 @@ You should return `9`, because propagating the message from `0 -> 2 -> 3 -> 4` w
 
 ### Solutions
 
-* [Swift](./swift/Problem&#32;271/)
+* [Swift](./swift/Problem&#32;270/)
 
 ## Problem 271
 
