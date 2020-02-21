@@ -5157,7 +5157,7 @@ You should return `9`, because propagating the message from `0 -> 2 -> 3 -> 4` w
 
 * [Swift](./swift/Problem&#32;271/)
 
-## Problem 270
+## Problem 271
 
 #### Description
 
