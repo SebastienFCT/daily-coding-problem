@@ -1,15 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 272
+//
+//  Created by sebastien FOCK CHOW THO on 2020-02-21.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Spotify.
+import Foundation
 
-Write a function, `throw_dice(N, faces, total)`, that determines how many ways it is possible to throw `N` dice with some number of faces each to get a specific total.
-
-For example, `throw_dice(3, 6, 7)` should equal `15`.
-
-
-## Solution
-
-```swift
 func throw_dice(n: Int, faces: Int, total: Int, current: Int = 0) -> Int {
     
     var result = 0
@@ -31,18 +29,3 @@ func throw_dice(n: Int, faces: Int, total: Int, current: Int = 0) -> Int {
     
     return result
 }
-```
-
-## Tests
-
-```swift
-class Problem_272Tests: XCTestCase {
-
-    func test_example() {
-        
-        let actual = throw_dice(n: 3, faces: 6, total: 7)
-        print(actual)
-    }
-
-}
-```
