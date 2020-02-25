@@ -5229,7 +5229,7 @@ For example, given '-1 + (2 + 3)', you should return 4.
 
 ### Solutions
 
-* [TODO](./swift/Problem&#32;274/)
+* [Swift](./swift/Problem&#32;274/)
 
 ## Problem 275
 
