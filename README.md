@@ -5198,3 +5198,59 @@ For example, given `[-6, 0, 2, 40]`, you should return `2`. Given `[1, 5, 7, 8]`
 ### Solutions
 
 * [Swift](./swift/Problem&#32;273/)
+
+## Problem 274
+
+#### Description
+
+This problem was asked by Facebook.
+
+Given a string consisting of parentheses, single digits, and positive and negative signs, convert the string into a mathematical expression to obtain the answer.
+
+Don't use eval or a similar built-in parser.
+
+For example, given '-1 + (2 + 3)', you should return 4.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;274/)
+
+## Problem 274
+
+#### Description
+
+This problem was asked by Facebook.
+
+Given a string consisting of parentheses, single digits, and positive and negative signs, convert the string into a mathematical expression to obtain the answer.
+
+Don't use eval or a similar built-in parser.
+
+For example, given '-1 + (2 + 3)', you should return 4.
+
+### Solutions
+
+* [TODO](./swift/Problem&#32;274/)
+
+## Problem 275
+
+#### Description
+
+This problem was asked by Epic.
+
+The "look and say" sequence is defined as follows: beginning with the term 1, each subsequent term visually describes the digits appearing in the previous term. The first few terms are as follows:
+
+```
+1
+11
+21
+1211
+111221
+```
+
+As an example, the fourth term is `1211`, since the third term consists of one `2` and one `1`.
+
+Given an integer `N`, print the `N`th term of this sequence.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;275/)
