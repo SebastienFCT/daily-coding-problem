@@ -1,13 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 278
+//
+//  Created by sebastien FOCK CHOW THO on 2020-02-27.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Amazon.
+import Foundation
 
-Given an integer `N`, construct all possible binary search trees with `N` nodes.
-
-
-## Solution
-
-```swift
 class Node {
     var value: Int
     var left: Node?
@@ -94,21 +94,3 @@ struct BinarySearchTree {
         return result
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_278Tests: XCTestCase {
-
-    func test_all_trees() {
-        
-        let bst = BinarySearchTree()
-        
-        for tree in bst.allTrees(n: 5) {
-            print(tree.printable())
-        }
-    }
-
-}
-```
