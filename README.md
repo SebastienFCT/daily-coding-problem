@@ -5348,3 +5348,15 @@ Given a friendship list such as the one above, determine the number of friend gr
 ### Solutions
 
 * [Swift](./swift/Problem&#32;279/)
+
+## Problem 280
+
+#### Description
+
+This problem was asked by Pandora.
+
+Given an undirected graph, determine if it contains a cycle.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;280/)
