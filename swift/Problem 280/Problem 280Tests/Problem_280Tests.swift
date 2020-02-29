@@ -11,24 +11,26 @@ import XCTest
 
 class Problem_280Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_graph_cycle() {
+        
+        let a = Node(value: 0)
+        let b = Node(value: 1)
+        let c = Node(value: 2)
+        
+        a.nodes = [b]
+        b.nodes = [c]
+        c.nodes = [a]
+        
+        XCTAssertTrue(a.containsCycle(current: []))
+        
+        let a2 = Node(value: 0)
+        let b2 = Node(value: 1)
+        let c2 = Node(value: 2)
+        
+        a2.nodes = [b2]
+        b2.nodes = [c2]
+        
+        XCTAssertFalse(a2.containsCycle(current: []))
     }
 
 }
