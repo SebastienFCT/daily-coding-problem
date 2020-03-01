@@ -22,11 +22,85 @@ Given an input consisting of brick lengths for each row such as the one above, r
 ## Solution
 
 ```swift
-// MARK: - TODO
+struct Wall {
+    
+    var stack: [[Int]]
+    
+    func optimalCut() -> Int {
+        
+        guard stack.count > 0 else {
+            return 0
+        }
+
+        let maxLength = stack.map{ $0.reduce(0, { $0 + $1 }) }.sorted{ $0 > $1 }.first!
+        var cuts: [Int: Int] = [:]
+        
+        for i in 1..<maxLength {
+            
+            var cutCount = 0
+            
+            for row in stack {
+                if row.isCutting(position: i) {
+                    cutCount += 1
+                }
+            }
+            
+            cuts[i] = cutCount
+        }
+        
+        let sorted = cuts.sorted{ $0.1 < $1.1 }
+        
+        return sorted.first!.key
+    }
+}
+
+typealias BrickRow = [Int]
+
+extension BrickRow {
+    
+    func isCutting(position: Int) -> Bool {
+        
+        var current = 0
+        
+        for brick in self {
+            
+            current += brick
+            
+            if position < current {
+                return true
+            }
+            
+            if position == current {
+                return false
+            }
+        }
+        
+        return false
+    }
+}
 ```
 
 ## Tests
 
 ```swift
-// MARK: - TODO
+class Problem_281Tests: XCTestCase {
+
+    func test_example() {
+        
+        let wall = Wall(stack: [
+            [3, 5, 1, 1],
+            [2, 3, 3, 2],
+            [5, 5],
+            [4, 4, 2],
+            [1, 3, 3, 3],
+            [1, 1, 6, 1, 1]
+        ])
+        
+        let expected = 8
+        let actual = wall.optimalCut()
+        
+        XCTAssert(actual == expected)
+    }
+
+}
 ```
