@@ -5387,3 +5387,15 @@ Given an input consisting of brick lengths for each row such as the one above, r
 ### Solutions
 
 * [Swift](./swift/Problem&#32;281/)
+
+## Problem 282
+
+#### Description
+
+This problem was asked by Netflix.
+
+Given an array of integers, determine whether it contains a Pythagorean triplet. Recall that a Pythogorean triplet `(a, b, c)` is defined by the equation `a²+ b²= c²`.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;282/)
