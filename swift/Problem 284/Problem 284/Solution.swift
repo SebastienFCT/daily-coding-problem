@@ -1,22 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 284
+//
+//  Created by sebastien FOCK CHOW THO on 2020-03-04.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Yext.
+import Foundation
 
-Two nodes in a binary tree can be called cousins if they are on the same level of the tree but have different parents. For example, in the following diagram 4 and 6 are cousins.
-
-```
-    1
-   / \
-  2   3
- / \   \
-4   5   6
-```
-
-Given a binary tree and a particular node, find all cousins of that node.
-
-## Solution
-
-```swift
 class Node {
     var value: Int
     var left: Node?
@@ -150,38 +141,3 @@ struct BinaryTree {
         }
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_284Tests: XCTestCase {
-
-    func test_example() {
-        
-        let root = Node(value: 1)
-        let l = Node(value: 2)
-        let r = Node(value: 3)
-        let ll = Node(value: 4)
-        let lr = Node(value: 5)
-        let rr = Node(value: 6)
-        
-        r.right = rr
-        
-        l.left = ll
-        l.right = lr
-        
-        root.left = l
-        root.right = r
-        
-        var bt = BinaryTree(root: root, nodesByLevel: [:])
-        bt.buildNodesByLevel()
-        
-        let actual = bt.cousin(of: ll).map{ $0.value }
-        let expected = [6]
-        
-        XCTAssert(actual == expected)
-    }
-
-}
-```

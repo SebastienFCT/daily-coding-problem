@@ -11,24 +11,30 @@ import XCTest
 
 class Problem_284Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_example() {
+        
+        let root = Node(value: 1)
+        let l = Node(value: 2)
+        let r = Node(value: 3)
+        let ll = Node(value: 4)
+        let lr = Node(value: 5)
+        let rr = Node(value: 6)
+        
+        r.right = rr
+        
+        l.left = ll
+        l.right = lr
+        
+        root.left = l
+        root.right = r
+        
+        var bt = BinaryTree(root: root, nodesByLevel: [:])
+        bt.buildNodesByLevel()
+        
+        let actual = bt.cousin(of: ll).map{ $0.value }
+        let expected = [6]
+        
+        XCTAssert(actual == expected)
     }
 
 }
