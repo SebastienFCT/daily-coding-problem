@@ -11,11 +11,47 @@ Can you do this using just one forward pass through the array?
 ## Solution
 
 ```swift
-// MARK: - TODO
+struct Street {
+    var buildingHeights: [Int]
+    
+    func countWithSunSet() -> Int {
+        
+        guard buildingHeights.count > 0 else {
+            return 0
+        }
+        
+        var count = 1
+        var current = buildingHeights.last!
+        
+        guard buildingHeights.count > 2 else {
+            return count
+        }
+        
+        for i in stride(from: buildingHeights.count-1, through: 0, by: -1) {
+            if buildingHeights[i] > current {
+                count += 1
+                current = buildingHeights[i]
+            }
+        }
+        
+        return count
+    }
+}
 ```
 
 ## Tests
 
 ```swift
-// MARK: - TODO
+class Problem_285Tests: XCTestCase {
+
+    func test_example() {
+        let input = Street(buildingHeights: [3, 7, 8, 3, 6, 1])
+        
+        let expected = 3
+        let actual = input.countWithSunSet()
+        
+        XCTAssert(actual == expected)
+    }
+
+}
 ```
