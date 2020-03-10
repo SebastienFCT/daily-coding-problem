@@ -22,11 +22,64 @@ Given a list of non-zero starting values [a, b, c], and assuming optimal play, d
 ## Solution
 
 ```swift
-// MARK: - TODO
+struct Nim {
+    
+    var heap1: Int
+    var heap2: Int
+    var heap3: Int
+    
+    func canWin() -> Bool {
+        
+        switch (heap1, heap2, heap3) {
+            
+        case (0, 0, _), (_, 0, 0), (0, _, 0):
+            return true
+        case (0, _, _):
+            return heap2 != 1 && heap3 != 1
+        case (_, 0, _):
+            return heap1 != 1 && heap3 != 1
+        case (_, _, 0):
+            return heap1 != 1 && heap2 != 1
+        case (1, 1, 1):
+            return false
+        case (1, 1, _), (1, _, 1), (_, 1, 1):
+            return true
+        case (1, _, _):
+            return heap2 > 1 && heap3 > 1
+        case (_, _, 1):
+            return heap1 > 1 && heap2 > 1
+        case (_, 1, _):
+            return heap1 > 1 && heap3 > 1
+        default:
+            
+            if heap1 > 1 {
+                return !Nim(heap1: heap1-1, heap2: heap2, heap3: heap3).canWin()
+            }
+            if heap2 > 1 {
+                return !Nim(heap1: heap1, heap2: heap2-1, heap3: heap3).canWin()
+            }
+            
+            return !Nim(heap1: heap1, heap2: heap2, heap3: heap3-1).canWin()
+        }
+    }
+}
 ```
 
 ## Tests
 
 ```swift
-// MARK: - TODO
+class Problem_289Tests: XCTestCase {
+
+    func test_nim_game() {
+        
+        XCTAssertFalse(Nim(heap1: 1, heap2: 1, heap3: 1).canWin())
+        XCTAssertTrue(Nim(heap1: 2, heap2: 1, heap3: 1).canWin())
+        XCTAssertTrue(Nim(heap1: 2, heap2: 2, heap3: 1).canWin())
+        XCTAssertTrue(Nim(heap1: 3, heap2: 4, heap3: 5).canWin())
+        XCTAssertTrue(Nim(heap1: 1, heap2: 2, heap3: 3).canWin())
+        XCTAssertTrue(Nim(heap1: 5, heap2: 5, heap3: 5).canWin())
+    }
+
+}
+
 ```

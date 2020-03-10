@@ -10,6 +10,7 @@
 		5DDB68A1241726DE00115660 /* Problem_289.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDB6897241726DE00115660 /* Problem_289.framework */; };
 		5DDB68A6241726DE00115660 /* Problem_289Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDB68A5241726DE00115660 /* Problem_289Tests.swift */; };
 		5DDB68A8241726DE00115660 /* Problem_289.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DDB689A241726DE00115660 /* Problem_289.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DDB68B224172CF900115660 /* Solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDB68B124172CF900115660 /* Solution.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		5DDB68A0241726DE00115660 /* Problem 289Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Problem 289Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DDB68A5241726DE00115660 /* Problem_289Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem_289Tests.swift; sourceTree = "<group>"; };
 		5DDB68A7241726DE00115660 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DDB68B124172CF900115660 /* Solution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solution.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				5DDB689A241726DE00115660 /* Problem_289.h */,
 				5DDB689B241726DE00115660 /* Info.plist */,
+				5DDB68B124172CF900115660 /* Solution.swift */,
 			);
 			path = "Problem 289";
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					5DDB6896241726DE00115660 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 					5DDB689F241726DE00115660 = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -195,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DDB68B224172CF900115660 /* Solution.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +344,7 @@
 		5DDB68AC241726DE00115660 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -356,6 +362,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sebfct.Problem-289";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -363,6 +370,7 @@
 		5DDB68AD241726DE00115660 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -387,6 +395,7 @@
 		5DDB68AF241726DE00115660 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = E5P894ED53;
@@ -405,6 +414,7 @@
 		5DDB68B0241726DE00115660 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = E5P894ED53;
