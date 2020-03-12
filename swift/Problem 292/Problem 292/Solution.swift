@@ -1,40 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 292
+//
+//  Created by sebastien FOCK CHOW THO on 2020-03-12.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Twitter.
+import Foundation
 
-A teacher must divide a class of students into two teams to play dodgeball. Unfortunately, not all the kids get along, and several refuse to be put on the same team as that of their enemies.
-
-Given an adjacency list of students and their enemies, write an algorithm that finds a satisfactory pair of teams, or returns False if none exists.
-
-For example, given the following enemy graph you should return the teams `{0, 1, 4, 5}` and `{2, 3}`.
-
-```
-students = {
-    0: [3],
-    1: [2],
-    2: [1, 4],
-    3: [0, 4, 5],
-    4: [2, 3],
-    5: [3]
-}
-```
-
-On the other hand, given the input below, you should return False.
-
-```
-students = {
-    0: [3],
-    1: [2],
-    2: [1, 3, 4],
-    3: [0, 2, 4, 5],
-    4: [2, 3],
-    5: [3]
-}
-```
-
-## Solution
-
-```swift
 struct Class {
     
     var students: [(key: Int, value: [Int])]
@@ -100,27 +73,3 @@ struct Class {
         return nil
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_292Tests: XCTestCase {
-
-    func test_example() {
-        
-        let input = Class(students: [
-            (key: 0, value: [3]),
-            (key: 1, value: [2]),
-            (key: 2, value: [1, 4]),
-            (key: 3, value: [0, 4, 5]),
-            (key: 4, value: [2, 3]),
-            (key: 5, value: [3])
-        ])
-        
-        let actual = input.divide()
-        print(actual)
-    }
-
-}
-```
