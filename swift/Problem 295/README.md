@@ -24,11 +24,48 @@ Bonus: Can you do this using only `O(k)` space?
 ## Solution
 
 ```swift
-// MARK: - TODO
+struct PascalTriangle {
+    
+    func getRow(n: Int) -> [Int] {
+        
+        if n == 0 {
+            fatalError("n must be greater than 0")
+        }
+        
+        if n == 1 {
+            return [1]
+        }
+        
+        var result: [Int] = Array(repeating: 0, count: n)
+        
+        let previous = getRow(n: n-1)
+        for i in 0..<result.count {
+            
+            if i != 0 {
+                result[i] += previous[i-1]
+            }
+            
+            if i != result.count-1 {
+                result[i] += previous[i]
+            }
+        }
+        
+        return result
+    }
+}
 ```
 
 ## Tests
 
 ```swift
-// MARK: - TODO
+class Problem_295Tests: XCTestCase {
+
+    func test_pascal_triangle() {
+        
+        for i in 1...10 {
+            print(PascalTriangle().getRow(n: i))
+        }
+    }
+
+}
 ```
