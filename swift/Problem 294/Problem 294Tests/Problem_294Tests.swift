@@ -11,24 +11,34 @@ import XCTest
 
 class Problem_294Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_example() {
+        
+        let elevations: [Int: Int] = [
+            0: 5,
+            1: 25,
+            2: 15,
+            3: 20,
+            4: 10
+        ]
+        
+        let paths: [(itinerary: (from: Int, to: Int), distance: Int)] = [
+            (itinerary: (from: 0, to: 1), distance: 10),
+            (itinerary: (from: 0, to: 2), distance: 8),
+            (itinerary: (from: 0, to: 3), distance: 15),
+            (itinerary: (from: 1, to: 3), distance: 12),
+            (itinerary: (from: 2, to: 4), distance: 10),
+            (itinerary: (from: 3, to: 4), distance: 5),
+            (itinerary: (from: 3, to: 0), distance: 17),
+            (itinerary: (from: 4, to: 0), distance: 10),
+        ]
+        
+        let input = Runner(elevations: elevations, paths: paths)
+        
+        let actual = input.shortestPathAscendingAndThenDescending()
+        
+        XCTAssert(actual?.locations == [0, 2, 4, 0])
+        XCTAssert(actual?.distance == 28)
+        
     }
 
 }
