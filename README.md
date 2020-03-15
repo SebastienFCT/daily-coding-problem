@@ -5667,6 +5667,7 @@ Given a dictionary of places of the form {location: elevation}, and a dictionary
 
 For example, suppose you are given the following input:
 
+```
 elevations = {0: 5, 1: 25, 2: 15, 3: 20, 4: 10}
 paths = {
     (0, 1): 10,
@@ -5678,7 +5679,9 @@ paths = {
     (3, 0): 17,
     (4, 0): 10
 }
-In this case, the shortest valid path would be 0 -> 2 -> 4 -> 0, with a distance of 28.
+```
+
+In this case, the shortest valid path would be `0 -> 2 -> 4 -> 0`, with a distance of `28`.
 
 
 ### Solutions
