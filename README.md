@@ -5717,3 +5717,16 @@ Bonus: Can you do this using only `O(k)` space?
 ### Solutions
 
 * [Swift](./swift/Problem&#32;295/)
+
+## Problem 296
+
+#### Description
+
+This problem was asked by Etsy.
+
+Given a sorted array, convert it into a height-balanced binary search tree.
+
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;296/)
