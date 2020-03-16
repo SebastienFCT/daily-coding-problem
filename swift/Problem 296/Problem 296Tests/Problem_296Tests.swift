@@ -11,24 +11,13 @@ import XCTest
 
 class Problem_296Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_height_balanced_binary_tree_builder() {
+        
+        let input = [1, 2, 3, 4, 5, 6]
+        XCTAssert(input.heightBalancedBinaryTree().toString() == "4 -> 2 -> 1 -> 6 -> 5")
+        
+        let input2 = [1, 2, 3, 4, 5, 6, 7]
+        XCTAssert(input2.heightBalancedBinaryTree().toString() == "4 -> 2 -> 1 -> 3 -> 6 -> 5 -> 7")
     }
 
 }
