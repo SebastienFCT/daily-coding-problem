@@ -1,17 +1,14 @@
-## Description
+//
+//  Solution.swift
+//  Problem 301
+//
+//  Created by sebastien FOCK CHOW THO on 2020-03-21.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Triplebyte.
+import Foundation
+import CryptoKit
 
-Implement a data structure which carries out the following operations without resizing the underlying array:
-
-- add(value): Add a value to the set of values.
-- check(value): Check whether a value is in the set.
-
-The check method may return occasional false positives (in other words, incorrectly identifying an element as part of the set), but should always correctly identify a true element.
-
-## Solution
-
-```swift
 struct TripleByteCustomStruct {
     
     var key: SymmetricKey
@@ -53,30 +50,3 @@ struct TripleByteCustomStruct {
         return sealedBox
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_301Tests: XCTestCase {
-
-    func test_custom_struct() {
-        
-        var input = TripleByteCustomStruct(key: SymmetricKey(size: .bits256))
-        
-        XCTAssertFalse(input.check(value: "test 1"))
-        input.add(value: "test 1")
-        XCTAssertTrue(input.check(value: "test 1"))
-        XCTAssertFalse(input.check(value: "test 2"))
-        input.add(value: "test 2")
-        XCTAssertTrue(input.check(value: "test 2"))
-        XCTAssertFalse(input.check(value: "test 3"))
-        input.add(value: "test 4")
-        XCTAssertFalse(input.check(value: "test 3"))
-        
-        // This is a false positive (acceptable by the question)
-        XCTAssertTrue(input.check(value: "test"))
-    }
-
-}
-```
