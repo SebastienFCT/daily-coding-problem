@@ -1,22 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 302
+//
+//  Created by sebastien FOCK CHOW THO on 2020-03-22.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Uber.
+import Foundation
 
-You are given a 2-d matrix where each cell consists of either `/`, `\`, or an empty space. Write an algorithm that determines into how many regions the slashes divide the space.
-
-For example, suppose the input for a three-by-six grid is the following:
-
-```
-\    /
- \  /
-  \/
-```
-
-Considering the edges of the matrix as boundaries, this divides the grid into three triangles, so you should return `3`.
-
-## Solution
-
-```swift
 extension Array where Element == Array<Character> {
     
     typealias Coordinate = (row: Int, column: Int, content: Character)
@@ -86,23 +77,3 @@ extension Array where Element == Array<Character> {
         return result
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_302Tests: XCTestCase {
-
-    func test_example() {
-        
-        let input: [[Character]] = [
-            ["\\", " ", " ", " ", " ", "/"],
-            [" ", "\\", " ", " ", "/", " "],
-            [" ", " ", "\\", "/", " ", " "]
-        ]
-        
-        XCTAssert(input.countRegion() == 3)
-    }
-
-}
-```
