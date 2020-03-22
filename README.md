@@ -5832,3 +5832,25 @@ The check method may return occasional false positives (in other words, incorrec
 ### Solutions
 
 * [Swift](./swift/Problem&#32;301/)
+
+## Problem 302
+
+#### Description
+
+This problem was asked by Uber.
+
+You are given a 2-d matrix where each cell consists of either `/`, `\`, or an empty space. Write an algorithm that determines into how many regions the slashes divide the space.
+
+For example, suppose the input for a three-by-six grid is the following:
+
+```
+\    /
+ \  /
+  \/
+```
+
+Considering the edges of the matrix as boundaries, this divides the grid into three triangles, so you should return `3`.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;302/)
