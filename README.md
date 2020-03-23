@@ -5854,3 +5854,17 @@ Considering the edges of the matrix as boundaries, this divides the grid into th
 ### Solutions
 
 * [Swift](./swift/Problem&#32;302/)
+
+## Problem 303
+
+#### Description
+
+This problem was asked by Microsoft.
+
+Given a clock time in `hh:mm` format, determine, to the nearest degree, the angle between the hour and the minute hands.
+
+Bonus: When, during the course of a day, will the angle be zero?
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;303/)
