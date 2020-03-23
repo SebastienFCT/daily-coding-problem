@@ -1,14 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 303
+//
+//  Created by sebastien FOCK CHOW THO on 2020-03-23.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Microsoft.
+import Foundation
 
-Given a clock time in `hh:mm` format, determine, to the nearest degree, the angle between the hour and the minute hands.
-
-Bonus: When, during the course of a day, will the angle be zero?
-
-## Solution
-
-```swift
 struct Clock {
     
     var hoursDigits: Int
@@ -62,20 +61,3 @@ struct Clock {
         return result
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_303Tests: XCTestCase {
-
-    func test_example() {
-        
-        let input = Clock(time: "12:12")
-        
-        print(input.angle())
-        print(Clock.zeroAngles())
-    }
-
-}
-```
