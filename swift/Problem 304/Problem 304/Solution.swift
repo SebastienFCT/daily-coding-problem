@@ -1,14 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 304
+//
+//  Created by sebastien FOCK CHOW THO on 2020-03-24.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Two Sigma.
+import Foundation
 
-A knight is placed on a given square on an 8 x 8 chessboard. It is then moved randomly several times, where each move is a standard [knight move](https://en.wikipedia.org/wiki/Knight_(chess)#Movement). If the knight jumps off the board at any point, however, it is not allowed to jump back on.
-
-After k moves, what is the probability that the knight remains on the board?
-
-## Solution
-
-```swift
 typealias Position = (row: Int, column: Int)
 typealias Move = (row: Int, column: Int)
 
@@ -56,19 +55,3 @@ struct ChessExperiments {
         return probability
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_304Tests: XCTestCase {
-
-    func test_chess_knight_experiment() {
-        
-        let ce = ChessExperiments()
-        
-        print(ce.knightProbabityToRemainOnBoard(boardDimension: 8, position: (2, 2), afterTotalMove: 1, sampleSize: 10000))
-    }
-
-}
-```
