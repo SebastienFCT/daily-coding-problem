@@ -1,13 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 305
+//
+//  Created by sebastien FOCK CHOW THO on 2020-03-25.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Amazon.
+import Foundation
 
-Given a linked list, remove all consecutive nodes that sum to zero. Print out the remaining nodes.
-
-For example, suppose you are given the input `3 -> 4 -> -7 -> 5 -> -6 -> 6`. In this case, you should first remove `3 -> 4 -> -7`, then `-6 -> 6`, leaving only `5`.
-## Solution
-
-```swift
 class Node {
     var value: Int
     var next: Node?
@@ -67,18 +67,3 @@ struct LinkedList {
         return result
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_305Tests: XCTestCase {
-
-    func test_example() {
-        let ll = LinkedList(root: Node(value: 3, next: Node(value: 4, next: Node(value: -7, next: Node(value: 5, next: Node(value: -6, next: Node(value: 6, next: nil)))))))
-        
-        XCTAssert(ll.removeConsecutiveNodesWithZeroSum() == "5")
-    }
-
-}
-```
