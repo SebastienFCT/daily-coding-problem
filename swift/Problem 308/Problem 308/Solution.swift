@@ -1,19 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 308
+//
+//  Created by sebastien FOCK CHOW THO on 2020-03-28.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Quantcast.
+import Foundation
 
-You are presented with an array representing a Boolean expression. The elements are of two kinds:
-
-- `T` and `F`, representing the values `True` and `False`.
-- `&`, |`,` and `^`, representing the bitwise operators for `AND`, `OR`, and `XOR`.
-
-Determine the number of ways to group the array elements using parentheses so that the entire expression evaluates to `True`.
-
-For example, suppose the input is `['F', '|', 'T', '&', 'T']`. In this case, there are two acceptable groupings: `(F | T)` & `T` and `F | (T & T)`.
-
-## Solution
-
-```swift
 struct Quantcast {
     
     var expression: [Character]
@@ -99,23 +93,3 @@ struct Quantcast {
         }
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_308Tests: XCTestCase {
-
-    func test_example() {
-        
-        let expression: [Character] = ["F", "|", "T", "&", "T"]
-        let input = Quantcast(expression: expression)
-        
-        let actual = input.countForTrueResult()
-        let expected = 2
-        
-        XCTAssert(actual == expected)
-    }
-
-}
-```
