@@ -5910,3 +5910,17 @@ Come up with an algorithm that sorts this list in O(N log k) time.
 ### Solutions
 
 * [Swift](./swift/Problem&#32;306/)
+
+## Problem 307
+
+#### Description
+
+This problem was asked by Oracle.
+
+Given a binary search tree, find the floor and ceiling of a given integer. The floor is the highest element in the tree less than or equal to an integer, while the ceiling is the lowest element in the tree greater than or equal to an integer.
+
+If either value does not exist, return None.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;307/)
