@@ -1,14 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 307
+//
+//  Created by sebastien FOCK CHOW THO on 2020-03-27.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Oracle.
+import Foundation
 
-Given a binary search tree, find the floor and ceiling of a given integer. The floor is the highest element in the tree less than or equal to an integer, while the ceiling is the lowest element in the tree greater than or equal to an integer.
-
-If either value does not exist, return None.
-
-## Solution
-
-```swift
 class Node {
     var value: Int
     var left: Node?
@@ -85,35 +84,3 @@ struct Tree {
         return result
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_307Tests: XCTestCase {
-
-    func test_tree_floor_and_ceil() {
-        
-        let root = Node(value: 8
-            , left: Node(value: 3
-                , left: Node(value: 1)
-                , right: Node(value: 6
-                    , left: Node(value: 4)
-                    , right: Node(value: 7)
-                )
-            )
-            , right: Node(value: 10
-                , left: nil
-                , right: Node(value: 14, left: Node(value: 13), right: nil)
-            )
-        )
-        
-        let bt = Tree(root: root)
-        
-        let actual = bt.floorAndCeiling(value: 6)
-        XCTAssert(actual.floor?.value == 3)
-        XCTAssert(actual.ceil?.value == 13)
-    }
-
-}
-```

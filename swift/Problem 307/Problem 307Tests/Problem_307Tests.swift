@@ -11,24 +11,27 @@ import XCTest
 
 class Problem_307Tests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_tree_floor_and_ceil() {
+        
+        let root = Node(value: 8
+            , left: Node(value: 3
+                , left: Node(value: 1)
+                , right: Node(value: 6
+                    , left: Node(value: 4)
+                    , right: Node(value: 7)
+                )
+            )
+            , right: Node(value: 10
+                , left: nil
+                , right: Node(value: 14, left: Node(value: 13), right: nil)
+            )
+        )
+        
+        let bt = Tree(root: root)
+        
+        let actual = bt.floorAndCeiling(value: 6)
+        XCTAssert(actual.floor?.value == 3)
+        XCTAssert(actual.ceil?.value == 13)
     }
 
 }
