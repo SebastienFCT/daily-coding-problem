@@ -5959,3 +5959,15 @@ Given an input such as the one above, return the lowest possible cost of moving 
 ### Solutions
 
 * [Swift](./swift/Problem&#32;309/)
+
+## Problem 310
+
+#### Description
+
+This problem was asked by Pivotal.
+
+Write an algorithm that finds the total number of set bits in all integers between 1 and N.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;310/)
