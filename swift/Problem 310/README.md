@@ -7,11 +7,32 @@ Write an algorithm that finds the total number of set bits in all integers betwe
 ## Solution
 
 ```swift
-// MARK: - TODO
+extension Int {
+    
+    func countSetBits() -> Int {
+        
+        if self <= 0 {
+            return 0
+        }
+        
+        let rest = self / 2
+        
+        return (self % 2 == 0 ? 0 : 1) + rest.countSetBits()
+    }
+}
 ```
 
 ## Tests
 
 ```swift
-// MARK: - TODO
+class Problem_310Tests: XCTestCase {
+
+    func test_count_set_bits() {
+        
+        for i in 0...100 {
+            print(i.countSetBits())
+        }
+    }
+
+}
 ```
