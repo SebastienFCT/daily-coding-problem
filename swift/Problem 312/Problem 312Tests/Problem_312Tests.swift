@@ -11,24 +11,17 @@ import XCTest
 
 class Problem_312Tests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_example() {
+        
+        let input = Board(columns: 4)
+        
+        let actual = input.countUniqueConfiguration()
+        let expected = 4
+        
+        // A B B C | A B C D | A A B C | A A C C
+        // A B C C | A B C D | A B B C | A B B C
+        
+        XCTAssert(actual == expected)
     }
 
 }
