@@ -1,16 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 313
+//
+//  Created by sebastien FOCK CHOW THO on 2020-04-02.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Citrix.
+import Foundation
 
-You are given a circular lock with three wheels, each of which display the numbers `0` through `9` in order. Each of these wheels rotate clockwise and counterclockwise.
-
-In addition, the lock has a certain number of "dead ends", meaning that if you turn the wheels to one of these combinations, the lock becomes stuck in that state and cannot be opened.
-
-Let us consider a "move" to be a rotation of a single wheel by one digit, in either direction. Given a lock initially set to `000`, a target combination, and a list of dead ends, write a function that returns the minimum number of moves required to reach the target state, or `None` if this is impossible.
-
-## Solution
-
-```swift
 typealias LockCombination = (first: Int, second: Int, third: Int)
 
 struct Lock {
@@ -113,32 +110,3 @@ struct Lock {
         return sorted.first
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_313Tests: XCTestCase {
-
-    func test_lock_count() {
-        
-        let lock = Lock(code: (0,0,1), deadEnds: [])
-        
-        let actual = lock.minMoves()
-        let expected = 1
-        
-        XCTAssert(actual == expected)
-    }
-    
-    func test_lock_count2() {
-        
-        let lock = Lock(code: (0,0,9), deadEnds: [])
-        
-        let actual = lock.minMoves()
-        let expected = 1
-        
-        XCTAssert(actual == expected)
-    }
-
-}
-```
