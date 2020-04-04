@@ -1,23 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 315
+//
+//  Created by sebastien FOCK CHOW THO on 2020-04-04.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Google.
+import Foundation
 
-In linear algebra, a Toeplitz matrix is one in which the elements on any given diagonal from top left to bottom right are identical.
-
-Here is an example:
-
-```
-1 2 3 4 8
-5 1 2 3 4
-4 5 1 2 3
-7 4 5 1 2
-```
-
-Write a program to determine whether a given input is a Toeplitz matrix.
-
-## Solution
-
-```swift
 typealias Position = (row: Int, column: Int)
 
 extension Array where Element == Array<Int> {
@@ -80,34 +70,3 @@ extension Array where Element == Array<Int> {
         return (self[current.row+1][current.column+1], (current.row+1, current.column+1))
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_315Tests: XCTestCase {
-
-    func test_example() {
-        
-        let input = [
-            [1, 2, 3, 4, 8],
-            [5, 1, 2, 3, 4],
-            [4, 5, 1, 2, 3],
-            [7, 4, 5, 1, 2]
-        ]
-        
-        XCTAssertTrue(input.isToeplitz())
-        
-        
-        let input2 = [
-            [111, 2, 3, 4, 8],
-            [5, 1, 2, 3, 4],
-            [4, 5, 1, 2, 3],
-            [7, 4, 5, 1, 2]
-        ]
-        
-        XCTAssertFalse(input2.isToeplitz())
-    }
-
-}
-```
