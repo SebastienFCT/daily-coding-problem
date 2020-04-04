@@ -11,11 +11,48 @@ For example, suppose listeners = `[1, 5, 11, 20]`, and towers = `[4, 8, 15]`. In
 ## Solution
 
 ```swift
-// MARK: - TODO
+struct Radio {
+    
+    var listeners: [Int]
+    var towers: [Int]
+    
+    
+    func minimumBoradcast() -> Int {
+        
+        var distances: [Int] = []
+        
+        for listener in listeners {
+            
+            var minDistance: Int? = nil
+            
+            for tower in towers {
+                
+                if minDistance == nil || abs(tower-listener) < minDistance! {
+                    minDistance = abs(tower-listener)
+                }
+            }
+                
+            distances.append(minDistance!)
+        }
+        
+        let sorted = distances.sorted{ $0 > $1 }
+        
+        return sorted.first!
+    }
+}
 ```
 
 ## Tests
 
 ```swift
-// MARK: - TODO
+class Problem_314Tests: XCTestCase {
+
+    func test_example() {
+        
+        let input = Radio(listeners: [1, 5, 11, 20], towers: [4, 8, 15])
+        
+        print(input.minimumBoradcast())
+    }
+
+}
 ```
