@@ -6043,3 +6043,26 @@ For example, suppose listeners = `[1, 5, 11, 20]`, and towers = `[4, 8, 15]`. In
 ### Solutions
 
 * [Swift](./swift/Problem&#32;314/)
+
+## Problem 315
+
+#### Description
+
+This problem was asked by Google.
+
+In linear algebra, a Toeplitz matrix is one in which the elements on any given diagonal from top left to bottom right are identical.
+
+Here is an example:
+
+```
+1 2 3 4 8
+5 1 2 3 4
+4 5 1 2 3
+7 4 5 1 2
+```
+
+Write a program to determine whether a given input is a Toeplitz matrix.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;315/)
