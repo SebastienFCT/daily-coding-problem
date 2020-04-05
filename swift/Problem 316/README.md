@@ -9,11 +9,43 @@ Given such an array, determine the denominations that must be in use. In the cas
 ## Solution
 
 ```swift
-// MARK: - TODO
+extension Array where Element == Int {
+    
+    func denominations() -> [Int] {
+        
+        var result: [Int] = []
+        var ways: [Int] = Array(repeating: 0, count: count)
+        
+        for i in 1..<count {
+            
+            if ways[i] >= self[i] {
+                continue
+            }
+            
+            result.append(i)
+            ways[i] += 1
+        }
+        
+        
+        return result
+    }
+}
 ```
 
 ## Tests
 
 ```swift
-// MARK: - TODO
+class Problem_316Tests: XCTestCase {
+
+    func test_example() {
+        
+        let input = [1, 0, 1, 1, 2]
+        
+        let actual = input.denominations()
+        let expected = [2, 3, 4]
+        
+        XCTAssert(actual == expected)
+    }
+
+}
 ```
