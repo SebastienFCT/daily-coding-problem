@@ -6080,3 +6080,15 @@ Given such an array, determine the denominations that must be in use. In the cas
 ### Solutions
 
 * [Swift](./swift/Problem&#32;316/)
+
+## Problem 317
+
+#### Description
+
+This problem was asked by Yahoo.
+
+Write a function that returns the bitwise AND of all integers between `M` and `N`, inclusive.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;317/)
