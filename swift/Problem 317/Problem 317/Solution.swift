@@ -1,12 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 317
+//
+//  Created by sebastien FOCK CHOW THO on 2020-04-06.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Yahoo.
+import Foundation
 
-Write a function that returns the bitwise AND of all integers between `M` and `N`, inclusive.
-
-## Solution
-
-```swift
 func andBitwise(from: Int, to: Int) -> UInt {
     
     var result = from.toUInt()
@@ -29,16 +30,3 @@ extension UInt {
         return (self <= UInt(Int.max)) ? Int(self) : Int(self - UInt(Int.max) - 1) + Int.min
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_317Tests: XCTestCase {
-
-    func test_and_bitwise() {
-        print(andBitwise(from: 9, to: 10))
-    }
-
-}
-```
