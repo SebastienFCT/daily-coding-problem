@@ -11,24 +11,30 @@ import XCTest
 
 class Problem_318Tests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_count_valid_playlists() {
+        
+        
+        let input = Trip()
+        
+        // required: 3
+        // available: S1 S2
+        // buffer: 1
+        // candidates: [S1, S2, S1], [S2, S1, S2]
+        
+        let actual = input.countValidPlaylists(requiredSongs: 3, actualSongs: 2, buffer: 1)
+        let expected = 2
+        
+        XCTAssert(actual == expected)
+        
+        // required: 4
+        // available: S1 S2
+        // buffer: 1
+        // candidates: [S1, S2, S1, S2], [S2, S1, S2, S1]
+        
+        let actual2 = input.countValidPlaylists(requiredSongs: 4, actualSongs: 2, buffer: 1)
+        let expected2 = 2
+        
+        XCTAssert(actual2 == expected2)
     }
 
 }
