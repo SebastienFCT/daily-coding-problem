@@ -9,11 +9,56 @@ For example, given "jiujitsu", you should return `5`, corresponding to the final
 ## Solution
 
 ```swift
-// MARK: - TODO
+extension String {
+    
+    func smallestWindowWithAllDistinctCharacters() -> Int {
+        
+        var uniqueCharacters: Set<Character> = Set()
+        
+        for char in self {
+            uniqueCharacters.insert(char)
+        }
+        
+        if uniqueCharacters.count == count {
+            return count
+        }
+        
+        var candidates: [Int] = []
+        
+        for i in 0..<count-uniqueCharacters.count {
+            
+            for j in i+1..<count {
+                
+                let current = Set(self[i...j])
+                
+                if (uniqueCharacters.subtracting(current).count == 0) {
+                    candidates.append(current.count)
+                    break
+                }
+            }
+        }
+        
+        let sorted = candidates.sorted{ $0 < $1 }
+        
+        return sorted.first ?? count
+    }
+}
 ```
 
 ## Tests
 
 ```swift
-// MARK: - TODO
+class Problem_320Tests: XCTestCase {
+
+    func test_example() {
+        
+        let input = "jiujitsu"
+        
+        let actual = input.smallestWindowWithAllDistinctCharacters()
+        let expected = 5
+        
+        XCTAssert(actual == expected)
+    }
+
+}
 ```
