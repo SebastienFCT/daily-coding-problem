@@ -73,7 +73,11 @@ extension Grid {
             copy[currentPos.row][currentPos.column] = copy[pos.row][pos.column]
             copy[pos.row][pos.column] = nil
             
-            result.append(contentsOf: copy.solve(previousStates: newStates, currentPos: (pos.row, pos.column)))
+            let candidates = copy.solve(previousStates: newStates, currentPos: (pos.row, pos.column))
+            
+            if !candidates.isEmpty {
+                result.append(contentsOf: copy.solve(previousStates: newStates, currentPos: (pos.row, pos.column)))
+            }
         }
         
         return result
