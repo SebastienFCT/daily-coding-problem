@@ -1,16 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 322
+//
+//  Created by sebastien FOCK CHOW THO on 2020-04-11.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Flipkart.
+import Foundation
 
-Starting from 0 on a number line, you would like to make a series of jumps that lead to the integer N.
-
-On the ith jump, you may move exactly i places to the left or right.
-
-Find a path with the fewest number of jumps required to get from 0 to N.
-
-## Solution
-
-```swift
 extension Int {
     
     // Solution comes from https://www.geeksforgeeks.org/find-the-number-of-jumps-to-reach-x-in-the-number-line-from-zero/
@@ -39,16 +36,3 @@ extension Int {
         return (self * (self + 1)) / 2
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_322Tests: XCTestCase {
-
-    func test_flipkart_jumps() {
-        print(2.flipkartJumpCount())
-    }
-
-}
-```
