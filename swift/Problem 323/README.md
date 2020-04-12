@@ -9,11 +9,25 @@ More precisely, given an unordered list of N numbers, find an element whose rank
 ## Solution
 
 ```swift
-// MARK: - TODO
+extension Array where Element == Int {
+    
+    func median() -> Int {
+        
+        return sorted()[count/2]
+    }
+}
 ```
 
 ## Tests
 
 ```swift
-// MARK: - TODO
+class Problem_323Tests: XCTestCase {
+
+    func test_median() {
+        
+        print([1,2,3,4,5,6,7,8,9,10].median())
+        print([1,1,1,1,2,2,2,2,3,3,3,3].median())
+    }
+
+}
 ```
