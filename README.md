@@ -6169,3 +6169,17 @@ Find a path with the fewest number of jumps required to get from 0 to N.
 ### Solutions
 
 * [Swift](./swift/Problem&#32;322/)
+
+## Problem 323
+
+#### Description
+
+This problem was asked by Dropbox.
+
+Create an algorithm to efficiently compute the approximate median of a list of numbers.
+
+More precisely, given an unordered list of N numbers, find an element whose rank is between `N / 4` and `3 * N / 4`, with a high level of certainty, in less than `O(N)` time.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;323/)
