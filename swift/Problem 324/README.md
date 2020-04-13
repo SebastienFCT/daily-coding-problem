@@ -11,11 +11,47 @@ For example, suppose the mice are positioned at [1, 4, 9, 15], and the holes are
 ## Solution
 
 ```swift
-// MARK: - TODO
+struct Amazon {
+    
+    var mouses: [Int]
+    var holes: [Int]
+    
+    func maxMoveCountToHide() -> Int {
+        
+        guard mouses.count == holes.count else {
+            fatalError("mouses.count != holes.count")
+        }
+        
+        let sortedMouses = mouses.sorted{ $0 < $1 }
+        let sortedHoles = holes.sorted{ $0 < $1 }
+        
+        var largerDiff = 0
+        
+        for i in 0..<mouses.count {
+            if abs(sortedMouses[i] - sortedHoles[i]) > largerDiff {
+               largerDiff = abs(sortedMouses[i] - sortedHoles[i])
+            }
+        }
+        
+        return largerDiff
+    }
+}
 ```
 
 ## Tests
 
 ```swift
-// MARK: - TODO
+class Problem_324Tests: XCTestCase {
+
+    func test_example() {
+        
+        let input = Amazon(mouses: [1, 4, 9, 15], holes: [10, -5, 0, 16])
+        
+        let actual = input.maxMoveCountToHide()
+        let expected = 6
+        
+        XCTAssert(actual == expected)
+    }
+
+}
 ```
