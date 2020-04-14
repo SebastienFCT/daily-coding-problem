@@ -1,14 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 325
+//
+//  Created by sebastien FOCK CHOW THO on 2020-04-14.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Jane Street.
+import Foundation
 
-The United States uses the imperial system of weights and measures, which means that there are many different, seemingly arbitrary units to measure distance. There are 12 inches in a foot, 3 feet in a yard, 22 yards in a chain, and so on.
-
-Create a data structure that can efficiently convert a certain quantity of one unit to the correct amount of any other unit. You should also allow for additional units to be added to the system.
-
-## Solution
-
-```swift
 struct FCTUnit: Hashable {
     var label: String = ""
     var multiplier: Float = 0
@@ -70,26 +69,3 @@ struct CustomSystem {
         return value / to.multiplier * from.multiplier
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_325Tests: XCTestCase {
-
-    func test_converter() {
-        
-        var system = CustomSystem(units: [FCTUnit(label: "inches", multiplier: 1)])
-        
-        system.inserUnitWithLabel("foot", reference: "inches", withMutiplier: 12)
-        system.inserUnitWithLabel("yard", reference: "foot", withMutiplier: 3)
-        system.inserUnitWithLabel("chain", reference: "yard", withMutiplier: 22)
-        
-        let actual = system.convert(fromUnit: "chain", toUnit: "foot", value: 1)
-        let expected: Float = 66
-        
-        XCTAssert(actual == expected)
-    }
-
-}
-```

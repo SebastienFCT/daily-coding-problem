@@ -11,24 +11,18 @@ import XCTest
 
 class Problem_325Tests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_converter() {
+        
+        var system = CustomSystem(units: [FCTUnit(label: "inches", multiplier: 1)])
+        
+        system.inserUnitWithLabel("foot", reference: "inches", withMutiplier: 12)
+        system.inserUnitWithLabel("yard", reference: "foot", withMutiplier: 3)
+        system.inserUnitWithLabel("chain", reference: "yard", withMutiplier: 22)
+        
+        let actual = system.convert(fromUnit: "chain", toUnit: "foot", value: 1)
+        let expected: Float = 66
+        
+        XCTAssert(actual == expected)
     }
 
 }
