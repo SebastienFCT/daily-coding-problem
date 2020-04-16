@@ -1,14 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 327
+//
+//  Created by sebastien FOCK CHOW THO on 2020-04-16.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Salesforce.
+import Foundation
 
-Write a program to merge two binary trees. Each node in the new tree should hold a value equal to the sum of the values of the corresponding nodes of the input trees.
-
-If only one input tree has a node in a given position, the corresponding node in the new tree should match that input node.
-
-## Solution
-
-```swift
 class Node {
     var value: Int
     var left: Node?
@@ -110,40 +109,3 @@ class Node {
         return toLevels(current: copy)
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_327Tests: XCTestCase {
-
-    func test_merge_trees() {
-        
-        let left = Node(value: 1
-            , left: Node(value: 2
-                , left: Node(value: 3)
-                , right: nil)
-            , right: Node(value: 5
-                , left: Node(value: 2)
-                , right: Node(value: 1))
-        )
-        
-        let right = Node(value: 1
-            , left: Node(value: 2
-                , left: Node(value: 3)
-                , right: nil)
-            , right: Node(value: 5
-                , left: Node(value: 2)
-                , right: Node(value: 1))
-        )
-        
-        let actual = left.merge(withTree: right)
-        
-        XCTAssert(actual?.value == 2)
-        XCTAssert(actual?.left?.value == 4)
-        XCTAssert(actual?.left?.left?.value == 6)
-        XCTAssert(actual?.left?.right?.value == nil)
-    }
-
-}
-```

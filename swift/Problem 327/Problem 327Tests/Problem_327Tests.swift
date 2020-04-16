@@ -11,24 +11,32 @@ import XCTest
 
 class Problem_327Tests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_merge_trees() {
+        
+        let left = Node(value: 1
+            , left: Node(value: 2
+                , left: Node(value: 3)
+                , right: nil)
+            , right: Node(value: 5
+                , left: Node(value: 2)
+                , right: Node(value: 1))
+        )
+        
+        let right = Node(value: 1
+            , left: Node(value: 2
+                , left: Node(value: 3)
+                , right: nil)
+            , right: Node(value: 5
+                , left: Node(value: 2)
+                , right: Node(value: 1))
+        )
+        
+        let actual = left.merge(withTree: right)
+        
+        XCTAssert(actual?.value == 2)
+        XCTAssert(actual?.left?.value == 4)
+        XCTAssert(actual?.left?.left?.value == 6)
+        XCTAssert(actual?.left?.right?.value == nil)
     }
 
 }
