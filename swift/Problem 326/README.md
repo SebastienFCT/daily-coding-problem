@@ -21,11 +21,59 @@ Given a sequence `S`, construct the corresponding Cartesian tree.
 ## Solution
 
 ```swift
-// MARK: - TODO
+class Node {
+    var value: Int
+    var left: Node?
+    var right: Node?
+    
+    init(value: Int) {
+        self.value = value
+        self.left = nil
+        self.right = nil
+    }
+}
+
+
+extension Array where Element == Int {
+    
+    func toTree(next: Node?) -> Node? {
+        
+        if isEmpty {
+            return next
+        }
+        
+        guard let last = next else {
+            return Array(suffix(count-1)).toTree(next: Node(value: self[0]))
+        }
+        
+        let node = Node(value: self[0])
+        
+        if last.value > node.value {
+            node.left = last
+            return Array(suffix(count-1)).toTree(next: node)
+        }
+        
+        last.right = node
+        return Array(suffix(count-1)).toTree(next: last)
+    }
+}
 ```
 
 ## Tests
 
 ```swift
-// MARK: - TODO
+class Problem_326Tests: XCTestCase {
+
+    func test_example() {
+        
+        let tree = [3, 2, 6, 1, 9].toTree(next: nil)
+        
+        XCTAssert(tree?.value == 1)
+        XCTAssert(tree?.left?.value == 2)
+        XCTAssert(tree?.right?.value == 9)
+        XCTAssert(tree?.left?.left?.value == 3)
+        XCTAssert(tree?.left?.right?.value == 6)
+    }
+
+}
 ```
