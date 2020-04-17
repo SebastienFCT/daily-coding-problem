@@ -11,23 +11,23 @@ import XCTest
 
 class Problem_328Tests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func test_elo() {
+        
+        var elo = Elo(players: [], minRank: 100)
+        
+        _ = elo.addPlayer(username: "sebastien")
+        _ = elo.addPlayer(username: "john_doe")
+        _ = elo.addPlayer(username: "jane_doe")
+        _ = elo.addPlayer(username: "johny_doe")
+        
+        for _ in 0...100 {
+            let rand1 = Int.random(in: 0...3)
+            let rand2 = Int.random(in: 0...3)
+            
+            if rand1 != rand2 {
+                elo.simulateWin(fromUserAtIndex: rand1, againstUserAtIndex: rand2)
+                print(elo.score())
+            }
         }
     }
 

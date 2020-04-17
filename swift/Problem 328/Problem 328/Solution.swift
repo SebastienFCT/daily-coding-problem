@@ -1,16 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 328
+//
+//  Created by sebastien FOCK CHOW THO on 2020-04-17.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Facebook.
+import Foundation
 
-In chess, the Elo rating system is used to calculate player strengths based on game results.
-
-A simplified description of the Elo system is as follows. Every player begins at the same score. For each subsequent game, the loser transfers some points to the winner, where the amount of points transferred depends on how unlikely the win is. For example, a 1200-ranked player should gain much more points for beating a 2000-ranked player than for beating a 1300-ranked player.
-
-Implement this system.
-
-## Solution
-
-```swift
 typealias PlayerElo = (player: String, elo: Int)
 struct Elo {
 
@@ -74,32 +71,3 @@ struct Elo {
     }
     
 }
-```
-
-## Tests
-
-```swift
-class Problem_328Tests: XCTestCase {
-
-    func test_elo() {
-        
-        var elo = Elo(players: [], minRank: 100)
-        
-        _ = elo.addPlayer(username: "sebastien")
-        _ = elo.addPlayer(username: "john_doe")
-        _ = elo.addPlayer(username: "jane_doe")
-        _ = elo.addPlayer(username: "johny_doe")
-        
-        for _ in 0...100 {
-            let rand1 = Int.random(in: 0...3)
-            let rand2 = Int.random(in: 0...3)
-            
-            if rand1 != rand2 {
-                elo.simulateWin(fromUserAtIndex: rand1, againstUserAtIndex: rand2)
-                print(elo.score())
-            }
-        }
-    }
-
-}
-```
