@@ -1,32 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 329
+//
+//  Created by sebastien FOCK CHOW THO on 2020-04-18.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Amazon.
+import Foundation
 
-The stable marriage problem is defined as follows:
-
-Suppose you have `N` men and `N` women, and each person has ranked their prospective opposite-sex partners in order of preference.
-
-For example, if `N = 3`, the input could be something like this:
-
-```
-guy_preferences = {
-    'andrew': ['caroline', 'abigail', 'betty'],
-    'bill': ['caroline', 'betty', 'abigail'],
-    'chester': ['betty', 'caroline', 'abigail'],
-}
-
-gal_preferences = {
-    'abigail': ['andrew', 'bill', 'chester'],
-    'betty': ['bill', 'andrew', 'chester'],
-    'caroline': ['bill', 'chester', 'andrew']
-}
-```
-
-Write an algorithm that pairs the men and women together in such a way that no two people of opposite sex would both rather be with each other than with their current partners.
-
-## Solution
-
-```swift
 struct Population {
     
     typealias Couple = (guy: String, gal: String)
@@ -132,27 +113,3 @@ struct Population {
         return indexes
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_329Tests: XCTestCase {
-
-    func test_example() {
-        
-        let population = Population(guyPrefs: [
-            "andrew": ["caroline", "abigail", "betty"],
-            "bill": ["caroline", "betty", "abigail"],
-            "chester": ["betty", "caroline", "abigail"]
-        ], galPrefs: [
-            "abigail": ["andrew", "bill", "chester"],
-            "betty": ["bill", "andrew", "chester"],
-            "caroline": ["bill", "chester", "andrew"]
-        ])
-        
-        print(population.marry())
-    }
-
-}
-```
