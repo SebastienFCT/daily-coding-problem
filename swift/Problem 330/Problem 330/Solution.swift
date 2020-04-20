@@ -1,24 +1,15 @@
-## Description
+//
+//  SOlution.swift
+//  Problem 330
+//
+//  Created by sebastien FOCK CHOW THO on 2020-04-19.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Dropbox.
+import Foundation
 
-A Boolean formula can be said to be satisfiable if there is a way to assign truth values to each variable such that the entire formula evaluates to true.
+// (¬c OR b) AND (b OR c) AND (¬b OR c) AND (¬c OR ¬a)
 
-For example, suppose we have the following formula, where the symbol `¬` is used to denote negation:
-
-```
-(¬c OR b) AND (b OR c) AND (¬b OR c) AND (¬c OR ¬a)
-```
-
-One way to satisfy this formula would be to let `a = False`, `b = True`, and `c = True`.
-
-This type of formula, with AND statements joining tuples containing exactly one OR, is known as 2-CNF.
-
-Given a `2-CNF` formula, find a way to assign truth values to satisfy it, or return False if this is impossible.
-
-## Solution
-
-```swift
 extension String {
     
     func solve2Cnf() -> [Character: Bool]? {
@@ -98,20 +89,3 @@ func allBoolCombinations(current: [Bool], remaining: Int) -> [[Bool]] {
     
     return result
 }
-```
-
-## Tests
-
-```swift
-class Problem_330Tests: XCTestCase {
-
-    func test_example() {
-        
-        let actual = "(¬c OR b) AND (b OR c) AND (¬b OR c) AND (¬c OR ¬a)".solve2Cnf()
-        let expected: [Character: Bool] = ["c": true, "a": false, "b": true]
-        
-        XCTAssert(actual == expected)
-    }
-
-}
-```
