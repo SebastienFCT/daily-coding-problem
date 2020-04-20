@@ -9,11 +9,50 @@ Determine how many times you would need to apply this operation to ensure that a
 ## Solution
 
 ```swift
-// MARK: - TODO
+extension String {
+    
+    func countMinFlips() -> Int {
+        
+        guard (self.filter({ $0 != "x" && $0 != "y" }).isEmpty) else {
+            fatalError("input invalid")
+        }
+        
+        var copy = self
+        
+        while copy.first == "x" {
+            copy.removeFirst()
+        }
+        
+        while copy.last == "y" {
+            copy.removeLast()
+        }
+        
+        if copy.isEmpty {
+            return 0
+        }
+        
+        let xCount = copy.filter({ $0 == "x" }).count
+        let yCount = copy.filter({ $0 == "y" }).count
+        
+        return min(xCount, yCount)
+    }
+}
 ```
 
 ## Tests
 
 ```swift
-// MARK: - TODO
+class Problem_331Tests: XCTestCase {
+
+    func test_example() {
+        
+        let input = "xyxxxyxyy"
+        
+        let actual = input.countMinFlips()
+        let expected = 2
+        
+        XCTAssert(actual == expected)
+    }
+
+}
 ```
