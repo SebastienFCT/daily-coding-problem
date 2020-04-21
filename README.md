@@ -6339,3 +6339,18 @@ Determine how many times you would need to apply this operation to ensure that a
 ### Solutions
 
 * [Swift](./swift/Problem&#32;331/)
+
+## Problem 332
+
+#### Description
+
+This problem was asked by Jane Street.
+
+Given integers M and N, write a program that counts how many positive integer pairs (a, b) satisfy the following conditions:
+
+- a + b = M
+- a XOR b = N
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;332/)
