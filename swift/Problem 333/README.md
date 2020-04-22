@@ -9,11 +9,54 @@ Given a list of N people and the above operation, find a way to identify the cel
 ## Solution
 
 ```swift
-// MARK: - TODO
+struct Party {
+    
+    var relation: [String : [String]]
+    
+    private func knows(a: String, b: String) -> Bool {
+        
+        return relation[a]?.contains(b) ?? false
+    }
+    
+    func findCelebrity() -> String? {
+        
+        var startIndex = 0
+        var endIndex = relation.count-1
+        
+        let people: [String] = Array(relation.keys)
+        
+        while startIndex != endIndex {
+            if knows(a: people[startIndex], b: people[endIndex]) {
+                startIndex += 1
+            } else {
+                endIndex -= 1
+            }
+        }
+        
+        return people[startIndex]
+    }
+    
+}
 ```
 
 ## Tests
 
 ```swift
-// MARK: - TODO
+class Problem_333Tests: XCTestCase {
+
+    func test_find_celebrity() {
+        
+        let input = Party(relation: [
+            "seb": ["john", "jane"],
+            "john": ["jane"],
+            "jane": []
+        ])
+        
+        let actual = input.findCelebrity()
+        let expected = "jane"
+        
+        XCTAssert(actual == expected)
+    }
+
+}
 ```
