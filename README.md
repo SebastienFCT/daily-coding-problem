@@ -6383,4 +6383,4 @@ Write a function that plays the 24 game.
 
 ### Solutions
 
-* [Swift by Rosetta Code](https://rosettacode.org/wiki/Category:Swift)
+* [Swift by Rosetta Code](https://rosettacode.org/wiki/24_game/Solve)
