@@ -1,12 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 337
+//
+//  Created by sebastien FOCK CHOW THO on 2020-04-26.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Apple.
+import Foundation
 
-Given a linked list, uniformly shuffle the nodes. What if we want to prioritize space over time?
-
-## Solution
-
-```swift
 class Node {
     var value: Int
     var next: Node?
@@ -71,21 +72,3 @@ struct LinkedList {
         return result
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_337Tests: XCTestCase {
-
-    func test_linkedlist_uniform_shuffle() {
-        
-        var ll = LinkedList(root: Node(value: 1, next: Node(value: 2, next: Node(value: 3, next: Node(value: 4, next: Node(value: 5, next: nil))))))
-        
-        print(ll.root.toString())
-        ll.uniformShuffle()
-        print(ll.root.toString())
-    }
-
-}
-```
