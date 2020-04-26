@@ -6429,7 +6429,6 @@ Given a directed graph of links between various websites, write a program that c
 
 #### Description
 
-
 This problem was asked by Microsoft.
 
 Write a program to determine how many distinct ways there are to create a max heap from a list of N given integers.
@@ -6443,3 +6442,15 @@ For example, if N = 3, and our integers are [1, 2, 3], there are two ways, shown
 ```
 
 ### Solutions
+
+## Problem 337
+
+#### Description
+
+This problem was asked by Apple.
+
+Given a linked list, uniformly shuffle the nodes. What if we want to prioritize space over time?
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;337/)
