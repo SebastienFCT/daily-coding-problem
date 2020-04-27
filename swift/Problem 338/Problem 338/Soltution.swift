@@ -1,12 +1,13 @@
-## Description
+//
+//  Soltution.swift
+//  Problem 338
+//
+//  Created by sebastien FOCK CHOW THO on 2020-04-27.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Facebook.
+import Foundation
 
-Given an integer n, find the next biggest integer with the same number of 1-bits on. For example, given the number 6 (`0110` in binary), return 9 (`1001`).
-
-## Solution
-
-```swift
 extension Int {
     
     func nextIntWithSameBitCount() -> Int {
@@ -64,17 +65,3 @@ extension UInt64 {
         return bits
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_338Tests: XCTestCase {
-
-    func test_example() {
-        
-        XCTAssert(6.nextIntWithSameBitCount() == 9)
-    }
-
-}
-```
