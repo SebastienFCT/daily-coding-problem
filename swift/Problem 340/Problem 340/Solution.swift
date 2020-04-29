@@ -1,12 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 340
+//
+//  Created by sebastien FOCK CHOW THO on 2020-04-29.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Google.
+import Foundation
 
-Given a set of points (x, y) on a 2D cartesian plane, find the two closest points. For example, given the points `[(1, 1), (-1, -1), (3, 4), (6, 1), (-1, -6), (-4, -3)]`, return `[(-1, -1), (1, 1)]`.
-
-## Solution
-
-```swift
 typealias TwoDimensionalPoint = (Int, Int)
 
 extension Array where Element == TwoDimensionalPoint {
@@ -40,20 +41,3 @@ extension Array where Element == TwoDimensionalPoint {
         return (left, right)
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_340Tests: XCTestCase {
-
-    func test_example() {
-        let input: [TwoDimensionalPoint] = [(1, 1), (-1, -1), (3, 4), (6, 1), (-1, -6), (-4, -3)]
-        
-        let actual = input.closestPair()
-        
-        XCTAssert((actual.left == (1, 1) && actual.right == (-1, -1)) || (actual.left == (-1, -1) && actual.right == (1, 1)))
-    }
-
-}
-```

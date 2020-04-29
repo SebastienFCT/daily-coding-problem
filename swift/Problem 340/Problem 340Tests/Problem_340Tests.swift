@@ -11,24 +11,12 @@ import XCTest
 
 class Problem_340Tests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_example() {
+        let input: [TwoDimensionalPoint] = [(1, 1), (-1, -1), (3, 4), (6, 1), (-1, -6), (-4, -3)]
+        
+        let actual = input.closestPair()
+        
+        XCTAssert((actual.left == (1, 1) && actual.right == (-1, -1)) || (actual.left == (-1, -1) && actual.right == (1, 1)))
     }
 
 }
