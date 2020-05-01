@@ -1,32 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 341
+//
+//  Created by sebastien FOCK CHOW THO on 2020-04-30.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Google.
+import Foundation
 
-You are given an N by N matrix of random letters and a dictionary of words. Find the maximum number of words that can be packed on the board from the given dictionary.
-
-A word is considered to be able to be packed on the board if:
-
-- It can be found in the dictionary
-- It can be constructed from untaken letters by other words found so far on the board
-- The letters are adjacent to each other (vertically and horizontally, not diagonally).
-- Each tile can be visited only once by any word.
-
-For example, given the following dictionary:
-
-`{ 'eat', 'rain', 'in', 'rat' }`
-and matrix:
-
-```
-[['e', 'a', 'n'],
- ['t', 't', 'i'],
- ['a', 'r', 'a']]
-```
-
-Your function should return 3, since we can make the words 'eat', 'in', and 'rat' without them touching each other. We could have alternatively made 'eat' and 'rain', but that would be incorrect since that's only 2 words.
-
-## Solution
-
-```swift
 typealias CharacterMatrix = [[Character]]
 
 extension CharacterMatrix {
@@ -155,26 +136,3 @@ extension CharacterMatrix {
         return self[pos.row][pos.column]
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_341Tests: XCTestCase {
-
-    func test_example() {
-        
-        let input: CharacterMatrix = [
-            ["e", "a", "n"],
-            ["t", "t", "i"],
-            ["a", "r", "a"]
-        ]
-        
-        let actual = input.maximize(forList: ["eat", "rain", "in", "rat"])
-        let expected = 3
-        
-        XCTAssert(actual == expected)
-    }
-
-}
-```
