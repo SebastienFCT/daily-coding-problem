@@ -21,11 +21,38 @@ Implement your own version of `reduce`.
 ## Solution
 
 ```swift
-// MARK: - TODO
+typealias IntOperation = (Int, Int) -> Int
+
+func fold(list: [Int], operation: IntOperation, initial: Int) -> Int {
+    
+    var result = initial
+    
+    for i in 0..<list.count {
+        result = operation(result, list[i])
+    }
+    
+    return result
+    
+}
 ```
 
 ## Tests
 
 ```swift
-// MARK: - TODO
+class Problem_342Tests: XCTestCase {
+
+    func test_fold() {
+        
+        let input = [1, 2, 3, 4, 5]
+        
+        func add(left: Int, right: Int) -> Int {
+            return left + right
+        }
+        
+        let actual = fold(list: input, operation: add(left:right:), initial: 0)
+        let expected = 15
+        
+        XCTAssert(actual == expected)
+    }
+}
 ```
