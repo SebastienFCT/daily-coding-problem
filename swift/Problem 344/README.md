@@ -23,11 +23,60 @@ Write a function that returns the maximum number of edges you can remove while s
 ## Solution
 
 ```swift
-// MARK: - TODO
+class Node {
+    var value: Int
+    var children: [Node]
+    
+    init(value: Int, children: [Node]) {
+        self.value = value
+        self.children = children
+    }
+    
+    func countNodes() -> Int {
+        
+        return 1 + children.map({ $0.countNodes() }).reduce(0) { $0 + $1 }
+    }
+    
+    func maxEdgeCutWithEvenSubtrees() -> Int {
+        
+        var result = 0
+        
+        for child in children {
+            if child.countNodes() % 2 == 0 {
+                result += 1
+            }
+            
+            result += child.maxEdgeCutWithEvenSubtrees()
+        }
+        
+        return result
+    }
+}
 ```
 
 ## Tests
 
 ```swift
-// MARK: - TODO
+class Problem_344Tests: XCTestCase {
+
+    func test_example() {
+        let input = Node(value: 1, children: [
+            Node(value: 2, children: []),
+            Node(value: 3, children: [
+                Node(value: 4, children: [
+                    Node(value: 6, children: []),
+                    Node(value: 7, children: []),
+                    Node(value: 8, children: [])
+                ]),
+                Node(value: 5, children: [])
+            ]),
+        ])
+        
+        let actual = input.maxEdgeCutWithEvenSubtrees()
+        let expected = 2
+        
+        XCTAssert(actual == expected)
+    }
+
+}
 ```
