@@ -11,24 +11,22 @@ import XCTest
 
 class Problem_346Tests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_example() {
+        
+        let input = AirbnbFlights(flights: [
+            Flight(from: "JFK", to: "ATL", 150),
+            Flight(from: "ATL", to: "SFO", 400),
+            Flight(from: "ORD", to: "LAX", 200),
+            Flight(from: "LAX", to: "DFW", 80),
+            Flight(from: "JFK", to: "HKG", 800),
+            Flight(from: "ATL", to: "ORD", 90),
+            Flight(from: "JFK", to: "LAX", 500),
+        ])
+        
+        let actual = input.cheapestTrip(from: "JFK", to: "LAX", withMaxConnection: 3)
+        let expected = 440
+        
+        XCTAssert(actual == expected)
     }
 
 }
