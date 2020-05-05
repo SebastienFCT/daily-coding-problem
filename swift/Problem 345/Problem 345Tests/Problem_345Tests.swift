@@ -21,7 +21,7 @@ class Problem_345Tests: XCTestCase {
         XCTAssertTrue(areTheSame(left: "He wants to eat food.", right: "He wants to consume food.", synonyms: synonyms, connectSynonyms: false))
         
         XCTAssertFalse(areTheSame(left: "He wants to eat food.", right: "He wants to absorb food.", synonyms: synonyms, connectSynonyms: false))
-        XCTAssertFalse(areTheSame(left: "He wants to eat food.", right: "He wants to absorb food.", synonyms: synonyms, connectSynonyms: true))
+        XCTAssertTrue(areTheSame(left: "He wants to eat food.", right: "He wants to absorb food.", synonyms: synonyms, connectSynonyms: true))
     }
 
 }

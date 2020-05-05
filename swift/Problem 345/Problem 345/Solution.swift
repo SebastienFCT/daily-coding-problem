@@ -19,19 +19,21 @@ func areTheSame(left: String, right: String, synonyms: [Synonym], connectSynonym
         return false
     }
     
-    if !connectSynonyms {
-        for i in 0..<leftWords.count {
-            
-            if leftWords[i] == rightWords[i] { continue }
-            
+    for i in 0..<leftWords.count {
+        
+        if leftWords[i] == rightWords[i] { continue }
+    
+        if !connectSynonyms {
             guard synonyms.contains(where: { (element) -> Bool in
                 (element.0 == leftWords[i] && element.1 == rightWords[i]) || (element.1 == leftWords[i] && element.0 == rightWords[i])
             }) else {
                 return false
             }
+        } else {
+            guard areSynonyms(left: String(leftWords[i]), right: String(rightWords[i]), withConnectedSynonyms: synonyms, seen: []) else {
+                return false
+            }
         }
-    } else {
-        
     }
     
     return true
