@@ -11,23 +11,36 @@ import XCTest
 
 class Problem_348Tests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func test_example() {
+        
+        var tt = TernaryTree()
+        
+        XCTAssertNil(tt.root)
+        
+        tt.insert(word: "code")
+        
+        if let codeSearch = tt.search(word: "code") {
+            XCTAssert(codeSearch.map{ $0.value } == ["c", "o", "d", "e"])
+        }
+        
+        XCTAssertNil(tt.search(word: "cob"))
+        
+        tt.insert(word: "cob")
+        tt.insert(word: "be")
+        tt.insert(word: "ax")
+        tt.insert(word: "war")
+        tt.insert(word: "we")
+        
+        if let warSearch = tt.search(word: "war") {
+            XCTAssert(warSearch.map{ $0.value } == ["c", "w", "a", "r"])
+        } else {
+            XCTFail("Couldn't find 'war'")
+        }
+        
+        if let axSearch = tt.search(word: "ax") {
+            XCTAssert(axSearch.map{ $0.value } == ["c", "b", "a", "x"])
+        } else {
+            XCTFail("Couldn't find 'ax'")
         }
     }
 
