@@ -1,32 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 349
+//
+//  Created by sebastien FOCK CHOW THO on 2020-05-08.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Grammarly.
+import Foundation
 
-[Soundex](https://en.wikipedia.org/wiki/Soundex) is an algorithm used to categorize phonetically, such that two names that sound alike but are spelled differently have the same representation.
-
-Soundex maps every name to a string consisting of one letter and three numbers, like M460.
-
-One version of the algorithm is as follows:
-
-1. Remove consecutive consonants with the same sound (for example, change ck -> c).
-2. Keep the first letter. The remaining steps only apply to the rest of the string.
-3. Remove all vowels, including y, w, and h.
-4. Replace all consonants with the following digits:
-    - b, f, p, v → 1
-    - c, g, j, k, q, s, x, z → 2
-    - d, t → 3
-    - l → 4
-    - m, n → 5
-    - r → 6
-5. If you don't have three numbers yet, append zeros until you do. Keep the first three numbers.
-
-Using this scheme, Jackson and Jaxen both map to J250.
-
-Implement Soundex.
-
-## Solution
-
-```swift
 struct Soundex {
     
     var similarConsonants: [Character: Character]
@@ -118,24 +99,3 @@ struct Soundex {
         return String(copy.prefix(4))
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_349Tests: XCTestCase {
-
-    func test_example() {
-        
-        let soundex = Soundex(similarConsonants: ["c" : "k"])
-        
-        // This one returns j225 instead of j250
-        // There is probably a rule missing in the problem that would cancel the "j" and the "s"
-        // It might also be the fact that I did not add anymore values to the similar consonants dictionary
-        print(soundex.encode(word: "Jackson"))
-        
-        XCTAssert(soundex.encode(word: "JAxen") == "j250")
-    }
-
-}
-```
