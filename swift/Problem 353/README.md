@@ -17,11 +17,37 @@ Determine the area of the largest rectangle that can be formed only from the bar
 ## Solution
 
 ```swift
-// MARK: - TODO
+extension Array where Element == Int {
+    
+    func maxArea() -> Int {
+        
+        if isEmpty {
+            return 0
+        }
+        
+        let candidate1 = self.min()! * count
+        let candidate2 = Array(suffix(count-1)).maxArea()
+        let candidate3 = Array(prefix(count-1)).maxArea()
+        
+        return Swift.max(candidate1, candidate2, candidate3)
+    }
+}
 ```
 
 ## Tests
 
 ```swift
-// MARK: - TODO
+class Problem_353Tests: XCTestCase {
+
+    func test_example() {
+        
+        let input = [1, 3, 2, 5]
+        
+        let actual = input.maxArea()
+        let expected = 6
+        
+        XCTAssert(actual == expected)
+    }
+
+}
 ```
