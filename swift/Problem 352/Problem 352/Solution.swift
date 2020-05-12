@@ -1,19 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 352
+//
+//  Created by sebastien FOCK CHOW THO on 2020-05-11.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Palantir.
+import Foundation
 
-A typical American-style crossword puzzle grid is an `N` x `N` matrix with black and white squares, which obeys the following rules:
-
-- Every white square must be part of an "across" word and a "down" word.
-- No word can be fewer than three letters long.
-- Every white square must be reachable from every other white square.
-- The grid is rotationally symmetric (for example, the colors of the top left and bottom right squares must match).
-
-Write a program to determine whether a given matrix qualifies as a crossword grid.
-
-## Solution
-
-```swift
 extension Array where Element == [Character] {
     
     // Let's assume a black square is represented by '_'
@@ -162,49 +156,3 @@ extension Array where Element == [Character] {
         
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_352Tests: XCTestCase {
-
-    func test_crossword_grid() {
-        
-        let grid1: [[Character]] = [
-            ["_", "_", " ", " ", " ", "_", "_"],
-            [" ", " ", " ", " ", " ", " ", " "],
-            [" ", " ", " ", " ", " ", " ", " "],
-            [" ", " ", " ", " ", " ", " ", " "],
-            [" ", " ", " ", " ", " ", " ", " "],
-            [" ", " ", " ", " ", " ", " ", " "],
-            ["_", "_", " ", " ", " ", "_", "_"]
-        ]
-        
-        XCTAssertTrue(grid1.isValidCrosswordGrid())
-        
-        let grid2: [[Character]] = [
-            ["_", "_", " ", " ", "_", "_"],
-            [" ", " ", " ", " ", " ", " "],
-            [" ", " ", " ", " ", " ", " "],
-            [" ", " ", " ", " ", " ", " "],
-            [" ", " ", " ", " ", " ", " "],
-            ["_", "_", " ", " ", "_", "_"]
-        ]
-        
-        // on the first and last row words are less than 3
-        XCTAssertFalse(grid2.isValidCrosswordGrid())
-        
-        let grid3: [[Character]] = [
-            ["_", "_", " ", "_", "_"],
-            [" ", " ", " ", " ", " "],
-            [" ", " ", " ", " ", " "],
-            [" ", " ", " ", " ", " "],
-            ["_", "_", " ", "_", "_"]
-        ]
-        
-        XCTAssertFalse(grid3.isValidCrosswordGrid())
-    }
-
-}
-```
