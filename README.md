@@ -6854,3 +6854,17 @@ For example, suppose your input is `[1.3, 2.3, 4.4]`. In this case you cannot do
 ### Solutions
 
 * [Swift](./swift/Problem&#32;355)
+
+## Problem 356
+
+#### Description
+
+This problem was asked by Netflix.
+
+Implement a queue using a set of fixed-length arrays.
+
+The queue should support `enqueue`, `dequeue`, and `get_size` operations.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;356)
