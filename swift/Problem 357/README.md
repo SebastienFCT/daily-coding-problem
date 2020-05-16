@@ -17,11 +17,47 @@ Given this representation, determine the depth of the tree.
 ## Solution
 
 ```swift
-// MARK: - TODO
+extension String {
+    
+    func treeDepth() -> Int {
+        
+        let stripped = filter{ $0 == "(" || $0 == ")" }
+        
+        var leftCount = 0
+        var rightCount = 0
+        
+        for i in 0..<stripped.count {
+            if stripped[i] == "(" {
+                leftCount += 1
+            } else {
+                break
+            }
+        }
+        
+        for i in stride(from: stripped.count-1, through: 0, by: -1) {
+            if stripped[i] == ")" {
+                rightCount += 1
+            } else {
+                break
+            }
+        }
+        
+        return Swift.max(leftCount, rightCount) - 1
+    }
+}
 ```
 
 ## Tests
 
 ```swift
-// MARK: - TODO
+class Problem_357Tests: XCTestCase {
+
+    func test_example() {
+        
+        XCTAssert("(00)".treeDepth() == 0)
+        XCTAssert("((00)(00))".treeDepth() == 1)
+        XCTAssert("((((00)0)0)0)".treeDepth() == 3)
+    }
+
+}
 ```
