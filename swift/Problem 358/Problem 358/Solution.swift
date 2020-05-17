@@ -1,17 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 358
+//
+//  Created by sebastien FOCK CHOW THO on 2020-05-17.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Dropbox.
+import Foundation
 
-Create a data structure that performs all the following operations in `O(1)` time:
-
-- `plus`: Add a key with value 1. If the key already exists, increment its value by one.
-- `minus`: Decrement the value of a key. If the key's value is currently 1, remove it.
-- `get_max`: Return a key with the highest value.
-- `get_min`: Return a key with the lowest value.
-
-## Solution
-
-```swift
 struct SpaceOne<T: Hashable> {
     
     var keys: [T: Int]
@@ -96,4 +92,3 @@ struct SpaceOne<T: Hashable> {
         return nil
     }
 }
-```
