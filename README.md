@@ -6890,3 +6890,20 @@ Given this representation, determine the depth of the tree.
 ### Solutions
 
 * [Swift](./swift/Problem&#32;357)
+
+## Problem 358
+
+#### Description
+
+This problem was asked by Dropbox.
+
+Create a data structure that performs all the following operations in `O(1)` time:
+
+- `plus`: Add a key with value 1. If the key already exists, increment its value by one.
+- `minus`: Decrement the value of a key. If the key's value is currently 1, remove it.
+- `get_max`: Return a key with the highest value.
+- `get_min`: Return a key with the lowest value.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;358)
