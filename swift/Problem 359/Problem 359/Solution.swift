@@ -1,16 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 359
+//
+//  Created by sebastien FOCK CHOW THO on 2020-05-18.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Slack.
+import Foundation
 
-You are given a string formed by concatenating several words corresponding to the integers zero through nine and then anagramming.
-
-For example, the input could be 'niesevehrtfeev', which is an anagram of 'threefiveseven'. Note that there can be multiple instances of each integer.
-
-Given this string, return the original integers in sorted order. In the example above, this would be `357`.
-
-## Solution
-
-```swift
 struct NumFinder {
     
     var numWords: [String: Int] = [
@@ -100,23 +97,3 @@ extension Dictionary where Key == Character, Value == Int {
         return copy
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_359Tests: XCTestCase {
-
-    func test_example() {
-        
-        let input = "niesevehrtfeev"
-        let numFinder = NumFinder()
-        
-        let actual = numFinder.solve(word: input)
-        let expected = 357
-        
-        XCTAssert(actual == expected)
-    }
-
-}
-```
