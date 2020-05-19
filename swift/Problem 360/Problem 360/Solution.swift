@@ -1,16 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 360
+//
+//  Created by sebastien FOCK CHOW THO on 2020-05-19.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Spotify.
+import Foundation
 
-You have access to ranked lists of songs for various users. Each song is represented as an integer, and more preferred songs appear earlier in each list. For example, the list `[4, 1, 7]` indicates that a user likes song `4` the best, followed by songs `1` and `7`.
-
-Given a set of these ranked lists, interleave them to create a playlist that satisfies everyone's priorities.
-
-For example, suppose your input is `{[1, 7, 3], [2, 1, 6, 7, 9], [3, 9, 5]}`. In this case a satisfactory playlist could be `[2, 1, 6, 7, 3, 9, 5]`.
-
-## Solution
-
-```swift
 extension Array where Element == Array<Int> {
     
     func spotifySorting() -> [Int] {
@@ -55,21 +52,3 @@ extension Array where Element == Array<Int> {
         return result
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_360Tests: XCTestCase {
-
-    func test_example() {
-        let input: [[Int]] = [[1, 7, 3], [2, 1, 6, 7, 9], [3, 9, 5]]
-        
-        let actual = input.spotifySorting()
-        let expected = [2, 1, 6, 7, 3, 9, 5]
-        
-        XCTAssert(expected == actual)
-    }
-
-}
-```
