@@ -1,14 +1,13 @@
-## Description
+//
+//  Solution.swift
+//  Problem 362
+//
+//  Created by sebastien FOCK CHOW THO on 2020-05-21.
+//  Copyright © 2020 sebastien FOCK CHOW THO. All rights reserved.
+//
 
-This problem was asked by Twitter.
+import Foundation
 
-A strobogrammatic number is a positive number that appears the same after being rotated 180 degrees. For example, `16891` is strobogrammatic.
-
-Create a program that finds all strobogrammatic numbers with N digits.
-
-## Solution
-
-```swift
 extension Int {
     
     func isStrobogrammatic() -> Bool {
@@ -50,17 +49,3 @@ extension Array where Element == Int {
         return true
     }
 }
-```
-
-## Tests
-
-```swift
-class Problem_362Tests: XCTestCase {
-
-    func test_example() {
-        
-        XCTAssertTrue(16891.isStrobogrammatic())
-    }
-
-}
-```
