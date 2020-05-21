@@ -11,24 +11,24 @@ import XCTest
 
 class Problem_361Tests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_example1() {
+        let input = Mastermind(guesses: [
+            "175286": 2,
+            "293416": 3,
+            "654321": 0
+        ])
+        
+        XCTAssertTrue(input.solvable())
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_example2() {
+        let input = Mastermind(guesses: [
+            "123456": 4,
+            "345678": 4,
+            "567890": 4
+        ])
+        
+        XCTAssertFalse(input.solvable())
     }
 
 }
