@@ -6963,3 +6963,17 @@ However, it is impossible for any key to result in the following scores, so in t
 ### Solutions
 
 * [Swift](./swift/Problem&#32;361)
+
+## Problem 362
+
+#### Description
+
+This problem was asked by Twitter.
+
+A strobogrammatic number is a positive number that appears the same after being rotated 180 degrees. For example, `16891` is strobogrammatic.
+
+Create a program that finds all strobogrammatic numbers with N digits.
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;362)
