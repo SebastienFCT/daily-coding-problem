@@ -6977,3 +6977,23 @@ Create a program that finds all strobogrammatic numbers with N digits.
 ### Solutions
 
 * [Swift](./swift/Problem&#32;362)
+
+## Problem 363
+
+#### Description
+
+This problem was asked by Squarespace.
+
+Write a function, `add_subtract`, which alternately adds and subtracts curried arguments. Here are some sample operations:
+
+```
+add_subtract(7) -> 7
+
+add_subtract(1)(2)(3) -> 1 + 2 - 3 -> 0
+
+add_subtract(-5)(10)(3)(9) -> -5 + 10 - 3 + 9 -> 11
+```
+
+### Solutions
+
+* [Swift](./swift/Problem&#32;363)
