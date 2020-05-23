@@ -6997,3 +6997,15 @@ add_subtract(-5)(10)(3)(9) -> -5 + 10 - 3 + 9 -> 11
 ### Solutions
 
 * [Swift](./swift/Problem&#32;363)
+
+## Problem 364
+
+#### Description
+
+This problem was asked by Facebook.
+
+Describe an algorithm to compute the longest increasing subsequence of an array of numbers in `O(n log n)` time.
+
+### Solutions
+
+* [Swift](./others/Problem&#32;363)
