@@ -7008,4 +7008,4 @@ Describe an algorithm to compute the longest increasing subsequence of an array 
 
 ### Solutions
 
-* [Description](./others/Problem&#32;363)
+* [Description](./others/Problem&#32;364)
