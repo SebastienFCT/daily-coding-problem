@@ -7026,4 +7026,4 @@ Implement a quack using three stacks and O(1) additional memory, so that the amo
 
 ### Solutions
 
-* [Description](./others/Problem&#32;365)
+* [Swift](./swift/Problem&#32;365)
